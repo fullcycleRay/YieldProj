@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OfferingDetailsService} from '../offering-details.service';
 import {Router} from '@angular/router';
 
@@ -11,11 +11,13 @@ export class OfferingDetailsComponent implements OnInit {
   resp: any;
   offeringResp: any;
 
-  constructor(private router:Router,private offeringDetails:OfferingDetailsService) { }
+  constructor(private router: Router, private offeringDetails: OfferingDetailsService) {
+  }
 
   ngOnInit() {
     this.getOfferingDetails();
   }
+
   getOfferingDetails(): void {
     this.offeringDetails.getOfferingData()
       .subscribe(
@@ -23,7 +25,7 @@ export class OfferingDetailsComponent implements OnInit {
           this.offeringResp = resp;
           console.log(this.offeringResp);
         }
-      )
+      );
   }
 
 }

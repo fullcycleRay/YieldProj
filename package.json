@@ -8,6 +8,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
+    "fixLint": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
     "e2e": "ng e2e"
   },
   "private": true,

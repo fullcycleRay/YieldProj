@@ -4,17 +4,17 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-top-nav',
   templateUrl: './top-nav.component.html',
-  styleUrls: ['../../app.component.scss','../../font-awesome/css/font-awesome.min.css']
+  styleUrls: ['../../app.component.scss', '../../font-awesome/css/font-awesome.min.css']
 })
 export class TopNavComponent implements OnInit {
-isUserLoggedIn:boolean;
-  
-  
-  constructor(private router:Router, private user:UserService) { 
- //  Subscribe here, this will automatically update 
+isUserLoggedIn: boolean;
+
+
+  constructor(private router: Router, private user: UserService) {
+ //  Subscribe here, this will automatically update
      this.user.isUserLoggedIn.subscribe( value => {
       this.isUserLoggedIn = value;
-  }); 
+  });
 
 
 
@@ -23,7 +23,7 @@ isUserLoggedIn:boolean;
 
   ngOnInit() {
   }
-  logOutUser(){
+  logOutUser() {
     this.user.isUserLoggedIn.next(false);
     sessionStorage.clear();
   }

@@ -12,13 +12,13 @@ export class UserService {
   constructor() {
     this.isUserLoggedIn.next(false);
    }
-   setUserLoggedIn(){
+   setUserLoggedIn() {
      this.isUserLoggedIn.next(true);
    }
-   getUserLoggedIn(){
+   getUserLoggedIn() {
      return this.isUserLoggedIn;
    }
-   setUserLoggedOut(){
+   setUserLoggedOut() {
     this.isUserLoggedIn.next(false);
    }
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {Angular2TokenService} from "angular2-token";
-import {environment} from "../environments/environment";
+import {Angular2TokenService} from 'angular2-token';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,5 @@ import {environment} from "../environments/environment";
 })
 export class AppComponent {
   title = 'app';
-  
+
 }
