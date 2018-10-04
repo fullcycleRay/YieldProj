@@ -1,0 +1,77 @@
+<div class="portal portal-signup ng-scope">
+    <div class="container portal-container">
+       <br><br><br><br><br>
+       <h1  class="signup-cta ">Access Alternative Investments<strong><br>with 8-20% Target Yields</strong></h1>
+       <div class="animation-hide signup-step-1 ">
+          <div class="portal-inputs-ctn">
+             <div class="portal-inputs">
+                <div class="row">
+                   <div class="portal-ui-container">
+                      <div data-ui-view="" class="animation-horizontal-slide ng-scope">                          
+                         <form  (submit)="signUpUser($event)" novalidate=""  class="ng-pristine ng-scope">
+                            <div class="signup-step-1">
+                               <div class="portal-small-ctn">
+                                  <div class="step-1-formdata">
+                                     <div>
+                                         <input type="text" class="form-control form-control--first ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="firstName" placeholder="First name"  data-ng-class="" required="" minlength="2" maxlength="256" >
+                                    </div>
+                                     <div>
+                                         <input  type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="lastName" placeholder="Last name"  data-ng-class="" required="" minlength="2" maxlength="256">
+                                    </div>
+                                     <div>
+                                         <input  type="email" class="form-control form-control--last ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-email ng-invalid ng-invalid-required ng-valid-maxlength" name="email" placeholder="Email"  data-ng-class="" data-validate-email="" data-validate-unique="" required="" maxlength="128" >
+                                    </div>
+                                    <div *ngIf="userAlreadyExist" class="ng-active" >                                            
+                                            <p ng-message="unique" class="alert alert-danger ng-scope" >An account with the email <strong class="alert-link ng-binding">{{eMail}}</strong> already exists.<br> Please <a href="" routerLink="/login" class="alert-link text-underline" data-ui-sref="login">login</a> instead</p>
+                                    </div>
+                                    
+                                    <div class="card-table ng-scope" *ngIf="anyError" >                                        
+                                            <table>
+                                               <tbody>
+                                                  <tr *ngIf="firstNameError" class="ng-scope" >
+                                                     <td class="card-table--padding"><span class="circle-icon"><i class="fa fa-info" data-ng-class="{'fa-check'}"></i></span></td>
+                                                     <td class="card-table__label card-table--padding">Your first name must be valid</td>
+                                                  </tr>
+                                                  <tr *ngIf="lastNameError" class="ng-scope" >
+                                                     <td class="card-table--padding"><span class="circle-icon"><i class="fa fa-info" data-ng-class="{'fa-check'}"></i></span></td>
+                                                     <td class="card-table__label card-table--padding">Your last name must be valid</td>
+                                                  </tr>
+                                                  <tr *ngIf="emailError" class="ng-scope">
+                                                     <td><span class="circle-icon"><i class="fa fa-info" data-ng-class="{'fa-check'}"></i></span></td>
+                                                     <td class="card-table__label">Your email must be valid</td>
+                                                  </tr>
+                                               </tbody>
+                                            </table>
+                                    </div>
+                                     <div ng-messages="" class="ng-inactive">
+                                     </div>                                    
+                                     <button type="submit" class="btn btn--attention portal-create-new animation-fadein-medium" data-ng-click="next()">CREATE MY ACCOUNT NOW</button> <a class="already-have-acc" ui-sref="login" routerLink="/login" href="">ALREADY HAVE AN ACCOUNT?</a>
+                                  </div>
+                                  <div class="clearfix social-buttons">
+                                     <a href="#" class="portal__social-media-link portal__social-media-link--first ng-isolate-scope FB-loaded" sign-in-with-facebook="" callback="signupCtrl.callbackFillData(signupCtrl.service);">
+                                        <div class="portal__social-media-col"><i class="fa fa-facebook-square portal__social-media-icon" aria-hidden="true"></i> <span class="portal__social-media-label">Sign up with <strong>Facebook</strong></span></div>
+                                     </a>
+                                     <a href="#" class="portal__social-media-link ng-isolate-scope IN-loading" sign-in-with-linkedin="" data-mode="register" data-redirect-to="signup/data">
+                                        <div class="portal__social-media-col"><i class="fa fa-linkedin-square portal__social-media-icon" aria-hidden="true"></i> <span class="portal__social-media-label">Sign up with <strong>Linkedin</strong></span></div>
+                                     </a>
+                                  </div>
+                               </div>
+                            </div>
+                         </form>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>    
+ </div>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" lazyload="">
+ <link rel="stylesheet" href="//cloud.typography.com/6330074/656728/css/fonts.css" lazyload="">
+ <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/jcrop/css/jquery.Jcrop.min.css?v=20180404173407" lazyload="">
+ <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css?v=20180404173407" lazyload="">
+ <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css?v=20180404173407" lazyload="">
+ <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/c3/c3.min.css?v=20180404173407" lazyload="">
+ <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/css/font-yieldstreet.css?v=20180404173407" lazyload="">
+ <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/angular-ui-select/dist/select.min.css?v=20180404173407" lazyload="">
+ <link rel="stylesheet" id="ys-styles-css" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/css/style.css?ver=20180404173407" type="text/css" media="all">

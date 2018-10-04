@@ -1,0 +1,58 @@
+.offeringCont_1{
+    padding: 40px 5vw;
+    background: linear-gradient( 0deg,rgba(241,243,245,1) 0%,rgba(250,251,252,1) 50%,rgba(236,239,240,1) 100% ),rgba(248,249,250,1);
+    background-size: 100% 0;
+    background-repeat: no-repeat;
+    padding: 40px 5vw;
+}
+
+.offeringCont_2{
+    border-top: 1px solid rgb(171,180,186);
+    min-height: 800px;
+    padding-bottom: 40px;
+    background: rgb(255,255,255);
+    max-width: 1185px;
+    margin: 0 auto;    
+}
+.offeringCont_3{
+
+}
+.offeringCont_4{
+    padding: 30px 30px 10px;
+    position: relative;
+}
+.gridCont_1{
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    z-index: 2;
+    position: relative;
+    display: grid;
+}
+.imgCont{
+    display: block;
+    margin-right: 20px;
+    grid-row-start: 1;
+    grid-row-end: span 5;
+    position: relative;
+}
+.imgDisp{
+    max-width: 250px;
+    min-height: 0;
+    clear: both;
+    overflow: hidden;
+    background-image: url(https://va4l.imgeng.in/https://ysdocs.s3.amazonaws.com/prod/NOTES/wTbO6Q/2hWDTkblmP2NGIipUZyLzgpo.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 2px 9px 0 rgba(0,0,0,0.15);
+}
+
+

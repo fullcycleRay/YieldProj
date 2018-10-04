@@ -1,0 +1,34 @@
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+user agent stylesheet
+:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+div {
+    display: block;
+}
+@media (min-width: 992px)
+{
+.LoginArea_loginArea_3tSKA {
+    margin-top: -17px;
+    white-space: nowrap;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+}
+@media (min-width: 576px)
+{
+.LoginArea_login_1L4C0 {
+    display: inline;
+    font-size: 14px;
+    line-height: 12px;
+    color: rgba(53, 56, 58, 1);
+    margin-right: 30px;
+    text-decoration: none;
+}
+}

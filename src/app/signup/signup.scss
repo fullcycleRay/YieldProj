@@ -1,0 +1,206 @@
+  .portal-signup {
+    form.signup-step-1 {
+      min-height: auto;
+    }
+    .ys-progress-bar {
+      display: none;
+    }
+    .norton-logo {
+      display: block;
+    }
+    .trust .logo img {
+      @include opacity(0.3);
+      &:hover {
+        @include opacity(1);
+      }
+    }
+    .portal-footer__disclaimer {
+      margin-top: 10px;
+      a {
+        padding-left: 0;
+      }
+    }
+    .portal-footer {
+      padding: 20px 0;
+      & img:last-child {
+        margin-top: -3px;
+      }
+    }
+    .signup-no-title {
+      margin-top: 75px;
+    }
+    .signup-cta {
+      font-size: 29px;
+      line-height: 1.5;
+      max-width: 510px;
+      margin: 30px auto 39px auto;
+      @include font-book;
+      strong {
+        @include font-medium;
+      }
+      span{
+        color: $ys-primary;
+      }
+    }
+    .portal-inputs {
+      input {
+        @include placeholder($gray-dark);
+        &.form-control {
+          box-shadow: inset 0 1px 1px 0 $gray-darkest;
+          height: 44px;
+          margin: 15px 0;
+          font-size: 16px;
+          border: none;
+          border-radius: 0;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        @include media-xs-max {
+          border: 1px solid #e6e8ea !important;
+        }
+      }
+      .portal-create-new {
+        width: 100%;
+        margin: 30px 0 15px 0;
+        height: 44px;
+        background: $ys-primary;
+        color: $white;
+      }
+    }
+    div.signup-step-1 {
+      .step-1-formdata {
+        max-width: 386px;
+        margin: 0 auto;
+        background: $gray-lighter;
+        border: 1px solid $gray;
+        padding: 25px 20px 20px;
+        border-radius: 2px;
+      }
+    }
+    .already-have-acc {
+      display: block;
+    }
+    .social-buttons {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 16px;
+      i,
+      span,
+      strong {
+        vertical-align: top;
+      }
+      .portal__social-media-label {
+        line-height: 1.5;
+      }
+      a {
+        display: inline-block;
+        padding-top: 10px;
+      }
+    }
+    .portal-footer {
+      a {
+        color: $blue;
+      }
+    }
+    .portal-footer__disclaimer {
+      color: $black;
+    }
+  .trust {
+      margin-top: 25px;
+    }
+    .press-breakline {
+      border-top: 1px solid $gray;
+      margin: 35px 0 0 0;
+      padding: 0;
+    }
+    .press-line {
+      color: $gray-dark;
+      width: 75%;
+      margin: 20px auto 25px;
+      &__quote {
+        width: 50%;
+        float: left;
+        padding: 0 40px;
+        &:first-child {
+          text-align: right;
+        }
+        img.hedgeweek {
+          width: 130px;
+          height: 20px;
+          margin-bottom: -3px;
+        }
+        img.wsj {
+          width: 188px;
+          height: 16px;
+          opacity: 0.4;
+        }
+      }
+  
+      blockquote {
+        @include font-book;
+        line-height: 1.5;
+        font-size: $font-size-small;
+        border: 0;
+        padding: 0;
+        margin: 15px 0 0 0;
+        font-style: italic;
+      }
+    }
+    @include media-xs {
+      .navbar-right {
+        .btn-signup {
+          display: none;
+        }
+        .btn-login {
+          display: inline-block !important;
+          margin: 0 !important;
+        }
+      }
+      .signup-step-1 {
+        min-height: 350px;
+      }
+      div.signup-step-1 .step-1-formdata {
+        padding: 15px 10px;
+      }
+      .portal-inputs .portal-create-new {
+        margin-top: 20px;
+      }
+      .portal-footer {
+        padding-top: 30px;
+        a {
+          display: block;
+          margin-bottom: 15px;
+        }
+        img {
+          height: 25px;
+          width: auto;
+          margin-bottom: 10px;
+        }
+      }
+      .portal-footer__disclaimer {
+        margin-top: 0;
+        text-align: left;
+        float: left;
+      }
+      .trust .logo {
+        padding-right: 5px;
+        width: 25%;
+      }
+      .press-line {
+        margin: 20px 0 25px;
+        width: auto;
+        &__quote {
+          float: none;
+          width: 100%;
+          padding: 0;
+          text-align: center;
+          margin-top: 25px;
+          &:first-child {
+            margin-top: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }

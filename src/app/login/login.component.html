@@ -1,0 +1,43 @@
+<div class="">
+  <div class="Login_container_y8qtG">
+    <br><br><br> <br>
+     <a routerLink="/"><img class="Login_image_3O2Yq" src="https://www.yieldstreet.com/static/media/logo-vertical.19c68260.svg" width="170" alt="YieldStreet"></a>
+     <div class="Login_box_36M41">
+       <form (submit)="loginUser($event)">
+        <h4 class="Login_title_1onnH">Login</h4>
+        <div class="InputText_container_3aVsF  "><label class="InputText_label_1GzgQ"></label>
+          <input type="email" min="4" max="Infinity" placeholder="Email" name="email" required class="InputText_input_4_Ga4 InputText_fullWidth_1VNFm" value=""
+          (input)="validateEmail($event.target.value)" [class.InputText_error-email_1I8MI]="emailError"  >
+          <div *ngIf="userIdError"class="InputText_errorMessage_1WBY1">{{userDisError}}</div>
+        </div>
+        <div class="InputText_container_3aVsF  "><label class="InputText_label_1GzgQ"></label>
+          <input type="password" min="0" max="Infinity" placeholder="Password" name="password" required class="InputText_input_4_Ga4 InputText_fullWidth_1VNFm" value=""
+          (input)="validatePaswd($event.target.value)" [class.InputText_error-email_1I8MI]="paswdError">
+          <div *ngIf="paswdError"class="InputText_errorMessage_1WBY1">{{passDisError}}</div>
+        </div>
+        
+        <div class="Login_checkPass_2e8ed">
+           <div class="Checkbox_container_oF3Uu "><label class="Checkbox_label_-Nabo"><input type="checkbox" class="Checkbox_checkbox_1mjpw" value="on"><span class="Checkbox_fakeCheckbox_17Ixq"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAABGdBTUEAALGPC/xhBQAAAG1JREFUGBmNjcsNgCAQBbUNE0Md/kKiHuyGm01ZmvaAswQIBzdCMmE/86BtKo/3vkc9qnTkHR4YfgNIW5THINOcYL6SUb65p7ynsSDf2TykoF9B5Lmch1pkyCFqXU7pIuSo5eUl7dQbycAFnSa9dEJuIwPz7WUAAAAASUVORK5CYII=" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAABGdBTUEAALGPC/xhBQAAAG1JREFUGBmNjcsNgCAQBbUNE0Md/kKiHuyGm01ZmvaAswQIBzdCMmE/86BtKo/3vkc9qnTkHR4YfgNIW5THINOcYL6SUb65p7ynsSDf2TykoF9B5Lmch1pkyCFqXU7pIuSo5eUl7dQbycAFnSa9dEJuIwPz7WUAAAAASUVORK5CYII= 1x, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAABGdBTUEAALGPC/xhBQAAAN1JREFUOBG1kskKAjEQRPUL3BD3q/9/9uTVXVBw/wWvHuMrSI8LM5hoLCg6E7tf9QyWS3+Qc24AdoxHyfGC4wuWJkkDAPbxWWQ0xZVkAcD+Cu8RcMLSDFezzXloytlF5IHZYrhYNGy9o0OY6+Ijlub4sbktyqUCJNXgEHrf4TVjvlRBPZwSFkJfBx80gBY4H25JNASH0PsMX36Ex4R4+J4qCV63+aDKQOGb8FsbG3wVDbcN8kI8fEeVvocXhAhsf8U154b1/VQB6XPZ1hzdBqeB22YAW/iKb3ho9zH1Dj7ZkCwSYMT/AAAAAElFTkSuQmCC 2x" alt="Checkmark"></span><span class="Checkbox_labelText_5bN4p">Remember Me</span></label></div>
+           <div class="Login_forgotBtn_1zkQE"><a routerLink="/forgetpassword">Forgot Password</a></div>
+        </div>
+        <div *ngIf = "userIdOrPassEntered"class="Notification_container_HOuP1 Notification_error_3zkZR">Wrong email or password.<span (click)="errorClose()" aria-hidden="true" class="fa fa-times Notification_close_1a2bS"></span></div>
+        <div class="Login_loginBtn_ReJvI"><button class="sc-bwzfXH hXtgmJ" id="login-login">Log In</button></div>
+        <p class="Login_noAccount_3kFJW">Don't have an account? <a routerLink="/signup">Sign Up</a></p>
+        </form>
+     </div>
+     <div class="Login_socialLogin_2ePFR">
+        <div>
+           <div class="SocialButton_container_3M9tx" style="color: rgb(49, 88, 157);">
+              <div class="SocialButton_icon_rR7uW"><span aria-hidden="true" class="fa fa-facebook-square"></span></div>
+              Log in with Facebook
+           </div>
+        </div>
+        <div>
+           <div class="SocialButton_container_3M9tx" style="color: rgb(0, 99, 146);">
+              <div class="SocialButton_icon_rR7uW"><span aria-hidden="true" class="fa fa-linkedin-square"></span></div>
+              Log in with Linkedin
+           </div>
+        </div>
+     </div> 
+  </div>
+</div>

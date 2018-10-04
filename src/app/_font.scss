@@ -1,0 +1,49 @@
+@mixin font-face($family, $path){
+    @font-face{
+        font-family: $family;
+        src: url('#{$path}.eot');
+        src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg##{$family}')format('svg');
+    }
+}
+
+@mixin font-light(){
+    font-family: $font-gotham-a, $font-gotham-b;
+    font-style: normal;
+    font-weight: 300; 
+}
+
+@mixin font-light-italic(){
+    font-family: $font-gotham-a, $font-gotham-b;
+    font-style: italic;
+    font-weight: 300; 
+}
+
+@mixin font-thin(){
+    font-family: $font-gotham-a, $font-gotham-b;
+    font-style: normal;
+    font-weight: 100;
+}
+
+@mixin font-book(){
+    font-family: $font-gotham-a, $font-gotham-b;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin font-book-italic(){
+    font-family: $font-gotham-a, $font-gotham-b;
+    font-style: italic;
+    font-weight: 400;
+}
+
+@mixin font-medium(){
+    font-family: $font-gotham-a, $font-gotham-b;
+    font-style: normal;
+    font-weight: 500;
+}
+
+@mixin font-bold(){
+    font-family: $font-gotham-a, $font-gotham-b;
+    font-style: normal;
+    font-weight: 700;
+}

@@ -1,0 +1,82 @@
+<br><br><br><br><br><br><br>
+<div class="container portal-container">
+    <div  class="animation-hide  signup-step-2 signup-no-title">
+      <div class="portal-inputs-ctn">
+        <div class="portal-inputs">
+          <div class="row">
+            <div class="portal-ui-container">
+              <!-- uiView: -->
+              <div data-ui-view="" class="animation-horizontal-slide ng-scope" >
+                <form name="" novalidate="" class="ng-pristine ng-scope ng-valid-mask ng-valid-pattern ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-strong ng-invalid-lowercase ng-invalid-uppercase ng-invalid-minimum">
+                  <div class="signup-step-2">
+                    <div class="portal-small-ctn">
+                      <div>
+                        <input type="tel" class="form-control form-control--first ng-pristine ng-untouched ng-isolate-scope ng-valid-mask ng-valid-pattern ng-empty ng-invalid ng-invalid-required ng-valid-maxlength" name="phone" placeholder="Phone Number" data-validate-phone="/^\\+?[0-9 \\-()]{10,32}$/" data-ng-model="signupCtrl.state.form.phone" data-ng-class="{'input-error': signupCtrl.submittedStep2 }" required="" maxlength="32" ui-mask="(999) 999 - 9999" ui-mask-placeholder="(___) ___ - ____">
+                        </div>
+<!--                        <show-password-input data-classes="form-control form-control--last" data-model="signupCtrl.state.form.password" data-is-invalid="signupCtrl.formStep2.password.$invalid" ,="" data-is-submitted="signupCtrl.submittedStep2" ng-if="!isSocialLogin" class="ng-scope ng-isolate-scope">
+-->
+                          <div class="show-passwd__container">
+                            <input type="password" class="form-control form-control--last" name="password" placeholder="Password" data-ng-model="model" data-validate-strong-password="" data-ng-class="{'input-error': isInvalid &amp;&amp; isSubmitted}" required="">
+                              <div class="input-checkbox show-passwd-button-container">
+                                <label>
+                                  <input type="checkbox">
+                                    <span class="checkbox-label show-passwd__label">Show</span>
+                                  </label>
+                                </div>
+                              </div>
+<!--                            </show-password-input> -->                      
+                            <div class="card-table">
+                              <table>
+                                <tbody>
+                                  <tr>
+                                    <td class="card-table--padding">
+                                      <span class="circle-icon">
+                                        <i class="fa" data-ng-class="{'fa-check'}"></i>
+                                      </span>
+                                    </td>
+                                    <td class="card-table__label card-table--padding">You must provide a valid phone number</td>
+                                  </tr>
+                                  <!-- ngIf: !isSocialLogin -->
+                                  <tr ng-if="!isSocialLogin" class="ng-scope">
+                                    <td class="card-table--padding">
+                                      <span class="circle-icon">
+                                        <i class="fa" data-ng-class="{'fa-check':!signupCtrl.formStep2.password.$error.lowercase}"></i>
+                                      </span>
+                                    </td>
+                                    <td class="card-table__label card-table--padding">Your password must have a lowercase letter</td>
+                                  </tr>
+                                  <!-- end ngIf: !isSocialLogin -->
+                                  <!-- ngIf: !isSocialLogin -->
+                                  <tr ng-if="!isSocialLogin" class="ng-scope">
+                                    <td class="card-table--padding">
+                                      <span class="circle-icon">
+                                        <i class="fa" data-ng-class="{'fa-check':!signupCtrl.formStep2.password.$error.uppercase}"></i>
+                                      </span>
+                                    </td>
+                                    <td class="card-table__label card-table--padding">Your password must have a uppercase letter</td>
+                                  </tr>
+                                  <!-- end ngIf: !isSocialLogin -->
+                                  <!-- ngIf: !isSocialLogin -->
+                                  <tr ng-if="!isSocialLogin" class="ng-scope">
+                                    <td>
+                                      <span class="circle-icon">
+                                        <i class="fa" data-ng-class="{'fa-check' : !signupCtrl.formStep2.password.$error.minimum}"></i>
+                                      </span>
+                                    </td>
+                                    <td class="card-table__label card-table--padding">Your password must be at least 8 characters</td>
+                                  </tr>
+                                  <!-- end ngIf: !isSocialLogin -->
+                                </tbody>
+                              </table>
+                            </div>
+                            <button type="button" class="btn btn--attention portal-create-new animation-fadein-medium" data-ng-click="signupCtrl.next()">CONTINUE</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
