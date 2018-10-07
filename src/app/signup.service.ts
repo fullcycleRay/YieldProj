@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators'
 import{Observable, of } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
+import {environment} from  '../environments/environment';
+
+const API_URL = environment.yieldUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +16,10 @@ export class SignupService {
   getAllData(fName,uId,passWord){
     let httpOptions = {headers: new HttpHeaders({ 
       'Content-Type': 'application/json',
-      'responseType': 'text' 
+      'Access-Control-Allow-Origin': '*'
     })};
-
     let signUpInfo = { name:fName ,email: uId,password:passWord};
-    let signUpUrl : string = 'http://localhost:3000/auth/signup';
+    let signUpUrl : string = API_URL+'/auth/signup';
     return this.http.post(signUpUrl,JSON.stringify(signUpInfo),httpOptions)
     .pipe(catchError(this.handleError('getAllData')))
   }

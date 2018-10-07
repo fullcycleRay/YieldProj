@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  yieldUrl: 'http://localhost:3000' //API url 
 };

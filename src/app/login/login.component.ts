@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { UserService } from '../user.service';
 import {AuthServiceService} from'../auth-service.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,10 +22,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    
 
   }
   getRestItems(uId,pWord): void {
-    this.authUser.getAllData(uId, pWord)
+    this.authUser.login(uId, pWord)
       .subscribe(
         resp => {
           this.restItems = resp;
@@ -87,9 +89,8 @@ export class LoginComponent implements OnInit {
       this.user.isUserLoggedIn.next(true);      
       this.userIdError =false;
       this.emailError=false;
-      sessionStorage.setItem('auth_token', this.restItems.auth_token);
-      sessionStorage.setItem('usedId',eMail);
-      sessionStorage.setItem('isUserLoggedIn','Y');
+      localStorage.setItem('User', this.restItems.user.auth_token);
+      localStorage.setItem('isUserLoggedIn','Y');
       this.router.navigate(['offerings']);
     }
     else if(eMail =="")
@@ -109,7 +110,7 @@ export class LoginComponent implements OnInit {
       this.userDisError="This field has a minimum length of 4 characters.";
       this.emailError=true;
     } 
-    else if(eMail !="arunoday.ray@gmail.com" && eMail.length>4)
+    else if(this.restItems.success == false)
     {
       this.userIdError = true;
       this.userDisError="This is not a valid registered email";

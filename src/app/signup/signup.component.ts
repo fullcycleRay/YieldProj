@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
   eMail="";
   restItems: any;
   resp: any;
+  err: any;
 
   ngOnInit() {
   
@@ -29,6 +30,9 @@ export class SignupComponent implements OnInit {
         resp => {
           this.restItems = resp;
           console.log(this.restItems);
+        },
+        err => {
+          console.log("Error occured");
         }
       )
   }
@@ -70,7 +74,7 @@ export class SignupComponent implements OnInit {
     }
     if(this.restItems.success == true)
     {
-      sessionStorage.setItem('auth_token', this.restItems.auth_token);
+      localStorage.setItem('User', this.restItems.user);
       this.router.navigate(['offerings']);
     }
 

@@ -3,7 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators'
 import{Observable, of } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
+import {environment} from '../environments/environment';
 
+const API_URL = environment.yieldUrl;
 @Injectable({
   providedIn: 'root'
 })
@@ -11,13 +13,8 @@ export class OfferingDetailsService {
 
   constructor(private http: HttpClient, public sanitizer: DomSanitizer) { }
   getOfferingData(){
-    let httpOptions = {headers: new HttpHeaders({ 
-      'Content-Type': 'application/json',
-      'responseType': 'text' 
-    })};
-
-    let serviceUrl : string = 'http://localhost:3000/services/1';
-    return this.http.get(serviceUrl,httpOptions)
+    let serviceUrl : string = API_URL+'/services';
+    return this.http.get(serviceUrl)
     .pipe(catchError(this.handleError('getAllData')))
   }
   private handleError<T>(operation ='operation', result?: T){

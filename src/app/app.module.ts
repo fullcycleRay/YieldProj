@@ -22,10 +22,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { CreateInvestorAccountComponent } from './create-investor-account/create-investor-account.component';
 import { SelectInvestorAccountComponent } from './select-investor-account/select-investor-account.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthServiceService} from'./auth-service.service';
 import { OfferingDetailsComponent } from './offering-details/offering-details.component';
-
+import{JwtInterceptor} from './helper/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,13 @@ import { OfferingDetailsComponent } from './offering-details/offering-details.co
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService, AuthServiceService],
-  bootstrap: [AppComponent]
+  providers: [
+    UserService,
+    AuthServiceService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ],
+  bootstrap: [AppComponent],
+  
+
 })
 export class AppModule { }
