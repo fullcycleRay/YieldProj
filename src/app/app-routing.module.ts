@@ -2,8 +2,8 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
-import{SignupComponent} from './signup/signup.component';
-import{LoginComponent}from './login/login.component';
+import {SignupComponent} from './signup/signup.component';
+import {LoginComponent}from './login/login.component';
 import { OfferingsComponent } from './offerings/offerings.component';
 import { WhyYieldstreetComponent } from './why-yieldstreet/why-yieldstreet.component';
 import { InvestmentPhilosophyComponent } from './investment-philosophy/investment-philosophy.component';
@@ -12,11 +12,16 @@ import {Step2Component} from'./step2/step2.component';
 import {NotfoundComponent} from './notfound/notfound.component';
 import {ForgetpasswordComponent} from './forgetpassword/forgetpassword.component';
 import {ViewportfolioComponent} from './viewportfolio/viewportfolio.component';
-import{CreateInvestorAccountComponent} from './create-investor-account/create-investor-account.component';
-import{SelectInvestorAccountComponent} from'./select-investor-account/select-investor-account.component';
-import{OfferingDetailsComponent} from './offering-details/offering-details.component';
-import{OriginatorComponent} from './originator/originator.component';
+import {CreateInvestorAccountComponent} from './create-investor-account/create-investor-account.component';
+import {SelectInvestorAccountComponent} from'./select-investor-account/select-investor-account.component';
+import {OfferingDetailsComponent} from './offering-details/offering-details.component';
+import {OriginatorComponent} from './originator/originator.component';
 import {CompleteInvestmentComponent} from './complete-investment/complete-investment.component';
+import {InvestmentComponent} from './investment/investment.component'
+import {WalletComponent} from './wallet/wallet.component'
+import {TransferFundsComponent} from './transfer-funds/transfer-funds.component'
+import {TransactionComponent} from './transaction/transaction.component'
+import {AccountComponent} from './account/account.component'
 const routes: Routes = [
 {
   path:'',
@@ -29,6 +34,26 @@ const routes: Routes = [
 {
   path:'viewportfolio',
   component: ViewportfolioComponent
+},
+{
+  path: 'investments',
+  component: InvestmentComponent
+},
+{
+  path: 'wallet',
+  component: WalletComponent
+},
+{
+  path: 'funds',
+  component: TransferFundsComponent
+},
+{
+  path: 'transactions',
+  component: TransactionComponent
+},
+{
+  path: 'account',
+  component: AccountComponent
 },
 {
   path:'signup',

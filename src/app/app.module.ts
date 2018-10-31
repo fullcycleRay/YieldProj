@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule} from '@angular/forms';  
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -28,7 +28,13 @@ import { OfferingDetailsComponent } from './offering-details/offering-details.co
 import {JwtInterceptor} from './helper/jwt.interceptor';
 import { OriginatorComponent } from './originator/originator.component';
 import { GetMonths } from './offering-details/get-months.pipe';
-import { CompleteInvestmentComponent } from './complete-investment/complete-investment.component'
+import { CompleteInvestmentComponent } from './complete-investment/complete-investment.component';
+import { InvestmentComponent } from './investment/investment.component';
+import { WalletComponent } from './wallet/wallet.component';
+import { ManageAccountPartialComponent } from './manage-account-partial/manage-account-partial.component';
+import { TransferFundsComponent } from './transfer-funds/transfer-funds.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { AccountComponent } from './account/account.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +59,13 @@ import { CompleteInvestmentComponent } from './complete-investment/complete-inve
     OfferingDetailsComponent,
     OriginatorComponent,
     GetMonths,
-    CompleteInvestmentComponent
+    CompleteInvestmentComponent,
+    InvestmentComponent,
+    WalletComponent,
+    ManageAccountPartialComponent,
+    TransferFundsComponent,
+    TransactionComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +79,6 @@ import { CompleteInvestmentComponent } from './complete-investment/complete-inve
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
-  
 
 })
 export class AppModule { }
