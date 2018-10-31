@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import {Router} from '@angular/router';
-import {SignupService} from'../signup.service';
+import {SignupService} from '../signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,8 +16,8 @@ export class SignupComponent implements OnInit {
   lastNameError = false;
   emailError = false;
   userAlreadyExist = false;
-  eMail="";
-  restItems: any;
+  eMail='';
+  signupToken: any;
   resp: any;
   err: any;
 
@@ -25,25 +25,49 @@ export class SignupComponent implements OnInit {
   
   }
   getRestItems(fName,uId,pWord): void {
-    this.signUp.getAllData(fName,uId, pWord)
-      .subscribe(
+    this.signUp.signupUser(fName,uId, pWord)
+      .then(
         resp => {
-          this.restItems = resp;
-          console.log(this.restItems);
+          this.signupToken = resp;
+          console.log(this.signupToken);
+          if(fName=="" || fName.length<2)
+          {
+            this.anyError = true;
+            this.firstNameError=true; 
+          }
+          // if(lName=="" || lName.length<2)
+          // {
+          //   this.anyError = true;
+          //   this.lastNameError=true;
+          // }
+          if(this.eMail=="" || !(this.emailPattern(this.eMail)))
+          {
+            this.anyError = true;
+            this.emailError=true;
+          }
+          if(this.signupToken.success == false && this.signupToken.message =="Validation failed: Email has already been taken")
+          {
+            this.userAlreadyExist = true;
+          }
+          if(this.signupToken.success == true)
+          {
+            localStorage.setItem('User', this.signupToken.user);
+            this.router.navigate(['offerings']);
+          }
         },
         err => {
-          console.log("Error occured");
+          console.log('Error occured');
         }
-      )
+      );
   }
 
   emailPattern(email) {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
   }
   signUpUser(e){
-    var fName = e.target.elements[0].value;
-    var lName = e.target.elements[1].value;
+    let fName = e.target.elements[0].value;
+    let lName = e.target.elements[1].value;
     this.eMail = e.target.elements[2].value.toLowerCase();
     let currentUrl = this.router.url;
     this.anyError = false;
@@ -53,30 +77,6 @@ export class SignupComponent implements OnInit {
     this.userAlreadyExist = false;
     // console.log(fName,lName,this.eMail,currentUrl);
     this.getRestItems(fName,this.eMail,lName);
-    if(fName=="" || fName.length<2)
-    {
-      this.anyError = true;
-      this.firstNameError=true; 
-    }
-    if(lName=="" || lName.length<2)
-    {
-      this.anyError = true;
-      this.lastNameError=true;
-    }
-    if(this.eMail=="" || !(this.emailPattern(this.eMail)))
-    {
-      this.anyError = true;
-      this.emailError=true;
-    }
-    if(this.restItems.success == false && this.restItems.message =="Validation failed: Email has already been taken")
-    {
-      this.userAlreadyExist = true;
-    }
-    if(this.restItems.success == true)
-    {
-      localStorage.setItem('User', this.restItems.user);
-      this.router.navigate(['offerings']);
-    }
 
   }
   

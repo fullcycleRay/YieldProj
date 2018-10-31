@@ -1,25 +1,32 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-
+import { BehaviorSubject, Observable, Observer } from 'rxjs';
 @Injectable()
 export class UserService {
-  public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private eMail;
-  private fName;
-  private lName;
-
+  isLoggedIn = new BehaviorSubject<boolean>(false);
+  // isLoggedIn: any;
 
   constructor() {
-    this.isUserLoggedIn.next(false);
-   }
-   setUserLoggedIn(){
-     this.isUserLoggedIn.next(true);
-   }
-   getUserLoggedIn(){
-     return this.isUserLoggedIn;
-   }
-   setUserLoggedOut(){
-    this.isUserLoggedIn.next(false);
-   }
+  }
+  setUserLoggedIn() {
+    this.isLoggedIn.next(true);
+
+  }
+  setUserLoggedOut() {
+    localStorage.removeItem('User');
+    this.isLoggedIn.next(false);
+  }
+
+  checkLogin(): Observable<any> {
+    let currentUser = localStorage.getItem('User');
+    if (currentUser)
+      this.isLoggedIn.next(true);
+    else
+      this.isLoggedIn.next(false);
+      
+    return this.isLoggedIn;      
+  }
+  // getLoggedinUser(){
+
+  // }
 
 }

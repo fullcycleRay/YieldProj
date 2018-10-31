@@ -1,4 +1,9 @@
-<div class="Main_container_3ITgZ">
+<div *ngIf="loading" id="loading">
+	loading......
+</div>
+
+
+<div class="Main_container_3ITgZ" *ngIf ="!loading">
 	<div class="sc-iqzUVk bsHdeu">
 		<div class="sc-cqCuEk bsWxRK">
 			<!-- <div class="sc-kLIISr hAbONY"></div> -->
@@ -12,13 +17,13 @@
 						<span class="sc-cMljjf ljIbMs">{{offeringResp.services.upcoming.length}}</span>
 					</a>
 					<a class="sc-brqgnP pmwqo">Past
-						<span class="sc-cMljjf ljIbMs">{{offeringResp.services.past.length}})</span>
+						<span class="sc-cMljjf ljIbMs">{{offeringResp.services.past.length}}</span>
 					</a>
 				</div>
 			</div>
 			<div id="open" *ngIf="openOfferings">
 				<div class="sc-gFaPwZ klretw" *ngFor="let openOffer of openOfferings">
-					<div class="sc-gojNiO fmyiTm" title="openOfferings.name">
+					<div class="sc-gojNiO fmyiTm" title="{{openOfferings.name}}">
 						<div class="sc-daURTG ePINih">
 							<div>Fully Allocated</div>
 						</div>
@@ -40,9 +45,9 @@
 								</div>
 							</div>
 							<div class="sc-cbkKFq eMAkyf">
-								<a href="/offering/OWxmcQ/law-firm-financing-vii">
+								<!-- <a routerlink="/offering-detail/{{openOffer.uid}}"> -->
 									<div class="marketplace-offering-open-title sc-hrWEMg fpplFV">{{openOffer.name}}</div>
-								</a>
+								<!-- </a> -->
 								<p class="sc-gHboQg hzacNw">Originated by {{openOffer.owner_name}}</p>
 							</div>
 							<div class="sc-dUjcNx iLJTji">
@@ -64,7 +69,7 @@
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
-										<dd class="sc-iQKALj dIyKSD">{{openOffer.owner_name}</dd>
+										<dd class="sc-iQKALj dIyKSD">{{openOffer.owner_name}}</dd>
 										<dt class="sc-RefOD bcQLGm">Originator
 											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR" href="#sup4">4</a>
 										</dt>
@@ -119,7 +124,7 @@
 								</div>
 							</div>
 							<div class="sc-fOKMvo grfFFL">
-								<button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details">See Details
+								<button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details" routerLink="/offering-detail/{{openOffer.uid}}" routerLinkActive="router-link-active" >See Details
 									<img class="sc-htpNat gamggo" src="https://www.yieldstreet.com/static/media/arrow.bd5e780d.svg" alt="">
 								</button>
 							</div>
@@ -233,7 +238,7 @@
 								</div>
 							</div>
 							<div class="sc-fOKMvo grfFFL">
-								<button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details">See Details
+								<button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details" routerLink="/offering-detail/{{upcomingoffer.uid}}">See Details
 									<img class="sc-htpNat gamggo" src="https://www.yieldstreet.com/static/media/arrow.bd5e780d.svg" alt="">
 								</button>
 							</div>
@@ -242,7 +247,7 @@
 				</div>
 			</div>
 			<div id="past" *ngIf="pastOfferings">
-				<div class="sc-jtRfpW fDDQBl" id="pastofferings" *ngFor="let pastOffer of pastOfferings">
+				<div class="sc-jtRfpW fDDQBl" id="pastofferings">
 					<div class="sc-elJkPf csuNdW">
 						<h2 class="sc-hmXxxW bmezip">Past Offerings</h2>
 						<div class="sc-jwKygS bTswoQ" id="pastofferings-filter">
@@ -286,7 +291,7 @@
 						</div>
 					</div>
 					<div class="sc-bYSBpT cIgryd">
-						<div class="sc-feJyhm ftpxKV">
+						<div class="sc-feJyhm ftpxKV" *ngFor="let pastOffer of pastOfferings">
 							<div class="sc-jhAzac eGcSkl">
 								<div class="box">
 									<div class="sc-frDJqD eIqFEl">

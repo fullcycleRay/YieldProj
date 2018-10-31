@@ -15,6 +15,8 @@ import {ViewportfolioComponent} from './viewportfolio/viewportfolio.component';
 import{CreateInvestorAccountComponent} from './create-investor-account/create-investor-account.component';
 import{SelectInvestorAccountComponent} from'./select-investor-account/select-investor-account.component';
 import{OfferingDetailsComponent} from './offering-details/offering-details.component';
+import{OriginatorComponent} from './originator/originator.component';
+import {CompleteInvestmentComponent} from './complete-investment/complete-investment.component';
 const routes: Routes = [
 {
   path:'',
@@ -61,7 +63,7 @@ const routes: Routes = [
   component: CreateInvestorAccountComponent
 },
 {
-  path:'selectivestor',
+  path:'selectinvestor',
   component: SelectInvestorAccountComponent
 },
 {
@@ -69,8 +71,20 @@ const routes: Routes = [
   component: ForgetpasswordComponent
 },
 {
-  path: 'offering-detail',
+  path: 'offering-detail/:id',
   component: OfferingDetailsComponent
+},
+{
+  path: 'originator/:oid',
+  component: OriginatorComponent
+},
+{
+  path: 'offering-detail/:id/:success',
+  component: OfferingDetailsComponent
+},
+{
+  path: 'complete-investment/:id/:minAmt',
+  component: CompleteInvestmentComponent
 },
 {
   path:'**',

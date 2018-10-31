@@ -11,26 +11,16 @@ const API_URL = environment.yieldUrl;
   providedIn: 'root'
 })
 export class AuthServiceService {
+  loginToken: any;
   
   constructor(private http: HttpClient, private user:UserService) { }   
-    login(uId,passWord){  
-      let loginInfo = { email: uId,password:passWord};      
+   async login(uId,passWord){
+      let loginInfo = { email: uId,password:passWord};
       let loginUrl : string = API_URL+'/auth/login';
-      return this.http.post<any>(loginUrl,loginInfo)
-      .pipe(catchError(this.handleError('login')))
-    }
-    private handleError<T>(operation ='operation', result?: T){
-      return (error: any): Observable<T> => {
-        console.error(error);
-        return of( result as T);
-      }
+      this.loginToken = await this.http.post(loginUrl,loginInfo).toPromise();
+      return this.loginToken;
     }
 
-    logout()
-    {
-      this.user.isUserLoggedIn.next(false);
-      localStorage.removeItem('User');
-    }
 }
 
 

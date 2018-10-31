@@ -1,0 +1,161 @@
+<div class="Main__Container-jeBqdM gQKlCo">
+  <div class="Originator__Wrapper-ijPUFe dVKiYA">
+    <div class="Originator__Container-bdNBRK hnRJDP">
+      <div class="TopSection-cxsdWK cflONm">
+        <img src="../../assets/origin.png">
+        <div class="summary">
+          <h4>ORIGINATOR PROFILE</h4>
+          <h2>{{display_name}}</h2>
+        </div>
+      </div>
+      <div class="TopSection__Overview-jZYzXG isECwh">
+        {{description}}
+      </div>
+    </div>
+    <div class="Originator__SVGWrapper-dULQbD bANWKj"></div>
+  </div>
+  <div>
+    <div class="PastActivityContainer__Container-WAOnv TcZcV">
+      <div>
+        <h3 class="PastActivityContainer__PastOffersTitle-docZdL cPLVis">Past Activity on YieldStreet</h3>
+        <div class="Metrics__Container-gKAjgs kecctG">
+          <div class="Metrics__MetricWrapper-kzlYuB ePODXH">
+            <div class="Metrics__MetricItem-cxoMHw bvmvXr">78.3M</div>
+            <div class="Metrics__MetricTitle-kwJEDM ikqNEu">Total $ Funded</div>
+          </div>
+          <div class="Metrics__MetricWrapper-kzlYuB ePODXH">
+            <div class="Metrics__MetricItem-cxoMHw bvmvXr">19.57M</div>
+            <div class="Metrics__MetricTitle-kwJEDM ikqNEu">Average Offering Size</div>
+          </div>
+          <div class="desktopOnlyMetrics Metrics__MetricWrapper-kzlYuB ePODXH">
+            <div class="Metrics__MetricItem-cxoMHw bvmvXr">4</div>
+            <div class="Metrics__MetricTitle-kwJEDM ikqNEu">Total Offerings</div>
+          </div>
+        </div>
+        <div class="PastActivityContainer__OfferingContainer-eyIgMP blcUgc">
+          <div class="OfferingAlt-eQQGgK CmhWw" *ngFor="let offering of offeringData">
+            <div class="OfferingAlt__Container-gasKhY jAsHOr">
+              <div class="box">
+                <div class="OfferingAlt__Top-iufDeo LVbEu">
+                  <div class="off-image"><img class="OfferingAlt__ThumbnailImg-XuqZ dBmMnE" src="https://va4l.imgeng.in/https://ysdocs.s3.amazonaws.com/prod/NOTES/wTbO6Q/2hWDTkblmP2NGIipUZyLzgpo.png"></div>
+                  <div class="OfferingAlt__InfoContainer-fHrpMW cZkDNe">
+                    <p class="OfferingAlt__Category-dDowhj dWPmNj">Marine</p>
+                    <a href="/offering/wTbO6Q/capesize-financing-i">
+                      <h5 class="marketplace-offering-past-title OfferingAlt__Title-jFOEZp dhDdch">{{offering.name}}</h5>
+                      <div class="OfferingAlt__OtherInfos-Riftd cQeGyl">
+                        <p class="OfferingAlt__OtherInfoValue-iJCztt iBzhkg">{{ (offering.required_capital) |currency}}</p>
+                        <p class="OfferingAlt__Description-fYGMMw gFQhxH"> Offering Size</p>
+                      </div>
+                    </a>
+                    <div class="OfferingAlt__OtherInfos-Riftd ghLbUL">
+                      <div class="OfferingAlt__OtherInfo-csAElY gdJYHq">
+                        <p class="OfferingAlt__OtherInfoValue-iJCztt gxexkc">{{offering.annual_interest}}%</p>
+                        <p class="OfferingAlt__BaseDescription-brNsoi gCCkr">Annual Interest<a class="OfferingAlt__StyledAnchor-fYxUbS juujdx AnchorLink__Anchor-gvnPRg dbwGLr"
+                            href="#sup4">4</a></p>
+                      </div>
+                      <div class="OfferingAlt__OtherInfo-csAElY gdJYHq">
+                        <p class="OfferingAlt__OtherInfoValue-iJCztt gxexkc">{{ offering.start_date | getMonths  }}<span class="OfferingAlt__SmallTerm-lfxuAH dhdJKr">
+                            of {{offering.term}} Mo.</span></p>
+                        <p class="OfferingAlt__BaseDescription-brNsoi gCCkr">Term Remaining<a class="OfferingAlt__StyledAnchor-fYxUbS juujdx AnchorLink__Anchor-gvnPRg dbwGLr"
+                            href="#sup4">4</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="OfferingAlt__DonutWrapper-jPDTdd kQSHRh">
+                    <svg class="SimpleDonutChart__DonutChart-dQPJFj kyWOAd" width="124" height="124">
+                      <circle class="SimpleDonutChart__Track-iRcXev dLKtwy" r="61" cx="62" cy="62" transform="rotate(-90 62,62)"
+                        style="stroke-width: 0;"></circle>
+                      <circle class="SimpleDonutChart__Indicator-iraoNR hVRGrN" r="61" cx="62" cy="62" transform="rotate(-90 62,62)"
+                        style="stroke-width: 2; stroke-dasharray: 383.274, 383.274;"></circle>
+                    </svg>
+                    <div class="OfferingAlt__ProgressNumbers-glihmN dPakRm">
+                      <div class="OfferingAlt__OfferingSizeContainer-sfQxB fIyJZW">
+                        <div class="OfferingAlt__OfferingSize-CMsnL kuxaFr">$11.44M</div>
+                        <div class="OfferingAlt__OfferingSizeLabel-gXxedi ljZqFG">Offering Size</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="OfferingAlt__SubsectionTitle-dctqNv eFWYbJ">
+                  <span></span>
+                  <p>Active Metrics</p>
+                  <span></span>
+                </div>
+                <div>
+                  <div class="ActiveMetrics__StyledMetrics-kQcwAh fEjGnp OfferingAlt__Metrics-gqJoRM hamnSF">
+                    <div class="OfferingAlt__MetricItem-kCqUfh doFblN">
+                      <p class="ActiveMetrics__StyledBaseDescription-eqIadd ghusdQ OfferingAlt__BaseDescription-brNsoi juBhvK">Interest
+                        Earned</p>
+                      <p class="OfferingAlt__OtherInfoValue-iJCztt ibepWB"><span class="pastofferings-active-interestearned">$85,974</span></p>
+                    </div>
+                    <div class="OfferingAlt__MetricItem-kCqUfh doFblN">
+                      <p class="ActiveMetrics__StyledBaseDescription-eqIadd ghusdQ OfferingAlt__BaseDescription-brNsoi juBhvK">Principal
+                        + Interest Paid</p>
+                      <p class="OfferingAlt__OtherInfoValue-iJCztt ibepWB"><span class="pastofferings-active-principalandinterest">$0</span></p>
+                    </div>
+                    <div class="OfferingAlt__MetricItem-kCqUfh doFblN">
+                      <p class="ActiveMetrics__StyledBaseDescription-eqIadd ghusdQ OfferingAlt__BaseDescription-brNsoi juBhvK">Payments
+                        Made</p>
+                      <p class="OfferingAlt__OtherInfoValue-iJCztt ibepWB">0</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="OfferingAlt__ButtonContainer-nRoVB gWXFFL"><button class="marketplace-offering-past-cta SecondaryButton-jlMoT kTxIpx"><span
+                      class="OfferingAlt__DetailsButtonText-hCNiSk itdBda">See Details</span></button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="PastActivityContainer__CTAPastOffers-iyQMRm neDtW PrimaryButton__ButtonPrimary-exVhhh jLNNsJ" id="cta-view-past-offers">View
+          All Past Offerings</button>
+      </div>
+    </div>
+  </div>
+  <div class="Originator__LowerBackgroundColor-dMCCoY hJXPsN">
+    <div class="Originator__Container-bdNBRK jRLIRL">
+      <div class="TopSection__Management-liXQae EofJx">
+        <div class="management">
+          <h2>Management</h2>
+          <div class="management-body">
+            <div>
+              <h4>Steven A. Baffico</h4>
+              <span>Managing Partner &amp; CEO, Four Wood Capital Partners LLC</span>
+              <p>Mr. Baffico is Managing Partner &amp; CEO of FWCP and is the Executive Chairman of the Originator. He
+                serves as a member of the Originator’s Credit Committee as well as a member of the Originator’s
+                Management Board. Mr. Baffico’s supervisory responsibility with FWCP’s activities include management
+                and administration of all FWCP matters, approval of all structuring and underwriting activities
+                regarding FWCP’s senior secured lending business as a member of the Credit Committee, managing
+                institutional investor and service provider relationships and will serve as FWCP’s primary liaison to
+                the capital markets for current and future capital raising endeavors. Prior to founding FWCP in
+                November 2011, he held executive management positions at firms including Guggenheim Partners and
+                BlackRock. At Guggenheim Investments (2010-2011), Mr. Baffico was Senior Managing Director &amp; Head
+                of the Private Client Group, overseeing all aspects of the investment management and distribution
+                businesses, responsible for more than $27 billion in assets under management and or supervision.
+                Formerly, he spent more than a decade (1998-2010) at BlackRock, the world’s largest asset manager,
+                where he worked in various senior leadership capacities across sales, marketing, portfolio management,
+                product development, investment banking and capital markets. Mr. Baffico is FINRA Series 7, Series 24
+                and 63 registered and has a B.A. degree from the University of Wisconsin.</p>
+            </div>
+            <div>
+              <h4>Andrew Simmons</h4>
+              <span>Chief Executive Officer</span>
+              <p>Mr. Simmons has supervisory responsibility across structuring and underwriting activity of the
+                Originator’s senior secured lending activity, as well as overseeing internal risk management
+                activities. Mr. Simmons serves as a member of the Originator’s credit committee as well as a member of
+                the management board. Mr. Simmons joined the Originator in October 2014 and has over 30 years of
+                experience in the banking industry, with a expertise in shipping finance dating back to 1973. Mr.
+                Simmons is well-known and widely respected across shipping finance markets globally, having served in
+                key C-Suite roles for publicly traded companies and high-profile organizations in Europe and the Middle
+                East for many years. Previously, Mr. Simmons served as Chief Financial Officer of StealthGas Inc., one
+                of the largest publicly traded LNG carriers in the world (2005 – 20011), Vice President &amp; Head of
+                European Sales for Inchcape Shipping Services (2011 – 2013), Head of Credit Reports for Lloyd’s List
+                Intelligence (2011) and Director of Shipping Finance for Heath Lambert in Dubai and Bahrain (2002 –
+                2005). Most recently Mr. Simmons served as Chie Financial officer and Treasurer of SuperEco Tankers Ltd
+                (2013- 2014), a well-known transport operation out of Piraeus, Greece.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

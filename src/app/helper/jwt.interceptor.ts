@@ -10,10 +10,11 @@ export class JwtInterceptor implements HttpInterceptor {
         console.log("intercept")
         let headers = {};
         if (currentUser) {
-            headers['auth_token']= `${currentUser}`;
+            headers['Authorization']= `${currentUser}`;
         }
         headers['Content-Type'] = 'application/json; charset=utf-8';
         headers['responseType'] = 'json';
+        headers['Accept'] = 'application/json';
         request = request.clone({
             setHeaders: headers
         });

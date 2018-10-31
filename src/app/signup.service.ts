@@ -11,22 +11,13 @@ const API_URL = environment.yieldUrl;
   providedIn: 'root'
 })
 export class SignupService {
+  signupToken: any;
 
   constructor(private http: HttpClient, public sanitizer: DomSanitizer) { }
-  getAllData(fName,uId,passWord){
-    let httpOptions = {headers: new HttpHeaders({ 
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
-    })};
+  async signupUser(fName,uId,passWord){
     let signUpInfo = { name:fName ,email: uId,password:passWord};
     let signUpUrl : string = API_URL+'/auth/signup';
-    return this.http.post(signUpUrl,JSON.stringify(signUpInfo),httpOptions)
-    .pipe(catchError(this.handleError('getAllData')))
-  }
-  private handleError<T>(operation ='operation', result?: T){
-    return (error: any): Observable<T> => {
-      console.error(error);
-      return of( result as T);
-    }
+    this.signupToken = await this.http.post(signUpUrl,signUpInfo).toPromise();
+    return this.signupToken;
   }
 }

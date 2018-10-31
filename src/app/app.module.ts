@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import{FormsModule} from '@angular/forms';  
+import {FormsModule} from '@angular/forms';  
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -25,8 +25,10 @@ import { SelectInvestorAccountComponent } from './select-investor-account/select
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthServiceService} from'./auth-service.service';
 import { OfferingDetailsComponent } from './offering-details/offering-details.component';
-import{JwtInterceptor} from './helper/jwt.interceptor';
-
+import {JwtInterceptor} from './helper/jwt.interceptor';
+import { OriginatorComponent } from './originator/originator.component';
+import { GetMonths } from './offering-details/get-months.pipe';
+import { CompleteInvestmentComponent } from './complete-investment/complete-investment.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,9 @@ import{JwtInterceptor} from './helper/jwt.interceptor';
     CreateInvestorAccountComponent,
     SelectInvestorAccountComponent,
     OfferingDetailsComponent,
+    OriginatorComponent,
+    GetMonths,
+    CompleteInvestmentComponent
   ],
   imports: [
     BrowserModule,
