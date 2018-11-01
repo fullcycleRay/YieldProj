@@ -17,7 +17,6 @@ import { FooterComponent } from './footer/footer.component';
 import { Step2Component } from './step2/step2.component';
 import { UserService } from './user.service';
 import { ViewportfolioComponent } from './viewportfolio/viewportfolio.component';
-import { ManageaccountComponent } from './manageaccount/manageaccount.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { CreateInvestorAccountComponent } from './create-investor-account/create-investor-account.component';
@@ -34,7 +33,11 @@ import { WalletComponent } from './wallet/wallet.component';
 import { ManageAccountPartialComponent } from './manage-account-partial/manage-account-partial.component';
 import { TransferFundsComponent } from './transfer-funds/transfer-funds.component';
 import { TransactionComponent } from './transaction/transaction.component';
-import { AccountComponent } from './account/account.component'
+import { AccountComponent } from './account/account.component';
+import { AddAccountManuallyComponent } from './add-account-manually/add-account-manually.component';
+import { ManualAccountStep2Component } from './manual-account-step2/manual-account-step2.component';
+import { ManualAccountStep3Component } from './manual-account-step3/manual-account-step3.component';
+import { SidebarNavigationComponent } from './shared/sidebar-navigation/sidebar-navigation.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,6 @@ import { AccountComponent } from './account/account.component'
     FooterComponent,
     Step2Component,
     ViewportfolioComponent,
-    ManageaccountComponent,
     NotfoundComponent,
     ForgetpasswordComponent,
     CreateInvestorAccountComponent,
@@ -65,7 +67,11 @@ import { AccountComponent } from './account/account.component'
     ManageAccountPartialComponent,
     TransferFundsComponent,
     TransactionComponent,
-    AccountComponent
+    AccountComponent,
+    AddAccountManuallyComponent,
+    ManualAccountStep2Component,
+    ManualAccountStep3Component,
+    SidebarNavigationComponent
   ],
   imports: [
     BrowserModule,

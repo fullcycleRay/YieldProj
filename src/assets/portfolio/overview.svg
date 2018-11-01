@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Portfolio/Overview/Active</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="13.9969429 14.0694789 0 14.0694789 0 0.0721712159 13.9969429 0.0721712159 13.9969429 14.0694789"></polygon>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="-15.5709952%" id="linearGradient-3">
+            <stop stop-color="#1E9C9F" offset="0%"></stop>
+            <stop stop-color="#2CB591" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="195.366957%" x2="50%" y2="3.061617e-15%" id="linearGradient-4">
+            <stop stop-color="#1E9C9F" offset="0%"></stop>
+            <stop stop-color="#2CB591" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="153.506444%" x2="50%" y2="-208.397223%" id="linearGradient-5">
+            <stop stop-color="#1E9C9F" offset="0%"></stop>
+            <stop stop-color="#2CB591" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Icons/Portfolio/Overview/Active" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pie-Chart-Icon">
+            <g id="Group-3" transform="translate(0.000000, 2.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M6.9986799,13.4512035 C3.47505707,13.4512035 0.61791067,10.5950993 0.61791067,7.07095533 C0.61791067,3.76723325 3.12905211,1.05026055 6.34627295,0.72353598 L6.34627295,7.72284119 L6.36451117,7.72284119 L6.9986799,7.72284119 L13.3460993,7.72284119 C13.0193747,10.9405831 10.302402,13.4512035 6.9986799,13.4512035 Z M13.378928,7.07095533 L6.9986799,7.07095533 L6.9986799,0.0721712159 L6.97523077,0.0737344913 C3.12071464,0.0867617866 -0.000104218362,3.21383375 -0.000104218362,7.07095533 C-0.000104218362,10.9364144 3.13322084,14.0697395 6.9986799,14.0697395 C10.8636179,14.0697395 13.9969429,10.9364144 13.9969429,7.07095533 L13.378928,7.07095533 Z" id="Fill-1" fill="url(#linearGradient-3)" mask="url(#mask-2)"></path>
+            </g>
+            <path d="M8.59926447,7.41983354 L8.59926447,0.559003807 C12.2124008,0.838763791 15.2231757,3.82837602 15.4384154,7.41983354 L8.59926447,7.41983354 Z M8,0 L8,0.706626234 L8,7.25517775 L8,8 L8.74585457,8 L15.2938899,8 L16,8 C16,3.58165043 12.4183496,0 8,0 Z" id="Fill-4" fill="url(#linearGradient-4)"></path>
+            <polygon id="Stroke-6" fill="url(#linearGradient-5)" fill-rule="nonzero" points="6.34941282 9.39937694 6.34941282 9.71995544 6.73876953 9.71995544 2.71252441 13.8648682 2.31763051 13.5029503"></polygon>
+        </g>
+    </g>
+</svg>

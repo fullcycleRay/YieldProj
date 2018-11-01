@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Portfolio/Investments/Default</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons/Portfolio/Investments/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Investements-icon" transform="translate(7.500000, 7.500000) scale(-1, 1) translate(-7.500000, -7.500000) " fill="#ABB4BA" fill-rule="nonzero">
+            <polygon id="Line" points="0.201923077 3.08653846 0.951923077 3.08653846 0.951923077 15.375 0.201923077 15.375"></polygon>
+            <polygon id="Line-Copy" points="3.66346154 -0.375 4.41346154 -0.375 4.41346154 15.375 3.66346154 15.375"></polygon>
+            <polygon id="Line-Copy-3" points="7.125 5.39423077 7.875 5.39423077 7.875 15.375 7.125 15.375"></polygon>
+            <polygon id="Line-Copy-2" points="10.5865385 1.93269231 11.3365385 1.93269231 11.3365385 15.375 10.5865385 15.375"></polygon>
+            <polygon id="Line-Copy-4" points="14.0480769 8.85576923 14.7980769 8.85576923 14.7980769 15.375 14.0480769 15.375"></polygon>
+        </g>
+    </g>
+</svg>

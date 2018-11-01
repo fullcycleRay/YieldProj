@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Portfolio/Manage Funds/Default</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons/Portfolio/Manage-Funds/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Transfer-Icon" transform="translate(8.500000, 8.000000) rotate(-270.000000) translate(-8.500000, -8.000000) translate(2.000000, 0.000000)" fill="#ABB4BA">
+            <polygon id="Page-1" points="0.0030162413 11.8166324 11.9367749 11.7482546 8.45603248 15.5398357 8.79033256 16 12.7089327 11.7316222 12.7064192 11.7297741 13 11.4439425 12.7240139 11.1599589 8.79636504 7 8.46759474 7.46570842 11.9287316 11.1322382 0 11.200616"></polygon>
+            <polygon id="Page-1-Copy-2" points="11.0986786 3.68875122 2.96243286 3.73376465 5.27801514 1.30032349 4.91438515 0.840026855 2.06765802 3.84558522 1.8661499 4.03737166 2.05721719 4.22669405 4.91438515 7.14263916 5.27801514 6.6802063 2.96243286 4.34262085 11.0986786 4.29574585"></polygon>
+        </g>
+    </g>
+</svg>

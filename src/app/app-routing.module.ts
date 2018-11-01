@@ -7,7 +7,6 @@ import {LoginComponent}from './login/login.component';
 import { OfferingsComponent } from './offerings/offerings.component';
 import { WhyYieldstreetComponent } from './why-yieldstreet/why-yieldstreet.component';
 import { InvestmentPhilosophyComponent } from './investment-philosophy/investment-philosophy.component';
-import { ManageaccountComponent } from './manageaccount/manageaccount.component';
 import {Step2Component} from'./step2/step2.component';
 import {NotfoundComponent} from './notfound/notfound.component';
 import {ForgetpasswordComponent} from './forgetpassword/forgetpassword.component';
@@ -17,11 +16,14 @@ import {SelectInvestorAccountComponent} from'./select-investor-account/select-in
 import {OfferingDetailsComponent} from './offering-details/offering-details.component';
 import {OriginatorComponent} from './originator/originator.component';
 import {CompleteInvestmentComponent} from './complete-investment/complete-investment.component';
-import {InvestmentComponent} from './investment/investment.component'
-import {WalletComponent} from './wallet/wallet.component'
-import {TransferFundsComponent} from './transfer-funds/transfer-funds.component'
-import {TransactionComponent} from './transaction/transaction.component'
-import {AccountComponent} from './account/account.component'
+import {InvestmentComponent} from './investment/investment.component';
+import {WalletComponent} from './wallet/wallet.component';
+import {TransferFundsComponent} from './transfer-funds/transfer-funds.component';
+import {TransactionComponent} from './transaction/transaction.component';
+import {AccountComponent} from './account/account.component';
+import {AddAccountManuallyComponent} from './add-account-manually/add-account-manually.component';
+import {ManualAccountStep2Component} from './manual-account-step2/manual-account-step2.component';
+import {ManualAccountStep3Component} from './manual-account-step3/manual-account-step3.component'
 const routes: Routes = [
 {
   path:'',
@@ -56,6 +58,18 @@ const routes: Routes = [
   component: AccountComponent
 },
 {
+  path: 'new-account',
+  component: AddAccountManuallyComponent
+},
+{
+  path: 'new-account-step-2',
+  component: ManualAccountStep2Component
+},
+{
+  path: 'new-account-step-3',
+  component: ManualAccountStep3Component
+},
+{
   path:'signup',
   component: SignupComponent
 },
@@ -78,10 +92,6 @@ const routes: Routes = [
 {
   path:'investment-philosophy',
   component: InvestmentPhilosophyComponent
-},
-{
-  path:'manageaccount',
-  component: ManageaccountComponent
 },
 {
   path:'createaccount',

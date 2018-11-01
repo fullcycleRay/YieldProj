@@ -29,6 +29,7 @@
     "core-js": "^2.4.1",
     "moment": "^2.22.2",
     "node-sass": "^4.9.3",
+    "react-tooltip": "^3.9.0",
     "rxjs": "^6.1.0",
     "sass": "^1.13.1",
     "zone.js": "^0.8.26"
