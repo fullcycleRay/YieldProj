@@ -21,7 +21,6 @@ export class OfferingDetailsService {
     this.route.params
     .subscribe(
       params => {
-        debugger
         this.subscribed = params.success;
         localStorage.setItem('Subcribed',this.subscribed);
         console.log(this.subscribed);

@@ -28,7 +28,6 @@ export class OfferingsComponent implements OnInit {
   dateNow: Date = new Date();
 
   constructor(private http: HttpClient, private router: Router, private offeringDetails: OfferingDetailsService) {
-    
   }
 
   ngOnInit() {
@@ -58,6 +57,12 @@ export class OfferingsComponent implements OnInit {
         this.upcomingOfferings[z] = this.offeringResp.services.upcoming[z]
       }
     }
+    if(!(this.openOfferings.length))
+      this.openOfferings.length = 0;
+    if(!(this.pastOfferings.length))
+      this.pastOfferings.length = 0;
+    if(!(this.upcomingOfferings.length))
+      this.upcomingOfferings.length =0;
   }
 
 }
