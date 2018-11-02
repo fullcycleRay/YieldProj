@@ -15,7 +15,6 @@ export class CompleteInvestmentService {
     let subcriptionInfo = { uid: uId,investment_amount:investedAmt};
     let subcriptionUrl : string = API_URL+'/subscribe-service-user';
     this.OfferSubs = await this.http.post(subcriptionUrl,subcriptionInfo).toPromise();
-    console.log(this.OfferSubs);
     return this.OfferSubs;
   }
 }

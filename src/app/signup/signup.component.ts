@@ -29,7 +29,6 @@ export class SignupComponent implements OnInit {
       .then(
         resp => {
           this.signupToken = resp;
-          console.log(this.signupToken);
           if(fName=="" || fName.length<2)
           {
             this.anyError = true;
@@ -75,7 +74,6 @@ export class SignupComponent implements OnInit {
     this.lastNameError=false;
     this.emailError=false;
     this.userAlreadyExist = false;
-    // console.log(fName,lName,this.eMail,currentUrl);
     this.getRestItems(fName,this.eMail,lName);
 
   }

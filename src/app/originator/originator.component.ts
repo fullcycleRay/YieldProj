@@ -18,12 +18,10 @@ export class OriginatorComponent implements OnInit {
   today: any
   constructor(private originator: OriginatorService, private route: ActivatedRoute) {
     this.route.params
-    .subscribe( 
+    .subscribe(
       params =>{
         this.oid =params;
-        console.log(params);
       } );
-    
    }
 
   ngOnInit() {
@@ -35,7 +33,6 @@ export class OriginatorComponent implements OnInit {
     .then(
       resp => {
         this.originatorData = resp;
-        console.log(this.originatorData);
         this.extractOriginatorData();
       }
     )

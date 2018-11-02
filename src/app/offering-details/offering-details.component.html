@@ -16,9 +16,9 @@
                             </div>
                         </div>
                         <div class="OfferingDetail__TitleItem-etZIj IcjyO">
-                            <div class="marketplace-offering-open-title Title__Container-dmksRB iultKI">{{offering.service.name}}</div>
+                            <div class="marketplace-offering-open-title Title__Container-dmksRB iultKI">{{serviceName}}</div>
                             <p class="OfferingDetail__Description-iSkrqw hRoApQ">Originated by
-                                {{offering.service.owner_name}}</p>
+                                {{ownerName}}</p>
                         </div>
                         <div class="OfferingDetail__MetricsContainer-kcAjPx gQgCku">
                             <div class="OfferingDetail__StyledSubsectionTitle-kawPMh fMoMsY OfferingAlt__SubsectionTitle-dctqNv eFWYbJ"><span></span>
@@ -29,12 +29,12 @@
                         <div class="OfferingDetail__PropertiesItem-etBlni dNLhtn">
                             <div class="offeringmetrics OfferingMetrics__Container-iNpSSZ dsoWNo">
                                 <dl class="offeringmetrics-item OfferingMetrics__ItemContainer-CtRbQ dljKDL">
-                                    <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">{{offering.service.annual_interest}}%</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Annual
+                                    <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">{{annualInterest}}%</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Annual
                                         Interest <a class="OfferingMetrics__StyledAnchor-hpeJwn cERDkL AnchorLink__Anchor-gvnPRg dbwGLr"
                                             href="#sup4">4</a></dt>
                                 </dl>
                                 <dl class="offeringmetrics-item OfferingMetrics__ItemContainer-CtRbQ dljKDL">
-                                    <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">{{offering.service.term}} months</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Term
+                                    <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">{{offeringTerm}} months</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Term
                                         <a class="OfferingMetrics__StyledAnchor-hpeJwn cERDkL AnchorLink__Anchor-gvnPRg dbwGLr"
                                             href="#sup4">4</a></dt>
                                 </dl>
@@ -86,11 +86,11 @@
                                             <dd class="Progress__RemainingPercentage-fipLgT duvuxp"><span>{{investmentPerRemaining}}%</span></dd><dt
                                                 class="Progress__RemainingLabel-dotWig cWQmxH">Remaining</dt>
                                         </dl>
-                                        <p class="Progress__RemainingText-ZbrzJ bmZYIY">${{offering.service.invested_amount}}M of ${{offering.service.required_capital/1000000}}M</p>
+                                        <p class="Progress__RemainingText-ZbrzJ bmZYIY">${{offeringInvestedAmt}}M of ${{offeringReqCap/1000000}}M</p>
                                     </div>
                                 </div>
                                 <dl class="Progress__MinimumInvestmentContainer-jFHikf gGJDHi">
-                                    <dd class="Progress__MinimumInvestmentValue-bgEBMC kkMHBY"><span>${{offering.service.min_investment}}</span></dd><dt
+                                    <dd class="Progress__MinimumInvestmentValue-bgEBMC kkMHBY"><span>${{offeringMinAmt}}</span></dd><dt
                                         class="Progress__MinimumInvestmentLabel-gBoNNd kednpY">Minimum Investment</dt>
                                 </dl>
                             </div>
@@ -107,13 +107,13 @@
                                                 src="https://www.yieldstreet.com/static/media/arrow.bd5e780d.svg" alt=""></button>
                                     </div>
                                 </div>
-                                <p class="Invest__MinimumInvestment-kJvTNU fjxFFf"><span>${{offering.service.min_investment}}</span>
+                                <p class="Invest__MinimumInvestment-kJvTNU fjxFFf"><span>${{offeringMinAmt}}</span>
                                     <span class="Invest__MinimumInvestmentLabel-ccljjA hGElhY">Min.
                                         Investment</span></p>
                                 <ul class="Invest__Progression-dxxPya eOdbCm">
                                     <li class="Invest__ProgressionItem-wFTrh kVNbGb" *ngIf="">Must be in
                                         increments of $5k</li>
-                                    <li class="Invest__ProgressionItem-wFTrh kVNbGb" *ngIf="minAmtIndicator">Must be between {{offering.service.min_investment}}
+                                    <li class="Invest__ProgressionItem-wFTrh kVNbGb" *ngIf="minAmtIndicator">Must be between {{offeringMinAmt}}
                                         and $1m</li>
                                 </ul>
                             </div>
@@ -254,10 +254,10 @@
                     <figure class="Originator__PhotoFrame-bDkboy pePEo"><img class="Originator__Photo-iWDbfP kvSXSQ"
                             src="https://www.yieldstreet.com/a/api/user/ascend/pimg"></figure>
                     <div class="Originator__DescriptionAndLink-jMsyaT mLkla">
-                        <h3 class="Originator__OriginatorName-fRDHym dgChux">{{offering.service.originator.display_name}}</h3>
-                        <p class="Originator__OriginatorDesc-izPmEx eCgfOp">{{offering.service.originator.headline}}    
+                        <h3 class="Originator__OriginatorName-fRDHym dgChux">{{originatorOwnerName}}</h3>
+                        <p class="Originator__OriginatorDesc-izPmEx eCgfOp">{{originatorHeadline}}
                         </p><a class="offering-originator-link Originator__OriginatorLink-dulvcs elFKBb"
-                            href="/originator/{{offering.service.owner_name}}">View Originator’s Full Profile</a>
+                            href="/originator/{{originatorOwnerName}}">View Originator’s Full Profile</a>
                     </div>
                 </div>
             </div>

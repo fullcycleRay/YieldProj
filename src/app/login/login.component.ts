@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
       .then(
         resp => {
           this.restItems = resp;
-          console.log(this.restItems);
           if (pWord == "") {
             this.paswdError = true;
             this.passDisError = "This field is required";
@@ -118,7 +117,6 @@ export class LoginComponent implements OnInit {
     this.emailError = false;
     var eMail = e.target.elements[0].value.toLowerCase();
     var pWord = e.target.elements[1].value;
-    // console.log(eMail,pWord);
     this.getRestItems(eMail, pWord);
   }
 }

@@ -20,17 +20,25 @@ export class OfferingDetailsComponent implements OnInit {
   isUserLoggedIn: any;
   investOrLogin = "";
   investmentError: any;
-  originator: any;
+  // originator: any;
   investmentPerRemaining: any;
   investAmt: any;
   minAmtIndicator: any;
+  serviceName: any;
+  ownerName: any;
+  annualInterest: any;
+  offeringTerm: any;
+  offeringInvestedAmt: any;
+  offeringReqCap: any;
+  offeringMinAmt: any;
+  originatorOwnerName: any;
+  originatorHeadline: any;
 
   constructor(private InvestmentOffering: InvestmentOfferingService, private route: ActivatedRoute, private user: UserService, private router: Router) {
     this.route.params
       .subscribe(
         params => {
           this.uid = params;
-          console.log(params);
         });
   }
   ngOnInit() {
@@ -49,7 +57,7 @@ export class OfferingDetailsComponent implements OnInit {
       resp => {
         this.isUserLoggedIn = resp;
       }
-    );  
+    );
     this.displayLogin();
   }
 
@@ -58,7 +66,6 @@ export class OfferingDetailsComponent implements OnInit {
       .then(
         resp => {
           this.offering = resp;
-          console.log(this.offering);
           this.extractOfferingData();
         }
       )
@@ -66,7 +73,16 @@ export class OfferingDetailsComponent implements OnInit {
   }
 
   extractOfferingData() {
-    this.originator = this.offering.service.originator;
+    // this.originator = this.offering.service.originator;
+    this.serviceName = this.offering.service.name;
+    this.ownerName = this.offering.service.owner_name;
+    this.annualInterest = this.offering.service.annual_interest;
+    this.offeringTerm = this.offering.service.term;
+    this.offeringInvestedAmt = this.offering.service.invested_amount;
+    this.offeringReqCap = this.offering.service.required_capital;
+    this.offeringMinAmt = this.offering.service.min_investment;
+    this.originatorOwnerName = this.offering.service.originator.display_name;
+    this.originatorHeadline = this.offering.service.originator.headline;
     //Calculating remaing percentage
     this.investmentPerRemaining = ((this.offering.service.required_capital - this.offering.service.invested_amount) * 100) / this.offering.service.required_capital
     for (var i = 0; i < this.offering.service.details.length; i++) {
@@ -100,13 +116,11 @@ export class OfferingDetailsComponent implements OnInit {
     {
       this.router.navigate(['complete-investment/' + this.uid.id + '/' + this.investAmt] );
     }
-    
-
   }
   checkForMinAmt(){
     if(this.investAmt >= this.offering.service.min_investment)
     {
-      this.minAmtIndicator = false;     
+      this.minAmtIndicator = false;
     }
     else{
       this.minAmtIndicator = true;

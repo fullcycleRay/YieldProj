@@ -18,10 +18,8 @@ export class CompleteInvestmentComponent implements OnInit {
     this.route.params
     .subscribe(
       params => {
-        debugger
         this.uid = params.id;
         this.investedAmt = params.minAmt;
-        console.log(params);
       });
   }
 
@@ -30,12 +28,10 @@ export class CompleteInvestmentComponent implements OnInit {
   }
 
   subscribeOffering(){
-    debugger
     this.subscriptionOffer.subscribeOffer(this.uid,this.investedAmt)
     .then(
       resp =>{
         this.subscptionData = resp;
-        console.log(this.subscptionData);
         if (this.subscptionData.success == true){
           alert(this.subscptionData.message);
           // this.router.navigate(['offering-details/' + this.uid + '/' +"subscribed"] );

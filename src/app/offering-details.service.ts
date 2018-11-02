@@ -23,7 +23,6 @@ export class OfferingDetailsService {
       params => {
         this.subscribed = params.success;
         localStorage.setItem('Subcribed',this.subscribed);
-        console.log(this.subscribed);
       });
   }
   async getOfferingData() {

@@ -4,7 +4,6 @@ import * as moment from 'moment';
 @Pipe({name: 'getMonths'})
 export class GetMonths implements PipeTransform {
   transform(value: string): string {
-      debugger;
     const startDate = moment(value);
     const today = moment(new Date()).utc();
     let duration = moment.duration(today.diff(startDate)).asMonths();

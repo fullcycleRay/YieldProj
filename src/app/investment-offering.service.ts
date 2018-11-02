@@ -17,7 +17,6 @@ export class InvestmentOfferingService {
   async getOffering(uid) {
     let serviceUrl : string = API_URL+'/services/'+uid;
     this.offerings = await this.http.get(serviceUrl).toPromise();
-    console.log('No issues, I will wait until promise is resolved..');
     return this.offerings
   }
 }
