@@ -20,10 +20,12 @@
                             <p class="OfferingDetail__Description-iSkrqw hRoApQ">Originated by
                                 {{ownerName}}</p>
                         </div>
-                        <div class="OfferingDetail__MetricsContainer-kcAjPx gQgCku">
+                        <div class="OfferingDetail__MetricsContainer-kcAjPx WYKgs" *ngIf= "false">
                             <div class="OfferingDetail__StyledSubsectionTitle-kawPMh fMoMsY OfferingAlt__SubsectionTitle-dctqNv eFWYbJ"><span></span>
                                 <p>Recently Funded</p><span></span>
                             </div>
+                            <div class="OfferingDetail__StyledRecentlyFunded-iyWWpO jWQQMv OfferingAlt__RecentlyFunded-bTvIIY jtHxis">
+                                This offering was recently closed. <br>Metrics are expected in 84 days.</div>
                         </div>
                         <div class="OfferingDetail__SummaryItem-hvNAjH kSZqUv"></div>
                         <div class="OfferingDetail__PropertiesItem-etBlni dNLhtn">
@@ -31,18 +33,18 @@
                                 <dl class="offeringmetrics-item OfferingMetrics__ItemContainer-CtRbQ dljKDL">
                                     <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">{{annualInterest}}%</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Annual
                                         Interest <a class="OfferingMetrics__StyledAnchor-hpeJwn cERDkL AnchorLink__Anchor-gvnPRg dbwGLr"
-                                            href="#sup4">4</a></dt>
+                                            >4</a></dt>
                                 </dl>
                                 <dl class="offeringmetrics-item OfferingMetrics__ItemContainer-CtRbQ dljKDL">
                                     <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">{{offeringTerm}} months</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Term
                                         <a class="OfferingMetrics__StyledAnchor-hpeJwn cERDkL AnchorLink__Anchor-gvnPRg dbwGLr"
-                                            href="#sup4">4</a></dt>
+                                           >4</a></dt>
                                 </dl>
                                 <dl class="offeringmetrics-item OfferingMetrics__ItemContainer-CtRbQ hcvWDF">
                                     <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">Ascend Real Estate
                                         Partners</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Originator
                                         <a class="OfferingMetrics__StyledAnchor-hpeJwn cERDkL AnchorLink__Anchor-gvnPRg dbwGLr"
-                                            href="#sup4">4</a></dt>
+                                            >4</a></dt>
                                 </dl>
                             </div>
                         </div>
@@ -97,14 +99,14 @@
                             <div class="OfferingDetail__MobileSummary-hdLivU hhpwPl"></div>
                         </div>
                         <div class="OfferingDetail__InvestItem-bZuupC iNmkqm">
-                            <div class="Invest__Container-ldeGsY iKzNGj">
+                            <div class="Invest__Container-ldeGsY iKzNGj" *ngIf ="true">
                                 <div class="Invest__InvestContent-dFWNar bjZLNY">
                                     <input type="number" class="Invest__StyledNumberFormat-iOMrLe iyOtaV" placeholder="$ XXX,XXX"
                                         id="offering-valueinput" value="" [(ngModel)]="investAmt" (input)="checkForMinAmt()">
                                     <div class="Invest__ButtonWrapper-TTfGU jUNhFm">
                                         <button class="Invest__StyledPrimaryButton-EArHq cxJDtz PrimaryButton__ButtonPrimary-exVhhh jcEjeY"
                                             id="offering-invest" (click) ="investInOffering()">{{investOrLogin}}<img class="PrimaryButton__Arrow-bFuMQr cjfbRg"
-                                                src="https://www.yieldstreet.com/static/media/arrow.bd5e780d.svg" alt=""></button>
+                                                src="../../assets/ui-image/arrow.bd5e780d.svg" alt=""></button>
                                     </div>
                                 </div>
                                 <p class="Invest__MinimumInvestment-kJvTNU fjxFFf"><span>${{offeringMinAmt}}</span>

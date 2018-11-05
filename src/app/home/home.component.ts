@@ -9,7 +9,7 @@ import { UserService } from "../user.service"
 export class HomeComponent implements OnInit {
   isUserLoggedIn: any;
   signupOrBrowseOffering: any;
-
+  sigupOrBrowserURL: any;
   constructor(private user: UserService) { }
 
   ngOnInit() {
@@ -22,11 +22,14 @@ export class HomeComponent implements OnInit {
   }
 
   displayLogin() {
+    debugger
     if (this.isUserLoggedIn) {
       this.signupOrBrowseOffering = "Browse Offering";
+      this.sigupOrBrowserURL ="/offerings";
     }
     else {
       this.signupOrBrowseOffering = "Sign Up";
+      this.sigupOrBrowserURL ="/signup";
     }
   }
 }

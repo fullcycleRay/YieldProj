@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "fontyieldstreet";
+  src:url("../fonts/yieldstreet/fontyieldstreet.eot");
+  src:url("../fonts/yieldstreet/fontyieldstreet.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/yieldstreet/fontyieldstreet.woff") format("woff"),
+    url("../fonts/yieldstreet/fontyieldstreet.woff2") format("woff2"),
+    url("../fonts/yieldstreet/fontyieldstreet.ttf") format("truetype"),
+    url("../fonts/yieldstreet/fontyieldstreet.svg#fontyieldstreet") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-fy]:before {
+  font-family: "fontyieldstreet" !important;
+  content: attr(data-fy);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="fy-"]:before,
+[class*=" fy-"]:before {
+  font-family: "fontyieldstreet" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fy-logo:before {
+  content: "\E800";
+}
+.fy-coins:before {
+  content: '\e801';
+}
+.fy-shield-alt:before {
+  content: '\e802';
+}
+.fy-calendar:before {
+  content: '\e803';
+}
+.fy-bricks:before {
+  content: '\e804';
+}
+.fy-sheild:before {
+  content: '\e805';
+}
+.fy-growing-line:before {
+  content: '\e806';
+}
+.fy-pencil:before {
+  content: "\E807";
+}

@@ -59,19 +59,19 @@
 									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
 										<dd class="sc-iQKALj dIyKSD">{{openOffer.annual_interest}}</dd>
 										<dt class="sc-RefOD bcQLGm">Annual Interest
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR" href="#sup4">4</a>
+											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
 										<dd class="sc-iQKALj dIyKSD">{{openOffer.term}} months</dd>
 										<dt class="sc-RefOD bcQLGm">Term
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR" href="#sup4">4</a>
+											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
 										<dd class="sc-iQKALj dIyKSD">{{openOffer.owner_name}}</dd>
 										<dt class="sc-RefOD bcQLGm">Originator
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR" href="#sup4">4</a>
+											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 								</div>
@@ -113,7 +113,7 @@
 									</div>
 									<dl class="sc-bsbRJL GxuAS">
 										<dd class="sc-hZSUBg cvfoae">
-											<span>$150,000</span>
+											<span>${{offeringMinAmt}}</span>
 										</dd>
 										<dt class="sc-cMhqgX fFMChW">Minimum Investment</dt>
 									</dl>
@@ -125,7 +125,7 @@
 							</div>
 							<div class="sc-fOKMvo grfFFL">
 								<button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details" routerLink="/offering-detail/{{openOffer.uid}}" routerLinkActive="router-link-active" >See Details
-									<img class="sc-htpNat gamggo" src="https://www.yieldstreet.com/static/media/arrow.bd5e780d.svg" alt="">
+									<img class="sc-htpNat gamggo" src="../../assets/ui-image/arrow.bd5e780d.svg" alt="">
 								</button>
 							</div>
 						</div>
@@ -159,7 +159,7 @@
 								</div>
 							</div>
 							<div class="sc-cbkKFq eMAkyf">
-								<a href="/offering/OWxmcQ/law-firm-financing-vii">
+								<a routerLink="/offering-detail/{{upcomingoffer.uid}}">
 									<div class="marketplace-offering-open-title sc-hrWEMg fpplFV">{{upcomingoffer.name}}</div>
 								</a>
 								<p class="sc-gHboQg hzacNw">Originated by {{upcomingoffer.owner_name}}</p>
@@ -173,19 +173,19 @@
 									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
 										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.annual_interest}}</dd>
 										<dt class="sc-RefOD bcQLGm">Annual Interest
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR" href="#sup4">4</a>
+											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
 										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.term}} months</dd>
 										<dt class="sc-RefOD bcQLGm">Term
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR" href="#sup4">4</a>
+											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
 										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.owner_name}</dd>
 										<dt class="sc-RefOD bcQLGm">Originator
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR" href="#sup4">4</a>
+											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 								</div>
@@ -239,7 +239,7 @@
 							</div>
 							<div class="sc-fOKMvo grfFFL">
 								<button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details" routerLink="/offering-detail/{{upcomingoffer.uid}}">See Details
-									<img class="sc-htpNat gamggo" src="https://www.yieldstreet.com/static/media/arrow.bd5e780d.svg" alt="">
+									<img class="sc-htpNat gamggo" src="../../assets/ui-image/arrow.bd5e780d.svg" alt="">
 								</button>
 							</div>
 						</div>
@@ -300,7 +300,7 @@
 										</div>
 										<div class="sc-jnlKLf iukwUf">
 											<p class="sc-fBuWsC bJYYcE">Real Estate</p>
-											<a href="/offering/Ru1_vw/multi-use-real-estate-properties-i-">
+											<a routerLink="/offering-detail/{{pastOffer.uid}}">
 												<h5 class="marketplace-offering-past-title sc-fMiknA ihCrPN">{{pastOffer.name}} </h5>
 												<div class="sc-caSCKo giOrYH">
 													<p class="sc-cHGsZl jHXJRE">$4.5M</p>
@@ -311,7 +311,7 @@
 												<div class="sc-gisBJw cBXWj">
 													<p class="sc-cHGsZl eoSNBH">{{pastOffer.annual_interest}}%</p>
 													<p class="sc-dVhcbM dWxTtV">Annual Interest
-														<a class="sc-kafWEX jnwVQG sc-cvbbAY dbHDoR" href="#sup4">4</a>
+														<a class="sc-kafWEX jnwVQG sc-cvbbAY dbHDoR">4</a>
 													</p>
 												</div>
 												<div class="sc-gisBJw cBXWj">
@@ -319,7 +319,7 @@
 														<span class="sc-gGBfsJ cmPsgo"> of 11 Mo.</span>
 													</p>
 													<p class="sc-dVhcbM dWxTtV">Term Remaining
-														<a class="sc-kafWEX jnwVQG sc-cvbbAY dbHDoR" href="#sup4">4</a>
+														<a class="sc-kafWEX jnwVQG sc-cvbbAY dbHDoR">4</a>
 													</p>
 												</div>
 											</div>
@@ -366,13 +366,12 @@
 				<h4 class="sc-dfVpRl eUcrm">Ready to Get Started?</h4>
 				<div class="sc-iyvyFf izePjh">
 					<span>
-						<a href="/signup">
+						<a routerLink="/signup">
 							<button class="cta cta-loggedout sc-bwzfXH RvzlV" id="cta-loggedout">Sign Up Now</button>
 						</a>
 					</span>
 				</div>
-				<p class="sc-gzOgki fRQslM">Questions? Visit our
-					<a href="/support-center">FAQ</a> or give us a call at (844) 943-5378
+				<p class="sc-gzOgki fRQslM">Questions? give us a call at (844) 943-5378
 				</p>
 				<p class="sc-gzOgki fRQslM">Need access to larger investments? Please reach out to our team directly at
 					<a href="mailto:investments@yieldstreet.com">investments@yieldstreet.com</a>.

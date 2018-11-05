@@ -7,7 +7,7 @@
              <div class="portal-inputs">
                 <div class="row">
                    <div class="portal-ui-container">
-                      <div data-ui-view="" class="animation-horizontal-slide ng-scope">                          
+                      <div data-ui-view="" class="animation-horizontal-slide ng-scope">
                          <form  (submit)="signUpUser($event)" novalidate=""  class="ng-pristine ng-scope">
                             <div class="signup-step-1">
                                <div class="portal-small-ctn">
@@ -21,11 +21,10 @@
                                      <div>
                                          <input  type="email" class="form-control form-control--last ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-email ng-invalid ng-invalid-required ng-valid-maxlength" name="email" placeholder="Email"  data-ng-class="" data-validate-email="" data-validate-unique="" required="" maxlength="128" >
                                     </div>
-                                    <div *ngIf="userAlreadyExist" class="ng-active" >                                            
+                                    <div *ngIf="userAlreadyExist" class="ng-active">
                                             <p ng-message="unique" class="alert alert-danger ng-scope" >An account with the email <strong class="alert-link ng-binding">{{eMail}}</strong> already exists.<br> Please <a href="" routerLink="/login" class="alert-link text-underline" data-ui-sref="login">login</a> instead</p>
                                     </div>
-                                    
-                                    <div class="card-table ng-scope" *ngIf="anyError" >                                        
+                                    <div class="card-table ng-scope" *ngIf="anyError">
                                             <table>
                                                <tbody>
                                                   <tr *ngIf="firstNameError" class="ng-scope" >
@@ -44,7 +43,7 @@
                                             </table>
                                     </div>
                                      <div ng-messages="" class="ng-inactive">
-                                     </div>                                    
+                                     </div>
                                      <button type="submit" class="btn btn--attention portal-create-new animation-fadein-medium" data-ng-click="next()">CREATE MY ACCOUNT NOW</button> <a class="already-have-acc" ui-sref="login" routerLink="/login" href="">ALREADY HAVE AN ACCOUNT?</a>
                                   </div>
                                </div>
@@ -56,14 +55,14 @@
              </div>
           </div>
        </div>
-    </div>    
+    </div>
  </div>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" lazyload="">
  <link rel="stylesheet" href="//cloud.typography.com/6330074/656728/css/fonts.css" lazyload="">
- <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/jcrop/css/jquery.Jcrop.min.css?v=20180404173407" lazyload="">
- <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css?v=20180404173407" lazyload="">
- <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css?v=20180404173407" lazyload="">
- <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/c3/c3.min.css?v=20180404173407" lazyload="">
- <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/css/font-yieldstreet.css?v=20180404173407" lazyload="">
- <link rel="stylesheet" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/bower_components/angular-ui-select/dist/select.min.css?v=20180404173407" lazyload="">
- <link rel="stylesheet" id="ys-styles-css" href="https://www.yieldstreet.com/wp-content/themes/yieldstreet-ng/css/style.css?ver=20180404173407" type="text/css" media="all">
+ <link rel="stylesheet" href="../../assets/jquery/jquery.Jcrop.min.css" lazyload="">
+ <link rel="stylesheet" href="../../assets/fonts/select.min.css" lazyload="">
+ <link rel="stylesheet" href="../../assets/fonts/bootstrap-slider.min.css" lazyload="">
+ <link rel="stylesheet" href="../../assets/fonts/c3.min.css" lazyload="">
+ <link rel="stylesheet" href="../../assets/fonts/font-yieldstreet.css" lazyload="">
+ <link rel="stylesheet" href="../../assets/fonts/bootstrap-select.min.css" lazyload="">
+ <link rel="stylesheet" id="ys-styles-css" href="../../assets/fonts/style.css" type="text/css" media="all">

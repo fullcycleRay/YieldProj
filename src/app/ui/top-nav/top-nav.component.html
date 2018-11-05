@@ -3,7 +3,7 @@
       <div class="Header_hamburger_3W0VD">
          <div class="Hamburger_hamburger_3Ior- null"><span class="Hamburger_meat_219A-"></span></div>
       </div>
-      <div class="Header_logo_gHI83"><a routerLink="/"><img width="145" src="/assets/logo.2c6d97be.svg" alt="YieldStreet"></a></div>
+      <div class="Header_logo_gHI83"><a routerLink="/"><img width="145" src="../../../assets/ProjYield.png" alt="YieldStreet"></a></div>
    </div>
    <div class="Header_primaryNav_3RqeR">
       <div class="Header_desktop_1iNkc">
@@ -47,7 +47,7 @@
                     </div>
                   <div class="PrimaryNavigation_menuItem_2IOWG"><span class="PrimaryNavigationTitle_title_24E-A"><span class="onClicknav"><a class="" routerLink="/investment-philosophy">Investment Philosophy</a></span></span></div>
                   <div *ngIf="!isUserLoggedIn" class="PrimaryNavigation_menuItem_2IOWG"><span class="PrimaryNavigationTitle_title_24E-A"><span class="onClicknav"><a class="" routerLink="/about">About Us</a></span></span></div>
-                  <div class="PrimaryNavigation_menuItem_2IOWG"><span class="PrimaryNavigationTitle_title_24E-A"><span class="onClicknav"><a class="" routerLink="/support-center">Resources</a></span><span><span class="PrimaryNavigationTitle_icon_zdOSZ"><span aria-hidden="true" class=""></span></span><span class="PrimaryNavigationTitle_subtitle_39aOC"></span></span></span></div>
+                  <!-- <div class="PrimaryNavigation_menuItem_2IOWG"><span class="PrimaryNavigationTitle_title_24E-A"><span class="onClicknav"><a class="" routerLink="/support-center">Resources</a></span><span><span class="PrimaryNavigationTitle_icon_zdOSZ"><span aria-hidden="true" class=""></span></span><span class="PrimaryNavigationTitle_subtitle_39aOC"></span></span></span></div> -->
                </div>
             </div>
          </div>
@@ -66,7 +66,7 @@
                 <div *ngIf="isUserLoggedIn" class="PrimaryNavigation_signButtons_1UcV_">
                         <button class="sc-bdVaJa iGTUbO">
                             <a routerLink="/" (click)=logOutUser()>Log out</a>
-                         </button>                         
+                         </button>
                 </div>
                <div class="PrimaryNavigation_menus_A1QH_">
                   <div class="PrimaryNavigation_menuItem_2IOWG">
@@ -90,7 +90,7 @@
                         </span>
                      </span>
                   </div>
-                  <div class="PrimaryNavigation_menuItem_2IOWG">
+                  <!-- <div class="PrimaryNavigation_menuItem_2IOWG">
                      <span class="PrimaryNavigationTitle_title_24E-A">
                         <span class="onClicknav"><a class="" routerLink="/support-center">Resources</a></span>
                         <span>
@@ -105,7 +105,7 @@
                            </span>
                         </span>
                      </span>
-                  </div>
+                  </div> -->
                </div>
             </div>
          </div>
@@ -116,9 +116,9 @@
           <a class="LoginArea_login_1L4C0" id="header-login" routerLink="/login">Log in</a>
           <a id="header-signuplink" routerLink="/signup">
             <button class="sc-bwzfXH fSaDtr" id="header-signup">Sign Up</button></a>
-        </div>        
+        </div>
         <div *ngIf="isUserLoggedIn" class="LoginArea_signupButton_1DDAX">
-                <a class="LoginArea_login_1L4C0" id="header-login" routerLink="/"(click)=logOutUser()>Log out</a>                
-        </div>        
+                <a class="LoginArea_login_1L4C0" id="header-login" routerLink="/"(click)=logOutUser()>Log out</a>
+        </div>
    </div>
 </div>
