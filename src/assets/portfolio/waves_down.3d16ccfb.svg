@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1992" height="376" viewBox="0 0 1992 376">
+  <defs>
+    <rect id="waves-copy-a" width="1992" height="376"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="waves-copy-b" fill="#fff">
+      <use xlink:href="#waves-copy-a"/>
+    </mask>
+    <g mask="url(#waves-copy-b)">
+      <g transform="matrix(1 0 0 -1 -32 410)">
+        <polygon fill="#1E9C9F" fill-opacity=".305" points="32.589 34.031 352.188 110.703 1194.133 .844 1742.367 110.703 2050.164 61.375 2006.695 195.438 32.589 195.438"/>
+        <polygon fill="#2CB591" fill-opacity=".315" points=".75 154.414 313.037 34.273 915.547 99.906 1665.781 34.273 2024.785 154.414 2024.785 347.74 8.484 347.74"/>
+        <polygon fill="#29AB64" fill-opacity=".186" points="12.56 211.214 459.841 51.578 1097.966 117.688 1794.818 30.372 2277.336 117.688 2277.336 444 21.213 444" transform="matrix(-1 0 0 1 2289.896 0)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -869,7 +869,7 @@
 	height: 70px;
 	width: 100%;
 	background-color: rgb(246, 246, 246);
-	background-image: url(https://www.yieldstreet.com/static/media/waves_down.3d16ccfb.svg);
+	background-image: url('../../assets/portfolio/waves_down.3d16ccfb.svg');
 	background-repeat: repeat-x;
 	background-position: bottom center;
 	z-index: 1;
@@ -1373,7 +1373,7 @@
 
 @media (min-width:768px) {
 	.dEsccv {
-		background-image: url(https://www.yieldstreet.com/static/media/hero-image@2x.cd310c65.jpg);
+		background-image: url('../../assets/hero-image.87b76954.png');
 		min-height: 500px;
 		max-height: 650px;
 	}
@@ -1381,18 +1381,15 @@
 
 @media (min-width:992px) {
 	.dEsccv {
-		background-image: url(https://www.yieldstreet.com/static/media/hero-image@2x.cd310c65.jpg);
+		background-image: url('../../assets/portfolio/hero-image@2x.cd310c65.jpg');
 		min-height: 535px;
 		max-height: 900px;
 		background-position: center 75%;
 	}
 }
 
-
-/* sc-component-id: Hero__BigContainer-UAZww */
-
 .hTBlNx {
-	background-image: url(https://www.yieldstreet.com/static/media/hero-image@3x.cbf2f4d8.jpg);
+	background-image: url('../../assets/hero-image@3x.cbf2f4d8.jpg');
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -1402,9 +1399,6 @@
 	background-position: center 75%;
 	padding: 0 5vw 5vh;
 }
-
-
-/* sc-component-id: Hero__Content-dYgNyW */
 
 .cHkJyk {
 	padding: 10vw 5vw 35vh 5vw;
@@ -4871,7 +4865,7 @@ dYWwWr {
 	min-height: 1155px;
 	max-width: 360px;
 	margin: 0 auto;
-	background: url(https://www.yieldstreet.com/static/media/mobileGroup.1b190706.png) no-repeat center center;
+	background: url('../../assets/portfolio/mobileGroup.1b190706.png') no-repeat center center;
 	background-size: contain;
 }
 
@@ -4893,7 +4887,7 @@ dYWwWr {
 	.hUdTnG {
 		min-height: 360px;
 		max-width: 640px;
-		background: url(https://www.yieldstreet.com/static/media/desktopGroup.6a685eb9.png) no-repeat center center;
+		background: url('../../assets/portfolio/desktopGroup.6a685eb9.png') no-repeat center center;
 		background-size: contain;
 	}
 }
@@ -4904,10 +4898,6 @@ dYWwWr {
 		max-width: 820px;
 	}
 }
-
-
-/* sc-component-id: MultipleAssetClasses__DesktopVersion-bsHjGY */
-
 .bGOCwH {
 	display: none;
 }
@@ -5503,11 +5493,8 @@ dYWwWr {
 	}
 }
 
-
-/* sc-component-id: IRRLead__IRRBackground-Yzluj */
-
 .OydzF {
-	background-image: url(https://www.yieldstreet.com/static/media/bkg-low.265be09b.jpg);
+	background-image: url('../../assets/portfolio/bkg-low.265be09b.jpg');
 	background-repeat: no-repeat;
 	background-position-y: -70px;
 	padding: 50px 0;
