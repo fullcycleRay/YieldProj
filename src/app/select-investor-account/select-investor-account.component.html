@@ -16,7 +16,7 @@
              <div class="InvestorAccountType__OptionContainer-cTOVYp kRMRqm">
                 <div class="investor-account-type-option investor-account-type-option-individual RadioInput__OptionContent-czBJyF gdCScW">
                    <div class="RadioInput__StyledInput-kQFKpi ghVESY">
-                      <input type="radio" class="RadioInput__Input-csTqyz bmBchR" value="" (change)="checkIfChecKed($event)" >
+                      <input type="radio" class="RadioInput__Input-csTqyz" value="" (change)="checkIfChecKed($event)" >
                       <div class="RadioInput__Circle-eUFKVO cUdjyD" ></div>
                    </div>
                    <div class="RadioInput__OptionTitle-hFcBMM dflEyP">Another Individual</div>
@@ -60,11 +60,11 @@
                 <button class="PrimaryButton__ButtonPrimary-exVhhh hkmwMx" routerLink="createaccount" ng-disabled="anyTypeSelected">Next</button>
               </a>
               <a class="InvestorAccountType__StyledLink-eOhBGX gnjOPH" >
-                <button class="PrimaryButton__ButtonPrimary-exVhhh hPkfgc" (click)="canSel();">Cancel</button>
+                <button class="PrimaryButton__ButtonPrimary-exVhhh hPkfgc" routerLink="/account">Cancel</button>
               </a>
             </div>
           </div>
         </form>
-       </div>    
+       </div>
     </div>
  </div>

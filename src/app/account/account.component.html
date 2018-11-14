@@ -21,7 +21,9 @@
                           <li class="InvestorAccountModal__ListItem-rz3u4w-6 jhWbYn">You are a financial advisor and invest on behalf of others.</li>
                       </ul>
                     </div>
-                    <div class="InvestorAccountModal__ButtonWrapper-rz3u4w-4 dBBxrE"><button id="transfer-funds-delete-account-confirm" class="PrimaryButton__ButtonPrimary confirmButton PrimaryButton__ButtonPrimary-lm14bl-0 dzKqIi">Create New Account</button><button id="transfer-funds-delete-account-cancel" class="PrimaryButton__ButtonPrimary cancelButton PrimaryButton__ButtonPrimary-lm14bl-0 bdxOfW" (click)="showModal()">Cancel</button></div>
+                    <div class="InvestorAccountModal__ButtonWrapper-rz3u4w-4 dBBxrE">
+                      <button id="transfer-funds-delete-account-confirm" class="PrimaryButton__ButtonPrimary confirmButton PrimaryButton__ButtonPrimary-lm14bl-0 dzKqIi" routerLink ='/selectinvestor'>Create New Account</button><button id="transfer-funds-delete-account-cancel" class="PrimaryButton__ButtonPrimary cancelButton PrimaryButton__ButtonPrimary-lm14bl-0 bdxOfW" (click)="showModal()">Cancel</button>
+                    </div>
                 </div>
               </div>
           </div>
@@ -102,7 +104,7 @@
                     <div class="InvestorAccountsItem__Item-qmFTp fUzbkT"><a class="InvestorAccountsItem__StyledLinkSetUp-hOxxYE fadEfH" href="/settings/upload-investor-documents/81649">Upload Identity Documents</a></div>
                  </div>
                  <!-- <div class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account" data-toggle="modal" data-target="#myModal">+ Add New Account</div> -->
-                 <button type="button" class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account" data-toggle="modal" data-target="#myModal" (click)="showModal()" data-backdrop="false" >+ Add New Account</button>
+                 <div type="button" class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account" data-toggle="modal" data-target="#myModal" (click)="showModal()" data-backdrop="false" >+ Add New Account</div>
 
               </div>
            </div>

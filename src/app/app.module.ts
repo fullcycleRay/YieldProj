@@ -39,7 +39,8 @@ import { ManualAccountStep2Component } from './manual-account-step2/manual-accou
 import { ManualAccountStep3Component } from './manual-account-step3/manual-account-step3.component';
 import { SidebarNavigationComponent } from './shared/sidebar-navigation/sidebar-navigation.component';
 import { SignupStep3Component } from './signup-step3/signup-step3.component';
-import { SignupStep4Component } from './signup-step4/signup-step4.component'
+import { SignupStep4Component } from './signup-step4/signup-step4.component';
+import { GooglePlacesDirective } from './google-places.directive'
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +76,8 @@ import { SignupStep4Component } from './signup-step4/signup-step4.component'
     ManualAccountStep3Component,
     SidebarNavigationComponent,
     SignupStep3Component,
-    SignupStep4Component
+    SignupStep4Component,
+    GooglePlacesDirective
   ],
   imports: [
     BrowserModule,
