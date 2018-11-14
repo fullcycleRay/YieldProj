@@ -1,0 +1,105 @@
+<div data-ui-view="" data-autoscroll="true" role="root-ui-view" class="ng-scope" style="">
+  <div class="portal portal-signup ng-scope">
+     <div class="container portal-container">
+        <div data-ng-show="true" class="animation-hide signup-no-title signup-step-3" style="">
+           <div class="portal-inputs-ctn">
+              <div class="portal-inputs">
+                 <div class="row">
+                    <div class="portal-ui-container">
+                       <div data-ui-view="" class="animation-horizontal-slide ng-scope" style="">
+                          <form name="signupCtrl.formStep3" novalidate="" class="ng-pristine ng-scope ng-invalid ng-invalid-required ng-invalid-remove ng-valid-required-add ng-invalid-required-remove" style="">
+                             <div class="signup-step-3">
+                                <div class="portal-small-ctn">
+                                   <div class="card-body pull-left--text-align">
+                                      <div class="clearfix only-input">
+                                         <!-- ngIf: investorTypes -->
+                                            <div class="dropdown-combobox input-select">
+                                               <label class="input-base" ng-class="{'error': error, 'disabled': isDisabled}">
+                                                  <span ng-show="showLabel" class="">
+                                                     <span class="ng-scope">What type of investor are you?</span>
+                                                     <i ng-show="required" class="">*</i>
+                                                  </span>
+                                                  <button class="btn btn-default dropdown-toggle portal-inputs__btn ng-binding" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Individual</button>
+                                               </label>
+                                               <ul class="error-msg ng-hide" ng-show="error">
+                                               </ul>
+                                            </div>
+                                      </div>
+                                      <div data-ng-if="signupCtrl.state.form.investorType === 'INDIVIDUAL'" class="ng-scope" style="">
+                                         <div class="portal__form-container">
+                                            <div class="clearfix">
+                                               <div class="portal__col--first"><span ng-class="{'bold red': signupCtrl.formStep3.$submitted &amp;&amp; signupCtrl.formStep3.indvIncome200k.$invalid}">I earn more than $200K per year or, jointly with my spouse, more than $300K per year</span></div>
+                                               <div class="portal__col--last">
+                                                     <div class="radio ys-radio">
+                                                        <label class="radio_label" >
+                                                           <input type="radio" name="indvIncome200k" ng-model="modelName" ng-required="required" ng-value="inputValue" ng-disabled="disabled" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" value="true" required="required"><span class="radio-btn"></span>
+                                                           <p>
+                                                              <span class="ng-scope">Yes</span>
+                                                           </p>
+                                                        </label>
+                                                     </div>
+                                                     <div class="radio ys-radio">
+                                                        <label class="radio_label">
+                                                           <input type="radio" name="indvIncome200k" ng-model="modelName" ng-required="required" ng-value="inputValue" ng-disabled="disabled" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" value="false" required="required"><span class="radio-btn"></span>
+                                                           <p>
+                                                              <span class="ng-scope">No</span>
+                                                           </p>
+                                                        </label>
+                                                     </div>
+                                               </div>
+                                            </div>
+                                            <div class="clearfix mar-top">
+                                               <div class="portal__col--first"><span ng-class="{'bold red': signupCtrl.formStep3.$submitted &amp;&amp; signupCtrl.formStep3.indvNetWorth1m.$invalid}">I have more than $1M in assets, not including my primary residence</span></div>
+                                               <div class="portal__col--last">
+                                                     <div class="radio ys-radio">
+                                                        <label class="radio_label">
+                                                           <input type="radio" name="indvNetWorth1m" ng-model="modelName" ng-required="required" ng-value="inputValue" ng-disabled="disabled" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" value="true" required="required"><span class="radio-btn"></span>
+                                                           <p>
+                                                              <span class="ng-scope">Yes</span>
+                                                           </p>
+                                                        </label>
+                                                     </div>
+                                                     <div class="radio ys-radio">
+                                                        <label class="radio_label">
+                                                           <input type="radio" name="indvNetWorth1m" ng-model="modelName" ng-required="required" ng-value="inputValue" ng-disabled="disabled" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" value="false" required="required"><span class="radio-btn"></span>
+                                                           <p>
+                                                              <span class="ng-scope">No</span>
+                                                           </p>
+                                                        </label>
+                                                     </div>
+                                               </div>
+                                            </div>
+                                            <div class="portal__form-footer">
+                                               <a href="#" class="portal__form-footer__link">why we ask this</a>
+                                               <div class="portal__form-tooltip">
+                                                  <div class="portal__form-footer-inner-content">
+                                                     <p>Due to current federal security laws, YieldStreet investments are limited to accredited investors with a certain income or net worth.</p>
+                                                     <a ui-sref="main.supportcenter.faq({article: 'who-can-invest-in-these-deals'})" target="_blank" class="portal__tooltip-link" href="#">read more</a>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                      <!-- end ngIf: signupCtrl.state.form.investorType === 'INDIVIDUAL' --><!-- ngIf: signupCtrl.state.form.investorType && signupCtrl.state.form.investorType !== 'INDIVIDUAL' -->
+                                   </div>
+                                </div>
+                                <button type="button" class="btn btn--attention portal-create-new animation-fadein-medium" data-ng-click="signupCtrl.next()">CONTINUE</button>
+                             </div>
+                          </form>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+<link rel="stylesheet" href="../../assets/fonts/jquery.fancybox.css" lazyload="">
+<link rel="stylesheet" href="../../assets/jquery/jquery.Jcrop.min.css" lazyload="">
+<link rel="stylesheet" href="../../assets/fonts/select.min.css" lazyload="">
+<link rel="stylesheet" href="../../assets/fonts/bootstrap-slider.min.css" lazyload="">
+<link rel="stylesheet" href="../../assets/fonts/c3.min.css" lazyload="">
+<link rel="stylesheet" href="../../assets/fonts/font-yieldstreet.css" lazyload="">
+<link rel="stylesheet" href="../../assets/fonts/bootstrap-select.min.css" lazyload="">
+<link rel="stylesheet" id="ys-styles-css" href="../../assets/fonts/style.css" type="text/css" media="all">

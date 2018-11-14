@@ -1,6 +1,31 @@
 <div class="Main__Wrapper-fTNHWf fHOsuF">
   <div class="Main__Container-jeBqdM gQKlCo">
-     <div class="InvestorAccounts__Wrapper-hlILMC itwTyA">
+     <div class="InvestorAccounts__Wrapper-sc-1xaw1zp-0 dGEGqw">
+        <!-- Modal -->
+        <div class="InvestorAccountModal__InvestorModal-rz3u4w-0 fIEKfQ Modal__ModalBackground-sc-1prg9d1-0 bgbVJM " *ngIf="modalBack">
+          <div  class="Modal__ModalContainer-sc-1prg9d1-1 YgHVe" id="myModal" role="dialog">
+              <div class="Modal__ModalHeader-sc-1prg9d1-2 bSVhQa">
+                <a (click)="showModal()">
+                    <img src="../../assets/ui-image/modal_close_btn.svg" class="Modal__Icon-sc-1prg9d1-4 eISWrm">
+                </a>
+
+              </div>
+              <div class="Modal__ModalContent-sc-1prg9d1-3 kZXKqu">
+                <div class="InvestorAccountModal__Wrapper-rz3u4w-1 hLzzSP">
+                    <h2 class="InvestorAccountModal__ModalTitle-rz3u4w-2 jIJMsg">Need to create another investor account? </h2>
+                    <div class="InvestorAccountModal__ModalText-rz3u4w-3 iFoYpU">
+                      If one of the following is applicable, you can create another investment account:
+                      <ul class="InvestorAccountModal__ListWrapper-rz3u4w-5 cQfxxn">
+                          <li class="InvestorAccountModal__ListItem-rz3u4w-6 jhWbYn">You want to invest on behalf of an entity, such as an LLC or Trust.</li>
+                          <li class="InvestorAccountModal__ListItem-rz3u4w-6 jhWbYn">You want to invest with a self-directed IRA or Solo 401(k) account.</li>
+                          <li class="InvestorAccountModal__ListItem-rz3u4w-6 jhWbYn">You are a financial advisor and invest on behalf of others.</li>
+                      </ul>
+                    </div>
+                    <div class="InvestorAccountModal__ButtonWrapper-rz3u4w-4 dBBxrE"><button id="transfer-funds-delete-account-confirm" class="PrimaryButton__ButtonPrimary confirmButton PrimaryButton__ButtonPrimary-lm14bl-0 dzKqIi">Create New Account</button><button id="transfer-funds-delete-account-cancel" class="PrimaryButton__ButtonPrimary cancelButton PrimaryButton__ButtonPrimary-lm14bl-0 bdxOfW" (click)="showModal()">Cancel</button></div>
+                </div>
+              </div>
+          </div>
+        </div>
         <div class="Navbar__InnerWrapper-jFgBlI cuaAbL Container-gZqETv dedQyW">
             <app-sidebar-navigation></app-sidebar-navigation>
            <div class="InvestorAccounts__ContentWrapper-hmDOdb eYkedC">
@@ -76,7 +101,9 @@
                     </div>
                     <div class="InvestorAccountsItem__Item-qmFTp fUzbkT"><a class="InvestorAccountsItem__StyledLinkSetUp-hOxxYE fadEfH" href="/settings/upload-investor-documents/81649">Upload Identity Documents</a></div>
                  </div>
-                 <div class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account">+ Add New Account</div>
+                 <!-- <div class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account" data-toggle="modal" data-target="#myModal">+ Add New Account</div> -->
+                 <button type="button" class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account" data-toggle="modal" data-target="#myModal" (click)="showModal()" data-backdrop="false" >+ Add New Account</button>
+
               </div>
            </div>
         </div>

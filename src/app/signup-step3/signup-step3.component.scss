@@ -1,0 +1,62 @@
+
+
+.clearfix:after, .clearfix:before {
+    content: " ";
+    display: table;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    clear: both;
+}
+input-radio {
+    display: block;
+    clear: both;
+  }
+  input-radio .radio.ys-radio label {
+    font-size: 12px;
+    vertical-align: middle;
+      padding-top: 2px;
+      vertical-align: middle;
+      float: left;
+}
+.radio.ys-radio label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    padding-left: 0;
+}
+.radio label, .checkbox label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+.pull-left--text-align {
+    text-align: left;
+}
+.radio.ys-radio {
+    margin-bottom: 15px;
+}
+.radio.ys-radio label input[type="radio"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+input-radio .radio.ys-radio label input[type="radio"] ~ .radio-btn {
+    float: left;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #646464;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+
+    .radio_label{
+        display: inline-flex !important;
+    }

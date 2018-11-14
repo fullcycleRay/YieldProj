@@ -37,7 +37,9 @@ import { AccountComponent } from './account/account.component';
 import { AddAccountManuallyComponent } from './add-account-manually/add-account-manually.component';
 import { ManualAccountStep2Component } from './manual-account-step2/manual-account-step2.component';
 import { ManualAccountStep3Component } from './manual-account-step3/manual-account-step3.component';
-import { SidebarNavigationComponent } from './shared/sidebar-navigation/sidebar-navigation.component'
+import { SidebarNavigationComponent } from './shared/sidebar-navigation/sidebar-navigation.component';
+import { SignupStep3Component } from './signup-step3/signup-step3.component';
+import { SignupStep4Component } from './signup-step4/signup-step4.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +73,9 @@ import { SidebarNavigationComponent } from './shared/sidebar-navigation/sidebar-
     AddAccountManuallyComponent,
     ManualAccountStep2Component,
     ManualAccountStep3Component,
-    SidebarNavigationComponent
+    SidebarNavigationComponent,
+    SignupStep3Component,
+    SignupStep4Component
   ],
   imports: [
     BrowserModule,

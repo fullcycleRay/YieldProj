@@ -3,13 +3,19 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss','../app.component.scss','../font-awesome/css/font-awesome.min.css','../viewportfolio/viewportfolio.component.scss']
+  styleUrls: ['./account.component.scss', '../app.component.scss', '../font-awesome/css/font-awesome.min.css',  '../viewportfolio/viewportfolio.component.scss']
 })
 export class AccountComponent implements OnInit {
+  modalBack = false;
 
   constructor() { }
 
   ngOnInit() {
+    this.modalBack = false;
   }
+  showModal() {
+    this.modalBack = !(this.modalBack);
+  }
+
 
 }

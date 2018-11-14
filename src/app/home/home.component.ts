@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   }
 
   displayLogin() {
-    debugger
     if (this.isUserLoggedIn) {
       this.signupOrBrowseOffering = "Browse Offering";
       this.sigupOrBrowserURL ="/offerings";

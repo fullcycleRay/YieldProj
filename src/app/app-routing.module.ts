@@ -23,7 +23,9 @@ import {TransactionComponent} from './transaction/transaction.component';
 import {AccountComponent} from './account/account.component';
 import {AddAccountManuallyComponent} from './add-account-manually/add-account-manually.component';
 import {ManualAccountStep2Component} from './manual-account-step2/manual-account-step2.component';
-import {ManualAccountStep3Component} from './manual-account-step3/manual-account-step3.component'
+import {ManualAccountStep3Component} from './manual-account-step3/manual-account-step3.component';
+import {SignupStep3Component} from './signup-step3/signup-step3.component';
+import {SignupStep4Component} from './signup-step4/signup-step4.component'
 const routes: Routes = [
 {
   path:'',
@@ -58,6 +60,10 @@ const routes: Routes = [
   component: AccountComponent
 },
 {
+  path: 'create-investor-account',
+  component: CreateInvestorAccountComponent
+},
+{
   path: 'new-account',
   component: AddAccountManuallyComponent
 },
@@ -76,6 +82,14 @@ const routes: Routes = [
 {
   path:'step2',
   component: Step2Component
+},
+{
+  path: 'step3',
+  component: SignupStep3Component
+},
+{
+  path: 'step4',
+  component: SignupStep4Component
 },
 {
   path:'login',
