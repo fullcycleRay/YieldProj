@@ -5,7 +5,7 @@
              <div class="AccountAvatar__Container-hnDrws fGMnpS">
                 <div class="AccountAvatar__Sphere-cZYEID bZWnwk"><span class="AccountAvatar__SphereText-gbhJYI jScECE">AR</span></div>
                 <div class="AccountAvatar__Content-jJObCI cpMlqO">
-                   <div class="AccountAvatar__Title-iRTHDV kUprSS">Manage Account<span class="AccountAvatar__CogContainer-eskLGc jMFmlD"><a class="AccountAvatar__CogLink-cJlgBb gDhyzX" href="/profile/contact"><span aria-hidden="true" class="fa fa-cog"></span></a></span></div>
+                   <div class="AccountAvatar__Title-iRTHDV kUprSS">Manage Account<span class="AccountAvatar__CogContainer-eskLGc jMFmlD"><a class="AccountAvatar__CogLink-cJlgBb gDhyzX" ><span aria-hidden="true" class="fa fa-cog"></span></a></span></div>
                    <div class="AccountAvatar__AccountName-iYHFiC iffCbE">Arunoday Ray</div>
                 </div>
              </div>
@@ -16,51 +16,51 @@
              <div class="InvestorAccountType__OptionContainer-cTOVYp kRMRqm">
                 <div class="investor-account-type-option investor-account-type-option-individual RadioInput__OptionContent-czBJyF gdCScW">
                    <div class="RadioInput__StyledInput-kQFKpi ghVESY">
-                      <input type="radio" class="RadioInput__Input-csTqyz" value="" (change)="checkIfChecKed($event)" >
-                      <div class="RadioInput__Circle-eUFKVO cUdjyD" ></div>
+                      <label class="radio-inline">
+                          <input type="radio" name="optradio" (click) = "checkIfChecKed($event.target.value)">Another Individual
+                      </label>
                    </div>
-                   <div class="RadioInput__OptionTitle-hFcBMM dflEyP">Another Individual</div>
                    <div class="RadioInput__OptionDescription-crpiEF PybdY">Provide a SSN to invest on behalf of someone else.</div>
                 </div>
                 <div class="investor-account-type-option investor-account-type-option-revocable RadioInput__OptionContent-czBJyF gdCScW">
                    <div class="RadioInput__StyledInput-kQFKpi ghVESY">
-                      <input type="radio" class="RadioInput__Input-csTqyz bmBchR" value="">
-                      <div class="RadioInput__Circle-eUFKVO cUdjyD"></div>
+                      <label class="radio-inline">
+                          <input type="radio" name="optradio" (click) = "checkIfChecKed($event.target.value)">Revocable Trust
+                      </label>
                    </div>
-                   <div class="RadioInput__OptionTitle-hFcBMM dflEyP">Revocable Trust</div>
-                   <div class="RadioInput__OptionDescription-crpiEF PybdY">Provide a SSN and a Trust Agreement to invest with your revocable trust.</div>
+                   <div class= "RadioInput__OptionDescription-crpiEF PybdY">Provide a SSN and a Trust Agreement to invest with your revocable trust.</div>
                 </div>
                 <div class="investor-account-type-option investor-account-type-option-entity RadioInput__OptionContent-czBJyF gdCScW">
                    <div class="RadioInput__StyledInput-kQFKpi ghVESY">
-                      <input type="radio" class="RadioInput__Input-csTqyz bmBchR" value="">
-                      <div class="RadioInput__Circle-eUFKVO cUdjyD"></div>
+                      <label class="radio-inline">
+                          <input type="radio" name="optradio">Entity (i.e. LLC, Partnership, S Corp)
+                      </label>
                    </div>
-                   <div class="RadioInput__OptionTitle-hFcBMM dflEyP">Entity (i.e. LLC, Partnership, S Corp)</div>
                    <div class="RadioInput__OptionDescription-crpiEF PybdY">Provide an EIN to invest as a business entity.</div>
                 </div>
                 <div class="investor-account-type-option investor-account-type-option-selfdirected RadioInput__OptionContent-czBJyF gdCScW">
                    <div class="RadioInput__StyledInput-kQFKpi ghVESY">
-                      <input type="radio" class="RadioInput__Input-csTqyz bmBchR" value="">
-                      <div class="RadioInput__Circle-eUFKVO cUdjyD"></div>
+                      <label class="radio-inline">
+                          <input type="radio" name="optradio" (click) = "checkIfChecKed($event.target.value)">Self-Directed IRA Account
+                      </label>
                    </div>
-                   <div class="RadioInput__OptionTitle-hFcBMM dflEyP">Self-Directed IRA Account</div>
                    <div class="RadioInput__OptionDescription-crpiEF PybdY">Provide an EIN and an Account Opening or Verification document to invest with your self-directed IRA.</div>
                 </div>
                 <div class="investor-account-type-option investor-account-type-option-irrevocable RadioInput__OptionContent-czBJyF gdCScW">
                    <div class="RadioInput__StyledInput-kQFKpi ghVESY">
-                      <input type="radio" class="RadioInput__Input-csTqyz bmBchR" value="">
-                      <div class="RadioInput__Circle-eUFKVO cUdjyD"></div>
+                      <label class="radio-inline">
+                          <input type="radio" name="optradio" (click) = "checkIfChecKed($event.target.value)">Irrevocable Trust, Checkbook IRA or Solo 401(k)
+                      </label>
                    </div>
-                   <div class="RadioInput__OptionTitle-hFcBMM dflEyP">Irrevocable Trust, Checkbook IRA or Solo 401(k)</div>
                    <div class="RadioInput__OptionDescription-crpiEF PybdY">Provide an EIN and a Trust Agreement to invest with your irrevocable trust, solo 401(k) or checkbook IRA.</div>
                 </div>
              </div>
              <div class="InvestorAccountType__ButtonContainer-hKatlb csoiKj">
                <a class="InvestorAccountType__StyledLink-eOhBGX gnjOPH" >
-                <button class="PrimaryButton__ButtonPrimary-exVhhh hkmwMx" routerLink="createaccount" ng-disabled="anyTypeSelected">Next</button>
+                <button class="PrimaryButton__ButtonPrimary-exVhhh" routerLink = "/create-investor-account" [disabled] = "testvalue == true" [ngClass]= "testvalue == false ? 'dkfyQQ' : 'hkmwMx'">Next</button>
               </a>
               <a class="InvestorAccountType__StyledLink-eOhBGX gnjOPH" >
-                <button class="PrimaryButton__ButtonPrimary-exVhhh hPkfgc" routerLink="/account">Cancel</button>
+                <button class="PrimaryButton__ButtonPrimary-exVhhh hPkfgc" routerLink = "/account">Cancel</button>
               </a>
             </div>
           </div>

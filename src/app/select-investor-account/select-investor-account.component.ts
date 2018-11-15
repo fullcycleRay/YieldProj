@@ -4,24 +4,28 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-select-investor-account',
   templateUrl: './select-investor-account.component.html',
-  styleUrls: ['./select-investor-account.component.scss','../app.component.scss','../font-awesome/css/font-awesome.min.css']
+  styleUrls: ['./select-investor-account.component.scss', '../app.component.scss', '../font-awesome/css/font-awesome.min.css']
 })
 export class SelectInvestorAccountComponent implements OnInit {
-  testIfCheck =false;
+  testIfCheck = true;
   testvalue;
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.testIfCheck = true;
   }
-  canSel = function(){
-    this.router.navigate(['manageaccount']);
-  }
-  anySelectedBox = function(){
 
-  }
-  checkIfChecKed(e){
-    this.testvalue=e;
+  anySelectedBox = function() {
+
+  };
+  checkIfChecKed(e) {
+    if (e === 'on') {
+      this.testvalue = false;
+    } else {
+      this.testvalue = true;
+    }
+
 
   }
 }

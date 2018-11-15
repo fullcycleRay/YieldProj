@@ -1694,13 +1694,7 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 /* sc-component-id: RadioInput__StyledInput-kQFKpi */
 
 .ghVESY{margin-top:20px;}
-/* sc-component-id: RadioInput__Circle-eUFKVO */
 
-
-
-/* sc-component-id: RadioInput__OptionTitle-hFcBMM */
-
-.dflEyP{color:rgb(53,56,58);float:left;font-size:14px;line-height:24px;padding-left:6px;}
 /* sc-component-id: RadioInput__OptionDescription-crpiEF */
 
 .PybdY{clear:left;color:rgb(118,129,135);font-size:12px;line-height:18px;padding-left:25px;}
@@ -1830,8 +1824,6 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 
 
 /* sc-component-id: RadioInput__OptionTitle-hFcBMM */
-
-.dflEyP{color:rgb(53,56,58);float:left;font-size:14px;line-height:24px;padding-left:6px;}
 /* sc-component-id: RadioInput__OptionDescription-crpiEF */
 
 .PybdY{clear:left;color:rgb(118,129,135);font-size:12px;line-height:18px;padding-left:25px;}
@@ -1855,3 +1847,8 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 
 /* sc-component-id: InvestorAccountType-eNILlG */
 
+.radioSelectInv{
+  color: rgb(43,184,192);
+    content: '◉';
+    background:white;border:1px solid rgb(171,180,186);border-radius:100%;content:'';display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:22px;float:left;height:14px;line-height:10px;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-top:4px;width:14px;
+}
