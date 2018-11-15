@@ -14,8 +14,8 @@ export class TopNavComponent implements OnInit {
 
   constructor(private router: Router, private user: UserService, private authUser: AuthServiceService) {
     this.user.checkLogin().subscribe(
-      resp =>{
-        this.isUserLoggedIn =resp;
+      resp => {
+        this.isUserLoggedIn = resp;
       }
     );
   }
@@ -23,10 +23,10 @@ export class TopNavComponent implements OnInit {
   ngOnInit() {
   }
 
-  ngAfterContentChecked(){
+  ngAfterContentChecked() {
     this.user.checkLogin().subscribe(
-      resp =>{
-        this.isUserLoggedIn =resp;
+      resp => {
+        this.isUserLoggedIn = resp;
       }
     );
   }

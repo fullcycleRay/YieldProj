@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferingDetailsService } from '../offering-details.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, map } from 'rxjs/operators'
+import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {UserService} from '../user.service';
 
 const API_URL = environment.yieldUrl;
 
@@ -15,10 +16,9 @@ const API_URL = environment.yieldUrl;
   styleUrls: ['./offerings.component.scss', '../app.component.scss']
 })
 export class OfferingsComponent implements OnInit {
-  isUserLoggedIn;
   userId: any;
-  offeringTitle = "";
-  offeringDesc = "";
+  offeringTitle = '';
+  offeringDesc = '';
   resp: any;
   offeringResp: any;
   pastOfferings = [];
@@ -26,13 +26,27 @@ export class OfferingsComponent implements OnInit {
   openOfferings = [];
   loading = true;
   dateNow: Date = new Date();
+  isUserLoggedIn: Observable <boolean>;
 
-  constructor(private http: HttpClient, private router: Router, private offeringDetails: OfferingDetailsService) {
+  constructor(private http: HttpClient, private router: Router, private offeringDetails: OfferingDetailsService,
+    private userService: UserService) {
   }
 
   ngOnInit() {
     this.getOfferingDetails();
     this.loading = false;
+    this.userService.checkLogin().subscribe(
+      resp => {
+        this.isUserLoggedIn = resp;
+      }
+    );
+  }
+  ngAfterContentChecked() {
+    this.userService.checkLogin().subscribe(
+      resp => {
+        this.isUserLoggedIn = resp;
+      }
+    );
   }
   getOfferingDetails(): void {
     this.offeringDetails.getOfferingData()

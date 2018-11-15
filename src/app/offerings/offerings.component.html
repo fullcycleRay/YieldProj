@@ -363,11 +363,11 @@
 				</div>
 			</div>
 			<div class="sc-gxMtzJ cMDySV" id="marketplace-get-started">
-				<h4 class="sc-dfVpRl eUcrm">Ready to Get Started?</h4>
+				<h4 class="sc-dfVpRl eUcrm">Ready to Get Started</h4>
 				<div class="sc-iyvyFf izePjh">
 					<span>
-						<a routerLink="/signup">
-							<button class="cta cta-loggedout sc-bwzfXH RvzlV" id="cta-loggedout">Sign Up Now</button>
+						<a routerLink="{{isUserLoggedIn == true ? '/account' : '/signup' }}">
+							<button class="cta cta-loggedout sc-bwzfXH RvzlV" id="cta-loggedout">{{isUserLoggedIn == true ? "Manage Account" : "Signup"}}</button>
 						</a>
 					</span>
 				</div>
