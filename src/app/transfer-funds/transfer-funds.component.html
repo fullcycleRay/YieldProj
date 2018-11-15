@@ -5,10 +5,12 @@
         <div class="TransferFunds__Wrapper-iAXsuO kmqWFo">
            <div class="AccountHeader__Header-dzfoXL eUFaOX">
               <div class="AccountAvatar__Container-hnDrws fGMnpS">
-                 <div class="AccountAvatar__Sphere-cZYEID bZWnwk"><span class="AccountAvatar__SphereText-gbhJYI jScECE">TD</span></div>
+                 <div class="AccountAvatar__Sphere-cZYEID bZWnwk">
+                   <span class="AccountAvatar__SphereText-gbhJYI jScECE">TD</span>
+                  </div>
                  <div class="AccountAvatar__Content-jJObCI cpMlqO">
-                    <div class="AccountAvatar__Title-iRTHDV kUprSS">Manage Account<span class="AccountAvatar__CogContainer-eskLGc jMFmlD"><a class="AccountAvatar__CogLink-cJlgBb gDhyzX" href="/profile/user"><span aria-hidden="true" class="fa fa-cog"></span></a></span></div>
-                    <div class="AccountAvatar__AccountName-iYHFiC iffCbE">Tushar Dhingra</div>
+                    <div class="AccountAvatar__Title-iRTHDV kUprSS">Manage Account<span class="AccountAvatar__CogContainer-eskLGc jMFmlD"><a class="AccountAvatar__CogLink-cJlgBb gDhyzX"><span aria-hidden="true" class="fa fa-cog"></span></a></span></div>
+                    <div class="AccountAvatar__AccountName-iYHFiC iffCbE">{{currentUser}}</div>
                  </div>
               </div>
               <div class="OnboardingProgressView__ProgressBarContainer-kqTHQs fqMPhP">
@@ -48,10 +50,22 @@
               <div class="TransferFunds__Header-kdtEcZ lgSQGw">
                  <div class="TransferFunds__Title-laRkDW kaIhwm">Manage Funds</div>
                  <div class="Dropdown__Container-cUUygg dlinaM" id="transfer-funds-investor">
-                    <div class="undefined false Dropdown__ActiveContainer-ftVMPU bkTGAH" data-click-id="dropdown" id="active-container">
+                    <div >
+                        <!-- <button class="dropdown-toggle Dropdown__ActiveOption-eGGXhI eguRTf" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown button
+                        </button> -->
+                        <select class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton">
+                          <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2 ">
+                            <span class="jCuLJb">Action</span>
+                          </option>
+                          <option class="dropdown-item jCuLJb aawYR">Another action</option>
+                          <option class="dropdown-item jCuLJb aawYR">Something else here</option>
+                        </select>
+                      </div>
+                    <!-- <div class="false Dropdown__ActiveContainer-ftVMPU bkTGAH" data-click-id="dropdown" id="active-container">
                        <div class="Dropdown__ActiveOption-eGGXhI eguRTf" data-click-id="dropdown" id="active-option">Tushar Dhingra</div>
                        <span id="dropdown-arrow" data-click-id="dropdown" theme="secondary" aria-hidden="true" class="fa fa-angle-down Dropdown__DropdownIcon-dIxNDU ikGzXA"></span>
-                    </div>
+                    </div> -->
                  </div>
               </div>
               <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo">
@@ -59,7 +73,11 @@
                  <div class="ExternalBanks__NoBankWrapper-mBUfY bkBUZv">
                     <p class="ExternalBanks__NoBankAccountText-eQlvuw kPUQpi">You have not connected to an external bank account.</p>
                     <p class="ExternalBanks__NoBankAccountDescription-fooRdK kfCuDE">In order to transfer funds to and from YieldStreet, you’ll need to set-up an external account.</p>
-                    <div class="ExternalBanks__ButtonContainer-djYdki gULRxs"><button class="ExternalBanks__StyledButton-hiBpNJ dYGjny PrimaryButton__ButtonPrimary-exVhhh YVQzO btnwidth" id="transfer-funds-add-bank-account-button">Add External Bank Account</button></div>
+                    <div class="ExternalBanks__ButtonContainer-djYdki gULRxs">
+                      <button routerLink ="/new-account"class="ExternalBanks__StyledButton-hiBpNJ dYGjny PrimaryButton__ButtonPrimary-exVhhh YVQzO btnwidth" id="transfer-funds-add-bank-account-button">
+                        Add External Bank Account
+                      </button>
+                    </div>
                  </div>
               </div>
            </div>

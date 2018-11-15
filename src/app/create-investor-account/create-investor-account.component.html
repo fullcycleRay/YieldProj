@@ -1,4 +1,3 @@
-<div class="Main__Wrapper-z4tjtm-0 lliKhK">
   <div class="Main_container_3ITgZ">
       <div class="CreateInvestorAccount__Wrapper-glLLun eyhVip" id="profile-create-investor-account">
         <div class="Container-gZqETv bBSfBP">
@@ -8,7 +7,7 @@
                     <div class="AccountAvatar__Sphere-cZYEID bZWnwk"><span class="AccountAvatar__SphereText-gbhJYI jScECE">AR</span></div>
                     <div class="AccountAvatar__Content-jJObCI cpMlqO">
                         <div class="AccountAvatar__Title-iRTHDV kUprSS">Manage Account<span class="AccountAvatar__CogContainer-eskLGc jMFmlD"><a class="AccountAvatar__CogLink-cJlgBb gDhyzX" href="/profile/contact"><span aria-hidden="true" class="fa fa-cog"></span></a></span></div>
-                        <div class="AccountAvatar__AccountName-iYHFiC iffCbE">Arunoday Ray</div>
+                        <div class="AccountAvatar__AccountName-iYHFiC iffCbE">{{currentUser}}</div>
                     </div>
                   </div>
               </div>
@@ -105,11 +104,11 @@
                           </div>
                           <div class="shared__SubmitWrapper-hxHSYN cFTjig">
                               <div class="shared__ButtonContainer-jLPnlz bCtzFR">
-                                <button class="PrimaryButton__ButtonPrimary-exVhhh" id="create-account-indv" [disabled] = "agreement == true" [ngClass]= "agreement == false ? 'jLNNsJ' : 'fRXIAO'">
+                                <button class="PrimaryButton__ButtonPrimary-exVhhh" type="submit" id="create-account-indv" [disabled] = "agreement == true" [ngClass]= "agreement == false ? 'jLNNsJ' : 'fRXIAO'">
                                 Submit
                                 </button>
                                 <a class="shared__StyledLink-GxMhC cJoMFF">
-                                <button class="PrimaryButton__ButtonPrimary-exVhhh hPkfgc"  (click)="cancelInv();">Cancel</button>
+                                <button class="PrimaryButton__ButtonPrimary-exVhhh hPkfgc"  routerLink ="/account">Cancel</button>
                                 </a>
                               </div>
                           </div>
@@ -121,4 +120,3 @@
         </div>
       </div>
   </div>
-</div>

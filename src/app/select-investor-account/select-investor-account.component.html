@@ -10,7 +10,7 @@
                 </div>
              </div>
           </div>
-          <form>
+          <form (submit) = "selectedInvestor($event)">
           <div class="InvestorAccountType__Content-huxUSV iUvvEp">
              <div class="InvestorAccountType__Title-kDGOTi bSVjAq">Select Investor Account Type</div>
              <div class="InvestorAccountType__OptionContainer-cTOVYp kRMRqm">
@@ -57,7 +57,7 @@
              </div>
              <div class="InvestorAccountType__ButtonContainer-hKatlb csoiKj">
                <a class="InvestorAccountType__StyledLink-eOhBGX gnjOPH" >
-                <button class="PrimaryButton__ButtonPrimary-exVhhh" routerLink = "/create-investor-account" [disabled] = "testvalue == true" [ngClass]= "testvalue == false ? 'dkfyQQ' : 'hkmwMx'">Next</button>
+                <button class="PrimaryButton__ButtonPrimary-exVhhh" [disabled] = "testvalue == true" [ngClass]= "testvalue == false ? 'dkfyQQ' : 'hkmwMx'">Next</button>
               </a>
               <a class="InvestorAccountType__StyledLink-eOhBGX gnjOPH" >
                 <button class="PrimaryButton__ButtonPrimary-exVhhh hPkfgc" routerLink = "/account">Cancel</button>

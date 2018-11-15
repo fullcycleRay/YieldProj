@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AppError} from '../shared/appError';
 import * as moment from 'moment';
+import {AccountService} from '../account.service';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-create-investor-account',
@@ -22,10 +24,12 @@ export class CreateInvestorAccountComponent implements OnInit {
   addressError: any;
   dobError: any;
   ssnError: any;
+  restItems: any;
+  currentUser: any;
 
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private accService: AccountService, private user: UserService ) { }
 
   ngOnInit() {
     this.agreement = true;
@@ -34,8 +38,11 @@ export class CreateInvestorAccountComponent implements OnInit {
     this.addressError = '';
     this.dobError = '';
     this.ssnError = '';
+    this.currentUser = this.user.getCurrentUser();
   }
+
   createIndAcc(e) {
+    // onSubmit validations start
     this.legalFirstName = e.target.elements[0].value.toLowerCase();
     if (this.legalFirstName === '') {
       this.firstNameError = AppError.error_0001;
@@ -75,13 +82,17 @@ export class CreateInvestorAccountComponent implements OnInit {
     } else {
       this.ssnError = '';
     }
-    this.certifyCheckbox = e.target.elements[5].value;
+    // onSubmit validations ends
+    // sending data for api call start
+    if (this.ssnError === '' && this.dobError === '' && this.addressError === '' && this.lastNameError === ''
+        && this.firstNameError === '') {
+          this.getRestItems(this.legalFirstName, this.LegalSecondName,
+            this.primaryAdd, this.dateOfBirth, this.SocialSecurityNum);
+    }
+    // sending data for api call ends
 
   }
-  cancelInv = function() {
-    this.router.navigate(['manageaccount']);
-  };
-
+  // enabling submit button
   enableCreateAcc(e) {
     this.checkAgree = e.target.checked;
     if (this.checkAgree) {
@@ -91,35 +102,53 @@ export class CreateInvestorAccountComponent implements OnInit {
     }
 
   }
+  // Reseting  first name error
   validateFName (e) {
     this.legalFirstName = e;
     if ( this.legalFirstName !== '') {
       this.firstNameError = '';
     }
   }
+  // Reseting  last name error
   validateLName (e) {
     this.LegalSecondName = e;
     if ( this.LegalSecondName !== '') {
       this.lastNameError = '';
     }
   }
+  // Reseting address error
   validateAddr (e) {
     this.primaryAdd = e;
     if ( this.primaryAdd !== '') {
       this.addressError = '';
     }
   }
+  // Reseting dob error
   validateDob (e) {
     this.dateOfBirth = e;
     if ( this.dateOfBirth !== '') {
       this.dobError = '';
     }
   }
+  // Reseting ssn error
   validateSsn (e) {
     this.SocialSecurityNum = e;
     if ( this.SocialSecurityNum !== '') {
       this.ssnError = '';
     }
   }
-
+  getRestItems(legalFirstName, LegalSecondName, primaryAdd, dateOfBirth, SocialSecurityNum): void {
+    this.accService.createAcc(legalFirstName, LegalSecondName, primaryAdd, dateOfBirth, SocialSecurityNum)
+      .then(
+        resp => {
+          this.restItems = resp;
+          if (this.restItems.success === true) {
+            alert ('Account sucessfully added');
+            this.router.navigate(['offerings']);
+          } else if (this.restItems.success === false) {
+            alert ('Something went wrong, Account not Created');
+          }
+        }
+      );
+}
 }

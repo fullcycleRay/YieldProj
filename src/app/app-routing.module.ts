@@ -3,16 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {SignupComponent} from './signup/signup.component';
-import {LoginComponent}from './login/login.component';
+import {LoginComponent} from './login/login.component';
 import { OfferingsComponent } from './offerings/offerings.component';
 import { WhyYieldstreetComponent } from './why-yieldstreet/why-yieldstreet.component';
 import { InvestmentPhilosophyComponent } from './investment-philosophy/investment-philosophy.component';
-import {Step2Component} from'./step2/step2.component';
+import {Step2Component} from './step2/step2.component';
 import {NotfoundComponent} from './notfound/notfound.component';
 import {ForgetpasswordComponent} from './forgetpassword/forgetpassword.component';
 import {ViewportfolioComponent} from './viewportfolio/viewportfolio.component';
 import {CreateInvestorAccountComponent} from './create-investor-account/create-investor-account.component';
-import {SelectInvestorAccountComponent} from'./select-investor-account/select-investor-account.component';
+import {SelectInvestorAccountComponent} from './select-investor-account/select-investor-account.component';
 import {OfferingDetailsComponent} from './offering-details/offering-details.component';
 import {OriginatorComponent} from './originator/originator.component';
 import {CompleteInvestmentComponent} from './complete-investment/complete-investment.component';
@@ -28,15 +28,15 @@ import {SignupStep3Component} from './signup-step3/signup-step3.component';
 import {SignupStep4Component} from './signup-step4/signup-step4.component'
 const routes: Routes = [
 {
-  path:'',
+  path: '',
   component: HomeComponent
 },
 {
-  path:'about',
+  path: 'about',
   component: AboutComponent
 },
 {
-  path:'viewportfolio',
+  path: 'viewportfolio',
   component: ViewportfolioComponent
 },
 {
@@ -76,11 +76,11 @@ const routes: Routes = [
   component: ManualAccountStep3Component
 },
 {
-  path:'signup',
+  path: 'signup',
   component: SignupComponent
 },
 {
-  path:'step2',
+  path: 'step2',
   component: Step2Component
 },
 {
@@ -92,31 +92,31 @@ const routes: Routes = [
   component: SignupStep4Component
 },
 {
-  path:'login',
+  path: 'login',
   component: LoginComponent
 },
 {
-  path:'offerings',
+  path: 'offerings',
   component: OfferingsComponent
 },
 {
-  path:'why-yieldstreet',
+  path: 'why-yieldstreet',
   component: WhyYieldstreetComponent
 },
 {
-  path:'investment-philosophy',
+  path: 'investment-philosophy',
   component: InvestmentPhilosophyComponent
 },
 {
-  path:'createaccount',
+  path: 'createaccount',
   component: CreateInvestorAccountComponent
 },
 {
-  path:'selectinvestor',
+  path: 'selectinvestor',
   component: SelectInvestorAccountComponent
 },
 {
-  path:'forgetpassword',
+  path: 'forgetpassword',
   component: ForgetpasswordComponent
 },
 {
@@ -136,7 +136,7 @@ const routes: Routes = [
   component: CompleteInvestmentComponent
 },
 {
-  path:'**',
+  path: '**',
   component: NotfoundComponent
 }
 ];

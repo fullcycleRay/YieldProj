@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-manage-account-partial',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-account-partial.component.scss']
 })
 export class ManageAccountPartialComponent implements OnInit {
+  currentUser: any;
 
-  constructor() { }
+  constructor( private user: UserService) { }
 
   ngOnInit() {
+    this.currentUser = this.user.getCurrentUser();
   }
 
 }

@@ -3,7 +3,6 @@ import { BehaviorSubject, Observable, Observer } from 'rxjs';
 @Injectable()
 export class UserService {
   isLoggedIn = new BehaviorSubject<boolean>(false);
-  // isLoggedIn: any;
 
   constructor() {
   }
@@ -18,15 +17,14 @@ export class UserService {
 
   checkLogin(): Observable<any> {
     let currentUser = localStorage.getItem('User');
-    if (currentUser)
+    if (currentUser) {
       this.isLoggedIn.next(true);
-    else
+    } else {
       this.isLoggedIn.next(false);
-      
-    return this.isLoggedIn;      
+    }
+    return this.isLoggedIn;
   }
-  // getLoggedinUser(){
-
-  // }
-
+  getCurrentUser () {
+    return localStorage.getItem('name');
+  }
 }
