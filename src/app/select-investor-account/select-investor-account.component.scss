@@ -471,9 +471,6 @@
     }
 }
 /* sc-component-id: MultipleAssetClasses__DesktopVersion-bsHjGY */
- .bGOCwH{
-    display:none;
-}
 @media (min-width:768px){
     .bGOCwH{
         display:unset;
@@ -1579,15 +1576,12 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 
 
 /* sc-component-id: RadioInput__Input-csTqyz */
-
-.bmBchR{display:none;}.bmBchR + .RadioInput__Circle-eUFKVO:before{background:white;border:1px solid rgb(171,180,186);border-radius:100%;content:'';display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:22px;float:left;height:14px;line-height:10px;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-top:4px;width:14px;}
-.bmBchR:checked + .RadioInput__Circle-eUFKVO:before{border:1px solid transparent;color:rgb(43,184,192);content:'◉';}
 /* sc-component-id: RadioInput__OptionTitle-hFcBMM */
 
 .dflEyP{color:rgb(53,56,58);float:left;font-size:14px;line-height:24px;padding-left:6px;}
 /* sc-component-id: RadioInput__OptionDescription-crpiEF */
 
-.PybdY{clear:left;color:rgb(118,129,135);font-size:12px;line-height:18px;padding-left:25px;}
+.PybdY{clear:left;color:rgb(118,129,135);font-size:12px;line-height:18px;padding-left:40px;}
 /* sc-component-id: InvestorAccountType__Wrapper-hpMNEt */
 
 .hJIBlq{background:rgb(246,246,246);width:100%;}
@@ -1697,7 +1691,6 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 
 /* sc-component-id: RadioInput__OptionDescription-crpiEF */
 
-.PybdY{clear:left;color:rgb(118,129,135);font-size:12px;line-height:18px;padding-left:25px;}
 /* sc-component-id: InvestorAccountType__Wrapper-hpMNEt */
 
 .hJIBlq{background:rgb(246,246,246);width:100%;}
@@ -1826,7 +1819,6 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 /* sc-component-id: RadioInput__OptionTitle-hFcBMM */
 /* sc-component-id: RadioInput__OptionDescription-crpiEF */
 
-.PybdY{clear:left;color:rgb(118,129,135);font-size:12px;line-height:18px;padding-left:25px;}
 /* sc-component-id: InvestorAccountType__Wrapper-hpMNEt */
 
 .hJIBlq{background:rgb(246,246,246);width:100%;}
@@ -1851,4 +1843,40 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
   color: rgb(43,184,192);
     content: '◉';
     background:white;border:1px solid rgb(171,180,186);border-radius:100%;content:'';display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:22px;float:left;height:14px;line-height:10px;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-top:4px;width:14px;
+}
+
+
+.bmBchR:checked + .RadioInput__Circle-eUFKVO::before {
+  border: 1px solid transparent;
+  color: rgb(43,184,192);
+  content: '◉';
+}
+.bmBchR{
+  display: none;
+}
+.bmBchR + .RadioInput__Circle-eUFKVO::before {
+  background: white;
+  border: 1px solid rgb(171,180,186);
+  border-radius: 100%;
+  content: '';
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 22px;
+  float: left;
+  height: 14px;
+  line-height: 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 4px;
+  width: 14px;
+}
+.customRadioLabel {
+  display: inline-flex !important;
+}
+.radioTitle{
+  padding-left: 6px;
 }
