@@ -50,22 +50,13 @@
               <div class="TransferFunds__Header-kdtEcZ lgSQGw">
                  <div class="TransferFunds__Title-laRkDW kaIhwm">Manage Funds</div>
                  <div class="Dropdown__Container-cUUygg dlinaM" id="transfer-funds-investor">
-                    <div >
-                        <!-- <button class="dropdown-toggle Dropdown__ActiveOption-eGGXhI eguRTf" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Dropdown button
-                        </button> -->
-                        <select class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton">
-                          <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2 ">
-                            <span class="jCuLJb">Action</span>
+                    <div>
+                        <select class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton" >
+                          <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData">
+                            <span class="jCuLJb">{{accData.first_name}} {{accData.title}}</span>
                           </option>
-                          <option class="dropdown-item jCuLJb aawYR">Another action</option>
-                          <option class="dropdown-item jCuLJb aawYR">Something else here</option>
                         </select>
                       </div>
-                    <!-- <div class="false Dropdown__ActiveContainer-ftVMPU bkTGAH" data-click-id="dropdown" id="active-container">
-                       <div class="Dropdown__ActiveOption-eGGXhI eguRTf" data-click-id="dropdown" id="active-option">Tushar Dhingra</div>
-                       <span id="dropdown-arrow" data-click-id="dropdown" theme="secondary" aria-hidden="true" class="fa fa-angle-down Dropdown__DropdownIcon-dIxNDU ikGzXA"></span>
-                    </div> -->
                  </div>
               </div>
               <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo">

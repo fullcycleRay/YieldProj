@@ -17,6 +17,7 @@ export class TransferFundsComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.user.getCurrentUser();
+    this.getRestItems();
   }
   getRestItems(): void {
     this.accService.getAccList()

@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "fontyieldstreet";
-  src:url("../fonts/yieldstreet/fontyieldstreet.eot");
+  /*src:url("../fonts/yieldstreet/fontyieldstreet.eot");
   src:url("../fonts/yieldstreet/fontyieldstreet.eot?#iefix") format("embedded-opentype"),
     url("../fonts/yieldstreet/fontyieldstreet.woff") format("woff"),
     url("../fonts/yieldstreet/fontyieldstreet.woff2") format("woff2"),
     url("../fonts/yieldstreet/fontyieldstreet.ttf") format("truetype"),
-    url("../fonts/yieldstreet/fontyieldstreet.svg#fontyieldstreet") format("svg");
+    url("../fonts/yieldstreet/fontyieldstreet.svg#fontyieldstreet") format("svg");*/
   font-weight: normal;
   font-style: normal;
 
