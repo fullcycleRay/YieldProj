@@ -56,27 +56,31 @@ export class OfferingsComponent implements OnInit {
           console.log(this.offeringResp, this.dateNow.getTime());
           this.offeringDataExc();
         }
-      )
+      );
   }
 
   offeringDataExc(): void {
     if (this.offeringResp) {
-      for (var i = 0; i < this.offeringResp.services.open.length; i++) {
+      for (let i = 0; i < this.offeringResp.services.open.length; i++) {
         this.openOfferings[i] = this.offeringResp.services.open[i];
       }
-      for (var j = 0; j < this.offeringResp.services.past.length; j++) {
+      for (let j = 0; j < this.offeringResp.services.past.length; j++) {
         this.pastOfferings[j] = this.offeringResp.services.past[j];
       }
-      for (var z = 0; z < this.offeringResp.services.upcoming.length; z++) {
-        this.upcomingOfferings[z] = this.offeringResp.services.upcoming[z]
+      for (let z = 0; z < this.offeringResp.services.upcoming.length; z++) {
+        this.upcomingOfferings[z] = this.offeringResp.services.upcoming[z];
       }
     }
-    if(!(this.openOfferings.length))
+    if (!(this.openOfferings.length)) {
       this.openOfferings.length = 0;
-    if(!(this.pastOfferings.length))
+    }
+    if (!(this.pastOfferings.length)) {
       this.pastOfferings.length = 0;
-    if(!(this.upcomingOfferings.length))
-      this.upcomingOfferings.length =0;
+    }
+    if (!(this.upcomingOfferings.length)) {
+      this.upcomingOfferings.length = 0;
+    }
+
   }
 
 }

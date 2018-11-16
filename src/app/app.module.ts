@@ -22,7 +22,7 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 import { CreateInvestorAccountComponent } from './create-investor-account/create-investor-account.component';
 import { SelectInvestorAccountComponent } from './select-investor-account/select-investor-account.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {AuthServiceService} from'./auth-service.service';
+import {AuthServiceService} from './auth-service.service';
 import { OfferingDetailsComponent } from './offering-details/offering-details.component';
 import {JwtInterceptor} from './helper/jwt.interceptor';
 import { OriginatorComponent } from './originator/originator.component';

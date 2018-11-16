@@ -25,7 +25,8 @@ import {AddAccountManuallyComponent} from './add-account-manually/add-account-ma
 import {ManualAccountStep2Component} from './manual-account-step2/manual-account-step2.component';
 import {ManualAccountStep3Component} from './manual-account-step3/manual-account-step3.component';
 import {SignupStep3Component} from './signup-step3/signup-step3.component';
-import {SignupStep4Component} from './signup-step4/signup-step4.component'
+import {SignupStep4Component} from './signup-step4/signup-step4.component';
+import {UserSessionGuard} from './user-session.guard';
 const routes: Routes = [
 {
   path: '',
@@ -37,7 +38,8 @@ const routes: Routes = [
 },
 {
   path: 'viewportfolio',
-  component: ViewportfolioComponent
+  component: ViewportfolioComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'investments',
@@ -45,35 +47,43 @@ const routes: Routes = [
 },
 {
   path: 'wallet',
-  component: WalletComponent
+  component: WalletComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'funds',
-  component: TransferFundsComponent
+  component: TransferFundsComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'transactions',
-  component: TransactionComponent
+  component: TransactionComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'account',
-  component: AccountComponent
+  component: AccountComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'create-investor-account',
-  component: CreateInvestorAccountComponent
+  component: CreateInvestorAccountComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'new-account',
-  component: AddAccountManuallyComponent
+  component: AddAccountManuallyComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'new-account-step-2',
-  component: ManualAccountStep2Component
+  component: ManualAccountStep2Component,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'new-account-step-3',
-  component: ManualAccountStep3Component
+  component: ManualAccountStep3Component,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'signup',
@@ -109,11 +119,13 @@ const routes: Routes = [
 },
 {
   path: 'createaccount',
-  component: CreateInvestorAccountComponent
+  component: CreateInvestorAccountComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'selectinvestor',
-  component: SelectInvestorAccountComponent
+  component: SelectInvestorAccountComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'forgetpassword',
@@ -133,7 +145,8 @@ const routes: Routes = [
 },
 {
   path: 'complete-investment/:id/:minAmt',
-  component: CompleteInvestmentComponent
+  component: CompleteInvestmentComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: '**',
