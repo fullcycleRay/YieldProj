@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.scss','./reactTooltip.scss','../viewportfolio/viewportfolio.component.scss' ,'../app.component.scss','../font-awesome/css/font-awesome.min.css']
+  styleUrls: ['./transaction.component.scss', './reactTooltip.scss',
+   '../viewportfolio/viewportfolio.component.scss', '../app.component.scss']
 })
 export class TransactionComponent implements OnInit {
   isClicked = false;

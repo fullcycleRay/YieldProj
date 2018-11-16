@@ -1,33 +1,33 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {AboutComponent} from './about/about.component';
-import {SignupComponent} from './signup/signup.component';
+import {HomeComponent} from './static-ui/home/home.component';
+import {AboutComponent} from './static-ui/about/about.component';
+import {SignupComponent} from './userSignup/signup/signup.component';
 import {LoginComponent} from './login/login.component';
-import { OfferingsComponent } from './offerings/offerings.component';
-import { WhyYieldstreetComponent } from './why-yieldstreet/why-yieldstreet.component';
-import { InvestmentPhilosophyComponent } from './investment-philosophy/investment-philosophy.component';
-import {Step2Component} from './step2/step2.component';
-import {NotfoundComponent} from './notfound/notfound.component';
+import { OfferingsComponent } from './offering/offerings/offerings.component';
+import { WhyYieldstreetComponent } from './static-ui/why-yieldstreet/why-yieldstreet.component';
+import { InvestmentPhilosophyComponent } from './static-ui/investment-philosophy/investment-philosophy.component';
+import {SignupStep2Component} from './userSignup/signup-step2/signup-step2.component';
+import {NotfoundComponent} from './static-ui/notfound/notfound.component';
 import {ForgetpasswordComponent} from './forgetpassword/forgetpassword.component';
 import {ViewportfolioComponent} from './viewportfolio/viewportfolio.component';
-import {CreateInvestorAccountComponent} from './create-investor-account/create-investor-account.component';
-import {SelectInvestorAccountComponent} from './select-investor-account/select-investor-account.component';
-import {OfferingDetailsComponent} from './offering-details/offering-details.component';
+import {CreateInvestorAccountComponent} from './manage-account/create-investor-account/create-investor-account.component';
+import {SelectInvestorAccountComponent} from './manage-account/select-investor-account/select-investor-account.component';
+import {OfferingDetailsComponent} from './offering/offering-details/offering-details.component';
 import {OriginatorComponent} from './originator/originator.component';
-import {CompleteInvestmentComponent} from './complete-investment/complete-investment.component';
-import {InvestmentComponent} from './investment/investment.component';
+import {CompleteInvestmentComponent} from './transactions/complete-investment/complete-investment.component';
+import {InvestmentComponent} from './static-ui/investment/investment.component';
 import {WalletComponent} from './wallet/wallet.component';
-import {TransferFundsComponent} from './transfer-funds/transfer-funds.component';
+import {TransferFundsComponent} from './bank-account/transfer-funds/transfer-funds.component';
 import {TransactionComponent} from './transaction/transaction.component';
-import {AccountComponent} from './account/account.component';
-import {AddAccountManuallyComponent} from './add-account-manually/add-account-manually.component';
-import {ManualAccountStep2Component} from './manual-account-step2/manual-account-step2.component';
-import {ManualAccountStep3Component} from './manual-account-step3/manual-account-step3.component';
-import {SignupStep3Component} from './signup-step3/signup-step3.component';
-import {SignupStep4Component} from './signup-step4/signup-step4.component';
-import {UserSessionGuard} from './user-session.guard';
-import {ConfirmInvestmentComponent} from './confirm-investment/confirm-investment.component';
+import {AccountComponent} from './manage-account/manage-account-step1/account.component';
+import {AddAccountManuallyComponent} from './bank-account/add-account-manually/add-account-manually.component';
+import {ManualAccountStep2Component} from './manage-account/manual-account-step2/manual-account-step2.component';
+import {ManualAccountStep3Component} from './manage-account/manual-account-step3/manual-account-step3.component';
+import {SignupStep3Component} from './userSignup/signup-step3/signup-step3.component';
+import {SignupStep4Component} from './userSignup/signup-step4/signup-step4.component';
+import {UserSessionGuard} from './shared/user-session-guard/user-session.guard';
+import {ConfirmInvestmentComponent} from './transactions/confirm-investment/confirm-investment.component';
 const routes: Routes = [
 {
   path: '',
@@ -36,6 +36,12 @@ const routes: Routes = [
 {
   path: 'about',
   component: AboutComponent
+},
+
+{
+  path: 'account',
+  component: AccountComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'viewportfolio',
@@ -62,11 +68,6 @@ const routes: Routes = [
   canActivate: [UserSessionGuard]
 },
 {
-  path: 'account',
-  component: AccountComponent,
-  canActivate: [UserSessionGuard]
-},
-{
   path: 'create-investor-account',
   component: CreateInvestorAccountComponent,
   canActivate: [UserSessionGuard]
@@ -88,18 +89,18 @@ const routes: Routes = [
 },
 {
   path: 'signup',
-  component: SignupComponent
+  component: SignupComponent,
 },
 {
-  path: 'step2',
-  component: Step2Component
+  path: 'signup-step2',
+  component: SignupStep2Component
 },
 {
-  path: 'step3',
+  path: 'signup-step3',
   component: SignupStep3Component
 },
 {
-  path: 'step4',
+  path: 'signup-step4',
   component: SignupStep4Component
 },
 {

@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
-import { AuthServiceService } from'../auth-service.service';
+import { UserService } from '../services/user/user.service';
+import { AuthServiceService } from '../services/auth/auth-service.service';
 
 fdescribe('LoginComponent', () => {
   let component: LoginComponent;
@@ -31,6 +31,6 @@ fdescribe('LoginComponent', () => {
   });
   it('should close', () => {
     //let spyObj = spyOn(userService, 'setUserLoggedIn').and.callThrough();
-    
+
   });
 });

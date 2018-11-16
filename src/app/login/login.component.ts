@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
-import { AuthServiceService } from '../auth-service.service';
+import { UserService } from '../services/user/user.service';
+import { AuthServiceService } from '../services/auth/auth-service.service';
+import {AppError} from '../shared/appError';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss', '../app.component.scss', '../font-awesome/css/font-awesome.min.css']
+  styleUrls: ['./login.component.scss', '../app.component.scss']
 })
 export class LoginComponent implements OnInit {
   userIdError = false;
@@ -69,34 +70,34 @@ export class LoginComponent implements OnInit {
   }
   emailPattern(email) {
     // tslint:disable-next-line:max-line-length
-    let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
   }
 
   // validating emailId
   validateEmail(f) {
-    let eMail = f.toLowerCase();
+    const eMail = f.toLowerCase();
     this.userIdError = false;
     this.userDisError = '';
     this.emailError = false;
     if (eMail === '') {
       this.userIdError = true;
-      this.userDisError = 'This field is required';
+      this.userDisError = AppError.error_0001;
       this.emailError = true;
     } else if (!(this.emailPattern(eMail)) && eMail.length >= 4) {
       this.userIdError = true;
-      this.userDisError = 'Please enter a valid email';
+      this.userDisError = AppError.error_0005;
     } else if (eMail.length < 4) {
       this.userIdError = true;
-      this.userDisError = 'This field has a minimum length of 4 characters.';
+      this.userDisError = AppError.error_0002;
     }
   }
   // Validating password
   validatePaswd(g) {
-    let pWord = g;
+    const pWord = g;
     if (pWord === '') {
       this.paswdError = true;
-      this.passDisError = 'This field is required';
+      this.passDisError = AppError.error_0001;
     } else {
       this.paswdError = false;
     }
@@ -106,8 +107,8 @@ export class LoginComponent implements OnInit {
     this.userIdOrPassEntered = false;
     this.userIdError = false;
     this.emailError = false;
-    let eMail = e.target.elements[0].value.toLowerCase();
-    let pWord = e.target.elements[1].value;
+    const eMail = e.target.elements[0].value.toLowerCase();
+    const pWord = e.target.elements[1].value;
     this.getRestItems(eMail, pWord);
   }
 }
