@@ -27,6 +27,7 @@ import {ManualAccountStep3Component} from './manual-account-step3/manual-account
 import {SignupStep3Component} from './signup-step3/signup-step3.component';
 import {SignupStep4Component} from './signup-step4/signup-step4.component';
 import {UserSessionGuard} from './user-session.guard';
+import {ConfirmInvestmentComponent} from './confirm-investment/confirm-investment.component';
 const routes: Routes = [
 {
   path: '',
@@ -144,9 +145,13 @@ const routes: Routes = [
   component: OfferingDetailsComponent
 },
 {
-  path: 'complete-investment/:id/:minAmt',
+  path: 'complete-investment/:id',
   component: CompleteInvestmentComponent,
   canActivate: [UserSessionGuard]
+},
+{
+  path: 'confirm-investment',
+  component: ConfirmInvestmentComponent
 },
 {
   path: '**',

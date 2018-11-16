@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestmentOfferingService } from '../investment-offering.service';
-import { ActivatedRoute, Router } from "@angular/router";
-import { UserService } from "../user.service"
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../user.service';
+import {CompleteInvestmentService} from '../complete-investment.service';
+
 
 
 @Component({
@@ -18,7 +20,7 @@ export class OfferingDetailsComponent implements OnInit {
   security: any;
   uid: any;
   isUserLoggedIn: any;
-  investOrLogin = "";
+  investOrLogin = '';
   investmentError: any;
   // originator: any;
   investmentPerRemaining: any;
@@ -34,7 +36,8 @@ export class OfferingDetailsComponent implements OnInit {
   originatorOwnerName: any;
   originatorHeadline: any;
 
-  constructor(private InvestmentOffering: InvestmentOfferingService, private route: ActivatedRoute, private user: UserService, private router: Router) {
+  constructor(private InvestmentOffering: InvestmentOfferingService, private route: ActivatedRoute,
+              private user: UserService, private router: Router, private compInvest: CompleteInvestmentService) {
     this.route.params
       .subscribe(
         params => {
@@ -42,7 +45,7 @@ export class OfferingDetailsComponent implements OnInit {
         });
   }
   ngOnInit() {
-    this.investOrLogin = "";
+    this.investOrLogin = '';
     this.getOffering();
     this.user.checkLogin().subscribe(
       resp => {
@@ -52,6 +55,7 @@ export class OfferingDetailsComponent implements OnInit {
 
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngAfterContentChecked() {
     this.user.checkLogin().subscribe(
       resp => {
@@ -68,7 +72,7 @@ export class OfferingDetailsComponent implements OnInit {
           this.offering = resp;
           this.extractOfferingData();
         }
-      )
+      );
 
   }
 
@@ -83,19 +87,17 @@ export class OfferingDetailsComponent implements OnInit {
     this.offeringMinAmt = this.offering.service.min_investment;
     this.originatorOwnerName = this.offering.service.originator.display_name;
     this.originatorHeadline = this.offering.service.originator.headline;
-    //Calculating remaing percentage
-    this.investmentPerRemaining = ((this.offering.service.required_capital - this.offering.service.invested_amount) * 100) / this.offering.service.required_capital
-    for (var i = 0; i < this.offering.service.details.length; i++) {
-      if (this.offering.service.details[i].field_type == "description") {
+    // Calculating remaing percentage
+    this.investmentPerRemaining = (((this.offering.service.required_capital - this.offering.service.invested_amount) * 100)
+                                    / this.offering.service.required_capital);
+    for (let i = 0; i < this.offering.service.details.length; i++) {
+      if (this.offering.service.details[i].field_type === 'description') {
         this.summary = this.offering.service.details[i].description;
-      }
-      else if (this.offering.service.details[i].field_type == "opportunity") {
-        this.whyOppurtunity = this.offering.service.details[i].children
-      }
-      else if (this.offering.service.details[i].field_type == "risk") {
-        this.risk = this.offering.service.details[i].children
-      }
-      else if (this.offering.service.details[i].field_type == "security") {
+      } else if (this.offering.service.details[i].field_type === 'opportunity') {
+        this.whyOppurtunity = this.offering.service.details[i].children;
+      } else if (this.offering.service.details[i].field_type === 'risk') {
+        this.risk = this.offering.service.details[i].children;
+      } else if (this.offering.service.details[i].field_type === 'security') {
         this.security = this.offering.service.details[i].description;
       }
     }
@@ -104,25 +106,24 @@ export class OfferingDetailsComponent implements OnInit {
 
   displayLogin() {
     if (this.isUserLoggedIn) {
-      this.investOrLogin = "Invest";
-    }
-    else {
-      this.investOrLogin = "Log in";
+      this.investOrLogin = 'Invest';
+    } else {
+      this.investOrLogin = 'Log in';
     }
   }
   investInOffering() {
-    this.checkForMinAmt()
-    if(!this.minAmtIndicator)
-    {
-      this.router.navigate(['complete-investment/' + this.uid.id + '/' + this.investAmt] );
+    this.checkForMinAmt();
+    if (!this.minAmtIndicator) {
+      localStorage.setItem('serviceName', this.serviceName);
+      localStorage.setItem('InvestmentAmt', this.investAmt);
+      this.compInvest.setInvestmentAmt(this.investAmt);
+      this.router.navigate(['complete-investment/' + this.uid.id] );
     }
   }
-  checkForMinAmt(){
-    if(this.investAmt >= this.offering.service.min_investment)
-    {
+  checkForMinAmt() {
+    if (this.investAmt >= this.offering.service.min_investment) {
       this.minAmtIndicator = false;
-    }
-    else{
+    } else {
       this.minAmtIndicator = true;
     }
   }

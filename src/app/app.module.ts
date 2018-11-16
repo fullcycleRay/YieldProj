@@ -40,6 +40,7 @@ import { ManualAccountStep3Component } from './manual-account-step3/manual-accou
 import { SidebarNavigationComponent } from './shared/sidebar-navigation/sidebar-navigation.component';
 import { SignupStep3Component } from './signup-step3/signup-step3.component';
 import { SignupStep4Component } from './signup-step4/signup-step4.component';
+import { ConfirmInvestmentComponent } from './confirm-investment/confirm-investment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +77,7 @@ import { SignupStep4Component } from './signup-step4/signup-step4.component';
     SidebarNavigationComponent,
     SignupStep3Component,
     SignupStep4Component,
+    ConfirmInvestmentComponent,
   ],
   imports: [
     BrowserModule,

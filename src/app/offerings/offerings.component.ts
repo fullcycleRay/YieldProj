@@ -41,6 +41,7 @@ export class OfferingsComponent implements OnInit {
       }
     );
   }
+  // tslint:disable-next-line:use-life-cycle-interface
   ngAfterContentChecked() {
     this.userService.checkLogin().subscribe(
       resp => {

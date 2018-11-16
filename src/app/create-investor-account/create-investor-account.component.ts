@@ -144,7 +144,7 @@ export class CreateInvestorAccountComponent implements OnInit {
           this.restItems = resp;
           if (this.restItems.success === true) {
             alert ('Account sucessfully added');
-            this.router.navigate(['offerings']);
+            this.router.navigate(['/account']);
           } else if (this.restItems.success === false) {
             alert ('Something went wrong, Account not Created');
           }

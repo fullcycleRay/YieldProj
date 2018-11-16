@@ -2531,3 +2531,31 @@
 		color: rgb(118, 129, 135);
 	}
 }
+.eguRTf {
+	border: none;
+	padding: 0 10px 0 0;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.eguRTf.active-option {
+	color: rgb(30, 156, 159);
+	display: block;
+	font-size: 15px;
+	margin: 0 auto;
+	padding: 0px 12px !important;
+	width: 96%;
+}
+
+.selectWidth {
+		width: 425px !important;
+}
+

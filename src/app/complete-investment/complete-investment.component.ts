@@ -1,44 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router } from '@angular/router';
 import {CompleteInvestmentService} from '../complete-investment.service';
 
 @Component({
   selector: 'app-complete-investment',
   templateUrl: './complete-investment.component.html',
-  styleUrls: ['./complete-investment.component.scss','../app.component.scss', '../font-awesome/css/font-awesome.min.css']
+  styleUrls: ['./complete-investment.component.scss', '../app.component.scss', '../font-awesome/css/font-awesome.min.css']
 })
 export class CompleteInvestmentComponent implements OnInit {
   uid: any;
   investedAmt: any;
   subscptionData: any;
   loggedInUser: any;
-  paramDel =[];
+  paramDel = [];
 
-  constructor(private route: ActivatedRoute, private subscriptionOffer: CompleteInvestmentService, private router: Router) { 
+  constructor(private route: ActivatedRoute, private subscriptionOffer: CompleteInvestmentService, private router: Router) {
     this.route.params
     .subscribe(
       params => {
         this.uid = params.id;
-        this.investedAmt = params.minAmt;
       });
   }
 
   ngOnInit() {
     this.loggedInUser = localStorage.getItem('name');
+    this.investedAmt = this.subscriptionOffer.getInvestmentAmt();
   }
 
-  subscribeOffering(){
-    this.subscriptionOffer.subscribeOffer(this.uid,this.investedAmt)
+  subscribeOffering() {
+    this.subscriptionOffer.subscribeOffer(this.uid, this.investedAmt)
     .then(
-      resp =>{
+      resp => {
         this.subscptionData = resp;
-        if (this.subscptionData.success == true){
-          alert(this.subscptionData.message);
+        if (this.subscptionData.success === true) {
           // this.router.navigate(['offering-details/' + this.uid + '/' +"subscribed"] );
-          this.router.navigate(['/']);
+          this.router.navigate(['/confirm-investment']);
         }
       }
-    )
+    );
   }
 
 

@@ -105,15 +105,15 @@
 										</div>
 										<div class="sc-cmthru jgpYLn">
 											<dl class="sc-gwVKww boAGcr">
-												<dd class="sc-hXRMBi fWxLwC">0%</dd>
+												<dd class="sc-hXRMBi fWxLwC">{{(openOffer.required_capital - (openOffer.invested_amount == null  ? 0 : openOffer.invested_amount))*100/(openOffer.required_capital) | number: 2-2}}%</dd>
 												<dt class="sc-epnACN hCPGag">Remaining</dt>
 											</dl>
-											<p class="sc-iQNlJl ozNsI">$0 of $15M</p>
+											<p class="sc-iQNlJl ozNsI">${{ openOffer.invested_amount == null  ? 0 : openOffer.invested_amount  }} of ${{openOffer.required_capital/1000000}}M</p>
 										</div>
 									</div>
 									<dl class="sc-bsbRJL GxuAS">
 										<dd class="sc-hZSUBg cvfoae">
-											<span>${{offeringMinAmt}}</span>
+											<span>${{openOffer.min_investment}}</span>
 										</dd>
 										<dt class="sc-cMhqgX fFMChW">Minimum Investment</dt>
 									</dl>
@@ -219,15 +219,15 @@
 										</div>
 										<div class="sc-cmthru jgpYLn">
 											<dl class="sc-gwVKww boAGcr">
-												<dd class="sc-hXRMBi fWxLwC">0%</dd>
+												<dd class="sc-hXRMBi fWxLwC">{{(upcomingoffer.required_capital - (upcomingoffer.invested_amount == null  ? 0 : upcomingoffer.invested_amount)) *100/(upcomingoffer.required_capital) | number: 2-2}}%</dd>
 												<dt class="sc-epnACN hCPGag">Remaining</dt>
 											</dl>
-											<p class="sc-iQNlJl ozNsI">$0 of $15M</p>
+											<p class="sc-iQNlJl ozNsI">${{ upcomingoffer.invested_amount == null  ? 0 : upcomingoffer.invested_amount  }} of ${{upcomingoffer.required_capital/1000000}}M</p>
 										</div>
 									</div>
 									<dl class="sc-bsbRJL GxuAS">
 										<dd class="sc-hZSUBg cvfoae">
-											<span>$150,000</span>
+											<span>${{upcomingoffer.min_investment}}</span>
 										</dd>
 										<dt class="sc-cMhqgX fFMChW">Minimum Investment</dt>
 									</dl>
@@ -296,14 +296,14 @@
 								<div class="box">
 									<div class="sc-frDJqD eIqFEl">
 										<div class="off-image">
-											<img class="sc-jqCOkK hWMEzZ" src="https://ysdocs.s3.amazonaws.com/prod/NOTES/Ru1_vw/bHgO2ixtATpjLOW74jq0Pub3.png">
+											<img class="sc-jqCOkK hWMEzZ" src="../../assets/closed_offering_thumbnil.png">
 										</div>
 										<div class="sc-jnlKLf iukwUf">
 											<p class="sc-fBuWsC bJYYcE">Real Estate</p>
 											<a routerLink="/offering-detail/{{pastOffer.uid}}">
 												<h5 class="marketplace-offering-past-title sc-fMiknA ihCrPN">{{pastOffer.name}} </h5>
 												<div class="sc-caSCKo giOrYH">
-													<p class="sc-cHGsZl jHXJRE">$4.5M</p>
+													<p class="sc-cHGsZl jHXJRE">${{pastOffer.required_capital/1000000}}M</p>
 													<p class="sc-bbmXgH dUqMsj"> Offering Size</p>
 												</div>
 											</a>
@@ -315,7 +315,7 @@
 													</p>
 												</div>
 												<div class="sc-gisBJw cBXWj">
-													<p class="sc-cHGsZl eoSNBH">11
+													<p class="sc-cHGsZl eoSNBH">0
 														<span class="sc-gGBfsJ cmPsgo"> of 11 Mo.</span>
 													</p>
 													<p class="sc-dVhcbM dWxTtV">Term Remaining
@@ -331,7 +331,7 @@
 											</svg>
 											<div class="sc-tilXH dlmAbj">
 												<div class="sc-hEsumM keGjzv">
-													<div class="sc-ktHwxA dummVq">$4.5M</div>
+													<div class="sc-ktHwxA dummVq">${{pastOffer.required_capital/1000000}}M</div>
 													<div class="sc-cIShpX fapeeq">Offering Size</div>
 												</div>
 											</div>
@@ -347,7 +347,7 @@
 									</div>
 									<div class="sc-kjoXOD iPMTJj">
 										<button class="marketplace-offering-past-cta sc-TOsTZ ccRNxE">
-											<span class="sc-kgAjT bIfcEY">See Details</span>
+											<span class="sc-kgAjT bIfcEY" routerLink="/offering-detail/{{pastOffer.uid}}">See Details</span>
 										</button>
 									</div>
 								</div>

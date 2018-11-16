@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {AccountService} from '../account.service';
 import {UserService} from '../user.service';
+import {BankAccountService} from '../bank-account.service';
 
 @Component({
   selector: 'app-transfer-funds',
@@ -12,8 +13,11 @@ export class TransferFundsComponent implements OnInit {
   currentUser: any;
   restItems: any;
   accountData: any;
+  selectedValue: any;
+  @ViewChild('accountDropDownList') myDropDownList: ElementRef;
 
-  constructor( private user: UserService, private accService: AccountService) { }
+
+  constructor( private user: UserService, private accService: AccountService, private bankAccServ: BankAccountService) { }
 
   ngOnInit() {
     this.currentUser = this.user.getCurrentUser();
@@ -34,6 +38,10 @@ export class TransferFundsComponent implements OnInit {
   }
   extractData(resp): void {
     this.accountData = resp.data.users_accounts;
+  }
+  onRowClick() {
+    this.selectedValue = this.myDropDownList.nativeElement.value;
+    this.bankAccServ.setAccountId(this.selectedValue);
   }
 
 }
