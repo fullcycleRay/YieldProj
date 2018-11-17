@@ -84,7 +84,6 @@ export class CompleteInvestmentComponent implements OnInit {
         resp => {
           this.bankListResp = resp;
           if (this.bankListResp.success === true) {
-            debugger
             this.bankAccountData = this.bankListResp.data.users_bank_accounts;
           } else if (this.bankListResp.success === false) {
             alert ('Something went wrong, Unable to fetch bank accounts');
