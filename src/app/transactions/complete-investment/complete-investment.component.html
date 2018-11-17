@@ -5,22 +5,22 @@
       <ul class="Header__Properties-gzraN kLsubj">
         <li class="Header__PropertyChevron-MNkjL cdnWoI Header__Property-dxBFLO bvkila">
           <dl class="Header__Definition-kGSFiy clHQSC">
-            <dd class="Header__DefValue-eRxRTF elpHwH"><span>${{investedAmt}}</span></dd>
+            <dd class="Header__DefValue-eRxRTF elpHwH"><span>${{currentOffering.investmentAmt}}</span></dd>
             <dt class="Header__DefLabel-bCtXJW jmwIwo">Your Investment</dt>
           </dl>
         </li>
         <li class="Header__TitleProperty-idUQCp fbZUZm Header__Property-dxBFLO bvkila">
-          <h2 class="Header__Title-dLRSgy jGdlll">Residential Real Estate Property III</h2>
+          <h2 class="Header__Title-dLRSgy jGdlll">{{currentOffering.serviceName}}</h2>
         </li>
         <li class="Header__AdditionalProperty-gOZkQI hWcuBS Header__Property-dxBFLO bvkila">
           <dl class="Header__Definition-kGSFiy clHQSC">
-            <dd class="Header__DefValue-eRxRTF elpHwH">9.5%</dd>
+            <dd class="Header__DefValue-eRxRTF elpHwH">{{currentOffering.annualInterest}}%</dd>
             <dt class="Header__DefLabel-bCtXJW jmwIwo">Annual Interest</dt>
           </dl>
         </li>
         <li class="Header__AdditionalProperty-gOZkQI hWcuBS Header__Property-dxBFLO bvkila">
           <dl class="Header__Definition-kGSFiy clHQSC">
-            <dd class="Header__DefValue-eRxRTF elpHwH">36 months</dd>
+            <dd class="Header__DefValue-eRxRTF elpHwH">{{currentOffering.term}} months</dd>
             <dt class="Header__DefLabel-bCtXJW jmwIwo">Term</dt>
           </dl>
         </li>
@@ -30,22 +30,24 @@
       <div class="MoneyDetails__MoneyInfo-jWdaWg wDoGc" id="moneyDetails">
         <div class="MoneyDetails__MoneySection-fSZDLC YwERf">
           <div class="SectionTitle-eIlcEQ kEsgWj">Investor Account</div>
-          {{loggedInUser}}
+          <div>
+              <select #AccDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
+                <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value={{accData.id}}>
+                  <span class="jCuLJb">{{accData.first_name}} {{accData.title}}</span>
+                </option>
+              </select>
+            </div>
         </div>
         <div class="MoneyDetails__MoneySection-fSZDLC YwERf">
           <div class="SectionTitle-eIlcEQ kEsgWj">Payment Method</div>
           <div class="Dropdown__Container-cUUygg kzaOag">
-            <div class="undefined false Dropdown__ActiveContainer-ftVMPU bvVHeP" data-click-id="dropdown" id="active-container">
-              <div class="Dropdown__ActiveOption-eGGXhI lfzSIw" data-click-id="dropdown" id="active-option">
-                <option class="Dropdown__EmptyOption-gPFISr iMfXyn" data-click-id="dropdown">Choose Payment Method</option>
+              <div>
+                  <select #bankAccDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
+                    <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let bankaccData of bankAccountData" value={{bankaccData.account_number}}>
+                      <span class="jCuLJb">{{bankaccData.account_nick_name}} <br> {{bankaccData.bank_name}}</span>
+                    </option>
+                  </select>
               </div>
-              <span id="dropdown-arrow" data-click-id="dropdown" theme="primary" aria-hidden="true" class="fa fa-angle-down Dropdown__DropdownIcon-dIxNDU dGlzBF"></span>
-            </div>
-            <!-- <div class="Dropdown__DropdownTooltipContainer-AnVHI fWxgfp" id="dropdownOption-container">
-              <div class="null false Dropdown__DropdownOptionContainer-bkJvXC hIIRte" data-click-id="dropdown" id="dropdownOption-specificOption - 0">
-                <div class="Dropdown__DropdownOption-gMJJCM bUyBkE" data-click-id="dropdown">Fake Pay</div>
-              </div>
-            </div> -->
           </div>
         </div>
         <div class="MoneyDetails__MoneySection-fSZDLC YwERf">
@@ -83,10 +85,10 @@
                       alt="Checkmark"></span>
                   <span class="Checkbox__CheckBoxLabelText-jinvLj jwCFol">
                     <div class="Acknowledge__CheckboxLabel-evnzqg kxFJmz">I have read and agree to the terms of the <a
-                        class="Acknowledge__Link-jprdON efflvz" rel="noopener noreferrer" href="/a/api/note/documents/mNHAsw/126236">Subscription
+                        class="Acknowledge__Link-jprdON efflvz" rel="noopener noreferrer" href="">Subscription
                         Agreement</a>, the <a class="Acknowledge__Link-jprdON efflvz" target="_blank" rel="noopener noreferrer"
-                        href="/a/api/note/documents/mNHAsw/126234">Indenture Agreement</a>, and the <a class="Acknowledge__Link-jprdON efflvz"
-                        target="_blank" rel="noopener noreferrer" href="/a/api/note/documents/mNHAsw/126234">Form of
+                        href="">Indenture Agreement</a>, and the <a class="Acknowledge__Link-jprdON efflvz"
+                        target="_blank" rel="noopener noreferrer" href="">Form of
                         Borrower Payment Dependent Note</a> attached thereto.</div>
                   </span>
                 </label>
@@ -101,9 +103,9 @@
                       alt="Checkmark"></span>
                   <span class="Checkbox__CheckBoxLabelText-jinvLj jwCFol">
                     <div class="Acknowledge__CheckboxLabel-evnzqg kxFJmz">I have read and understood the <a class="Acknowledge__Link-jprdON efflvz"
-                        target="_blank" rel="noopener noreferrer" href="/a/api/note/documents/mNHAsw/126235">Private
+                        target="_blank" rel="noopener noreferrer" href="">Private
                         Placement Memorandum</a> and the <a class="Acknowledge__Link-jprdON efflvz" target="_blank" rel="noopener noreferrer"
-                        href="/a/api/note/documents/mNHAsw/126299">Series Note Supplement</a>, including without
+                        href="">Series Note Supplement</a>, including without
                       limitation, all <span class="Acknowledge__BoldText-XIEfB gEfWXG">risk factors</span> and <span
                         class="Acknowledge__BoldText-XIEfB gEfWXG">conflicts of interest</span> set forth therein.</div>
                   </span>
@@ -128,8 +130,11 @@
           </div>
         </div>
       </div>
-      <div class="CompleteInvestmentContainer__ButtonContainer-iWkNqf cVGEzd"><button class="CompleteInvestmentContainer__GrayButton-kyhlsH eEThJU PrimaryButton__ButtonPrimary-exVhhh lfXxYG"
-          id="complete-cancelBtn">Cancel</button>
+      <div class="CompleteInvestmentContainer__ButtonContainer-iWkNqf cVGEzd">
+        <button class="CompleteInvestmentContainer__GrayButton-kyhlsH eEThJU PrimaryButton__ButtonPrimary-exVhhh lfXxYG"
+          id="complete-cancelBtn" routerLink ="/offering-detail/{{currentOffering.uid}}">
+          Cancel
+        </button>
           <button class="CompleteInvestmentContainer__SubmitButton-eRMzxQ cgHsse PrimaryButton__ButtonPrimary-exVhhh jLNNsJ"
           id="complete-submitBtn" (click)="subscribeOffering()">Submit</button>
         </div>

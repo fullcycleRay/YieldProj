@@ -35,6 +35,7 @@ export class OfferingDetailsComponent implements OnInit {
   offeringMinAmt: any;
   originatorOwnerName: any;
   originatorHeadline: any;
+  serviceUid: any;
 
   constructor(private InvestmentOffering: InvestmentOfferingService, private route: ActivatedRoute,
               private user: UserService, private router: Router, private compInvest: CompleteInvestmentService) {
@@ -73,11 +74,11 @@ export class OfferingDetailsComponent implements OnInit {
           this.extractOfferingData();
         }
       );
-
   }
 
   extractOfferingData() {
     // this.originator = this.offering.service.originator;
+    this.serviceUid = this.offering.service.uid;
     this.serviceName = this.offering.service.name;
     this.ownerName = this.offering.service.owner_name;
     this.annualInterest = this.offering.service.annual_interest;
@@ -114,9 +115,14 @@ export class OfferingDetailsComponent implements OnInit {
   investInOffering() {
     this.checkForMinAmt();
     if (!this.minAmtIndicator) {
-      localStorage.setItem('serviceName', this.serviceName);
-      localStorage.setItem('InvestmentAmt', this.investAmt);
-      this.compInvest.setInvestmentAmt(this.investAmt);
+      const offeringArr = {
+        'uid' : this.serviceUid,
+        'serviceName' : this.serviceName,
+        'investmentAmt' : this.investAmt,
+        'annualInterest' : this.annualInterest,
+        'term' : this.offeringTerm
+      };
+      this.compInvest.setInvestmentAmt(offeringArr);
       this.router.navigate(['complete-investment/' + this.uid.id] );
     }
   }

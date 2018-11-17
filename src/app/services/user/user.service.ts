@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Observer } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable()
 export class UserService {
   isLoggedIn = new BehaviorSubject<boolean>(false);

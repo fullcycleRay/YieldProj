@@ -28,6 +28,7 @@ import {SignupStep3Component} from './userSignup/signup-step3/signup-step3.compo
 import {SignupStep4Component} from './userSignup/signup-step4/signup-step4.component';
 import {UserSessionGuard} from './shared/user-session-guard/user-session.guard';
 import {ConfirmInvestmentComponent} from './transactions/confirm-investment/confirm-investment.component';
+import {InvestmentGuard} from './shared/transaction/investment.guard';
 const routes: Routes = [
 {
   path: '',
@@ -148,7 +149,7 @@ const routes: Routes = [
 {
   path: 'complete-investment/:id',
   component: CompleteInvestmentComponent,
-  canActivate: [UserSessionGuard]
+  canActivate: [UserSessionGuard, InvestmentGuard]
 },
 {
   path: 'confirm-investment',

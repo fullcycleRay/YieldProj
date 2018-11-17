@@ -5612,3 +5612,38 @@ dYWwWr {
 .jwCFol.error-required {
     color: rgb(208, 2, 27);
 }
+
+.bkTGAH {
+	color: rgb(53, 56, 58);
+	border: 1px solid rgb(223, 227, 228);
+	padding: 12px;
+	min-width: 250px;
+	display: block;
+	cursor: pointer;
+	height: 40px;
+	background: rgb(255, 255, 255);
+}
+
+@media (min-width:768px) {
+	.bkTGAH {
+		width: auto;
+	}
+}
+
+@media (min-width:992px) {
+	.bkTGAH {
+		width: auto;
+	}
+}
+
+.bkTGAH .active {
+	width: 96%;
+}
+.jCuLJb {
+  color: rgb(53, 56, 58);
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgb(238, 240, 240);
+  padding: 12px;
+}
+

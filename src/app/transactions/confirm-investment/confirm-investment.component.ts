@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user/user.service';
 import {CompleteInvestmentService} from '../../services/complete-investment/complete-investment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirm-investment',
@@ -9,13 +10,19 @@ import {CompleteInvestmentService} from '../../services/complete-investment/comp
 })
 export class ConfirmInvestmentComponent implements OnInit {
   currentUser: any;
-  investedAmt: any;
+  currentOffering = {};
 
-  constructor( private user: UserService, private subscriptionOffer: CompleteInvestmentService) { }
+  constructor( private user: UserService, private subscriptionOffer: CompleteInvestmentService, private router: Router) { }
 
   ngOnInit() {
     this.currentUser = this.user.getCurrentUser();
-    this.investedAmt = this.subscriptionOffer.getInvestmentAmt();
+    this.subscriptionOffer.getInvestmentAmt()
+    .subscribe(
+      resp => {
+        this.currentOffering = resp;
+        localStorage.removeItem('offering');
+        }
+      );
   }
 
 }

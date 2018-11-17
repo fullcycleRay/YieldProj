@@ -83,7 +83,7 @@ import { ConfirmInvestmentComponent } from './transactions/confirm-investment/co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     UserService,
