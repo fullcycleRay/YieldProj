@@ -29,7 +29,6 @@ import {SignupStep4Component} from './userSignup/signup-step4/signup-step4.compo
 import {UserSessionGuard} from './shared/guards/user-session-guard/user-session.guard';
 import {ConfirmInvestmentComponent} from './transactions/confirm-investment/confirm-investment.component';
 import {InvestmentGuard} from './shared/guards/transaction/investment.guard';
-import {BankGuard} from './shared/guards/bank/bank.guard';
 const routes: Routes = [
 {
   path: '',
@@ -62,7 +61,7 @@ const routes: Routes = [
 {
   path: 'funds',
   component: TransferFundsComponent,
-  canActivate: [UserSessionGuard, BankGuard]
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'transactions',
