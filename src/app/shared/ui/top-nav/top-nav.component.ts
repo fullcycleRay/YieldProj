@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user/user.service';
+import { UserService } from '../../../services/user/user.service';
 import { Router } from '@angular/router';
-import { AuthServiceService } from '../../services/auth/auth-service.service';
+import { AuthServiceService } from '../../../services/auth/auth-service.service';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-top-nav',
   templateUrl: './top-nav.component.html',
-  styleUrls: ['../../app.component.scss']
+  styleUrls: ['../../../app.component.scss']
 })
 export class TopNavComponent implements OnInit {
   isUserLoggedIn: Observable <boolean>;
