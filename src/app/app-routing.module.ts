@@ -79,12 +79,12 @@ const routes: Routes = [
   canActivate: [UserSessionGuard]
 },
 {
-  path: 'new-account-step-2',
+  path: 'new-account-step-3',
   component: ManualAccountStep2Component,
   canActivate: [UserSessionGuard]
 },
 {
-  path: 'new-account-step-3',
+  path: 'new-account-step-2',
   component: ManualAccountStep3Component,
   canActivate: [UserSessionGuard]
 },

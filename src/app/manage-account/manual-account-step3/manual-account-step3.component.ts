@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../services/user/user.service';
+import {BankAccountService} from '../../services/bank-account/bank-account.service';
 
 @Component({
   selector: 'app-manual-account-step3',
@@ -9,11 +9,26 @@ import {UserService} from '../../services/user/user.service';
 })
 export class ManualAccountStep3Component implements OnInit {
   currentUser: any;
+  bankAccountData: any;
+  bankListResp: any;
 
-  constructor( private user: UserService) { }
+  constructor( private bankService: BankAccountService) { }
 
   ngOnInit() {
-    this.currentUser = this.user.getCurrentUser();
+    this.getBankAccList();
+  }
+  getBankAccList(): void {
+    this.bankService.getBankAccList()
+      .then(
+        resp => {
+          this.bankListResp = resp;
+          if (this.bankListResp.success === true) {
+            this.bankAccountData = this.bankListResp.data.users_bank_accounts;
+          } else if (this.bankListResp.success === false) {
+            alert ('Something went wrong, Unable to fetch bank accounts');
+          }
+        }
+      );
   }
 
 }

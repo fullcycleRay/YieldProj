@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user/user.service';
 import {BankAccountService} from '../../services/bank-account/bank-account.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-account-manually',
@@ -12,7 +13,7 @@ export class AddAccountManuallyComponent implements OnInit {
   currentUser: any;
   allAccData: any;
   restItems: any;
-  constructor( private user: UserService, private bankService: BankAccountService) { }
+  constructor( private user: UserService, private bankService: BankAccountService, private router: Router) { }
 
   ngOnInit() {
     this.currentUser = this.user.getCurrentUser();
@@ -25,8 +26,9 @@ export class AddAccountManuallyComponent implements OnInit {
         this.restItems = resp;
         if (this.restItems.success === true) {
           alert('Bank Account added');
+          this.router.navigate(['/new-account-step-2']);
         } else if (this.restItems.success === false) {
-          alert ('Something went wrong, Unable to fetch accounts');
+          alert ('Something went wrong, Unable to create bank accounts');
         }
       }
     );

@@ -14,14 +14,14 @@ export class TransferFundsComponent implements OnInit {
   restItems: any;
   accountData: any;
   selectedValue: any;
-  @ViewChild('accountDropDownList') myDropDownList: ElementRef;
+  // @ViewChild('accountDropDownList') myDropDownList: ElementRef;
 
 
   constructor( private user: UserService, private accService: AccountService, private bankAccServ: BankAccountService) { }
 
   ngOnInit() {
     this.currentUser = this.user.getCurrentUser();
-    this.getRestItems();
+    // this.getRestItems();
   }
   getRestItems(): void {
     this.accService.getAccList()
@@ -39,9 +39,10 @@ export class TransferFundsComponent implements OnInit {
   extractData(resp): void {
     this.accountData = resp.data.users_accounts;
   }
-  onRowClick() {
-    this.selectedValue = this.myDropDownList.nativeElement.value;
-    this.bankAccServ.setAccountId(this.selectedValue);
-  }
+
+  // onRowClick() {
+  //   this.selectedValue = this.myDropDownList.nativeElement.value;
+  //   this.bankAccServ.setAccountId(this.selectedValue);
+  // }
 
 }

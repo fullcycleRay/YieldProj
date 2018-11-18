@@ -5,22 +5,22 @@
       <ul class="Header__Properties-gzraN kLsubj">
         <li class="Header__PropertyChevron-MNkjL cdnWoI Header__Property-dxBFLO bvkila">
           <dl class="Header__Definition-kGSFiy clHQSC">
-            <dd class="Header__DefValue-eRxRTF elpHwH"><span>${{currentOffering.investmentAmt}}</span></dd>
+            <dd class="Header__DefValue-eRxRTF elpHwH"><span>${{currentOffering['investmentAmt']}}</span></dd>
             <dt class="Header__DefLabel-bCtXJW jmwIwo">Your Investment</dt>
           </dl>
         </li>
         <li class="Header__TitleProperty-idUQCp fbZUZm Header__Property-dxBFLO bvkila">
-          <h2 class="Header__Title-dLRSgy jGdlll">{{currentOffering.serviceName}}</h2>
+          <h2 class="Header__Title-dLRSgy jGdlll">{{currentOffering['serviceName']}}</h2>
         </li>
         <li class="Header__AdditionalProperty-gOZkQI hWcuBS Header__Property-dxBFLO bvkila">
           <dl class="Header__Definition-kGSFiy clHQSC">
-            <dd class="Header__DefValue-eRxRTF elpHwH">{{currentOffering.annualInterest}}%</dd>
+            <dd class="Header__DefValue-eRxRTF elpHwH">{{currentOffering['annualInterest']}}%</dd>
             <dt class="Header__DefLabel-bCtXJW jmwIwo">Annual Interest</dt>
           </dl>
         </li>
         <li class="Header__AdditionalProperty-gOZkQI hWcuBS Header__Property-dxBFLO bvkila">
           <dl class="Header__Definition-kGSFiy clHQSC">
-            <dd class="Header__DefValue-eRxRTF elpHwH">{{currentOffering.term}} months</dd>
+            <dd class="Header__DefValue-eRxRTF elpHwH">{{currentOffering['term']}} months</dd>
             <dt class="Header__DefLabel-bCtXJW jmwIwo">Term</dt>
           </dl>
         </li>
@@ -44,7 +44,7 @@
               <div>
                   <select #bankAccDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
                     <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let bankaccData of bankAccountData" value={{bankaccData.account_number}}>
-                      <span class="jCuLJb">{{bankaccData.account_nick_name}} <br> {{bankaccData.bank_name}}</span>
+                      <span class="jCuLJb" style = "display: inline-block;"> {{bankaccData.bank_name}}</span>
                     </option>
                   </select>
               </div>
@@ -132,7 +132,7 @@
       </div>
       <div class="CompleteInvestmentContainer__ButtonContainer-iWkNqf cVGEzd">
         <button class="CompleteInvestmentContainer__GrayButton-kyhlsH eEThJU PrimaryButton__ButtonPrimary-exVhhh lfXxYG"
-          id="complete-cancelBtn" routerLink ="/offering-detail/{{currentOffering.uid}}">
+          id="complete-cancelBtn" routerLink ="/offering-detail/{{currentOffering['uid']}}">
           Cancel
         </button>
           <button class="CompleteInvestmentContainer__SubmitButton-eRMzxQ cgHsse PrimaryButton__ButtonPrimary-exVhhh jLNNsJ"

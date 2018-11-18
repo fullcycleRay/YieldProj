@@ -41,6 +41,8 @@ import { SidebarNavigationComponent } from './shared/sidebar-navigation/sidebar-
 import { SignupStep3Component } from './userSignup/signup-step3/signup-step3.component';
 import { SignupStep4Component } from './userSignup/signup-step4/signup-step4.component';
 import { ConfirmInvestmentComponent } from './transactions/confirm-investment/confirm-investment.component';
+import { TransferFundHeaderComponent } from './shared/ui/transfer-fund-header/transfer-fund-header.component';
+import { ManageAccountHeaderComponent } from './shared/ui/manage-account-header/manage-account-header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +80,8 @@ import { ConfirmInvestmentComponent } from './transactions/confirm-investment/co
     SignupStep3Component,
     SignupStep4Component,
     ConfirmInvestmentComponent,
+    TransferFundHeaderComponent,
+    ManageAccountHeaderComponent,
   ],
   imports: [
     BrowserModule,
