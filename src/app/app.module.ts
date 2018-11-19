@@ -44,6 +44,7 @@ import { ConfirmInvestmentComponent } from './transactions/confirm-investment/co
 import { TransferFundHeaderComponent } from './shared/ui/transfer-fund-header/transfer-fund-header.component';
 import { ManageAccountHeaderComponent } from './shared/ui/manage-account-header/manage-account-header.component';
 import { VerifyAccountComponent } from './manage-account/verify-account/verify-account.component';
+import { FileUploadModule } from 'ng2-file-upload';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +91,7 @@ import { VerifyAccountComponent } from './manage-account/verify-account/verify-a
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FileUploadModule
   ],
   providers: [
     UserService,
