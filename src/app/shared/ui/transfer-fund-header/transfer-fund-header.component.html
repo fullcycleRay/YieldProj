@@ -3,8 +3,11 @@
   <div class="Dropdown__Container-cUUygg dlinaM" id="transfer-funds-investor">
      <div>
          <select #accountDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
-           <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value={{accData.id}}>
-             <span class="jCuLJb">{{accData.first_name}} {{accData.title}}</span>
+            <option class="false Dropdown__DropdownOptionContainer-nr8gk9-2" [value] = "1">
+                <span class="jCuLJb">{{currentUser | titlecase}}</span>
+              </option>
+           <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" [value] = "accData.id">
+             <span class="jCuLJb">{{accData.first_name | titlecase}} {{accData.title | titlecase}}</span>
            </option>
          </select>
        </div>

@@ -7,7 +7,7 @@ import {BankAccountService} from '../../services/bank-account/bank-account.servi
   selector: 'app-transfer-funds',
   templateUrl: './transfer-funds.component.html',
   styleUrls: ['./transfer-funds.component.scss', '../../viewportfolio/viewportfolio.component.scss'
-               , '../../app.component.scss']
+               , '../../app.component.scss', '../../manage-account/manual-account-step3/manual-account-step3.component.scss']
 })
 export class TransferFundsComponent implements OnInit {
   currentUser: any;
@@ -46,6 +46,5 @@ export class TransferFundsComponent implements OnInit {
         }
       );
   }
-
 
 }

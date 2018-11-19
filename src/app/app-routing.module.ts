@@ -91,6 +91,7 @@ const routes: Routes = [
 {
   path: 'signup',
   component: SignupComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'signup-step2',
@@ -106,7 +107,8 @@ const routes: Routes = [
 },
 {
   path: 'login',
-  component: LoginComponent
+  component: LoginComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'offerings',

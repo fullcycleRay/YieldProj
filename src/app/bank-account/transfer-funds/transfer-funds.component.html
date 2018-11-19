@@ -5,18 +5,6 @@
         <div class="TransferFunds__Wrapper-iAXsuO kmqWFo">
            <app-manage-account-header></app-manage-account-header>
            <div class="TransferFunds__Content-iakrPW diVxBw">
-              <!-- <div class="TransferFunds__Header-kdtEcZ lgSQGw">
-                 <div class="TransferFunds__Title-laRkDW kaIhwm">Manage Funds</div>
-                 <div class="Dropdown__Container-cUUygg dlinaM" id="transfer-funds-investor">
-                    <div>
-                        <select #accountDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
-                          <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value={{accData.id}}>
-                            <span class="jCuLJb">{{accData.first_name}} {{accData.title}}</span>
-                          </option>
-                        </select>
-                      </div>
-                 </div>
-              </div> -->
               <app-transfer-fund-header></app-transfer-fund-header>
               <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "!bankAccountExist">
                  <div class="TransferFunds__Subtitle-wkHIC hUQEze">External Bank Accounts</div>
@@ -30,58 +18,58 @@
                     </div>
                  </div>
               </div>
-              <div class="ExternalBanks__BankWrapper-hWhCgr kYEAjR" *ngIf ="bankAccountExist">
-                  <div class="ExternalBanks__ExternalBanksWrapper-booIEF jjVZyg" id="transfer-funds-external-banks-list">
-                     <div class="ExternalBanks__HeaderWrapper-kbkqki ekvVIp">
-                        <div class="ExternalBanks__Item-eWsHcE dqRJFI">Account Nickname</div>
-                        <div class="ExternalBanks__Item-eWsHcE dqRJFI">Bank Name</div>
-                        <div class="ExternalBanks__Item-eWsHcE dqRJFI">Account Number</div>
-                        <div class="ExternalBanks__Item-eWsHcE dqRJFI"></div>
-                        <div class="ExternalBanks__Item-eWsHcE dqRJFI"></div>
-                     </div>
-                     <div class="ExternalBanks__BanksRow-kBiVRS coDwtn" *ngFor= "let bankDetails of bankAccountData">
-                        <div class="ExternalBanks__Desktop-dvupgI czxaQn">
-                           <div class="ExternalBanks__BanksWrapper-jYQIes fuaHUE">
-                              <div class="ExternalBanks__Flex-iAohPz hYSgVD">
-                                 <div class="ExternalBanks__Item-eWsHcE deJnZy">{{bankDetails.account_nick_name}}</div>
-                                 <div class="ExternalBanks__Item-eWsHcE deJnZy">{{bankDetails.bank_name}}</div>
-                                 <div class="ExternalBanks__Item-eWsHcE deJnZy">***********{{bankDetails.account_number}}</div>
-                                 <div class="ExternalBanks__Item-eWsHcE fDDRaZ"></div>
-                                 <div class="ExternalBanks__Item-eWsHcE layPgH"><span data-click-id="click-out-0" aria-hidden="true" class="fa fa-edit ExternalBanks__CTAItem-itONUF jclplD"></span><span aria-hidden="true" class="fa fa-trash ExternalBanks__CTAItem-itONUF jclplD"></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="ExternalBanks__Mobile-kYmpuF dgMcWP">
-                           <div class="ExternalBanks__BanksWrapper-jYQIes fuaHUE">
-                              <div class="ExternalBanks__Flex-iAohPz hYSgVD">
-                                 <div class="ExternalBanks__Item-eWsHcE deJnZy">
-                                    <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Account Nickname</div>
-                                    test
-                                 </div>
-                                 <div class="ExternalBanks__Item-eWsHcE layPgH"><span data-click-id="click-out-0" aria-hidden="true" class="fa fa-edit ExternalBanks__CTAItem-itONUF jclplD"></span><span aria-hidden="true" class="fa fa-trash ExternalBanks__CTAItem-itONUF jclplD"></span></div>
-                              </div>
-                              <div class="ExternalBanks__Flex-iAohPz hYSgVD">
-                                 <div class="ExternalBanks__Item-eWsHcE deJnZy">
-                                    <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Bank Name</div>
-                                    ISABELLA BANK
-                                 </div>
-                                 <div class="ExternalBanks__Item-eWsHcE deJnZy">
-                                    <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Account Number</div>
-                                    ***********6667
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="ExternalBanks__LinkContainer-kWsNzB jEmhMz">
-                    <a [routerLink]="['/new-account']" routerLinkActive="router-link-active" >
-                        <p class="ExternalBanks__AddAccount-neWGU kqfSUF" id="transfer-funds-add-bank-account-link">
-                          Add External Bank Account
-                        </p>
-                    </a>
-                  </div>
-               </div>
+              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "bankAccountExist">
+                <div class="TransferFunds__Subtitle-wkHIC hUQEze">External Bank Accounts</div>
+                <!-- <div class="container success Notification__NotificationContainer-iqncWM cPNdGL alertCon" type="success">External Bank Account successfully connected to your YieldStreet Account.<span class="Notification__Close-fJjSLz dhZfLV"></span></div> -->
+                <div class="ExternalBanks__BankWrapper-hWhCgr kYEAjR">
+                   <div class="ExternalBanks__ExternalBanksWrapper-booIEF jjVZyg" id="transfer-funds-external-banks-list">
+                      <div class="ExternalBanks__HeaderWrapper-kbkqki ekvVIp">
+                         <div class="ExternalBanks__Item-eWsHcE dqRJFI">Account Nickname</div>
+                         <div class="ExternalBanks__Item-eWsHcE dqRJFI">Bank Name</div>
+                         <div class="ExternalBanks__Item-eWsHcE dqRJFI">Account Number</div>
+                         <div class="ExternalBanks__Item-eWsHcE dqRJFI"></div>
+                         <div class="ExternalBanks__Item-eWsHcE dqRJFI"></div>
+                      </div>
+                      <div class="ExternalBanks__BanksRow-kBiVRS coDwtn" *ngFor= "let bankDetails of bankAccountData">
+                         <div class="ExternalBanks__Desktop-dvupgI czxaQn">
+                            <div class="ExternalBanks__BanksWrapper-jYQIes fuaHUE">
+                               <div class="ExternalBanks__Flex-iAohPz hYSgVD">
+                                  <div class="ExternalBanks__Item-eWsHcE deJnZy">{{bankDetails.account_nick_name | titlecase}}</div>
+                                  <div class="ExternalBanks__Item-eWsHcE deJnZy">{{bankDetails.bank_name | titlecase}}</div>
+                                  <div class="ExternalBanks__Item-eWsHcE deJnZy">***********{{bankDetails.account_number}}</div>
+                                  <div class="ExternalBanks__Item-eWsHcE fDDRaZ"></div>
+                                  <div class="ExternalBanks__Item-eWsHcE layPgH"><span data-click-id="click-out-0" aria-hidden="true" class="fa fa-edit ExternalBanks__CTAItem-itONUF jclplD"></span><span aria-hidden="true" class="fa fa-trash ExternalBanks__CTAItem-itONUF jclplD"></span></div>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="ExternalBanks__Mobile-kYmpuF dgMcWP" *ngFor= "let bankDetails of bankAccountData">
+                            <div class="ExternalBanks__BanksWrapper-jYQIes fuaHUE">
+                               <div class="ExternalBanks__Flex-iAohPz hYSgVD">
+                                  <div class="ExternalBanks__Item-eWsHcE deJnZy">
+                                     <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Account Nickname</div>
+                                     {{bankDetails.account_nick_name | titlecase}}
+                                  </div>
+                                  <div class="ExternalBanks__Item-eWsHcE layPgH"><span data-click-id="click-out-0" aria-hidden="true" class="fa fa-edit ExternalBanks__CTAItem-itONUF jclplD"></span><span aria-hidden="true" class="fa fa-trash ExternalBanks__CTAItem-itONUF jclplD"></span></div>
+                               </div>
+                               <div class="ExternalBanks__Flex-iAohPz hYSgVD">
+                                  <div class="ExternalBanks__Item-eWsHcE deJnZy">
+                                     <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Bank Name</div>
+                                     {{bankDetails.bank_name | titlecase}}
+                                  </div>
+                                  <div class="ExternalBanks__Item-eWsHcE deJnZy">
+                                     <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Account Number</div>
+                                     ***********{{bankDetails.account_number}}
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="ExternalBanks__LinkContainer-kWsNzB jEmhMz">
+                      <p class="ExternalBanks__AddAccount-neWGU kqfSUF" id="transfer-funds-add-bank-account-link">Add External Bank Account</p>
+                   </div>
+                </div>
+             </div>
            </div>
         </div>
      </div>
