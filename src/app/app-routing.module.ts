@@ -1,4 +1,4 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './static-ui/home/home.component';
 import {AboutComponent} from './static-ui/about/about.component';
@@ -29,6 +29,7 @@ import {SignupStep4Component} from './userSignup/signup-step4/signup-step4.compo
 import {UserSessionGuard} from './shared/guards/user-session-guard/user-session.guard';
 import {ConfirmInvestmentComponent} from './transactions/confirm-investment/confirm-investment.component';
 import {InvestmentGuard} from './shared/guards/transaction/investment.guard';
+import {VerifyAccountComponent} from './manage-account/verify-account/verify-account.component';
 const routes: Routes = [
 {
   path: '',
@@ -48,6 +49,10 @@ const routes: Routes = [
   path: 'viewportfolio',
   component: ViewportfolioComponent,
   canActivate: [UserSessionGuard]
+},
+{
+  path: 'upload-investor-document',
+  component: VerifyAccountComponent
 },
 {
   path: 'investments',

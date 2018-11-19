@@ -43,6 +43,7 @@ import { SignupStep4Component } from './userSignup/signup-step4/signup-step4.com
 import { ConfirmInvestmentComponent } from './transactions/confirm-investment/confirm-investment.component';
 import { TransferFundHeaderComponent } from './shared/ui/transfer-fund-header/transfer-fund-header.component';
 import { ManageAccountHeaderComponent } from './shared/ui/manage-account-header/manage-account-header.component';
+import { VerifyAccountComponent } from './manage-account/verify-account/verify-account.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +83,7 @@ import { ManageAccountHeaderComponent } from './shared/ui/manage-account-header/
     ConfirmInvestmentComponent,
     TransferFundHeaderComponent,
     ManageAccountHeaderComponent,
+    VerifyAccountComponent,
   ],
   imports: [
     BrowserModule,

@@ -73,7 +73,11 @@
                           </span>
                        </div>
                     </div>
-                    <div class="InvestorAccountsItem__Item-qmFTp fUzbkT"><a class="InvestorAccountsItem__StyledLinkSetUp-hOxxYE fadEfH" href="/settings/upload-investor-documents/65330">Upload Identity Documents</a></div>
+                    <div class="InvestorAccountsItem__Item-qmFTp fUzbkT">
+                      <a class="InvestorAccountsItem__StyledLinkSetUp-hOxxYE fadEfH" [routerLink]="['/upload-investor-document']" routerLinkActive="router-link-active" >
+                        Upload Identity Documents
+                      </a>
+                    </div>
                  </div>
                  <!-- <div class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account" data-toggle="modal" data-target="#myModal">+ Add New Account</div> -->
                  <div class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account" data-toggle="modal" data-target="#myModal" (click)="showModal()" data-backdrop="false" >+ Add New Account</div>
