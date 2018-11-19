@@ -4,7 +4,7 @@ import {UserService} from '../../../services/user/user.service';
 @Component({
   selector: 'app-manage-account-header',
   templateUrl: './manage-account-header.component.html',
-  styleUrls: ['./manage-account-header.component.scss','../../../bank-account/transfer-funds/transfer-funds.component.scss']
+  styleUrls: ['./manage-account-header.component.scss', '../../../bank-account/transfer-funds/transfer-funds.component.scss']
 })
 export class ManageAccountHeaderComponent implements OnInit {
   currentUser: any;

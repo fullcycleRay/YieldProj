@@ -1,0 +1,80 @@
+<div class="Main__Wrapper-z4tjtm-0 lliKhK">
+    <div class="Main__Container-z4tjtm-1 kseUjF">
+       <div id="settings-upload-investor-documents" class="UploadInvestorDocuments__Wrapper-sc-1rz4zhx-0 FDxYx">
+          <div class="UploadInvestorDocuments__StyledContainer-sc-1rz4zhx-1 iQcGVi">
+            <app-manage-account-header></app-manage-account-header>
+             <div class="UploadInvestorDocuments__WhiteBlock-sc-1rz4zhx-2 dNHjBN">
+                <div class="AccountBreadcrumb__Container-nwpmlo-0 ffsdGk">
+                  <span class="AccountBreadcrumb__Title-nwpmlo-1 cuNfxS">Settings for: </span>
+                  <span class="AccountBreadcrumb__Subtitle-nwpmlo-2 xlJzm">
+                    test test
+                    <span class="AccountBreadcrumb__AccountType-nwpmlo-3 eYtyru">
+                       - Individual
+                      </span>
+                    </span>
+                  </div>
+                <h1 class="UploadInvestorDocuments__Title-sc-1rz4zhx-3 PCBZE">Upload Government Photo ID</h1>
+                <p class="UploadInvestorDocuments__SupportText-sc-1rz4zhx-6 loZkuc">Please upload a copy of government issued photo ID (ie driver’s license or passport) to complete identity verification and open your ProjectYield Wallet!</p>
+                <div class="UploadInvestorDocuments__MissingDocuments-sc-1rz4zhx-8 kyeVED"
+                ng2FileDrop
+                [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                (fileOver)="fileOverBase($event)"
+                [uploader]="uploader"
+                >
+                   <div class="UploadInvestorDocuments__MissingDocument-sc-1rz4zhx-9 fyBBrO">
+                      <p class="UploadInvestorDocuments__DocumentTitle-sc-1rz4zhx-13 lpuvbP">Government Issued Photo ID</p>
+                      <div class="FileUpload__DropzoneStyled-sc-1g0h9vj-1 gJSAiL" working="0" aria-disabled="false" style="position: relative;">
+                         <div class="UploadInvestorDocuments__CenteredDiv-sc-1rz4zhx-4 dFSFIw topMargin">
+                            <input class="TertiaryButton__StyledTertiaryButton undefined TertiaryButton__StyledTertiaryButton-fyt5hd-0 bxgaRH"
+                                    type="file"
+                                    ng2FileSelect [uploader]="uploader" multiple
+                            >
+                         <!-- </input> -->
+                            <p class="FileUpload__DragAndDropText-sc-1g0h9vj-2 cHeuSK">
+                              <span class="UploadInvestorDocuments__Gray4-sc-1rz4zhx-5 fMiDES">
+                                  - or -
+                                  <br>
+                                  Drag and Drop File Here
+                              </span>
+                               <!-- <br> -->
+
+                              </p>
+                         </div>
+                         <!-- <input type="file"
+                         style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; opacity: 1e-05; pointer-events: none;"
+                         ng2FileSelect [uploader]="uploader" multiple
+                         > -->
+                      </div>
+                      <p class="UploadInvestorDocuments__IdText-sc-1rz4zhx-7 cxFHez">
+                        <span>Please be sure to upload a photo of the <strong>front</strong> of your ID.</span>
+                      </p>
+                      <div class="UploadInvestorDocuments__UploadedObject-sc-1rz4zhx-11 fSorsF"
+                            *ngFor="let item of uploader.queue">
+                        <div class="UploadInvestorDocuments__CloseIconWrapper-sc-1rz4zhx-16 dwILMm">
+                          <span aria-hidden="true"
+                          class="fa fa-times UploadInvestorDocuments__CloseIcon-sc-1rz4zhx-17 kWsawe"
+                          (click)="item.remove()">
+                          </span>
+                        </div>
+                        <div>
+                            {{ item?.file?.name }}
+                        </div>
+                        <p class="UploadInvestorDocuments__UploadedObjectFeedback-sc-1rz4zhx-12 dVSzJV" >
+                            {{ item?.file?.size/1024/1024 | number:'.2' }} MB
+                        </p>
+                      </div>
+                   </div>
+                </div>
+                <div class="UploadInvestorDocuments__ButtonContainer-sc-1rz4zhx-10 kUvCrw">
+                  <button id="documents-submit" class="PrimaryButton__ButtonPrimary SubmitCancelButton-sc-1057j2-0 jIvJyI PrimaryButton__ButtonPrimary-lm14bl-0 hrRcUC">
+                    Submit
+                  </button>
+                  <button id="documents-cancel" routerLink="/account" routerLinkActive="router-link-active" class="PrimaryButton__ButtonPrimary SubmitCancelButton-sc-1057j2-0 jIvJyI PrimaryButton__ButtonPrimary-lm14bl-0 dQDoKT">
+                    Cancel
+                  </button>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

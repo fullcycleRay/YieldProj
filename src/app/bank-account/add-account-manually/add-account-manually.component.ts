@@ -26,7 +26,7 @@ export class AddAccountManuallyComponent implements OnInit {
         this.restItems = resp;
         if (this.restItems.success === true) {
           alert('Bank Account added');
-          this.router.navigate(['/new-account-step-2']);
+          this.router.navigate(['/funds']);
         } else if (this.restItems.success === false) {
           alert ('Something went wrong, Unable to create bank accounts');
         }

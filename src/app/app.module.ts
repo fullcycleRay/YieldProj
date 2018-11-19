@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './static-ui/home/home.component';
 import { AboutComponent } from './static-ui/about/about.component';
-import { TopNavComponent } from './shared/top-nav/top-nav.component';
+import { TopNavComponent } from './shared/ui/top-nav/top-nav.component';
 import { OfferingsComponent } from './offering/offerings/offerings.component';
 import { WhyYieldstreetComponent } from './static-ui/why-yieldstreet/why-yieldstreet.component';
 import { InvestmentPhilosophyComponent } from './static-ui/investment-philosophy/investment-philosophy.component';
@@ -13,7 +13,7 @@ import { UniversityComponent } from './static-ui/university/university.component
 import { SupportCenterComponent } from './static-ui/support-center/support-center.component';
 import { SignupComponent } from './userSignup/signup/signup.component';
 import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import { FooterComponent } from './shared/ui/footer/footer.component';
 import { SignupStep2Component } from './userSignup/signup-step2/signup-step2.component';
 import { UserService } from './services/user/user.service';
 import { ViewportfolioComponent } from './viewportfolio/viewportfolio.component';
@@ -37,12 +37,14 @@ import { AccountComponent } from './manage-account/manage-account-step1/account.
 import { AddAccountManuallyComponent } from './bank-account/add-account-manually/add-account-manually.component';
 import { ManualAccountStep2Component } from './manage-account/manual-account-step2/manual-account-step2.component';
 import { ManualAccountStep3Component } from './manage-account/manual-account-step3/manual-account-step3.component';
-import { SidebarNavigationComponent } from './shared/sidebar-navigation/sidebar-navigation.component';
+import { SidebarNavigationComponent } from './shared/ui/sidebar-navigation/sidebar-navigation.component';
 import { SignupStep3Component } from './userSignup/signup-step3/signup-step3.component';
 import { SignupStep4Component } from './userSignup/signup-step4/signup-step4.component';
 import { ConfirmInvestmentComponent } from './transactions/confirm-investment/confirm-investment.component';
 import { TransferFundHeaderComponent } from './shared/ui/transfer-fund-header/transfer-fund-header.component';
 import { ManageAccountHeaderComponent } from './shared/ui/manage-account-header/manage-account-header.component';
+import { VerifyAccountComponent } from './manage-account/verify-account/verify-account.component';
+import { FileUploadModule } from 'ng2-file-upload';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,12 +84,14 @@ import { ManageAccountHeaderComponent } from './shared/ui/manage-account-header/
     ConfirmInvestmentComponent,
     TransferFundHeaderComponent,
     ManageAccountHeaderComponent,
+    VerifyAccountComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FileUploadModule
   ],
   providers: [
     UserService,

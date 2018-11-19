@@ -42,23 +42,23 @@
                                </div>
                             </div>
                          </div>
-                         <div class="ExternalBanks__Mobile-kYmpuF dgMcWP">
+                         <div class="ExternalBanks__Mobile-kYmpuF dgMcWP" *ngFor= "let bankDetails of bankAccountData">
                             <div class="ExternalBanks__BanksWrapper-jYQIes fuaHUE">
                                <div class="ExternalBanks__Flex-iAohPz hYSgVD">
                                   <div class="ExternalBanks__Item-eWsHcE deJnZy">
                                      <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Account Nickname</div>
-                                     test
+                                     {{bankDetails.account_nick_name | titlecase}}
                                   </div>
                                   <div class="ExternalBanks__Item-eWsHcE layPgH"><span data-click-id="click-out-0" aria-hidden="true" class="fa fa-edit ExternalBanks__CTAItem-itONUF jclplD"></span><span aria-hidden="true" class="fa fa-trash ExternalBanks__CTAItem-itONUF jclplD"></span></div>
                                </div>
                                <div class="ExternalBanks__Flex-iAohPz hYSgVD">
                                   <div class="ExternalBanks__Item-eWsHcE deJnZy">
                                      <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Bank Name</div>
-                                     ISABELLA BANK
+                                     {{bankDetails.bank_name | titlecase}}
                                   </div>
                                   <div class="ExternalBanks__Item-eWsHcE deJnZy">
                                      <div class="ExternalBanks__MobileLabel-kbfZOO cLcbAS">Account Number</div>
-                                     ***********6667
+                                     ***********{{bankDetails.account_number}}
                                   </div>
                                </div>
                             </div>

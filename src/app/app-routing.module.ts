@@ -1,4 +1,4 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './static-ui/home/home.component';
 import {AboutComponent} from './static-ui/about/about.component';
@@ -26,9 +26,10 @@ import {ManualAccountStep2Component} from './manage-account/manual-account-step2
 import {ManualAccountStep3Component} from './manage-account/manual-account-step3/manual-account-step3.component';
 import {SignupStep3Component} from './userSignup/signup-step3/signup-step3.component';
 import {SignupStep4Component} from './userSignup/signup-step4/signup-step4.component';
-import {UserSessionGuard} from './shared/user-session-guard/user-session.guard';
+import {UserSessionGuard} from './shared/guards/user-session-guard/user-session.guard';
 import {ConfirmInvestmentComponent} from './transactions/confirm-investment/confirm-investment.component';
-import {InvestmentGuard} from './shared/transaction/investment.guard';
+import {InvestmentGuard} from './shared/guards/transaction/investment.guard';
+import {VerifyAccountComponent} from './manage-account/verify-account/verify-account.component';
 const routes: Routes = [
 {
   path: '',
@@ -48,6 +49,10 @@ const routes: Routes = [
   path: 'viewportfolio',
   component: ViewportfolioComponent,
   canActivate: [UserSessionGuard]
+},
+{
+  path: 'upload-investor-document',
+  component: VerifyAccountComponent
 },
 {
   path: 'investments',

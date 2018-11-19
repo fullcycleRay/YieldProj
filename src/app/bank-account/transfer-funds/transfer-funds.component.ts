@@ -15,8 +15,8 @@ export class TransferFundsComponent implements OnInit {
   accountData: any;
   selectedValue: any;
   bankListResp: any;
-  bankAccountData: any;
   bankAccountExist: boolean;
+  bankAccountData: any;
   // @ViewChild('accountDropDownList') myDropDownList: ElementRef;
 
 
@@ -27,16 +27,18 @@ export class TransferFundsComponent implements OnInit {
     this.bankAccountExist = false;
     this.getBankAccList();
   }
-
   getBankAccList(): void {
     this.bankAccServ.getBankAccList()
       .then(
         resp => {
+
           this.bankListResp = resp;
           if (this.bankListResp.success === true) {
-            if (Object.keys(this.bankListResp.data.users_bank_accounts).length !== 0) {
+            if ((Object.keys(this.bankListResp.data).length !== 0)) {
               this.bankAccountData = this.bankListResp.data.users_bank_accounts;
               this.bankAccountExist = true;
+            } else {
+              this.bankAccountExist = false;
             }
           } else if (this.bankListResp.success === false) {
             alert ('Something went wrong, Unable to fetch bank accounts');
