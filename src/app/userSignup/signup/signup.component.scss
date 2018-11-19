@@ -316,6 +316,7 @@ $ys-white: rgba(255, 255, 255, 1); /* Neige */
       line-height: 1.5;
       max-width: 510px;
       margin: 30px auto 39px auto;
+      text-align: center;
       @include font-book;
       strong {
         @include font-medium;
@@ -359,6 +360,9 @@ $ys-white: rgba(255, 255, 255, 1); /* Neige */
     }
     .already-have-acc {
       display: block;
+      text-align: center;
+      color: black;
+      font-weight: 700
     }
     .social-buttons {
       text-align: center;
@@ -495,3 +499,18 @@ $ys-white: rgba(255, 255, 255, 1); /* Neige */
       }
     }
   //}
+
+  .rowCenter {
+    justify-content: center;
+  }
+
+  .portal-container{
+      padding-top:4vw !important;
+  }
+
+  .fullWidthForm{
+    width:100%;
+  }
+ .boldText{
+   font-weight: 800 !important;
+ }
