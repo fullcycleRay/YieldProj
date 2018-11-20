@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   emailError = false;
   restItems: any;
   resp: any;
+  apiError: any;
 
   constructor(private router: Router, private user: UserService, private authUser: AuthServiceService) {
   }
@@ -29,41 +30,31 @@ export class LoginComponent implements OnInit {
       .then(
         resp => {
           this.restItems = resp;
-          if (pWord === '') {
-            this.paswdError = true;
-            this.passDisError = 'This field is required';
-          } else if (eMail === '') {
-            this.userIdError = true;
-            this.userDisError = 'This field is required';
-            this.emailError = true;
-          } else if (!(this.emailPattern(eMail)) && eMail.length >= 4) {
-            this.userIdError = true;
-            this.userDisError = 'Please enter a valid email';
-          } else if (eMail.length < 4) {
-            this.userIdError = true;
-            this.userDisError = 'This field has a minimum length of 4 characters.';
-            this.emailError = true;
-          } else if (this.restItems.success == true) {
+          if (this.restItems.success === true) {
             this.userIdError = false;
             this.emailError = false;
             localStorage.setItem('User', this.restItems.user.auth_token);
             localStorage.setItem('name', this.restItems.user.name);
             this.user.setUserLoggedIn();
             this.router.navigate(['offerings']);
-          } else if (this.restItems.success == false) {
+          } else if (this.restItems.success === false) {
             this.userIdError = true;
-            this.userDisError = 'This is not a valid registered email';
+            this.userDisError = AppError.error_0006;
             this.emailError = true;
           }
-          // && this.restItems.message =="Invalid password"
-          // else if(this.restItems.success == false)
-          // {
-          //   this.userIdError = false;
-          //   this.userIdOrPassEntered =true;
-          // }
+        },
+        error => {
+          this.apiError = error;
+          if (this.apiError.status === 401 && this.apiError.error.message === 'You have entered wrong password.') {
+            this.paswdError = true;
+            this.passDisError = AppError.error_0007;
+          } else if ( this.apiError.status === 401 && this.apiError.error.message === 'User does not exists.') {
+            this.userIdError = true;
+            this.userDisError = AppError.error_0006;
+          }
         }
       );
-  }
+    }
 
   errorClose() {
     this.userIdOrPassEntered = false;
@@ -109,6 +100,24 @@ export class LoginComponent implements OnInit {
     this.emailError = false;
     const eMail = e.target.elements[0].value.toLowerCase();
     const pWord = e.target.elements[1].value;
-    this.getRestItems(eMail, pWord);
+    if (eMail === '') {
+      this.userIdError = true;
+      this.userDisError = AppError.error_0001;
+      this.emailError = true;
+    } else if (!(this.emailPattern(eMail)) && eMail.length >= 4) {
+      this.userIdError = true;
+      this.userDisError = AppError.error_0005;
+    } else if (eMail.length < 4) {
+      this.userIdError = true;
+      this.userDisError = AppError.error_0002;
+      this.emailError = true;
+    }
+    if (pWord === '') {
+      this.paswdError = true;
+      this.passDisError = AppError.error_0001;
+    }
+    if ( this.userIdError === false && this.userIdError === false && this.paswdError === false) {
+      this.getRestItems(eMail, pWord);
+    }
   }
 }
