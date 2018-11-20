@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { FormGroup, FormControl } from '@angular/forms';
 import {Router} from '@angular/router';
 import {SignupService} from '../../services/signup/signup.service';
+import {AppError} from '../../shared/appError';
 
 @Component({
   selector: 'app-signup',
@@ -13,13 +12,14 @@ export class SignupComponent implements OnInit {
   constructor(private router: Router, private signUp: SignupService) { }
   firstNameError = false;
   anyError = false;
-  lastNameError = false;
+  passWordError = false;
   emailError = false;
   userAlreadyExist = false;
   eMail = '';
   signupToken: any;
   resp: any;
   err: any;
+  apiError: any;
 
   ngOnInit() {
 
@@ -29,24 +29,16 @@ export class SignupComponent implements OnInit {
       .then(
         resp => {
           this.signupToken = resp;
-          if (fName === '' || fName.length < 2) {
-            this.anyError = true;
-            this.firstNameError = true;
-          }
-          if (this.eMail === '' || !(this.emailPattern(this.eMail))) {
-            this.anyError = true;
-            this.emailError = true;
-          }
-          if (this.signupToken.success === false && this.signupToken.message === 'Validation failed: Email has already been taken') {
-            this.userAlreadyExist = true;
-          }
           if (this.signupToken.success === true) {
             localStorage.setItem('User', this.signupToken.user);
             this.router.navigate(['offerings']);
           }
         },
-        err => {
-          console.log('Error occured');
+        error => {
+          this.apiError = error;
+          if (this.apiError.status === 422) {
+            this.userAlreadyExist = true;
+          }
         }
       );
   }
@@ -58,14 +50,28 @@ export class SignupComponent implements OnInit {
   }
   signUpUser(e) {
     const fName = e.target.elements[0].value;
-    const lName = e.target.elements[1].value;
+    const passWord = e.target.elements[1].value;
     this.eMail = e.target.elements[2].value.toLowerCase();
     this.anyError = false;
     this.firstNameError = false;
-    this.lastNameError = false;
+    this.passWordError = false;
     this.emailError = false;
     this.userAlreadyExist = false;
-    this.getRestItems(fName, this.eMail, lName);
+    if (fName === '' || fName.length < 2) {
+      this.anyError = true;
+      this.firstNameError = true;
+    }
+    if (this.eMail === '' || !(this.emailPattern(this.eMail))) {
+      this.anyError = true;
+      this.emailError = true;
+    }
+    if ( passWord === '') {
+      this.anyError = true;
+      this.passWordError = true;
+    }
+    if (this.anyError === false &&  this.emailError === false && this.firstNameError === false && this.passWordError === false ) {
+      this.getRestItems(fName, this.eMail, passWord);
+    }
 
   }
 }

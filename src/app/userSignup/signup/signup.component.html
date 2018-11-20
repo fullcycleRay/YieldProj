@@ -13,30 +13,42 @@
                                <div class="portal-small-ctn">
                                   <div class="step-1-formdata">
                                      <div>
-                                         <input type="text" class="form-control form-control--first ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="firstName" placeholder="First name"  data-ng-class="" required="" minlength="2" maxlength="256" >
+                                         <input type="text" class="form-control form-control--first ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="firstName" placeholder="Enter your Full name"  required="true">
                                     </div>
                                      <div>
-                                         <input  type="password" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="password" placeholder="Password"  data-ng-class="" required="" minlength="2" maxlength="256">
+                                         <input  type="password" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="password" placeholder="Enter your password"  required="true">
                                     </div>
                                      <div>
-                                         <input  type="email" class="form-control form-control--last ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-email ng-invalid ng-invalid-required ng-valid-maxlength" name="email" placeholder="Email"  data-ng-class="" data-validate-email="" data-validate-unique="" required="" maxlength="128" >
+                                         <input  type="email" class="form-control form-control--last ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-email ng-invalid ng-invalid-required ng-valid-maxlength" name="email" placeholder="Enter your email" required="true">
                                     </div>
-                                    <div *ngIf="userAlreadyExist" class="ng-active">
-                                            <p ng-message="unique" class="alert alert-danger ng-scope" >An account with the email <strong class="alert-link ng-binding">{{eMail}}</strong> already exists.<br> Please <a href="" routerLink="/login" class="alert-link text-underline" data-ui-sref="login">login</a> instead</p>
+                                    <div *ngIf="userAlreadyExist" >
+                                            <p class="alert alert-danger" >An account with the email <strong class="alert-link ng-binding">{{eMail}}</strong> already exists.<br> Please <a href="" routerLink="/login" class="alert-link text-underline" data-ui-sref="login">login</a> instead</p>
                                     </div>
                                     <div class="card-table ng-scope" *ngIf="anyError">
                                             <table>
                                                <tbody>
-                                                  <tr *ngIf="firstNameError" class="ng-scope" >
-                                                     <td class="card-table--padding"><span class="circle-icon"><i class="fa fa-info" data-ng-class="{'fa-check'}"></i></span></td>
-                                                     <td class="card-table__label card-table--padding">Your first name must be valid</td>
+                                                  <tr *ngIf="firstNameError">
+                                                     <td class="card-table--padding">
+                                                       <span>
+                                                         <i class="fa fa-info"></i>
+                                                        </span>
+                                                      </td>
+                                                     <td class="card-table__label card-table--padding">You must enter your name </td>
                                                   </tr>
-                                                  <tr *ngIf="lastNameError" class="ng-scope" >
-                                                     <td class="card-table--padding"><span class="circle-icon"><i class="fa fa-info" data-ng-class="{'fa-check'}"></i></span></td>
-                                                     <td class="card-table__label card-table--padding">Your last name must be valid</td>
+                                                  <tr *ngIf="passWordError">
+                                                     <td class="card-table--padding">
+                                                       <span>
+                                                         <i class="fa fa-info"></i>
+                                                        </span>
+                                                      </td>
+                                                     <td class="card-table__label card-table--padding">Password is required</td>
                                                   </tr>
-                                                  <tr *ngIf="emailError" class="ng-scope">
-                                                     <td><span class="circle-icon"><i class="fa fa-info" data-ng-class="{'fa-check'}"></i></span></td>
+                                                  <tr *ngIf="emailError">
+                                                     <td>
+                                                       <span>
+                                                         <i class="fa fa-info"></i>
+                                                        </span>
+                                                      </td>
                                                      <td class="card-table__label">Your email must be valid</td>
                                                   </tr>
                                                </tbody>
