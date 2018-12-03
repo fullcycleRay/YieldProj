@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
         resp => {
           this.signupToken = resp;
           if (this.signupToken.success === true) {
-            localStorage.setItem('User', this.signupToken.user);
+            localStorage.setItem('User', this.signupToken.user.auth_token);
             this.router.navigate(['offerings']);
           }
         },
