@@ -25,7 +25,7 @@
                       <p class="UploadInvestorDocuments__DocumentTitle-sc-1rz4zhx-13 lpuvbP">Government Issued Photo ID</p>
                       <div class="FileUpload__DropzoneStyled-sc-1g0h9vj-1 gJSAiL" working="0" aria-disabled="false" style="position: relative;">
                          <div class="UploadInvestorDocuments__CenteredDiv-sc-1rz4zhx-4 dFSFIw topMargin">
-                            <input class="TertiaryButton__StyledTertiaryButton undefined TertiaryButton__StyledTertiaryButton-fyt5hd-0 bxgaRH"
+                            <input class="btn btn-outline-info  TertiaryButton__StyledTertiaryButton undefined TertiaryButton__StyledTertiaryButton-fyt5hd-0 bxgaRH"
                                     type="file"
                                     ng2FileSelect [uploader]="uploader" multiple
                             >
@@ -65,8 +65,9 @@
                       </div>
                    </div>
                 </div>
-                <div class="UploadInvestorDocuments__ButtonContainer-sc-1rz4zhx-10 kUvCrw">
-                  <button id="documents-submit" class="PrimaryButton__ButtonPrimary SubmitCancelButton-sc-1057j2-0 jIvJyI PrimaryButton__ButtonPrimary-lm14bl-0 hrRcUC">
+                <div  class="UploadInvestorDocuments__ButtonContainer-sc-1rz4zhx-10 kUvCrw">
+                  <button  type="button" id="documents-submit" class="PrimaryButton__ButtonPrimary SubmitCancelButton-sc-1057j2-0 jIvJyI PrimaryButton__ButtonPrimary-lm14bl-0 " [disabled]="!uploader.getNotUploadedItems().length"
+                  [ngClass]= "!uploader.getNotUploadedItems().length ? 'jLNNsJ' : 'hrRcUC'"(click)="uploader.uploadAll()">
                     Submit
                   </button>
                   <button id="documents-cancel" routerLink="/account" routerLinkActive="router-link-active" class="PrimaryButton__ButtonPrimary SubmitCancelButton-sc-1057j2-0 jIvJyI PrimaryButton__ButtonPrimary-lm14bl-0 dQDoKT">

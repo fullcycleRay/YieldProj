@@ -11,7 +11,7 @@
                     </div>
                     <div class="Header__CurrentTab-dWpQpn dQsaWW">Transactions</div>
                  </div>
-                 <div class="Header__DropdownWrapper-kzZVJq cMVwLP">
+                 <div class="Header__DropdownWrapper-kzZVJq cMVwLP" *ngIf= "false">
                     <div>
                        <div class="shared__Desktop-hjxvYk cGsOEk">
                           <div class="Transactions__StyledDropdown-gKkqrw bMQkEO shared__StyledHeaderDropdown-nCqUr cHWqGL HeaderDropdown__DropdownWrapper-coMKrj jvsIdX">
@@ -55,16 +55,16 @@
                     </div>
                  </div>
               </div>
-              <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa" *ngIf="false">
+              <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa" *ngIf="tranPresent === false">
                  <div class="Transactions__Container-jGaKLJ ibqjOa">
                     <div class="NoInvestmentAlert__NoInvestmentsAlertContainer-cVRUEX cUGTtX shared__ComponentWrapper-hNHPcs inGxEQ">
                        <h4 class="NoInvestmentAlert__NoInvestmentsTitle-jtCIJD imAOFj">The currently selected Investor Account does not have any Transactions available at this time.</h4>
                        <p class="NoInvestmentAlert__NoInvestmentsParagraph-cDuknA gJQlKE">Once a transaction is initiated for this Investor Account, its details will appear here.</p>
-                       <a href="/offerings"><button class="PrimaryButton__ButtonPrimary-exVhhh jLNNsJ" id="browse-offerings">Browse Offerings</button></a>
+                       <a  [routerLink]="['/offerings']" routerLinkActive="router-link-active" ><button class="PrimaryButton__ButtonPrimary-exVhhh jLNNsJ" id="browse-offerings">Browse Offerings</button></a>
                     </div>
                  </div>
               </div>
-              <div class="Transactions__Wrapper-ForFM kKpXAN">
+              <div class="Transactions__Wrapper-ForFM kKpXAN" *ngIf=" tranPresent === true">
                   <p class="Transactions__Label-kyKciE kZzUUf">Pending Transactions</p>
                   <div class="TransactionsTableDesktop__StyledTable-jESJps iECseb desktop-table DesktopTable__Wrapper-davOaM icCAYC">
                      <div class="DesktopTable__TableHeader-SGQqU eLqeCd">
@@ -76,9 +76,9 @@
                         <div class="TransactionsTableDesktop__ArrowHeader-gUdLSw cmEMrL"><span aria-hidden="true" class="fa fa-angle-double-down TransactionsTableDesktop__DoubleAngle-kDmPKl fGpwQv"></span></div>
                      </div>
                      <div class="DesktopTable__TableBody-jtIoId eYMmSM">
-                        <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH">
+                        <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngFor="let transaction of transactions">
                            <div class="DesktopTableRow__TableColumn-cwFros gXmfjc">
-                              November 1, 2018
+                              {{transaction.investment_date}}
                               <div class="transaction-details TransactionsTableDesktop__TransactionDetailsWrapper-gtLWAn eOOzdO" *ngIf="isClicked">
                                  <div class="TransactionsTableDesktop__TransactionDetails-jijtrL INBGC">
                                     Effective Date
@@ -87,13 +87,14 @@
                                        <div class="__react_component_tooltip place-top type-dark " id="tooltip-transactions-mobile" data-id="tooltip">The Effective Date of the transaction is the date funds were applied to the investment.</div>
                                     </span>
                                  </div>
-                                 <div class="TransactionsTableDesktop__TransactionDetails-jijtrL icyMjV">November 1, 2018</div>
+                                 <div class="TransactionsTableDesktop__TransactionDetails-jijtrL icyMjV">{{transaction.service.effective_date}}</div>
                               </div>
                            </div>
-                           <div class="DesktopTableRow__TableColumn-cwFros lhAmAo">Tushar Dhingra</div>
-                           <div class="DesktopTableRow__TableColumn-cwFros bXpkoM"><a href="/portfolio/investment-details-pending/wTbO6Q/65330">Large Dry Bulk Vessel Acquisition</a></div>
+                           <div class="DesktopTableRow__TableColumn-cwFros lhAmAo">{{transaction.customer_name}}</div>
+                           <div class="DesktopTableRow__TableColumn-cwFros bXpkoM">
+                             <a routerLink ="/offering-detail/{{transaction.service.uid}}"  routerLinkActive="router-link-active" >{{transaction.service.name}}</a></div>
                            <div class="DesktopTableRow__TableColumn-cwFros vMCeh"><span class="TransactionsTableDesktop__IconWrapper-hwgqkl bKEkqU"><img alt="Responsive Image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAU5JREFUOBGNUztOBDEM9WSCqKm5AiwFp0BUNByAjp47QM2uhDgANRXTwQEQt6DiAkgrYpu8TLxxhgaPZmM7z59nzxL9U1bT5vroZXO5hAfvOP143Dub7ve9z3QR0/qzS7D9+rn4JLrqIbPFnE+8C+kSlDv567IYodFUOp7WzzDizpMVyRWCeo/TpQXDq0wHOPtyPBI7rqtpfQNQkUX7husTFGSrJDyc13CSTK3MYeeYcR0FDElcU10AAnOHJlo7DSevD4fmLAGOgrqBWsuGVR6KGvg7PZmT8pQ90CdAd74j0UqBUxtDAWizJbXUoIbHJG+hSBCXwHPErdYqBYk1uk2oVgqS2mAAFLdv41kSLH7wzUCipDkTDFBoFpLBOwsC1H2JVLsLviIo+DUqN87kNoKUNoOoHG9rEdKg7wPH9m/UeGd3g45vqmlrdm6+xP0CGgyDttZZ9pgAAAAASUVORK5CYII=" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAU5JREFUOBGNUztOBDEM9WSCqKm5AiwFp0BUNByAjp47QM2uhDgANRXTwQEQt6DiAkgrYpu8TLxxhgaPZmM7z59nzxL9U1bT5vroZXO5hAfvOP143Dub7ve9z3QR0/qzS7D9+rn4JLrqIbPFnE+8C+kSlDv567IYodFUOp7WzzDizpMVyRWCeo/TpQXDq0wHOPtyPBI7rqtpfQNQkUX7husTFGSrJDyc13CSTK3MYeeYcR0FDElcU10AAnOHJlo7DSevD4fmLAGOgrqBWsuGVR6KGvg7PZmT8pQ90CdAd74j0UqBUxtDAWizJbXUoIbHJG+hSBCXwHPErdYqBYk1uk2oVgqS2mAAFLdv41kSLH7wzUCipDkTDFBoFpLBOwsC1H2JVLsLviIo+DUqN87kNoKUNoOoHG9rEdKg7wPH9m/UeGd3g45vqmlrdm6+xP0CGgyDttZZ9pgAAAAASUVORK5CYII= 1x, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAU5JREFUOBGNUztOBDEM9WSCqKm5AiwFp0BUNByAjp47QM2uhDgANRXTwQEQt6DiAkgrYpu8TLxxhgaPZmM7z59nzxL9U1bT5vroZXO5hAfvOP143Dub7ve9z3QR0/qzS7D9+rn4JLrqIbPFnE+8C+kSlDv567IYodFUOp7WzzDizpMVyRWCeo/TpQXDq0wHOPtyPBI7rqtpfQNQkUX7husTFGSrJDyc13CSTK3MYeeYcR0FDElcU10AAnOHJlo7DSevD4fmLAGOgrqBWsuGVR6KGvg7PZmT8pQ90CdAd74j0UqBUxtDAWizJbXUoIbHJG+hSBCXwHPErdYqBYk1uk2oVgqS2mAAFLdv41kSLH7wzUCipDkTDFBoFpLBOwsC1H2JVLsLviIo+DUqN87kNoKUNoOoHG9rEdKg7wPH9m/UeGd3g45vqmlrdm6+xP0CGgyDttZZ9pgAAAAASUVORK5CYII= 2x"></span>Investment</div>
-                           <div class="DesktopTableRow__TableColumn-cwFros kWQzDe"><span>$15,000.00</span></div>
+                           <div class="DesktopTableRow__TableColumn-cwFros kWQzDe"><span>${{transaction.items[0].amount}}</span></div>
                            <div class="DesktopTableRow__TableColumn-cwFros dyGQer">
                              <span aria-hidden="true" class="fa fa-angle-down TransactionsTableDesktop__AngleDown-bcpKYL hQIAiO" (click)="showHide()"></span>
                             </div>

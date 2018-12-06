@@ -27,4 +27,10 @@ export class UserService {
   getCurrentUser () {
     return localStorage.getItem('name');
   }
+  getAuthToken () {
+    const currentUser = localStorage.getItem('User');
+    if (currentUser) {
+      return currentUser;
+    }
+  }
 }

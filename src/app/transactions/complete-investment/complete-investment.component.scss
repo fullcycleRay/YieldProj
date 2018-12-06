@@ -5613,6 +5613,10 @@ dYWwWr {
     color: rgb(208, 2, 27);
 }
 
+.setFont{
+  font-size: 16px;
+}
+
 .bkTGAH {
 	color: rgb(53, 56, 58);
 	border: 1px solid rgb(223, 227, 228);
@@ -5620,8 +5624,10 @@ dYWwWr {
 	min-width: 250px;
 	display: block;
 	cursor: pointer;
-	height: 40px;
-	background: rgb(255, 255, 255);
+  height: 50px;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  text-transform: uppercase;
 }
 
 @media (min-width:768px) {

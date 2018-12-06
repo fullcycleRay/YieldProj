@@ -5,50 +5,36 @@
         <div class="Footer_menuSection_3gd_Z">
            <span>Invest</span>
            <ul>
-              <li><a href="/offerings">Investment Offerings</a></li>
-              <li><a href="/why-yieldstreet">Why YieldStreet</a></li>
-              <li><a href="/family-office">Family Office</a></li>
-              <li><a href="/financial-advisor">Institutional / FAs</a></li>
+              <li><a [routerLink]="['/offerings']" routerLinkActive="router-link-active" >Investment Offerings</a></li>
+              <li><a [routerLink]="['/why-yieldstreet']" routerLinkActive="router-link-active" >Why YieldStreet</a></li>
            </ul>
         </div>
         <div class="Footer_menuSection_3gd_Z">
            <span>Borrow</span>
            <ul>
-              <li><a href="/raise-capital">Raise Capital</a></li>
-              <li><a href="mailto:investments@yieldstreet.com">Contact Us</a></li>
+              <li><a href="mailto:tushar.dhingra@full-cycle.com">Contact Us</a></li>
            </ul>
         </div>
         <div class="Footer_menuSection_3gd_Z">
            <span>Resources</span>
            <ul>
-              <li><a href="/investment-philosophy">Investment Philosophy</a></li>
-              <li><a href="/anti-investments">Anti-Investments</a></li>
-              <li><a href="/support-center">FAQ</a></li>
-              <li><a href="/university">University</a></li>
+              <li><a  [routerLink]="['/investment-philosophy']" routerLinkActive="router-link-active">Investment Philosophy</a></li>
            </ul>
         </div>
         <div class="Footer_menuSection_3gd_Z">
            <span>Company</span>
            <ul>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/careers">Careers</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/blog/category/press">Press</a></li>
+              <li><a [routerLink]="['/about']" routerLinkActive="router-link-active" >About Us</a></li>
            </ul>
         </div>
      </div>
-     <figure class="Footer_norton_1SWSp"><a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&amp;dn=yieldstreet.com&amp;lang=en" target="_blank" rel="noopener noreferrer"><img src="data:image/png;base64,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" alt="Norton Secured"></a></figure>
      <div class="Footer_addressContainer_5aHKN">
-        <p>597 5th Ave, 6th Floor, New York, NY 10017</p>
-        <p><a href="tel:844-943-5378">844-943-5378</a></p>
-        <p><a href="mailto:investments@yieldstreet.com">investments@yieldstreet.com</a></p>
+        <p>402 goHive, 4th Floor, Gurgaon, 120011</p>
+        <p><a href="tel:892-047-2798">892-047-2798</a></p>
+        <p><a href="mailto:investments@full-cycle.com">investments@full-cycle.com</a></p>
      </div>
-     <div class="Footer_socialContainer_1iqCe"><a href="https://www.instagram.com/yieldstreet/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="fa fa-instagram"></span></a><a href="https://twitter.com/YieldStreet" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="fa fa-twitter"></span></a><a href="https://www.facebook.com/YieldStreet" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="fa fa-facebook"></span></a><a href="https://www.linkedin.com/company/9383317/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="fa fa-linkedin"></span></a></div>
-     <p class="Footer_legalTextGraph_9JgOo" id="footnote--performance-disclaimer"><sup id="sup1">1</sup> Past performance is no guarantee of future results. Any historical returns, expected returns, or probability projections may not reflect actual future performance. All securities involve risk and may result in significant losses.</p>
-     <p class="sc-gzVnrw hBxpOw"><sup id="sup2">2</sup> Represents net unrealized internal rate of return (IRR) for all funds advised by the principals of YieldStreet Management, LLC (YieldStreet) since commencing operations on behalf of YieldStreet.<a class="sc-htoDjs ehUDZT">&nbsp;[read more]</a></p>
-     <p class="sc-gzVnrw hBxpOw"><sup id="sup3">3</sup> Represents an estimated, unrealized annualized internal rate of return (IRR) of your portfolio and is based by reference to the effective distribution dates and amounts to and from the investments, as well as any outstanding principal and accrued and unpaid interest as of the current date.<a class="sc-htoDjs ehUDZT">&nbsp;[read more]</a></p>
-     <p class="Footer_legalTextGraph_9JgOo"><sup id="sup4">4</sup> "Annual interest" represents an annual target rate of interest and "term" represents the estimated term of the investment. Such target returns and estimated term are projections of the returns or term and may ultimately not be achieved. Actual returns and term may be materially different from such projections. These targeted returns and estimated term are based on the underlying agreement between the SPV and the originator.</p>
-     <div class="Footer_legalTextContainer_3TbKQ">
+     <div class="Footer_socialContainer_1iqCe"><a href="#" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="fa fa-instagram"></span></a><a href="https://twitter.com/YieldStreet" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="fa fa-twitter"></span></a><a href="https://www.facebook.com/YieldStreet" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="fa fa-facebook"></span></a><a href="https://www.linkedin.com/company/9383317/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" class="fa fa-linkedin"></span></a></div>
+     <!-- <div class="Footer_legalTextContainer_3TbKQ">
         <p>No communication by YieldStreet Inc. or any of its affiliates (collectively, “YieldStreet™”), through this website or any other medium, should be construed or is intended to be a recommendation to purchase, sell or hold any security or otherwise to be investment, tax, financial, accounting, legal, regulatory or compliance advice. Nothing on this website is intended as an offer to extend credit, an offer to purchase or sell securities or a solicitation of any securities transaction.</p>
         <p>Any financial projections or returns shown on the website are estimated predictions of performance only, are hypothetical, are not based on actual investment results and are not guarantees of future results. Estimated projections do not represent or guarantee the actual results of any transaction, and no representation is made that any transaction will, or is likely to, achieve results or profits similar to those shown. In addition, other financial metrics and calculations shown on the website (including amounts of principal and interest repaid) have not been independently verified or audited and may differ from the actual financial metrics and calculations for any investment, which are contained in the investors' portfolios. Any investment information contained herein has been secured from sources that YieldStreet believes are reliable, but we make no representations or warranties as to the accuracy of such information and accept no liability therefor.</p>
         <p>Private placement investments are NOT bank deposits (and thus NOT insured by the FDIC or by any other federal governmental agency), are NOT guaranteed by YieldStreet or any other party, and MAY lose value. Neither the Securities and Exchange Commission nor any federal or state securities commission or regulatory authority has recommended or approved any investment or the accuracy or completeness of any of the information or materials provided by or through the website. Investors must be able to afford the loss of their entire investment.</p>
@@ -63,7 +49,7 @@
         <p>Investing in private placements requires long-term commitments, the ability to afford to lose the entire investment, and low liquidity needs. This website provides preliminary and general information about the Securities and is intended for initial reference purposes only. It does not summarize or compile all the applicable information. This website does not constitute an offer to sell or buy any securities. No offer or sale of any Securities will occur without the delivery of confidential offering materials and related documents. This information contained herein is qualified by and subject to more detailed information in the applicable offering materials. YieldStreet™ is not registered as a broker-dealer. YieldStreet™ does not make any representation or warranty to any prospective investor regarding the legality of an investment in any YieldStreet Securities.</p>
         <p>Banking services are provided by Evolve Bank, Member FDIC.</p>
         <p>Investment advisory services are provided by YieldStreet Management, LLC, an investment adviser registered with the Securities and Exchange Commission.</p>
-     </div>
-     <div class="Footer_copyright_ZwfuD"><span class="Footer_copyrightLine_1v9ht"><strong>Copyright © 2018 YieldStreet, Inc.</strong><br></span><span><a href="/privacy">Privacy</a></span><span class="Footer_bullet_12ilC">•</span><span><a href="/terms">Terms of use</a></span><span class="Footer_bullet_12ilC">•</span><span><a href="https://cdn2.yieldstreet.com/wp-content/uploads/2017/10/02151127/Yieldstreet-Form-ADV-Part-2-09.29.2017-Final.pdf" target="_blank" rel="noopener noreferrer">Form ADV Disclosure Brochure</a></span></div>
+     </div> -->
+     <div class="Footer_copyright_ZwfuD"><span class="Footer_copyrightLine_1v9ht"><strong>Copyright © 2018 ProjYield, Inc.</strong><br></span><span><a href="/privacy">Privacy</a></span><span class="Footer_bullet_12ilC">•</span><span><a href="/terms">Terms of use</a></span><span class="Footer_bullet_12ilC"></span></div>
   </div>
 </footer>
