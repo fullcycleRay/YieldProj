@@ -11,6 +11,7 @@ export class AccountService {
   accountType: any;
   accToken: any;
   accList: any;
+  accountId = [];
 
   constructor( private http: HttpClient, ) { }
   // Will send account data and create new account
@@ -30,7 +31,8 @@ export class AccountService {
     account['address'] = address;
     account[ 'first_name' ] = legalFirstName;
     account[ 'title' ] = LegalSecondName;
-    account[ 'account_type' ] = this.accountType;
+    // account[ 'account_type' ] = this.accountType;
+    account[ 'account_type' ] = 1;
     account [ 'dob' ] = dateOfBirth;
     account [ 'identity_number' ] = SocialSecurityNum;
     account [ 'identity_type' ] = 0;
@@ -44,5 +46,11 @@ export class AccountService {
     const accUrl: string = API_URL + '/user/accounts';
     this.accList = await this.http.get(accUrl).toPromise();
     return this.accList;
+  }
+  setSelectAccId (selectedAccId) {
+    localStorage.setItem('selectedAccID', selectedAccId);
+  }
+  getSelectAccId () {
+    return localStorage.getItem('selectedAccID');
   }
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {AccountService} from '../../services/account/account.service';
 import {UserService} from '../../services/user/user.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
@@ -13,8 +13,9 @@ export class AccountComponent implements OnInit {
   restItems: any;
   accountData: any;
   currentUser: any;
+  selectedAccId: any;
 
-  constructor(private accService: AccountService, private user: UserService ) { }
+  constructor(private accService: AccountService, private user: UserService, private route: Router ) { }
 
   ngOnInit() {
     this.modalBack = false;
@@ -40,6 +41,11 @@ export class AccountComponent implements OnInit {
   extractData(resp): void {
     this.accountData = resp.data.users_accounts;
   }
+  uploadDocument(e): void {
+    this.selectedAccId = e.path[2].childNodes[0].childNodes[0].value;
+    this.accService.setSelectAccId(this.selectedAccId);
+     this.route.navigate(['/upload-investor-document']);
 
+  }
 
 }

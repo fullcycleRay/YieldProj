@@ -17,6 +17,14 @@
     font-weight:300;
     font-style:normal
 }
+
+.loader{
+  transform: translate(140%);
+  height: 100px;
+}
+.loaderWrapper{
+  height: 40vw;
+}
 //## Font, line-height, and color for body text, headings, and more.
 $font-gotham-a:				'Gotham A';
 $font-gotham-b:				'Gotham B';
@@ -543,7 +551,7 @@ h6{
     background:rgba(246, 246, 246, 1);
     text-align:center;
     padding-top:40px
-    
+
 }
 .Footer_container_1IhIW a{
     color:rgba(43, 184, 192, 1);

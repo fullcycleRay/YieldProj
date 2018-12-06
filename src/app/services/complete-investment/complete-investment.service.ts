@@ -15,9 +15,19 @@ export class CompleteInvestmentService {
 
   constructor(private http: HttpClient) { }
   async subscribeOffer(uId, investedAmt) {
-    // tslint:disable-next-line:radix
-    const subcriptionInfo = { uid: uId, investment_amount: parseInt(investedAmt)};
-    const subcriptionUrl: string = API_URL + '/subscribe-service-user';
+
+    const subcriptionInfo = {
+      'subscription':
+      {
+        uid: uId,
+        // tslint:disable-next-line:radix
+        investment_amount: parseInt(investedAmt),
+        'coupon_code': 'coupon_code',
+        'misc': 'Test',
+        'items': {}
+      }
+    };
+    const subcriptionUrl: string = API_URL + '/order/user-subscription';
     this.OfferSubs = await this.http.post(subcriptionUrl, subcriptionInfo).toPromise();
     return this.OfferSubs;
   }
