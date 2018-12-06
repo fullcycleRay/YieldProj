@@ -84,4 +84,11 @@ export class OfferingsComponent implements OnInit {
 
   }
 
+
+subSectionLoad(e, subSectionLoad) {
+  if (e.target.classList.contains(subSectionLoad)) {
+      e.preventDefault();
+  }
+}
+
 }

@@ -113,10 +113,10 @@
                                     <span class="Invest__MinimumInvestmentLabel-ccljjA hGElhY">Min.
                                         Investment</span></p>
                                 <ul class="Invest__Progression-dxxPya eOdbCm">
-                                    <li class="Invest__ProgressionItem-wFTrh kVNbGb" *ngIf="">Must be in
+                                    <li class="Invest__ProgressionItem-wFTrh kVNbGb" *ngIf="minAmtIndicator == 'minAmtError'">Must be in
                                         increments of $5k</li>
-                                    <li class="Invest__ProgressionItem-wFTrh kVNbGb" *ngIf="minAmtIndicator">Must be between {{offeringMinAmt}}
-                                        and $1m</li>
+                                    <li class="Invest__ProgressionItem-wFTrh kVNbGb" *ngIf="minAmtIndicator == 'thresholdError'">Must be between {{offeringMinAmt}}
+                                        and ${{offeringReqCap/1000000}}m</li>
                                 </ul>
                             </div>
                         </div>
