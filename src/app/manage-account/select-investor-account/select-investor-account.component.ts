@@ -30,7 +30,7 @@ export class SelectInvestorAccountComponent implements OnInit {
   }
   selectedInvestor(e) {
     this.radioButton = e;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i < 6; i++) {
       if ( this.radioButton.target.elements[i].checked ) {
         this.accService.accountType = i;
         break;

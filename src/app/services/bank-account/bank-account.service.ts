@@ -22,7 +22,8 @@ accountId: any;
       'special_instuction': accData[5].value,
     };
     const accUrl: string = API_URL + '/account/bank-detail';
-    this.bankAccToken = await this.http.post(accUrl, {'bank_detail': bankDetail, 'account_id': this.accountId }).toPromise();
+    debugger
+    this.bankAccToken = await this.http.post(accUrl, {'bank_detail': bankDetail, 'account_uid': this.accountId }).toPromise();
     return this.bankAccToken;
   }
 
