@@ -1,10 +1,6 @@
-<div *ngIf="loading" id="loading">
-	loading......
-</div>
-
-
-<div class="Main_container_3ITgZ" *ngIf ="!loading">
-	<div class="sc-iqzUVk bsHdeu">
+<div class="Main_container_3ITgZ"  >
+    <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+	<div class="sc-iqzUVk bsHdeu" *ngIf="!appConfig.getLoader()">
 		<div class="sc-cqCuEk bsWxRK">
 			<!-- <div class="sc-kLIISr hAbONY"></div> -->
 			<div class="sc-dliRfk hkvrfF">
@@ -59,19 +55,16 @@
 									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
 										<dd class="sc-iQKALj dIyKSD">{{openOffer.annual_interest}}</dd>
 										<dt class="sc-RefOD bcQLGm">Annual Interest
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
 										<dd class="sc-iQKALj dIyKSD">{{openOffer.term}} months</dd>
 										<dt class="sc-RefOD bcQLGm">Term
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
 										<dd class="sc-iQKALj dIyKSD">{{openOffer.owner_name}}</dd>
 										<dt class="sc-RefOD bcQLGm">Originator
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 								</div>
@@ -98,7 +91,7 @@
                         <br>
 												<dt class="sc-epnACN hCPGag">Remaining</dt>
 											</dl>
-											<p class="sc-iQNlJl ozNsI">${{ openOffer.invested_amount == null  ? 0 : openOffer.invested_amount  }} of ${{openOffer.required_capital/1000000}}M</p>
+											<p class="sc-iQNlJl ozNsI">${{ openOffer.invested_amount == null  ? 0 : openOffer.invested_amount}} of ${{openOffer.required_capital/1000000}}M</p>
 										</div>
 									</div>
 									<dl class="sc-bsbRJL GxuAS">
@@ -163,19 +156,16 @@
 									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
 										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.annual_interest}}</dd>
 										<dt class="sc-RefOD bcQLGm">Annual Interest
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
 										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.term}} months</dd>
 										<dt class="sc-RefOD bcQLGm">Term
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 									<dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
 										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.owner_name}</dd>
 										<dt class="sc-RefOD bcQLGm">Originator
-											<a class="sc-bwCtUz eVqorp sc-cvbbAY dbHDoR">4</a>
 										</dt>
 									</dl>
 								</div>
@@ -202,7 +192,7 @@
                         <br>
 												<dt class="sc-epnACN hCPGag">Remaining</dt>
 											</dl>
-											<p class="sc-iQNlJl ozNsI">${{ upcomingoffer.invested_amount == null  ? 0 : upcomingoffer.invested_amount  }} of ${{upcomingoffer.required_capital/1000000}}M</p>
+											<p class="sc-iQNlJl ozNsI">${{ upcomingoffer.invested_amount == null  ? 0 : upcomingoffer.invested_amount}} of ${{upcomingoffer.required_capital/1000000}}M</p>
 										</div>
 									</div>
 									<dl class="sc-bsbRJL GxuAS">

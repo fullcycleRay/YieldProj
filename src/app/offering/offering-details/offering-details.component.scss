@@ -6953,3 +6953,35 @@
   text-align:center;
   cursor:not-allowed;
 }
+.hkmwMx{
+  min-width:190px;
+  max-width:340px;
+  width:100%;
+  padding-top:11px;
+  padding-right:15px;
+  padding-bottom:11px;
+  padding-left:15px;
+  background:rgb(223,227,228);
+  color:white;
+  font-family:'Raleway',sans-serif;
+  font-weight:normal;
+  font-size:16px;
+  text-align:left;
+  border:0;
+  position:relative;
+  border-radius:0;
+  line-height:24px;
+  height:auto;
+  text-align:center;
+  cursor:not-allowed;
+}
+.hkmwMx:hover{
+  background:rgb(223,227,228);
+}
+.hkmwMx disabled{
+  background:gray5;
+}
+.hkmwMx a{
+  color:white;
+  text-decoration:none;
+}

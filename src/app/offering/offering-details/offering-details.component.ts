@@ -135,5 +135,12 @@ export class OfferingDetailsComponent implements OnInit {
       this.minAmtIndicator = '';
     }
   }
+  checkInvesmentCompleted() {
+    if (this.offeringInvestedAmt >= this.offeringReqCap) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }

@@ -29,7 +29,7 @@ export class TransferFundHeaderComponent implements OnInit {
           this.restItems = resp;
           if (this.restItems.success === true) {
             this.accountData = resp.data.users_accounts;
-            this.selectedValue = this.accountData[0].id;
+            this.selectedValue = this.accountData[0].uid;
             this.bankAccServ.setAccountId(this.selectedValue);
           } else if (this.restItems.success === false) {
             alert ('Something went wrong, Unable to fetch  User accounts');

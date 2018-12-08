@@ -5,8 +5,8 @@
         <div class="TransferFunds__Wrapper-iAXsuO kmqWFo">
            <app-manage-account-header></app-manage-account-header>
            <div class="TransferFunds__Content-iakrPW diVxBw">
-              <app-transfer-fund-header></app-transfer-fund-header>
-              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "!bankAccountExist">
+              <app-transfer-fund-header *ngIf="!appConfig.getLoader()"></app-transfer-fund-header>
+              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "!bankAccountExist && !appConfig.getLoader()">
                  <div class="TransferFunds__Subtitle-wkHIC hUQEze">External Bank Accounts</div>
                  <div class="ExternalBanks__NoBankWrapper-mBUfY bkBUZv">
                     <p class="ExternalBanks__NoBankAccountText-eQlvuw kPUQpi">You have not connected to an external bank account.</p>
@@ -18,7 +18,8 @@
                     </div>
                  </div>
               </div>
-              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "bankAccountExist">
+              <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "bankAccountExist && !appConfig.getLoader()">
                 <div class="TransferFunds__Subtitle-wkHIC hUQEze">External Bank Accounts</div>
                 <!-- <div class="container success Notification__NotificationContainer-iqncWM cPNdGL alertCon" type="success">External Bank Account successfully connected to your YieldStreet Account.<span class="Notification__Close-fJjSLz dhZfLV"></span></div> -->
                 <div class="ExternalBanks__BankWrapper-hWhCgr kYEAjR">

@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {AccountService} from '../../services/account/account.service';
 import {UserService} from '../../services/user/user.service';
 import {BankAccountService} from '../../services/bank-account/bank-account.service';
+import {AppConfig} from '../../../environments/config';
+import { NgSelectOption } from '@angular/forms';
 
 @Component({
   selector: 'app-transfer-funds',
@@ -17,14 +19,16 @@ export class TransferFundsComponent implements OnInit {
   bankListResp: any;
   bankAccountExist: boolean;
   bankAccountData: any;
-  // @ViewChild('accountDropDownList') myDropDownList: ElementRef;
+  @ViewChild('accountDropDownList') myDropDownList: ElementRef;
 
 
-  constructor( private user: UserService, private accService: AccountService, private bankAccServ: BankAccountService) { }
+  constructor( private user: UserService, private accService: AccountService,
+    private bankAccServ: BankAccountService, public appConfig: AppConfig) { }
 
   ngOnInit() {
     this.currentUser = this.user.getCurrentUser();
     this.bankAccountExist = false;
+    this.appConfig.setLoader(true);
     this.getBankAccList();
   }
   getBankAccList(): void {
@@ -37,8 +41,10 @@ export class TransferFundsComponent implements OnInit {
             if ((Object.keys(this.bankListResp.data).length !== 0)) {
               this.bankAccountData = this.bankListResp.data.users_bank_accounts;
               this.bankAccountExist = true;
+              this.appConfig.setLoader(false);
             } else {
               this.bankAccountExist = false;
+              this.appConfig.setLoader(false);
             }
           } else if (this.bankListResp.success === false) {
             alert ('Something went wrong, Unable to fetch bank accounts');

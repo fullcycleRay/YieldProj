@@ -67,7 +67,7 @@
                                             <br>
                                             <dt class="Progress__RemainingLabel-dotWig cWQmxH">Remaining</dt>
                                         </dl>
-                                        <p class="Progress__RemainingText-ZbrzJ bmZYIY">${{offeringInvestedAmt}} of ${{offeringReqCap/1000000}}M</p>
+                                        <p class="Progress__RemainingText-ZbrzJ bmZYIY">${{offeringInvestedAmt == null  ? 0 :offeringInvestedAmt }} of ${{offeringReqCap/1000000}}M</p>
                                     </div>
                                 </div>
                                 <dl class="Progress__MinimumInvestmentContainer-jFHikf gGJDHi">
@@ -81,10 +81,12 @@
                             <div class="Invest__Container-ldeGsY iKzNGj" *ngIf ="true">
                                 <div class="Invest__InvestContent-dFWNar bjZLNY">
                                     <input type="number" class="Invest__StyledNumberFormat-iOMrLe iyOtaV" placeholder="$ XXX,XXX"
-                                        id="offering-valueinput" value="" [(ngModel)]="investAmt" (input)="checkForMinAmt()">
+                                        id="offering-valueinput" value="" [(ngModel)]="investAmt" (input)="checkForMinAmt()"
+                                        [disabled]="checkInvesmentCompleted()">
                                     <div class="Invest__ButtonWrapper-TTfGU jUNhFm">
-                                        <button class="Invest__StyledPrimaryButton-EArHq cxJDtz PrimaryButton__ButtonPrimary-exVhhh jcEjeY"
-                                            id="offering-invest" (click) ="investInOffering()">{{investOrLogin}}<img class="PrimaryButton__Arrow-bFuMQr cjfbRg"
+                                        <button class="Invest__StyledPrimaryButton-EArHq cxJDtz PrimaryButton__ButtonPrimary-exVhhh "
+                                            id="offering-invest" (click) ="investInOffering()"
+                                            [disabled]="checkInvesmentCompleted() && investOrLogin === 'Invest'" [ngClass]= "!checkInvesmentCompleted() || investOrLogin === 'Log in' ? 'jcEjeY' : 'hkmwMx'">{{investOrLogin}}<img class="PrimaryButton__Arrow-bFuMQr cjfbRg"
                                                 src="../../assets/ui-image/arrow.bd5e780d.svg" alt=""></button>
                                     </div>
                                 </div>

@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
+import {AppConfig} from '../../../environments/config';
 
 const API_URL = environment.yieldUrl;
 
@@ -30,15 +31,16 @@ export class OfferingsComponent implements OnInit {
   offerRemPer: any;
 
   constructor(private http: HttpClient, private router: Router, private offeringDetails: OfferingDetailsService,
-    private userService: UserService) {
+    private userService: UserService, public appConfig: AppConfig) {
   }
 
   ngOnInit() {
     this.getOfferingDetails();
-    this.loading = false;
+    this.appConfig.setLoader(true);
     this.userService.checkLogin().subscribe(
       resp => {
         this.isUserLoggedIn = resp;
+        this.appConfig.setLoader(false);
       }
     );
   }
