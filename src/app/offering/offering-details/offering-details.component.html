@@ -32,61 +32,40 @@
                             <div class="offeringmetrics OfferingMetrics__Container-iNpSSZ dsoWNo">
                                 <dl class="offeringmetrics-item OfferingMetrics__ItemContainer-CtRbQ dljKDL">
                                     <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">{{annualInterest}}%</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Annual
-                                        Interest <a class="OfferingMetrics__StyledAnchor-hpeJwn cERDkL AnchorLink__Anchor-gvnPRg dbwGLr"
-                                            >4</a></dt>
+                                        Interest</dt>
                                 </dl>
                                 <dl class="offeringmetrics-item OfferingMetrics__ItemContainer-CtRbQ dljKDL">
                                     <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">{{offeringTerm}} months</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Term
-                                        <a class="OfferingMetrics__StyledAnchor-hpeJwn cERDkL AnchorLink__Anchor-gvnPRg dbwGLr"
-                                           >4</a></dt>
+                                        </dt>
                                 </dl>
                                 <dl class="offeringmetrics-item OfferingMetrics__ItemContainer-CtRbQ hcvWDF">
                                     <dd class="OfferingMetrics__ItemDefinition-hmSycF jURBfU">Ascend Real Estate
                                         Partners</dd><dt class="OfferingMetrics__ItemTitle-GjSEm jzEqpJ">Originator
-                                        <a class="OfferingMetrics__StyledAnchor-hpeJwn cERDkL AnchorLink__Anchor-gvnPRg dbwGLr"
-                                            >4</a></dt>
+                                        </dt>
                                 </dl>
                             </div>
                         </div>
                         <div class="OfferingDetail__ProgressItem-CgJoV gntfXw">
                             <div class="Progress__Container-gzusDh ceTJLX">
                                 <div class="Progress__ProgressWrapper-jKEhAG gmpsP">
-                                    <div class="Progress__DonutWrapper-llnBcI kJqRFd">
-                                        <svg class="SimpleDonutChart__DonutChart-dQPJFj kyWOAd" width="111" height="111">
-                                            <circle class="SimpleDonutChart__Track-iRcXev dLKtwy" r="53.5" cx="55.5" cy="55.5"
-                                                transform="rotate(-90 55.5,55.5)" style="stroke-width: 4;"></circle>
-                                            <circle class="SimpleDonutChart__Indicator-iraoNR hVRGrN" r="53.5" cx="55.5"
-                                                cy="55.5" transform="rotate(-90 55.5,55.5)" style="stroke-width: 4; stroke-dasharray: 100, 100;"></circle>
-                                        </svg>
-                                    </div>
-                                    <div class="Progress__DonutWrapper-llnBcI fwAhwC">
-                                        <svg class="SimpleDonutChart__DonutChart-dQPJFj kyWOAd" width="142" height="142">
-                                            <circle class="SimpleDonutChart__Track-iRcXev dLKtwy" r="69" cx="71" cy="71"
-                                                transform="rotate(-90 71,71)" style="stroke-width: 4;"></circle>
-                                            <circle class="SimpleDonutChart__Indicator-iraoNR hVRGrN" r="69" cx="71" cy="71"
-                                                transform="rotate(-90 71,71)" style="stroke-width: 4; stroke-dasharray: 100, 100;"></circle>
-                                        </svg>
-                                    </div>
-                                    <div class="Progress__DonutWrapper-llnBcI hNVqkq">
-                                        <svg class="SimpleDonutChart__DonutChart-dQPJFj kyWOAd" width="200" height="200">
-                                            <circle class="SimpleDonutChart__Track-iRcXev dLKtwy" r="98" cx="100" cy="100"
-                                                transform="rotate(-90 100,100)" style="stroke-width: 4;"></circle>
-                                            <circle class="SimpleDonutChart__Indicator-iraoNR hVRGrN" r="98" cx="100"
-                                                cy="100" transform="rotate(-90 100,100)" style="stroke-width: 4; stroke-dasharray: 100, 100;"></circle>
-                                        </svg>
-                                    </div>
-                                    <div class="Progress__DonutWrapper-llnBcI cUzVuB">
-                                        <svg class="SimpleDonutChart__DonutChart-dQPJFj kyWOAd" width="200" height="200">
-                                            <circle class="SimpleDonutChart__Track-iRcXev dLKtwy" r="98" cx="100" cy="100"
-                                                transform="rotate(-90 100,100)" style="stroke-width: 4;"></circle>
-                                            <circle class="SimpleDonutChart__Indicator-iraoNR hVRGrN" r="98" cx="100"
-                                                cy="100" transform="rotate(-90 100,100)" style="stroke-width: 4; stroke-dasharray: 100, 100;"></circle>
-                                        </svg>
-                                    </div>
+                                    <circle-progress
+                                    [percent]="investmentPerRemaining"
+                                    [radius]="100"
+                                    [outerStrokeWidth]="16"
+                                    [innerStrokeWidth]="8"
+                                    [outerStrokeColor]="'#78C000'"
+                                    [innerStrokeColor]="'#C7E596'"
+                                    [animation]="true"
+                                    [animationDuration]="300"
+                                  ></circle-progress>
                                     <div class="Progress__ProgressNumbers-ebfpZJ bptdSl">
                                         <dl class="Progress__RemainingContainer-fWTgvh eSwDbD">
-                                            <dd class="Progress__RemainingPercentage-fipLgT duvuxp"><span>{{investmentPerRemaining == null ? 0 : investmentPerRemaining | number: 2-2}}%</span></dd><dt
-                                                class="Progress__RemainingLabel-dotWig cWQmxH">Remaining</dt>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <dt class="Progress__RemainingLabel-dotWig cWQmxH">Remaining</dt>
                                         </dl>
                                         <p class="Progress__RemainingText-ZbrzJ bmZYIY">${{offeringInvestedAmt}} of ${{offeringReqCap/1000000}}M</p>
                                     </div>

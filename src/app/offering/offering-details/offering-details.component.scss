@@ -2199,14 +2199,14 @@
 }
 /* sc-component-id: Progress__RemainingText-ZbrzJ */
  .bmZYIY{
-    margin-top:10px;
+    margin-top:0px;
     color:rgb(118,129,135);
     font-size:12px;
     line-height:13px;
 }
 @media (min-width:768px){
     .bmZYIY{
-        margin-top:9px;
+        margin-top:0px;
         font-size:14px;
         line-height:15px;
     }
@@ -6930,4 +6930,26 @@
 		grid-row-start: 5;
 		-ms-grid-column-span: 1;
 	}
+}
+.hkmwMx{
+  min-width:190px;
+  max-width:340px;
+  width:100%;
+  padding-top:11px;
+  padding-right:15px;
+  padding-bottom:11px;
+  padding-left:15px;
+  background:rgb(223,227,228);
+  color:white;
+  font-family:'Raleway',sans-serif;
+  font-weight:normal;
+  font-size:16px;
+  text-align:left;
+  border:0;
+  position:relative;
+  border-radius:0;
+  line-height:24px;
+  height:auto;
+  text-align:center;
+  cursor:not-allowed;
 }

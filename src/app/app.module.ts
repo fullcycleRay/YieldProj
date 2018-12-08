@@ -45,6 +45,11 @@ import { TransferFundHeaderComponent } from './shared/ui/transfer-fund-header/tr
 import { ManageAccountHeaderComponent } from './shared/ui/manage-account-header/manage-account-header.component';
 import { VerifyAccountComponent } from './manage-account/verify-account/verify-account.component';
 import { FileUploadModule } from 'ng2-file-upload';
+// Import ng-circle-progress
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { LoaderComponent } from './shared/loader/loader.component';
+import {AppConfig} from '../environments/config';
+import { InvestmentDetailsComponent } from './transactions/investment-details/investment-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,18 +90,31 @@ import { FileUploadModule } from 'ng2-file-upload';
     TransferFundHeaderComponent,
     ManageAccountHeaderComponent,
     VerifyAccountComponent,
+    LoaderComponent,
+    InvestmentDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FileUploadModule
+    FileUploadModule,
+    // Specify ng-circle-progress as an import
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: '#78C000',
+      innerStrokeColor: '#C7E596',
+      animationDuration: 300,
+    })
   ],
   providers: [
     UserService,
     AuthServiceService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    AppConfig
   ],
   bootstrap: [AppComponent],
 

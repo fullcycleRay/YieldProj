@@ -22,7 +22,7 @@ export class OfferingDetailsService {
     .subscribe(
       params => {
         this.subscribed = params.success;
-        localStorage.setItem('Subcribed',this.subscribed);
+        localStorage.setItem('Subcribed', this.subscribed);
       });
   }
   async getOfferingData() {

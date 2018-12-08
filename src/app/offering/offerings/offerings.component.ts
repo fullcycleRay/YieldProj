@@ -27,6 +27,7 @@ export class OfferingsComponent implements OnInit {
   loading = true;
   dateNow: Date = new Date();
   isUserLoggedIn: Observable <boolean>;
+  offerRemPer: any;
 
   constructor(private http: HttpClient, private router: Router, private offeringDetails: OfferingDetailsService,
     private userService: UserService) {
@@ -84,6 +85,10 @@ export class OfferingsComponent implements OnInit {
 
   }
 
+calculatePercentage = (openOffer) => {
+  const investedAmount = openOffer.invested_amount == null  ? 0 : openOffer.invested_amount;
+  return (openOffer.required_capital - investedAmount) * 100 / (openOffer.required_capital);
+}
 
 subSectionLoad(e, subSectionLoad) {
   if (e.target.classList.contains(subSectionLoad)) {

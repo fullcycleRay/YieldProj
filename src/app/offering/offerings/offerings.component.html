@@ -25,13 +25,13 @@
 				<div class="sc-gFaPwZ klretw" *ngFor="let openOffer of openOfferings">
 					<div class="sc-gojNiO fmyiTm" title="{{openOfferings.name}}">
 						<div class="sc-daURTG ePINih">
-							<div>Fully Allocated</div>
+							<!-- <div>Fully Allocated</div> -->
 						</div>
 						<div class="sc-bXGyLb sHvNw">
 							<div class="sc-lkqHmb kenoSO">
 								<div class="sc-esjQYD fXUPyx">
 									<div class="sc-kIPQKe jjEvNx">
-										<p>Fully Allocated</p>
+										<!-- <p>Fully Allocated</p> -->
 									</div>
 								</div>
 							</div>
@@ -79,33 +79,23 @@
 							<div class="sc-fYiAbW hBEFkG">
 								<div class="sc-eTuwsz bZNdzA">
 									<div class="sc-esOvli dTDxbU">
-										<div class="sc-iuJeZd bZleEG">
-											<svg class="sc-hzDkRC cOHVfC" width="111" height="111">
-												<circle class="sc-Rmtcm lkJXfL" r="53.5" cx="55.5" cy="55.5" transform="rotate(-90 55.5,55.5)" style="stroke-width: 4;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="53.5" cx="55.5" cy="55.5" transform="rotate(-90 55.5,55.5)" style="stroke-width: 4; stroke-dasharray: 336.15, 336.15;"></circle>
-											</svg>
-										</div>
-										<div class="sc-iuJeZd eVJgJd">
-											<svg class="sc-hzDkRC cOHVfC" width="142" height="142">
-												<circle class="sc-Rmtcm lkJXfL" r="69" cx="71" cy="71" transform="rotate(-90 71,71)" style="stroke-width: 4;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="69" cx="71" cy="71" transform="rotate(-90 71,71)" style="stroke-width: 4; stroke-dasharray: 433.54, 433.54;"></circle>
-											</svg>
-										</div>
-										<div class="sc-iuJeZd jSEvXf">
-											<svg class="sc-hzDkRC cOHVfC" width="200" height="200">
-												<circle class="sc-Rmtcm lkJXfL" r="98" cx="100" cy="100" transform="rotate(-90 100,100)" style="stroke-width: 4;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="98" cx="100" cy="100" transform="rotate(-90 100,100)" style="stroke-width: 4; stroke-dasharray: 615.752, 615.752;"></circle>
-											</svg>
-										</div>
-										<div class="sc-iuJeZd dewQkA">
-											<svg class="sc-hzDkRC cOHVfC" width="190" height="190">
-												<circle class="sc-Rmtcm lkJXfL" r="93" cx="95" cy="95" transform="rotate(-90 95,95)" style="stroke-width: 4;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="93" cx="95" cy="95" transform="rotate(-90 95,95)" style="stroke-width: 4; stroke-dasharray: 584.336, 584.336;"></circle>
-											</svg>
-										</div>
+                      <circle-progress
+                      [percent]="calculatePercentage(openOffer)"
+                      [radius]="100"
+                      [outerStrokeWidth]="16"
+                      [innerStrokeWidth]="8"
+                      [outerStrokeColor]="'#78C000'"
+                      [innerStrokeColor]="'#C7E596'"
+                      [animation]="true"
+                      [animationDuration]="300"
+                    ></circle-progress>
 										<div class="sc-cmthru jgpYLn">
 											<dl class="sc-gwVKww boAGcr">
-												<dd class="sc-hXRMBi fWxLwC">{{(openOffer.required_capital - (openOffer.invested_amount == null  ? 0 : openOffer.invested_amount))*100/(openOffer.required_capital) | number: 2-2}}%</dd>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 												<dt class="sc-epnACN hCPGag">Remaining</dt>
 											</dl>
 											<p class="sc-iQNlJl ozNsI">${{ openOffer.invested_amount == null  ? 0 : openOffer.invested_amount  }} of ${{openOffer.required_capital/1000000}}M</p>
@@ -139,13 +129,13 @@
 				<div class="sc-gFaPwZ klretw" *ngFor="let upcomingoffer of upcomingOfferings">
 					<div class="sc-gojNiO fmyiTm" title="upcomingoffer.name">
 						<div class="sc-daURTG ePINih">
-							<div>Fully Allocated</div>
+							<!-- <div>Fully Allocated</div> -->
 						</div>
 						<div class="sc-bXGyLb sHvNw">
 							<div class="sc-lkqHmb kenoSO">
 								<div class="sc-esjQYD fXUPyx">
 									<div class="sc-kIPQKe jjEvNx">
-										<p>Fully Allocated</p>
+										<!-- <p>Fully Allocated</p> -->
 									</div>
 								</div>
 							</div>
@@ -193,33 +183,23 @@
 							<div class="sc-fYiAbW hBEFkG">
 								<div class="sc-eTuwsz bZNdzA">
 									<div class="sc-esOvli dTDxbU">
-										<div class="sc-iuJeZd bZleEG">
-											<svg class="sc-hzDkRC cOHVfC" width="111" height="111">
-												<circle class="sc-Rmtcm lkJXfL" r="53.5" cx="55.5" cy="55.5" transform="rotate(-90 55.5,55.5)" style="stroke-width: 4;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="53.5" cx="55.5" cy="55.5" transform="rotate(-90 55.5,55.5)" style="stroke-width: 4; stroke-dasharray: 336.15, 336.15;"></circle>
-											</svg>
-										</div>
-										<div class="sc-iuJeZd eVJgJd">
-											<svg class="sc-hzDkRC cOHVfC" width="142" height="142">
-												<circle class="sc-Rmtcm lkJXfL" r="69" cx="71" cy="71" transform="rotate(-90 71,71)" style="stroke-width: 4;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="69" cx="71" cy="71" transform="rotate(-90 71,71)" style="stroke-width: 4; stroke-dasharray: 433.54, 433.54;"></circle>
-											</svg>
-										</div>
-										<div class="sc-iuJeZd jSEvXf">
-											<svg class="sc-hzDkRC cOHVfC" width="200" height="200">
-												<circle class="sc-Rmtcm lkJXfL" r="98" cx="100" cy="100" transform="rotate(-90 100,100)" style="stroke-width: 4;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="98" cx="100" cy="100" transform="rotate(-90 100,100)" style="stroke-width: 4; stroke-dasharray: 615.752, 615.752;"></circle>
-											</svg>
-										</div>
-										<div class="sc-iuJeZd dewQkA">
-											<svg class="sc-hzDkRC cOHVfC" width="190" height="190">
-												<circle class="sc-Rmtcm lkJXfL" r="93" cx="95" cy="95" transform="rotate(-90 95,95)" style="stroke-width: 4;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="93" cx="95" cy="95" transform="rotate(-90 95,95)" style="stroke-width: 4; stroke-dasharray: 584.336, 584.336;"></circle>
-											</svg>
-										</div>
+                      <circle-progress
+                      [percent]="calculatePercentage(upcomingoffer)"
+                      [radius]="100"
+                      [outerStrokeWidth]="16"
+                      [innerStrokeWidth]="8"
+                      [outerStrokeColor]="'#78C000'"
+                      [innerStrokeColor]="'#C7E596'"
+                      [animation]="true"
+                      [animationDuration]="300"
+                    ></circle-progress>
 										<div class="sc-cmthru jgpYLn">
 											<dl class="sc-gwVKww boAGcr">
-												<dd class="sc-hXRMBi fWxLwC">{{(upcomingoffer.required_capital - (upcomingoffer.invested_amount == null  ? 0 : upcomingoffer.invested_amount)) *100/(upcomingoffer.required_capital) | number: 2-2}}%</dd>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 												<dt class="sc-epnACN hCPGag">Remaining</dt>
 											</dl>
 											<p class="sc-iQNlJl ozNsI">${{ upcomingoffer.invested_amount == null  ? 0 : upcomingoffer.invested_amount  }} of ${{upcomingoffer.required_capital/1000000}}M</p>
@@ -238,7 +218,7 @@
 								</div>
 							</div>
 							<div class="sc-fOKMvo grfFFL">
-								<button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details" routerLink="/offering-detail/{{upcomingoffer.uid}}">See Details
+								<button class="sc-fhYwyz gkfHjm sc-bwzfXH hkmwMx" id="offering-details" routerLink="/offering-detail/{{upcomingoffer.uid}}" disabled>See Details
 									<img class="sc-htpNat gamggo" src="../../assets/ui-image/arrow.bd5e780d.svg" alt="">
 								</button>
 							</div>
@@ -250,7 +230,7 @@
 				<div class="sc-jtRfpW fDDQBl" id="pastofferings">
 					<div class="sc-elJkPf csuNdW">
 						<h2 class="sc-hmXxxW bmezip">Past Offerings</h2>
-						<div class="sc-jwKygS bTswoQ" id="pastofferings-filter">
+						<!-- <div class="sc-jwKygS bTswoQ" id="pastofferings-filter">
 							<div class="sc-lhVmIH csJgMT">
 								<span>Filter: </span>
 								<div class="sc-cmTdod bMJlSl">
@@ -288,7 +268,7 @@
 									</label>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<div class="sc-bYSBpT cIgryd">
 						<div class="sc-feJyhm ftpxKV" *ngFor="let pastOffer of pastOfferings">
@@ -311,7 +291,6 @@
 												<div class="sc-gisBJw cBXWj">
 													<p class="sc-cHGsZl eoSNBH">{{pastOffer.annual_interest}}%</p>
 													<p class="sc-dVhcbM dWxTtV">Annual Interest
-														<a class="sc-kafWEX jnwVQG sc-cvbbAY dbHDoR">4</a>
 													</p>
 												</div>
 												<div class="sc-gisBJw cBXWj">
@@ -319,7 +298,6 @@
 														<span class="sc-gGBfsJ cmPsgo"> of 11 Mo.</span>
 													</p>
 													<p class="sc-dVhcbM dWxTtV">Term Remaining
-														<a class="sc-kafWEX jnwVQG sc-cvbbAY dbHDoR">4</a>
 													</p>
 												</div>
 											</div>
@@ -346,8 +324,8 @@
 										<br>Metrics are expected in 25 days.
 									</div>
 									<div class="sc-kjoXOD iPMTJj">
-										<button class="marketplace-offering-past-cta sc-TOsTZ ccRNxE">
-											<span class="sc-kgAjT bIfcEY" routerLink="/offering-detail/{{pastOffer.uid}}">See Details</span>
+										<button class="marketplace-offering-past-cta sc-TOsTZ hkmwMx seeDetails" disabled>
+											<span class="sc-kgAjT bIfcEY whiteTxt" routerLink="/offering-detail/{{pastOffer.uid}}">See Details</span>
 										</button>
 									</div>
 								</div>

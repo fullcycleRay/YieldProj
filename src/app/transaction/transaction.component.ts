@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TransactionsService} from '../services/transaction/transactions.service';
+import {AppConfig} from '../../environments/config';
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
@@ -11,11 +12,13 @@ export class TransactionComponent implements OnInit {
   accountTrans: any;
   tranPresent = false;
   transactions: any;
+  apiError: any;
 
-  constructor(private transactionService: TransactionsService) { }
+  constructor(private transactionService: TransactionsService, public appConfig: AppConfig) { }
 
   ngOnInit() {
     this.isClicked = false;
+    this.appConfig.setLoader(true);
     this.getAccTransaction();
 
   }
@@ -28,7 +31,12 @@ export class TransactionComponent implements OnInit {
         resp => {
           this.accountTrans = resp;
           this.displayTransc();
+          this.appConfig.setLoader(false);
 
+        },
+        error => {
+          this.apiError = error;
+          this.appConfig.setLoader(false);
         }
       );
   }

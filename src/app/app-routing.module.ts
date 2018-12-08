@@ -30,6 +30,7 @@ import {UserSessionGuard} from './shared/guards/user-session-guard/user-session.
 import {ConfirmInvestmentComponent} from './transactions/confirm-investment/confirm-investment.component';
 import {InvestmentGuard} from './shared/guards/transaction/investment.guard';
 import {VerifyAccountComponent} from './manage-account/verify-account/verify-account.component';
+import {InvestmentDetailsComponent} from './transactions/investment-details/investment-details.component';
 const routes: Routes = [
 {
   path: '',
@@ -57,6 +58,10 @@ const routes: Routes = [
 {
   path: 'investments',
   component: InvestmentComponent
+},
+{
+  path: 'investment-details/:id',
+  component: InvestmentDetailsComponent
 },
 {
   path: 'wallet',

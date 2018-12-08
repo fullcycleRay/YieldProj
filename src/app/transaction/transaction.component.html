@@ -55,7 +55,7 @@
                     </div>
                  </div>
               </div>
-              <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa" *ngIf="tranPresent === false">
+              <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa" *ngIf="tranPresent === false && !appConfig.getLoader()">
                  <div class="Transactions__Container-jGaKLJ ibqjOa">
                     <div class="NoInvestmentAlert__NoInvestmentsAlertContainer-cVRUEX cUGTtX shared__ComponentWrapper-hNHPcs inGxEQ">
                        <h4 class="NoInvestmentAlert__NoInvestmentsTitle-jtCIJD imAOFj">The currently selected Investor Account does not have any Transactions available at this time.</h4>
@@ -64,7 +64,8 @@
                     </div>
                  </div>
               </div>
-              <div class="Transactions__Wrapper-ForFM kKpXAN" *ngIf=" tranPresent === true">
+              <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+              <div class="Transactions__Wrapper-ForFM kKpXAN" *ngIf=" tranPresent === true && !appConfig.getLoader()">
                   <p class="Transactions__Label-kyKciE kZzUUf">Pending Transactions</p>
                   <div class="TransactionsTableDesktop__StyledTable-jESJps iECseb desktop-table DesktopTable__Wrapper-davOaM icCAYC">
                      <div class="DesktopTable__TableHeader-SGQqU eLqeCd">

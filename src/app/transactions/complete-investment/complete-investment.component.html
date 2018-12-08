@@ -43,6 +43,7 @@
           <div class="Dropdown__Container-cUUygg kzaOag">
               <div>
                   <select #bankAccDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
+                    <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2">fake pay</option>
                     <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let bankaccData of bankAccountData" value={{bankaccData.account_number}}>
                       <span class="jCuLJb" style = "display: inline-block;"> {{bankaccData.bank_name}}</span>
                     </option>
