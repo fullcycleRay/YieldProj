@@ -44,7 +44,7 @@
                       <div class="Investments__Container-gUoaLB VnLjP" *ngIf= " undefined !== accountInvestments">
                           <div >
                             <div>
-                                <p class="Investments__Label-suSkU koUArz">Pending Investments</p>
+                                <!-- <p class="Investments__Label-suSkU koUArz">Pending Investments</p> -->
                                 <div class="PendingTableDesktop__StyledTable-qxoTH kCVXCf desktop-table DesktopTable__Wrapper-davOaM icCAYC">
                                   <div class="DesktopTable__TableHeader-SGQqU eLqeCd">
                                       <div class="DesktopTable__TableColumn-kQTcFy hafpuL" width="425px"><span class="DesktopTable__TableText-lliHlq iPAGlM">Investment</span></div>
@@ -108,6 +108,40 @@
                                 </div> -->
                             </div>
                           </div>
+                          <div >
+                              <div>
+                                  <p class="Investments__Label-suSkU koUArz">Pending Investments</p>
+                                  <div class="PendingTableDesktop__StyledTable-qxoTH kCVXCf desktop-table DesktopTable__Wrapper-davOaM icCAYC">
+                                    <div class="DesktopTable__TableHeader-SGQqU eLqeCd">
+                                        <div class="DesktopTable__TableColumn-kQTcFy hafpuL" width="425px"><span class="DesktopTable__TableText-lliHlq iPAGlM">Investment</span></div>
+                                        <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Term</span></div>
+                                        <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Interest Rate</span></div>
+                                        <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Investment Amount</span></div>
+                                    </div>
+                                    <div class="DesktopTable__TableBody-jtIoId eYMmSM">
+                                      <div *ngFor="let investment of filteredArray">
+                                          <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngIf="investment.is_payment_pending === 'true'" >
+
+                                            <div class="DesktopTableRow__TableColumn-cwFros gcRVDh">
+                                                <div class="PendingTableDesktop__InvestmentTitle-dgbGRP gRwTuC">
+                                                  <a  routerLink ="/investment-details/{{investment.uid}}" routerLinkActive="router-link-active" >{{investment.service.name}}</a></div>
+                                                <div class="PendingTableDesktop__InvestorName-jRDwHF PcQdF">{{investment.service.originator_display_name}}</div>
+                                            </div>
+                                            <div class="pending-value term DesktopTableRow__TableColumn-cwFros iIWHKI">{{investment.service.remaining_term}} Mo.</div>
+                                            <div class="pending-value interest-rate DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{investment.service.annual_interest}}%</span></div>
+                                            <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{investment.investment}}</span></div>
+                                          </div>
+                                        </div>
+                                        <div class="PendingTableDesktop__StyledRow-cNUUFl cVxJDE DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngIf="false" >
+                                          <div class="DesktopTableRow__TableColumn-cwFros hxlqyY">Pending Investment Totals</div>
+                                          <div class="DesktopTableRow__TableColumn-cwFros uMzOX"></div>
+                                          <div class="pending-total interest-rate DesktopTableRow__TableColumn-cwFros cntOit"><span>10%</span></div>
+                                          <div class="pending-total amount DesktopTableRow__TableColumn-cwFros guMcgk"><span>$15,000.00</span></div>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
                       </div>
                       <div class="Investments__Container-gUoaLB VnLjP" *ngIf="undefined === accountInvestments">
                           <div class="Teaser__CompAcctContainer-hyPlEi exeJdx shared__ComponentWrapper-hNHPcs inGxEQ">
