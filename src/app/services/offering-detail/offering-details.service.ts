@@ -16,6 +16,7 @@ export class OfferingDetailsService {
   res: any;
   offeringCat: any;
   subscribed: any;
+  upcomingOrPast: any;
 
   constructor(private http: HttpClient, public sanitizer: DomSanitizer, private route: ActivatedRoute) {
     this.route.params
@@ -30,5 +31,10 @@ export class OfferingDetailsService {
     this.offeringCat = await this.http.get(serviceUrl).toPromise();
     return this.offeringCat;
     }
-
+    setNonActiveFlag(upcomingOrPast) {
+      localStorage.setItem('nonActive', JSON.stringify(upcomingOrPast));
+    }
+    getNonActiveFlag() {
+      return JSON.parse(localStorage.getItem('nonActive'));
+    }
 }

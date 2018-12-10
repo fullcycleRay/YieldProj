@@ -57,11 +57,13 @@ const routes: Routes = [
 },
 {
   path: 'investments',
-  component: InvestmentComponent
+  component: InvestmentComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'investment-details/:id',
-  component: InvestmentDetailsComponent
+  component: InvestmentDetailsComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'wallet',
@@ -165,7 +167,8 @@ const routes: Routes = [
 },
 {
   path: 'confirm-investment',
-  component: ConfirmInvestmentComponent
+  component: ConfirmInvestmentComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: '**',

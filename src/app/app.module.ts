@@ -50,6 +50,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { LoaderComponent } from './shared/loader/loader.component';
 import {AppConfig} from '../environments/config';
 import { InvestmentDetailsComponent } from './transactions/investment-details/investment-details.component';
+import {RequestCache} from './services/request-cache';
+import {CachingInterceptor} from './helper/cache.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,7 +116,9 @@ import { InvestmentDetailsComponent } from './transactions/investment-details/in
     UserService,
     AuthServiceService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    AppConfig
+    AppConfig,
+    RequestCache,
+    { provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 

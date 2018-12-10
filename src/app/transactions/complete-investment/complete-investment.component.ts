@@ -20,8 +20,9 @@ export class CompleteInvestmentComponent implements OnInit {
   selectedAccValue: any;
   bankListResp: any;
   bankAccountData: any;
-  @ViewChild('accountDropDownList') AccDropDownList: ElementRef;
+  @ViewChild('AcckeywordsInput') AccDropDownList: ElementRef;
   @ViewChild('bankAccDropDownList') BankAccDropDownList: ElementRef;
+  httpErrorResp: any;
 
   constructor(private route: ActivatedRoute, private subscriptionOffer: CompleteInvestmentService,
      private router: Router, private accService: AccountService, private bankAccList: BankAccountService) {
@@ -54,7 +55,8 @@ export class CompleteInvestmentComponent implements OnInit {
   }
 
   subscribeOffering() {
-    this.subscriptionOffer.subscribeOffer(this.uid, this.currentOffering['investmentAmt'])
+    this.subscriptionOffer.subscribeOffer(this.uid, this.currentOffering['investmentAmt'],
+     this.selectedAccValue)
     .then(
       resp => {
         this.subscptionData = resp;
@@ -62,6 +64,18 @@ export class CompleteInvestmentComponent implements OnInit {
           // this.router.navigate(['offering-details/' + this.uid + '/' +"subscribed"] );
           this.router.navigate(['/confirm-investment']);
         }
+      },
+      error => {
+        this.httpErrorResp = error;
+        if (this.httpErrorResp.status !== 200) {
+          if (this.httpErrorResp.error.message === 'Investment limit exhausted') {
+            alert(this.httpErrorResp.error.message);
+          } else {
+            alert('Error while investing please contact Fullcycle Tech Team');
+          }
+
+        }
+
       }
     );
   }
@@ -72,6 +86,7 @@ export class CompleteInvestmentComponent implements OnInit {
           this.accListResp = resp;
           if (this.accListResp.success === true) {
             this.accountData = this.accListResp.data.users_accounts;
+            this.selectedAccValue = this.accountData[0].uid;
           } else if (this.accListResp.success === false) {
             alert ('Something went wrong, Unable to fetch accounts');
           }

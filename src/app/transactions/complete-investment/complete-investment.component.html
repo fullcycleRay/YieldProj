@@ -31,8 +31,8 @@
         <div class="MoneyDetails__MoneySection-fSZDLC YwERf">
           <div class="SectionTitle-eIlcEQ kEsgWj">Investor Account</div>
           <div>
-              <select #AccDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH setFont" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
-                <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value={{accData.id}}>
+              <select #AcckeywordsInput class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH setFont"(change) ="onRowClick()" >
+                <option class="Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value={{accData.uid}}>
                   <span class="jCuLJb">{{accData.first_name}} {{accData.title}}</span>
                 </option>
               </select>

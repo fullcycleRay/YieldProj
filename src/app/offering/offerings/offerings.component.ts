@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferingDetailsService } from '../../services/offering-detail/offering-details.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, map } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
@@ -96,6 +94,10 @@ subSectionLoad(e, subSectionLoad) {
   if (e.target.classList.contains(subSectionLoad)) {
       e.preventDefault();
   }
+}
+routeOfferingDetail(uid) {
+this.offeringDetails.setNonActiveFlag({ uid: uid, flag: true});
+this.router.navigate(['/offering-detail/' + uid]);
 }
 
 }

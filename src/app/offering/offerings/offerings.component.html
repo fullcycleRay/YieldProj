@@ -212,7 +212,9 @@
 								</div>
 							</div>
 							<div class="sc-fOKMvo grfFFL">
-								<button class="sc-fhYwyz gkfHjm sc-bwzfXH hkmwMx" id="offering-details" routerLink="/offering-detail/{{upcomingoffer.uid}}" disabled>See Details
+                <button class="sc-fhYwyz gkfHjm sc-bwzfXH hkmwMx" id="offering-details"
+                 (click) ="routeOfferingDetail(upcomingoffer.uid)">
+                  See Details
 									<img class="sc-htpNat gamggo" src="../../assets/ui-image/arrow.bd5e780d.svg" alt="">
 								</button>
 							</div>
@@ -318,8 +320,9 @@
 										<br>Metrics are expected in 25 days.
 									</div>
 									<div class="sc-kjoXOD iPMTJj">
-										<button class="marketplace-offering-past-cta sc-TOsTZ hkmwMx seeDetails" disabled>
-											<span class="sc-kgAjT bIfcEY whiteTxt" routerLink="/offering-detail/{{pastOffer.uid}}">See Details</span>
+										<button class="marketplace-offering-past-cta sc-TOsTZ hkmwMx seeDetails" >
+                      <span class="sc-kgAjT bIfcEY whiteTxt" (click) ="routeOfferingDetail(pastOffer.uid)"
+                      >See Details</span>
 										</button>
 									</div>
 								</div>
