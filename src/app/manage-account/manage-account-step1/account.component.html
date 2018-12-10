@@ -40,6 +40,10 @@
                  </div>
               </div>
               <div class="InvestorAccounts__Content-xzUNG hPFPqk">
+                  <div class="alert alert-success" *ngIf="showUploadStatus">
+                      <strong>Success!</strong>Upload Successful!
+                      <i class="fa fa-close clickCursor" (click) = "closeUploadAlert()"></i>
+                    </div>
                  <div class="InvestorAccounts__Title-kFjJyR eiwQig">Your Investor Accounts</div>
                  <div class="InvestorAccounts__StyledHeader-eKdaqk PxFFM">
                     <div class="InvestorAccounts__ItemTitle-jIZWoq eyIXqu">Name</div>

@@ -14,10 +14,12 @@ export class AccountComponent implements OnInit {
   accountData: any;
   currentUser: any;
   selectedAccId: any;
-
+  showUploadStatus: any;
   constructor(private accService: AccountService, private user: UserService, private route: Router ) { }
 
   ngOnInit() {
+    this.showUploadStatus = false;
+    this.showUploadStatus = this.accService.getAccountIndc();
     this.modalBack = false;
     this.getRestItems();
     this.currentUser = this.user.getCurrentUser();
@@ -47,5 +49,8 @@ export class AccountComponent implements OnInit {
      this.route.navigate(['/upload-investor-document']);
 
   }
-
+  closeUploadAlert() {
+    this.accService.setAccountIndc(false);
+    this.showUploadStatus = this.accService.getAccountIndc();
+  }
 }

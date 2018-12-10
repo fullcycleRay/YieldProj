@@ -51,8 +51,8 @@ export class VerifyAccountComponent implements OnInit {
 
     this.uploader.onCompleteAll = () => {
       // console.log('******* onCompleteAll *********');
-      alert('Documents are uploaded! You will be notified once verification is done');
       localStorage.removeItem('selectedAccID');
+      this.accService.setAccountIndc(true);
       this.router.navigate(['/account']);
     };
   }
