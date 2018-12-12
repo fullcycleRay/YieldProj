@@ -33,14 +33,13 @@ export class OfferingsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getOfferingDetails();
     this.appConfig.setLoader(true);
     this.userService.checkLogin().subscribe(
       resp => {
         this.isUserLoggedIn = resp;
-        this.appConfig.setLoader(false);
       }
     );
+    this.getOfferingDetails();
   }
   // tslint:disable-next-line:use-life-cycle-interface
   ngAfterContentChecked() {
@@ -57,6 +56,7 @@ export class OfferingsComponent implements OnInit {
           this.offeringResp = resp;
           // console.log(this.offeringResp, this.dateNow.getTime());
           this.offeringDataExc();
+          this.appConfig.setLoader(false);
         }
       );
   }

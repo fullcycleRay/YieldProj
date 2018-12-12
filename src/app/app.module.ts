@@ -52,6 +52,8 @@ import {AppConfig} from '../environments/config';
 import { InvestmentDetailsComponent } from './transactions/investment-details/investment-details.component';
 import {RequestCache} from './services/request-cache';
 import {CachingInterceptor} from './helper/cache.interceptor';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { TooltipModule } from 'ng2-tooltip-directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,6 +103,7 @@ import {CachingInterceptor} from './helper/cache.interceptor';
     FormsModule,
     HttpClientModule,
     FileUploadModule,
+    TooltipModule,
     // Specify ng-circle-progress as an import
     NgCircleProgressModule.forRoot({
       // set defaults here
@@ -110,7 +113,8 @@ import {CachingInterceptor} from './helper/cache.interceptor';
       outerStrokeColor: '#78C000',
       innerStrokeColor: '#C7E596',
       animationDuration: 300,
-    })
+    }),
+    GoogleChartsModule.forRoot(),
   ],
   providers: [
     UserService,

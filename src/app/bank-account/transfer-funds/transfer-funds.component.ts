@@ -15,11 +15,12 @@ export class TransferFundsComponent implements OnInit {
   currentUser: any;
   restItems: any;
   accountData: any;
-  selectedValue: any;
   bankListResp: any;
   bankAccountExist: boolean;
   bankAccountData: any;
-  @ViewChild('accountDropDownList') myDropDownList: ElementRef;
+  filteredArray = [];
+  selectedAccValue: any;
+  @ViewChild('keywordsInput') keywordsInput: ElementRef;
 
 
   constructor( private user: UserService, private accService: AccountService,
@@ -28,6 +29,7 @@ export class TransferFundsComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.user.getCurrentUser();
     this.bankAccountExist = false;
+    this.getRestItems();
     this.appConfig.setLoader(true);
     this.getBankAccList();
   }
@@ -41,6 +43,7 @@ export class TransferFundsComponent implements OnInit {
             if ((Object.keys(this.bankListResp.data).length !== 0)) {
               this.bankAccountData = this.bankListResp.data.users_bank_accounts;
               this.bankAccountExist = true;
+              this.filterBankAccount();
               this.appConfig.setLoader(false);
             } else {
               this.bankAccountExist = false;
@@ -48,6 +51,34 @@ export class TransferFundsComponent implements OnInit {
             }
           } else if (this.bankListResp.success === false) {
             alert ('Something went wrong, Unable to fetch bank accounts');
+          }
+        }
+      );
+  }
+  filterBankAccount() {
+    this.filteredArray = [];
+      for (let i = 0; i < this.bankAccountData.length; i++ ) {
+        if (this.bankAccountData[i].user_account_uid === this.selectedAccValue) {
+          this.filteredArray.push(this.bankAccountData[i]);
+        }
+      }
+  }
+  onRowClick() {
+    this.selectedAccValue = this.keywordsInput.nativeElement.value;
+    this.bankAccServ.setAccountId(this.selectedAccValue);
+    this.filterBankAccount();
+  }
+  getRestItems(): void {
+    this.accService.getAccList()
+      .then(
+        resp => {
+          this.restItems = resp;
+          if (this.restItems.success === true) {
+            this.accountData = resp.data.users_accounts;
+            this.selectedAccValue = this.accountData[0].uid;
+            this.bankAccServ.setAccountId(this.selectedAccValue);
+          } else if (this.restItems.success === false) {
+            alert ('Something went wrong, Unable to fetch  User accounts');
           }
         }
       );

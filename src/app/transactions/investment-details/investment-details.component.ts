@@ -12,6 +12,25 @@ import {AppConfig} from '../../../environments/config';
 export class InvestmentDetailsComponent implements OnInit {
   uid: any;
   investmentOfferingDetails: any;
+  investmentChartType = 'AreaChart';
+  investmentTitle = '';
+  myWidth = '100px';
+  myHeight = '500px';
+  // dynamicResize = ['1000px', '500px'];
+  chartOptions = {
+    hAxis: {title: 'Months',  titleTextStyle: {color: '#333'}},
+    vAxis: {minValue: 0},
+    colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+    is3D: true
+  };
+  investmentColumn = ['Months', 'Earned Interests'];
+  investmentData = [
+            ['Nov',  500],
+            ['Dec',  1200],
+            ['Jan',  400],
+            ['Feb',  1020]
+    ];
+
 
   constructor(private route: ActivatedRoute, private router: Router,
      private investmentService: InvestmentService, public appConfig: AppConfig) {
@@ -25,7 +44,6 @@ export class InvestmentDetailsComponent implements OnInit {
   ngOnInit() {
     this.appConfig.setLoader(true);
     this.getInvestmentDetails();
-    // this.displayCharts();
   }
 
   getInvestmentDetails(): void {
@@ -33,32 +51,9 @@ export class InvestmentDetailsComponent implements OnInit {
     .then(
       resp => {
         this.investmentOfferingDetails = resp.data.users_investment;
+        this.investmentTitle = this.investmentOfferingDetails.service.name;
         this.appConfig.setLoader(false);
       }
     );
 }
-
-// displayCharts(){
-//   google.charts.load('current', {'packages':['corechart']});
-//   google.charts.setOnLoadCallback(drawChart);
-
-//   function drawChart() {
-//     let data = google.visualization.arrayToDataTable([
-//       ['Months', 'Earned Interests'],
-//       ['Nov',  1000],
-//       ['2014',  1170],
-//       ['2015',  660],
-//       ['2016',  1030]
-//     ]);
-
-//     let options = {
-//       hAxis: {title: 'Months',  titleTextStyle: {color: '#333'}},
-//       vAxis: {minValue: 0}
-//     };
-
-//     let chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-//     chart.draw(data, options);
-//   }
-// }
-
 }

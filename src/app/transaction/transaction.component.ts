@@ -4,7 +4,7 @@ import {AppConfig} from '../../environments/config';
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.scss', './reactTooltip.scss',
+  styleUrls: ['./transaction.component.scss',
    '../viewportfolio/viewportfolio.component.scss', '../app.component.scss']
 })
 export class TransactionComponent implements OnInit {
@@ -48,6 +48,8 @@ export class TransactionComponent implements OnInit {
       this.transactions = this.accountTrans.data.users_sales_orders;
 
     }
+  }
+  perClick(e) {
 
   }
 }

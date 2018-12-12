@@ -132,7 +132,7 @@ export class OfferingDetailsComponent implements OnInit {
     }
   }
   checkForMinAmt() {
-    if (this.investAmt < this.offering.service.min_investment) {
+    if (this.investAmt < this.offering.service.min_investment || undefined  === this.investAmt) {
       this.minAmtIndicator = 'minAmtError';
     } else if (this.investAmt >= this.offeringReqCap) {
       this.minAmtIndicator = 'thresholdError';

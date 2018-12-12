@@ -15,15 +15,7 @@
                       <div>
                          <div class="shared__Desktop-hjxvYk cGsOEk">
                             <div class="Investments__FilterContainer-csvBeW cPrxJq">
-                               <!-- <div class="shared__StyledHeaderDropdown-nCqUr cHWqGL HeaderDropdown__DropdownWrapper-coMKrj jvsIdX">
-                                  <div class="HeaderDropdown__StyledDropdown-cfQxqG beZXOE Dropdown__Container-cUUygg dlinaM" id="portfolio-investor-dropdown">
-                                     <div class="HeaderDropdown__StyledDropdown-cfQxqG beZXOE false Dropdown__ActiveContainer-ftVMPU ilTLWk" data-click-id="dropdown" id="active-container">
-                                        <div class="Dropdown__ActiveOption-eGGXhI eguRTf" data-click-id="dropdown" id="active-option">All Investors</div>
-                                        <span id="dropdown-arrow" data-click-id="dropdown" theme="secondary" aria-hidden="true" class="fa fa-angle-down Dropdown__DropdownIcon-dIxNDU ikGzXA"></span>
-                                     </div>
-                                  </div>
-                               </div> -->
-                               <select #keywordsInput class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH setFont"
+                               <select #keywordsInput class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH setFont customDopDown"
                                 (change)="onRowClick()" >
                                  <option value ="all">All</option>
                                 <option class="Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value = {{accData.uid}}>
@@ -44,7 +36,7 @@
                       <div class="Investments__Container-gUoaLB VnLjP" *ngIf= " undefined !== accountInvestments">
                           <div >
                             <div>
-                                <!-- <p class="Investments__Label-suSkU koUArz">Pending Investments</p> -->
+                                <p class="Investments__Label-suSkU koUArz">Active Investments</p>
                                 <div class="PendingTableDesktop__StyledTable-qxoTH kCVXCf desktop-table DesktopTable__Wrapper-davOaM icCAYC">
                                   <div class="DesktopTable__TableHeader-SGQqU eLqeCd">
                                       <div class="DesktopTable__TableColumn-kQTcFy hafpuL" width="425px"><span class="DesktopTable__TableText-lliHlq iPAGlM">Investment</span></div>
@@ -74,38 +66,6 @@
                                       </div>
                                   </div>
                                 </div>
-                                <!-- <div class="MobileTable__Wrapper-iMbaLQ kQNqoN">
-                                  <div class="MobileTable__Header-kOJgBU hlwqKg">Pending Investments</div>
-                                  <div class="mobile-row MobileTable__RowWrapper-gZljFT kekjSJ">
-                                      <div class="mobile-noteTitle MobileTableRow__TopRow-ekZURV bJjaDE">
-                                        <span class="mobile-noteTitle-title MobileTableRow__InvestmentTitle-zqsfg ebBrLw"><a href="/portfolio/investment-details-pending/wTbO6Q/65330">Large Dry Bulk Vessel Acquisition</a></span>
-                                        <p class="mobile-noteTitle-name MobileTableRow__InvestorName-eDFNAb cvdaUI">Tushar Dhingra</p>
-                                      </div>
-                                      <div class="mobile-termsRemaining MobileTableRow__TableRow-jTdAZR bIGknH" type="Pending">
-                                        <div class="mobile-table-cell-field MobileTableRow__MobileTableCell-gqRhUe fumGRy">Term</div>
-                                        <div class="mobile-table-cell-value MobileTableRow__MobileTableCell-gqRhUe fumGRy">34 Mo.</div>
-                                      </div>
-                                      <div class="mobile-interestRate MobileTableRow__TableRow-jTdAZR bIGknH" type="Pending">
-                                        <div class="MobileTableRow__MobileTableCell-gqRhUe fumGRy">Interest Rate</div>
-                                        <span class="mobile-table-cell-value">10.00%</span>
-                                      </div>
-                                      <div class="mobile-principalInvested MobileTableRow__TableRow-jTdAZR bIGknH" type="Pending">
-                                        <div class="MobileTableRow__MobileTableCell-gqRhUe fumGRy">Investment Amount</div>
-                                        <span class="mobile-table-cell-value">$15,000.00</span>
-                                      </div>
-                                  </div>
-                                  <div class="LastRow__LastRowWrapper-dbdAtQ irGaRx">
-                                      <div class="LastRow__Header-eqTfvf kQMInM">Pending Investment Summary</div>
-                                      <div class="mobile-averageInterestRate MobileTableRow__TableRow-jTdAZR bIGknH">
-                                        <div class="MobileTableRow__MobileTableCell-gqRhUe fumGRy">Interest Rate</div>
-                                        <span class="mobile-table-cell-value">10.00%</span>
-                                      </div>
-                                      <div class="mobile-totalPrincipalInvested MobileTableRow__TableRow-jTdAZR bIGknH">
-                                        <div class="MobileTableRow__MobileTableCell-gqRhUe fumGRy">Investment Amount</div>
-                                        <span class="mobile-table-cell-value">$15,000.00</span>
-                                      </div>
-                                  </div>
-                                </div> -->
                             </div>
                           </div>
                           <div >
@@ -193,145 +153,6 @@
                       </div>
                     </div>
                   </div>
-             </div>
-             <div class="PortfolioContainer__ContentWrapper-bLzDll fRUPbU" *ngIf ="false">
-                <div class="Header__Wrapper-jGBIxR dWYIdt">
-                   <div class="Header__TitleWrapper-eiGINF iWVqVB">
-                      <div class="Header__Title-dLRSgy fnOXBv">
-                         <div class="Breadcrumb__Container-iFkNRY gdpVpA"><span class="Breadcrumb__BreadcrumbItem-hOHfsj cvyNLD"><span class="Breadcrumb__FontAwesomeWrapper-eFirZx gGHvIX"><span aria-hidden="true" class="fa fa-angle-right"></span></span>portfolio</span><span class="Breadcrumb__BreadcrumbItem-hOHfsj cvyNLD"><span class="Breadcrumb__FontAwesomeWrapper-eFirZx gGHvIX"><span aria-hidden="true" class="fa fa-angle-right"></span></span>investments</span><span class="Breadcrumb__BreadcrumbItem-hOHfsj cvyNLD"><span class="Breadcrumb__FontAwesomeWrapper-eFirZx gGHvIX"><span aria-hidden="true" class="fa fa-angle-right"></span></span>Investment Details</span></div>
-                      </div>
-                      <div class="Header__CurrentTab-dWpQpn dQsaWW">Large Dry Bulk Vessel Acquisition</div>
-                   </div>
-                   <div class="Header__DropdownWrapper-kzZVJq cMVwLP"></div>
-                </div>
-                <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa">
-                   <div>
-                      <div class="Overview__Wrapper-jmeSor hFiCDe">
-                         <div class="Overview__ContentWrapper-eeNvPM dmErfv">
-                            <div>
-                               <div class="shared__ComponentWrapper-hNHPcs cfYEto">
-                                  <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
-                                     <h2 class="InvestmentDetailsComponent__ComponentHeader-hXScBQ cvmefl">Investment Details</h2>
-                                     <a href="/offering/wTbO6Q">
-                                        <div class="InvestmentDetailsComponent__OriginalOffering-hgJrrT lbpClL">View Original Offering</div>
-                                     </a>
-                                  </div>
-                                  <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
-                                     <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
-                                        <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
-                                           <dd>10%</dd>
-                                           <dt>Target Interest Rate</dt>
-                                        </dl>
-                                        <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
-                                           <dd>34 Mo.</dd>
-                                           <dt>Estimated Term Remaining</dt>
-                                        </dl>
-                                     </div>
-                                  </div>
-                                  <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
-                                     <div class="InvestmentDetailsItem__Flex-hzkPGS jyXbON">
-                                        <div class="InvestmentDetailsItem__LeftText-HuGiz dYvagt">Asset Class</div>
-                                        <div class="InvestmentDetailsItem__BottomLine-cMPcci ctETmp"></div>
-                                        <div class="InvestmentDetailsItem__RightText-eXlzpA lGhJn">Marine</div>
-                                     </div>
-                                  </div>
-                                  <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
-                                     <div class="InvestmentDetailsItem__Flex-hzkPGS jyXbON">
-                                        <div class="InvestmentDetailsItem__LeftText-HuGiz dYvagt">Payment Type</div>
-                                        <div class="InvestmentDetailsItem__BottomLine-cMPcci ctETmp"></div>
-                                        <div class="InvestmentDetailsItem__RightText-eXlzpA lGhJn">Monthly</div>
-                                     </div>
-                                  </div>
-                                  <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
-                                     <div class="InvestmentDetailsItem__Flex-hzkPGS jyXbON">
-                                        <div class="InvestmentDetailsItem__LeftText-HuGiz dYvagt">Date Invested</div>
-                                        <div class="InvestmentDetailsItem__BottomLine-cMPcci ctETmp"></div>
-                                        <div class="InvestmentDetailsItem__RightText-eXlzpA lGhJn">November 1, 2018</div>
-                                     </div>
-                                  </div>
-                                  <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
-                                     <div class="InvestmentDetailsItem__Flex-hzkPGS jyXbON">
-                                        <div class="InvestmentDetailsItem__LeftText-HuGiz dYvagt">Originator</div>
-                                        <div class="InvestmentDetailsItem__BottomLine-cMPcci ctETmp"></div>
-                                        <div class="InvestmentDetailsItem__RightText-eXlzpA lGhJn">Global Marine Transport Capital</div>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="shared__ComponentWrapper-hNHPcs cfYEto">
-                               <div class="InvestmentDocuments__SummaryWrapper-bNsReo cPCAxU">
-                                  <h2 class="InvestmentDocuments__ComponentHeader-lfhxyR dgFsF">Investment Documents</h2>
-                                  <div>
-                                     <div class="none InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
-                                        <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/117501" download="">Private Placement Memorandum</a></div>
-                                        <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/117501" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
-                                     </div>
-                                  </div>
-                                  <div>
-                                     <div class="background InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
-                                        <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/117502" download="">Subscription Agreement</a></div>
-                                        <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/117502" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
-                                     </div>
-                                  </div>
-                                  <div>
-                                     <div class="none InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
-                                        <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/133448" download="">Important Status Update</a></div>
-                                        <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/133448" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
-                                     </div>
-                                  </div>
-                                  <div>
-                                     <div class="background InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
-                                        <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/133465" download="">Indenture &amp; Form of Note</a></div>
-                                        <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/133465" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
-                                     </div>
-                                  </div>
-                                  <div>
-                                     <div class="none InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
-                                        <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/133664" download="">Series Note Supplement</a></div>
-                                        <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/133664" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
-                                     </div>
-                                  </div>
-                                  <div>
-                                     <div class="background InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
-                                        <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="https://ysdocs.s3.amazonaws.com/prod/INVESTMENTS/18154/UZtIoaKiq3d4FNWBqm5zqDZ0.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20181101T103607Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=AKIAJ6EW5IDOK7CZYOJA%2F20181101%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=8fb2620f40e747c32a14968f56add0938a54157d11118c73ba7014b6ccc036bb" download="">Subscription Agreement</a></div>
-                                        <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="https://ysdocs.s3.amazonaws.com/prod/INVESTMENTS/18154/UZtIoaKiq3d4FNWBqm5zqDZ0.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20181101T103607Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=AKIAJ6EW5IDOK7CZYOJA%2F20181101%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=8fb2620f40e747c32a14968f56add0938a54157d11118c73ba7014b6ccc036bb" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="Overview__RightContentWrapper-hjdzLc kFasWa">
-                            <div class="shared__ComponentWrapper-hNHPcs inGxEQ" id="portfolio-activity">
-                               <div class="Activity__TitleWrapper-bMaIrg dtzgFK">
-                                  <div class="Activity__Title-jSQQlI pjrCR">Investment Activity</div>
-                                  <div class="Activity__PaymentsTab-fXkAWs bOcZmN Activity__MenuTab-clDiJZ PsOBr">Payments</div>
-                                  <div class="Activity__UpdatesTab-fkJjda boetUH Activity__MenuTab-clDiJZ PsOBr">Updates</div>
-                               </div>
-                               <div class="Activity__UpdatesWrapper-iTfPKV hCWbKF" id="portfolio-overview-activity-updates">
-                                  <div class="Item__ItemWrapper-heChjU bYuSNA">
-                                     <div class="Item__TitleWrapper-jAOqsD vwOQo">
-                                        <div class="activity-item-title Item__Title-cKLOJg lwEFh">Investment Requested</div>
-                                        <div class="activity-item-date Item__Date-beMZVG eFfwpE">November 1, 2018</div>
-                                     </div>
-                                     <div class="Item__ContentWrapper-eWsHpb ghdoim">
-                                        <div class="Item__ContentInnerWrapper-jKYUeu ksKmGc"><span class="Item__Content-bZVkdQ ePYheE">You invested $15,000.00 in Large Dry Bulk Vessel Acquisition.</span></div>
-                                     </div>
-                                  </div>
-                                  <div class="Item__ItemWrapper-heChjU bYuSNA">
-                                     <div class="Item__TitleWrapper-jAOqsD vwOQo">
-                                        <div class="activity-item-title Item__Title-cKLOJg lwEFh">Important Status Update</div>
-                                        <div class="activity-item-date Item__Date-beMZVG eFfwpE">October 19, 2018</div>
-                                     </div>
-                                     <div class="Item__ContentWrapper-eWsHpb ghdoim">
-                                        <div class="Item__ContentInnerWrapper-jKYUeu ksKmGc"><span class="Item__Content-bZVkdQ ePYheE">Please see attached for an important status update regarding this offering.</span><span class="Item__DownloadButton-haWKiQ jxMeWy"> <span aria-hidden="true" class="fa fa-download"></span></span></div>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
              </div>
           </div>
        </div>

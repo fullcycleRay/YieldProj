@@ -13,8 +13,8 @@ export class TransferFundHeaderComponent implements OnInit {
   accountData: any;
   selectedValue: any;
   currentUser: any;
-
-  @ViewChild('accountDropDownList') myDropDownList: ElementRef;
+  selectedAccValue: any;
+  @ViewChild('keywordsInput') keywordsInput: ElementRef;
 
   constructor(private accService: AccountService, private bankAccServ: BankAccountService, private userService: UserService ) { }
 
@@ -38,7 +38,7 @@ export class TransferFundHeaderComponent implements OnInit {
       );
   }
   onRowClick() {
-    this.selectedValue = this.myDropDownList.nativeElement.value;
+    this.selectedAccValue = this.keywordsInput.nativeElement.value;
     this.bankAccServ.setAccountId(this.selectedValue);
   }
 

@@ -16,6 +16,7 @@ export class InvestmentComponent implements OnInit {
   accListResp: any;
   selectedAccValue: any;
   account_id: any;
+  extractedArray = [];
   filteredArray = [];
   @ViewChild('keywordsInput') keywordsInput: ElementRef;
 
@@ -31,6 +32,7 @@ export class InvestmentComponent implements OnInit {
       .then(
         resp => {
           this.accountInvestments = resp.data.investments;
+          this.extractData();
           this.filterInvestment();
           this.appConfig.setLoader(false);
 
@@ -67,5 +69,34 @@ export class InvestmentComponent implements OnInit {
     } else {
       this.filteredArray = this.accountInvestments;
     }
+  }
+  extractData () {
+    let accountInvestmentTemp = [];
+    accountInvestmentTemp = this.accountInvestments;
+    let investment = null;
+    let totalInvestment = null;
+    let investmentTotalFlag = false;
+    for (let i = 0; i < accountInvestmentTemp.length; i++ ) {
+      investmentTotalFlag = false;
+      investment = accountInvestmentTemp[i];
+      accountInvestmentTemp.splice(i, 1 );
+      totalInvestment = '';
+      for (let y = 0; y < accountInvestmentTemp.length; y++) {
+        if (investment.user_account_uid === accountInvestmentTemp[y].user_account_uid
+           && investment.service.uid === accountInvestmentTemp[y].service.uid
+           && investment.is_payment_pending === accountInvestmentTemp[y].is_payment_pending) {
+                investmentTotalFlag = true;
+                totalInvestment = investment.investment + accountInvestmentTemp[y].investment;
+                investment.investment = totalInvestment;
+                this.accountInvestments.splice(y, 1);
+                this.accountInvestments.splice(y, 0 , investment);
+        } else if ( investmentTotalFlag === false && y === accountInvestmentTemp.length - 1 ) {
+          accountInvestmentTemp.splice(i, 0 , investment);
+          investmentTotalFlag = null;
+          break;
+        }
+      }
+    }
+    this.accountInvestments = accountInvestmentTemp;
   }
 }

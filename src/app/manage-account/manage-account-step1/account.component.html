@@ -52,36 +52,39 @@
                     <div class="InvestorAccounts__ItemTitle-jIZWoq bfjtHr">Accreditation</div>
                     <div class="InvestorAccounts__ItemTitle-jIZWoq caksyX">Next Steps</div>
                  </div>
-                  <div class="InvestorAccountsItem__Row-jGQHOG iQwHZA" *ngFor= "let accData of accountData">
-                      <div class="InvestorAccountsItem__Item-qmFTp eAqlTR">
-                          <input #accid type="hidden" id="accId" name="accId" [value] = "accData.uid">
-                        <label class="InvestorAccountsItem__MobileLabel-goEcfD fLwSqC">Name</label>
-                        <div class="InvestorAccountsItem__Value-eVFkKX bvDjiZ">{{accData.first_name}} {{accData.title}}</div>
-                      </div>
-                      <div class="InvestorAccountsItem__Item-qmFTp kexPqu">
-                        <label class="InvestorAccountsItem__MobileLabel-goEcfD fLwSqC">Account Type</label>
-                        <div class="InvestorAccountsItem__Value-eVFkKX cBtYdm">{{accData.account_type}}</div>
-                      </div>
-                      <div class="InvestorAccountsItem__Item-qmFTp UxSRi">
-                        <label class="InvestorAccountsItem__MobileLabel-goEcfD fLwSqC">Identity</label>
-                        <div class="InvestorAccountsItem__Value-eVFkKX fSfYgx">
-                            <span class="InvestorAccounts__ValueText-gvYKBd iVgXXZ">
-                              <div><span aria-hidden="true" class="fa fa-clock-o"></span> Pending </div>
-                            </span>
-                        </div>
-                      </div>
-                      <div class="InvestorAccountsItem__Item-qmFTp eIykCj">
-                        <label class="InvestorAccountsItem__MobileLabel-goEcfD fLwSqC">Accreditation</label>
-                        <div class="InvestorAccountsItem__Value-eVFkKX fSfYgx">
-                            <span class="InvestorAccounts__ValueText-gvYKBd eyJVWC" color="rgb(171, 180, 186)">
-                              <div><span aria-hidden="true" class="fa fa-minus"></span> {{accData.status}} </div>
-                            </span>
-                        </div>
-                      </div>
-                      <div class="InvestorAccountsItem__Item-qmFTp fUzbkT">
-                        <a class="InvestorAccountsItem__StyledLinkSetUp-hOxxYE fadEfH" (click) ='uploadDocument($event)'>
-                          Upload Identity Documents
-                        </a>
+                 <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+                 <div *ngIf="!appConfig.getLoader()" >
+                      <div class="InvestorAccountsItem__Row-jGQHOG iQwHZA"  *ngFor= "let accData of accountData">
+                          <div class="InvestorAccountsItem__Item-qmFTp eAqlTR">
+                              <input #accid type="hidden" id="accId" name="accId" [value] = "accData.uid">
+                            <label class="InvestorAccountsItem__MobileLabel-goEcfD fLwSqC">Name</label>
+                            <div class="InvestorAccountsItem__Value-eVFkKX bvDjiZ">{{accData.first_name}} {{accData.title}}</div>
+                          </div>
+                          <div class="InvestorAccountsItem__Item-qmFTp kexPqu">
+                            <label class="InvestorAccountsItem__MobileLabel-goEcfD fLwSqC">Account Type</label>
+                            <div class="InvestorAccountsItem__Value-eVFkKX cBtYdm">{{accData.account_type}}</div>
+                          </div>
+                          <div class="InvestorAccountsItem__Item-qmFTp UxSRi">
+                            <label class="InvestorAccountsItem__MobileLabel-goEcfD fLwSqC">Identity</label>
+                            <div class="InvestorAccountsItem__Value-eVFkKX fSfYgx">
+                                <span class="InvestorAccounts__ValueText-gvYKBd iVgXXZ">
+                                  <div><span aria-hidden="true" class="fa fa-clock-o"></span> Pending </div>
+                                </span>
+                            </div>
+                          </div>
+                          <div class="InvestorAccountsItem__Item-qmFTp eIykCj">
+                            <label class="InvestorAccountsItem__MobileLabel-goEcfD fLwSqC">Accreditation</label>
+                            <div class="InvestorAccountsItem__Value-eVFkKX fSfYgx">
+                                <span class="InvestorAccounts__ValueText-gvYKBd eyJVWC" color="rgb(171, 180, 186)">
+                                  <div><span aria-hidden="true" class="fa fa-minus"></span> {{accData.status}} </div>
+                                </span>
+                            </div>
+                          </div>
+                          <div class="InvestorAccountsItem__Item-qmFTp fUzbkT">
+                            <a class="InvestorAccountsItem__StyledLinkSetUp-hOxxYE fadEfH" (click) ='uploadDocument($event)'>
+                              Upload Identity Documents
+                            </a>
+                          </div>
                       </div>
                   </div>
                  <!-- <div class="InvestorAccounts__AddNewInvestorButton-htUWOm idVsRd" id="profile-accounts-new-account" data-toggle="modal" data-target="#myModal">+ Add New Account</div> -->

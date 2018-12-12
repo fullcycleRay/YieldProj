@@ -1,5 +1,6 @@
 <div class="Main__Container-jeBqdM gQKlCo">
-  <div class="CompleteInvestmentContainer__StyledContainer-ezCXLp hvtsbs Container-gZqETv dedQyW">
+    <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+  <div class="CompleteInvestmentContainer__StyledContainer-ezCXLp hvtsbs Container-gZqETv dedQyW" *ngIf="!appConfig.getLoader()">
     <h1 class="CompleteInvestmentContainer__Title-jwLvwQ buXLfb">Complete Investment</h1>
     <div class="Header__Container-jDruZb HehNz">
       <ul class="Header__Properties-gzraN kLsubj">
@@ -58,6 +59,7 @@
             the terms in this online form and my agreement with YieldStreet.</div>
         </div>
       </div>
+      <form>
       <div class="Acknowledge__Container-cuemMQ DqwRz" id="acknowledge">
         <div class="SectionTitle-eIlcEQ kEsgWj">Acknowledge and Sign</div>
         <div class="Acknowledge__CheckContainer-cFGkAE ccOrjJ">
@@ -136,9 +138,10 @@
           id="complete-cancelBtn" routerLink ="/offering-detail/{{currentOffering['uid']}}">
           Cancel
         </button>
-          <button class="CompleteInvestmentContainer__SubmitButton-eRMzxQ cgHsse PrimaryButton__ButtonPrimary-exVhhh jLNNsJ"
-          id="complete-submitBtn" (click)="subscribeOffering()">Submit</button>
+          <button type = "submit"class="CompleteInvestmentContainer__SubmitButton-eRMzxQ cgHsse PrimaryButton__ButtonPrimary-exVhhh jLNNsJ"
+          id="complete-submitBtn" (click)="subscribeOffering($event)">Submit</button>
         </div>
+      </form>
     </div>
   </div>
 </div>

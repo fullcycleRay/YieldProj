@@ -16,342 +16,305 @@
 						<span class="sc-cMljjf ljIbMs">{{upcomingOfferings.length}}</span>
 					</a>
 				</div>
-			</div>
-			<div id="open" *ngIf="openOfferings">
-				<div class="sc-gFaPwZ klretw" *ngFor="let openOffer of openOfferings">
-					<div class="sc-gojNiO fmyiTm" title="{{openOfferings.name}}">
-						<div class="sc-daURTG ePINih">
-							<!-- <div>Fully Allocated</div> -->
-						</div>
-						<div class="sc-bXGyLb sHvNw">
-							<div class="sc-lkqHmb kenoSO">
-								<div class="sc-esjQYD fXUPyx">
-									<div class="sc-kIPQKe jjEvNx">
-										<!-- <p>Fully Allocated</p> -->
-									</div>
-								</div>
-							</div>
-							<div class="sc-eLExRp OBfjJ">
-								<div class="sc-hwwEjo isxROF">
-									<span class="sc-kfGgVZ kKlrRC">
-										<span class="sc-kPVwWT VCyPM">
-											<span aria-hidden="true" class="fa fa-angle-right"></span>
-										</span>Legal
-									</span>
-								</div>
-							</div>
-							<div class="sc-cbkKFq eMAkyf">
-								<!-- <a routerlink="/offering-detail/{{openOffer.uid}}"> -->
-									<div class="marketplace-offering-open-title sc-hrWEMg fpplFV">{{openOffer.name}}</div>
-								<!-- </a> -->
-								<p class="sc-gHboQg hzacNw">Originated by {{openOffer.owner_name}}</p>
-							</div>
-							<div class="sc-dUjcNx iLJTji">
-								<span class="sc-eilVRo esJwQa">Invest in a senior secured term loan to a New York based law firm backed by its
-									entire case inventory.</span>
-							</div>
-							<div class="sc-krvtoX foMcSo">
-								<div class="offeringmetrics sc-eXEjpC eHstZJ">
-									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
-										<dd class="sc-iQKALj dIyKSD">{{openOffer.annual_interest}}</dd>
-										<dt class="sc-RefOD bcQLGm">Annual Interest
-										</dt>
-									</dl>
-									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
-										<dd class="sc-iQKALj dIyKSD">{{openOffer.term}} months</dd>
-										<dt class="sc-RefOD bcQLGm">Term
-										</dt>
-									</dl>
-									<dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
-										<dd class="sc-iQKALj dIyKSD">{{openOffer.owner_name}}</dd>
-										<dt class="sc-RefOD bcQLGm">Originator
-										</dt>
-									</dl>
-								</div>
-							</div>
-							<div class="sc-fYiAbW hBEFkG">
-								<div class="sc-eTuwsz bZNdzA">
-									<div class="sc-esOvli dTDxbU">
-                      <circle-progress
-                      [percent]="calculatePercentage(openOffer)"
-                      [radius]="100"
-                      [outerStrokeWidth]="16"
-                      [innerStrokeWidth]="8"
-                      [outerStrokeColor]="'#78C000'"
-                      [innerStrokeColor]="'#C7E596'"
-                      [animation]="true"
-                      [animationDuration]="300"
-                      [subtitle] ="'Remaining'"
-                      [subtitleFontSize] ="12"
-                    ></circle-progress>
-										<div class="sc-cmthru jgpYLn">
-											<dl class="sc-gwVKww boAGcr">
-                        <br>
-                        <br>
-                        <br>
-                        <!-- <br> -->
-                        <!-- <br> -->
-												<!-- <dt class="sc-epnACN hCPGag">Remaining</dt> -->
-											</dl>
-											<p class="sc-iQNlJl ozNsI">${{ openOffer.invested_amount == null  ? 0 : openOffer.invested_amount}} of ${{openOffer.required_capital/1000000}}M</p>
-										</div>
-									</div>
-									<dl class="sc-bsbRJL GxuAS">
-										<dd class="sc-hZSUBg cvfoae">
-											<span>${{openOffer.min_investment}}</span>
-										</dd>
-										<dt class="sc-cMhqgX fFMChW">Minimum Investment</dt>
-									</dl>
-								</div>
-								<div class="sc-dymIpo chifrb">
-									<span class="sc-eilVRo esJwQa">Invest in a senior secured term loan to a New York based law firm backed by its
-										entire case inventory.</span>
-								</div>
-							</div>
-							<div class="sc-fOKMvo grfFFL">
-								<button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details" routerLink="/offering-detail/{{openOffer.uid}}" routerLinkActive="router-link-active" >See Details
-									<img class="sc-htpNat gamggo" src="../../assets/ui-image/arrow.bd5e780d.svg" alt="">
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="upcoming" *ngIf="upcomingOfferings">
-				<div class="sc-dliRfk hkvrfF">
-					<h2 class="sc-hmXxxW bmezip">Upcoming Offerings</h2>
-				</div>
-				<div class="sc-gFaPwZ klretw" *ngFor="let upcomingoffer of upcomingOfferings">
-					<div class="sc-gojNiO fmyiTm" title="upcomingoffer.name">
-						<div class="sc-daURTG ePINih">
-							<!-- <div>Fully Allocated</div> -->
-						</div>
-						<div class="sc-bXGyLb sHvNw">
-							<div class="sc-lkqHmb kenoSO">
-								<div class="sc-esjQYD fXUPyx">
-									<div class="sc-kIPQKe jjEvNx">
-										<!-- <p>Fully Allocated</p> -->
-									</div>
-								</div>
-							</div>
-							<div class="sc-eLExRp OBfjJ">
-								<div class="sc-hwwEjo isxROF">
-									<span class="sc-kfGgVZ kKlrRC">
-										<span class="sc-kPVwWT VCyPM">
-											<span aria-hidden="true" class="fa fa-angle-right"></span>
-										</span>Legal
-									</span>
-								</div>
-							</div>
-							<div class="sc-cbkKFq eMAkyf">
-								<a routerLink="/offering-detail/{{upcomingoffer.uid}}">
-									<div class="marketplace-offering-open-title sc-hrWEMg fpplFV">{{upcomingoffer.name}}</div>
-								</a>
-								<p class="sc-gHboQg hzacNw">Originated by {{upcomingoffer.owner_name}}</p>
-							</div>
-							<div class="sc-dUjcNx iLJTji">
-								<span class="sc-eilVRo esJwQa">Invest in a senior secured term loan to a New York based law firm backed by its
-									entire case inventory.</span>
-							</div>
-							<div class="sc-krvtoX foMcSo">
-								<div class="offeringmetrics sc-eXEjpC eHstZJ">
-									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
-										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.annual_interest}}</dd>
-										<dt class="sc-RefOD bcQLGm">Annual Interest
-										</dt>
-									</dl>
-									<dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
-										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.term}} months</dd>
-										<dt class="sc-RefOD bcQLGm">Term
-										</dt>
-									</dl>
-									<dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
-										<dd class="sc-iQKALj dIyKSD">{{upcomingoffer.owner_name}</dd>
-										<dt class="sc-RefOD bcQLGm">Originator
-										</dt>
-									</dl>
-								</div>
-							</div>
-							<div class="sc-fYiAbW hBEFkG">
-								<div class="sc-eTuwsz bZNdzA">
-									<div class="sc-esOvli dTDxbU">
-                      <circle-progress
-                      [percent]="calculatePercentage(upcomingoffer)"
-                      [radius]="100"
-                      [outerStrokeWidth]="16"
-                      [innerStrokeWidth]="8"
-                      [outerStrokeColor]="'#78C000'"
-                      [innerStrokeColor]="'#C7E596'"
-                      [animation]="true"
-                      [animationDuration]="300"
-                      [subtitle] ="'Remaining'"
-                      [subtitleFontSize] ="12"
-                    ></circle-progress>
-										<div class="sc-cmthru jgpYLn">
-											<dl class="sc-gwVKww boAGcr">
-                        <br>
-                        <br>
-                        <br>
-                        <!-- <br>
-                        <br>
-												<dt class="sc-epnACN hCPGag">Remaining</dt> -->
-											</dl>
-											<p class="sc-iQNlJl ozNsI">${{ upcomingoffer.invested_amount == null  ? 0 : upcomingoffer.invested_amount}} of ${{upcomingoffer.required_capital/1000000}}M</p>
-										</div>
-									</div>
-									<dl class="sc-bsbRJL GxuAS">
-										<dd class="sc-hZSUBg cvfoae">
-											<span>${{upcomingoffer.min_investment}}</span>
-										</dd>
-										<dt class="sc-cMhqgX fFMChW">Minimum Investment</dt>
-									</dl>
-								</div>
-								<div class="sc-dymIpo chifrb">
-									<span class="sc-eilVRo esJwQa">Invest in a senior secured term loan to a New York based law firm backed by its
-										entire case inventory.</span>
-								</div>
-							</div>
-							<div class="sc-fOKMvo grfFFL">
-                <button class="sc-fhYwyz gkfHjm sc-bwzfXH hkmwMx" id="offering-details"
-                 (click) ="routeOfferingDetail(upcomingoffer.uid)">
-                  See Details
-									<img class="sc-htpNat gamggo" src="../../assets/ui-image/arrow.bd5e780d.svg" alt="">
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="past" *ngIf="pastOfferings">
-				<div class="sc-jtRfpW fDDQBl" id="pastofferings">
-					<div class="sc-elJkPf csuNdW">
-						<h2 class="sc-hmXxxW bmezip">Past Offerings</h2>
-						<!-- <div class="sc-jwKygS bTswoQ" id="pastofferings-filter">
-							<div class="sc-lhVmIH csJgMT">
-								<span>Filter: </span>
-								<div class="sc-cmTdod bMJlSl">
-									<select class="sc-iELTvK elxDBg">
-										<option value="ALL">All</option>
-										<option value="COML">Commercial</option>
-										<option value="COND">Consumer</option>
-										<option value="LEGL">Legal</option>
-										<option value="REAL">Real Estate</option>
-									</select>
-									<span aria-hidden="true" class="fa fa-angle-down"></span>
-								</div>
-							</div>
-							<div class="sc-btzYZH eHXmfn">
-								<div class="Checkbox_container_oF3Uu ">
-									<label class="Checkbox_label_-Nabo">
-										<input type="checkbox" class="Checkbox_checkbox_1mjpw" value="on">
-										<span class="Checkbox_fakeCheckbox_17Ixq">
-											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAABGdBTUEAALGPC/xhBQAAAG1JREFUGBmNjcsNgCAQBbUNE0Md/kKiHuyGm01ZmvaAswQIBzdCMmE/86BtKo/3vkc9qnTkHR4YfgNIW5THINOcYL6SUb65p7ynsSDf2TykoF9B5Lmch1pkyCFqXU7pIuSo5eUl7dQbycAFnSa9dEJuIwPz7WUAAAAASUVORK5CYII="
-											 srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAABGdBTUEAALGPC/xhBQAAAG1JREFUGBmNjcsNgCAQBbUNE0Md/kKiHuyGm01ZmvaAswQIBzdCMmE/86BtKo/3vkc9qnTkHR4YfgNIW5THINOcYL6SUb65p7ynsSDf2TykoF9B5Lmch1pkyCFqXU7pIuSo5eUl7dQbycAFnSa9dEJuIwPz7WUAAAAASUVORK5CYII= 1x, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAABGdBTUEAALGPC/xhBQAAAN1JREFUOBG1kskKAjEQRPUL3BD3q/9/9uTVXVBw/wWvHuMrSI8LM5hoLCg6E7tf9QyWS3+Qc24AdoxHyfGC4wuWJkkDAPbxWWQ0xZVkAcD+Cu8RcMLSDFezzXloytlF5IHZYrhYNGy9o0OY6+Ijlub4sbktyqUCJNXgEHrf4TVjvlRBPZwSFkJfBx80gBY4H25JNASH0PsMX36Ex4R4+J4qCV63+aDKQOGb8FsbG3wVDbcN8kI8fEeVvocXhAhsf8U154b1/VQB6XPZ1hzdBqeB22YAW/iKb3ho9zH1Dj7ZkCwSYMT/AAAAAElFTkSuQmCC 2x"
-											 alt="Checkmark">
-										</span>
-										<span class="Checkbox_labelText_5bN4p"> Active</span>
-									</label>
-								</div>
-								<div class="Checkbox_container_oF3Uu ">
-									<label class="Checkbox_label_-Nabo">
-										<input type="checkbox" class="Checkbox_checkbox_1mjpw" value="on">
-										<span class="Checkbox_fakeCheckbox_17Ixq">
-											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAABGdBTUEAALGPC/xhBQAAAG1JREFUGBmNjcsNgCAQBbUNE0Md/kKiHuyGm01ZmvaAswQIBzdCMmE/86BtKo/3vkc9qnTkHR4YfgNIW5THINOcYL6SUb65p7ynsSDf2TykoF9B5Lmch1pkyCFqXU7pIuSo5eUl7dQbycAFnSa9dEJuIwPz7WUAAAAASUVORK5CYII="
-											 srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAABGdBTUEAALGPC/xhBQAAAG1JREFUGBmNjcsNgCAQBbUNE0Md/kKiHuyGm01ZmvaAswQIBzdCMmE/86BtKo/3vkc9qnTkHR4YfgNIW5THINOcYL6SUb65p7ynsSDf2TykoF9B5Lmch1pkyCFqXU7pIuSo5eUl7dQbycAFnSa9dEJuIwPz7WUAAAAASUVORK5CYII= 1x, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAABGdBTUEAALGPC/xhBQAAAN1JREFUOBG1kskKAjEQRPUL3BD3q/9/9uTVXVBw/wWvHuMrSI8LM5hoLCg6E7tf9QyWS3+Qc24AdoxHyfGC4wuWJkkDAPbxWWQ0xZVkAcD+Cu8RcMLSDFezzXloytlF5IHZYrhYNGy9o0OY6+Ijlub4sbktyqUCJNXgEHrf4TVjvlRBPZwSFkJfBx80gBY4H25JNASH0PsMX36Ex4R4+J4qCV63+aDKQOGb8FsbG3wVDbcN8kI8fEeVvocXhAhsf8U154b1/VQB6XPZ1hzdBqeB22YAW/iKb3ho9zH1Dj7ZkCwSYMT/AAAAAElFTkSuQmCC 2x"
-											 alt="Checkmark">
-										</span>
-										<span class="Checkbox_labelText_5bN4p">Fully Repaid</span>
-									</label>
-								</div>
-							</div>
-						</div> -->
-					</div>
-					<div class="sc-bYSBpT cIgryd">
-						<div class="sc-feJyhm ftpxKV" *ngFor="let pastOffer of pastOfferings">
-							<div class="sc-jhAzac eGcSkl">
-								<div class="box">
-									<div class="sc-frDJqD eIqFEl">
-										<div class="off-image">
-											<img class="sc-jqCOkK hWMEzZ" src="../../assets/closed_offering_thumbnil.png">
-										</div>
-										<div class="sc-jnlKLf iukwUf">
-											<p class="sc-fBuWsC bJYYcE">Real Estate</p>
-											<a routerLink="/offering-detail/{{pastOffer.uid}}">
-												<h5 class="marketplace-offering-past-title sc-fMiknA ihCrPN">{{pastOffer.name}} </h5>
-												<div class="sc-caSCKo giOrYH">
-													<p class="sc-cHGsZl jHXJRE">${{pastOffer.required_capital/1000000}}M</p>
-													<p class="sc-bbmXgH dUqMsj"> Offering Size</p>
-												</div>
-											</a>
-											<div class="sc-caSCKo bUGWdJ">
-												<div class="sc-gisBJw cBXWj">
-													<p class="sc-cHGsZl eoSNBH">{{pastOffer.annual_interest}}%</p>
-													<p class="sc-dVhcbM dWxTtV">Annual Interest
-													</p>
-												</div>
-												<div class="sc-gisBJw cBXWj">
-													<p class="sc-cHGsZl eoSNBH">0
-														<span class="sc-gGBfsJ cmPsgo"> of 11 Mo.</span>
-													</p>
-													<p class="sc-dVhcbM dWxTtV">Term Remaining
-													</p>
-												</div>
-											</div>
-										</div>
-										<div class="sc-fYxtnH XczkD">
-											<svg class="sc-hzDkRC cOHVfC" width="124" height="124">
-												<circle class="sc-Rmtcm lkJXfL" r="61" cx="62" cy="62" transform="rotate(-90 62,62)" style="stroke-width: 0;"></circle>
-												<circle class="sc-bRBYWo bvAKUx" r="61" cx="62" cy="62" transform="rotate(-90 62,62)" style="stroke-width: 2; stroke-dasharray: 383.274, 383.274;"></circle>
-											</svg>
-											<div class="sc-tilXH dlmAbj">
-												<div class="sc-hEsumM keGjzv">
-													<div class="sc-ktHwxA dummVq">${{pastOffer.required_capital/1000000}}M</div>
-													<div class="sc-cIShpX fapeeq">Offering Size</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="sc-cJSrbW gcLOQF">
-										<span></span>
-										<p>Recently Funded</p>
-										<span></span>
-									</div>
-									<div class="sc-kvZOFW ikJfHj">This offering was recently closed.
-										<br>Metrics are expected in 25 days.
-									</div>
-									<div class="sc-kjoXOD iPMTJj">
-										<button class="marketplace-offering-past-cta sc-TOsTZ hkmwMx seeDetails" >
-                      <span class="sc-kgAjT bIfcEY whiteTxt" (click) ="routeOfferingDetail(pastOffer.uid)"
-                      >See Details</span>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- <ul class="sc-kTUwUJ ihTGqU" id="marketplace-pagination">
-						<li class="marketplace-paginationitem marketplace-paginationitem-1 sc-dqBHgY fMjjij">1</li>
-						<li class="marketplace-paginationitem marketplace-paginationitem-2 sc-dqBHgY fqoTqk">2</li>
-						<li class="marketplace-paginationitem marketplace-paginationitem-4 sc-dqBHgY fqoTqk">4</li>
-						<li class="marketplace-paginationitem marketplace-paginationitem-3 sc-dqBHgY fqoTqk">3</li>
-					</ul> -->
-				</div>
-			</div>
-			<div class="sc-gxMtzJ cMDySV" id="marketplace-get-started">
-				<h4 class="sc-dfVpRl eUcrm">Ready to Get Started</h4>
-				<div class="sc-iyvyFf izePjh">
-					<span>
-						<a routerLink="{{isUserLoggedIn == true ? '/account' : '/signup' }}">
-							<button class="cta cta-loggedout sc-bwzfXH RvzlV" id="cta-loggedout">{{isUserLoggedIn == true ? "Manage Account" : "Signup"}}</button>
-						</a>
-					</span>
-				</div>
-				<p class="sc-gzOgki fRQslM">Questions? give us a call at (844) 943-5378
-				</p>
-				<p class="sc-gzOgki fRQslM">Need access to larger investments? Please reach out to our team directly at
-					<a href="mailto:investments@full-cycle.com">investments@full-cycle.com</a>.
-				</p>
-			</div>
+      </div>
+      <div>
+          <div id="open" *ngIf="openOfferings">
+            <div class="sc-gFaPwZ klretw" *ngFor="let openOffer of openOfferings">
+              <div class="sc-gojNiO fmyiTm" title="openOfferings.name">
+                <div class="sc-daURTG ePINih">
+                  <!-- <div>Fully Allocated</div> -->
+                </div>
+                <div class="sc-bXGyLb sHvNw">
+                  <div class="sc-lkqHmb kenoSO">
+                    <div class="sc-esjQYD fXUPyx">
+                      <div class="sc-kIPQKe jjEvNx">
+                        <!-- <p>Fully Allocated</p> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sc-eLExRp OBfjJ">
+                    <div class="sc-hwwEjo isxROF">
+                      <span class="sc-kfGgVZ kKlrRC">
+                        <span class="sc-kPVwWT VCyPM">
+                          <span aria-hidden="true" class="fa fa-angle-right"></span>
+                        </span>Legal
+                      </span>
+                    </div>
+                  </div>
+                  <div class="sc-cbkKFq eMAkyf">
+                    <!-- <a routerlink="/offering-detail/{{openOffer.uid}}"> -->
+                      <div class="marketplace-offering-open-title sc-hrWEMg fpplFV">{{openOffer.name}}</div>
+                    <!-- </a> -->
+                    <p class="sc-gHboQg hzacNw">Originated by {{openOffer.owner_name}}</p>
+                  </div>
+                  <div class="sc-dUjcNx iLJTji">
+                    <span class="sc-eilVRo esJwQa">Invest in a senior secured term loan to a New York based law firm backed by its
+                      entire case inventory.</span>
+                  </div>
+                  <div class="sc-krvtoX foMcSo">
+                    <div class="offeringmetrics sc-eXEjpC eHstZJ">
+                      <dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
+                        <dd class="sc-iQKALj dIyKSD">{{openOffer.annual_interest}}</dd>
+                        <dt class="sc-RefOD bcQLGm">Annual Interest
+                        </dt>
+                      </dl>
+                      <dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
+                        <dd class="sc-iQKALj dIyKSD">{{openOffer.term}} months</dd>
+                        <dt class="sc-RefOD bcQLGm">Term
+                        </dt>
+                      </dl>
+                      <dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
+                        <dd class="sc-iQKALj dIyKSD">{{openOffer.owner_name}}</dd>
+                        <dt class="sc-RefOD bcQLGm">Originator
+                        </dt>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="sc-fYiAbW hBEFkG">
+                    <div class="sc-eTuwsz bZNdzA">
+                      <div class="sc-esOvli dTDxbU">
+                          <circle-progress
+                          [percent]="calculatePercentage(openOffer)"
+                          [radius]="100"
+                          [outerStrokeWidth]="16"
+                          [innerStrokeWidth]="8"
+                          [outerStrokeColor]="'#78C000'"
+                          [innerStrokeColor]="'#C7E596'"
+                          [animation]="true"
+                          [animationDuration]="300"
+                          [subtitle] ="'Remaining'"
+                          [subtitleFontSize] ="12"
+                        ></circle-progress>
+                        <div class="sc-cmthru jgpYLn">
+                          <dl class="sc-gwVKww boAGcr">
+                            <br>
+                            <br>
+                            <br>
+                            <!-- <br> -->
+                            <!-- <br> -->
+                            <!-- <dt class="sc-epnACN hCPGag">Remaining</dt> -->
+                          </dl>
+                          <p class="sc-iQNlJl ozNsI">${{ openOffer.invested_amount == null  ? 0 : openOffer.invested_amount}} of ${{openOffer.required_capital/1000000}}M</p>
+                        </div>
+                      </div>
+                      <dl class="sc-bsbRJL GxuAS">
+                        <dd class="sc-hZSUBg cvfoae">
+                          <span>${{openOffer.min_investment}}</span>
+                        </dd>
+                        <dt class="sc-cMhqgX fFMChW">Minimum Investment</dt>
+                      </dl>
+                    </div>
+                    <div class="sc-dymIpo chifrb">
+                      <span class="sc-eilVRo esJwQa">Invest in a senior secured term loan to a New York based law firm backed by its
+                        entire case inventory.</span>
+                    </div>
+                  </div>
+                  <div class="sc-fOKMvo grfFFL">
+                    <button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details" routerLink="/offering-detail/{{openOffer.uid}}" routerLinkActive="router-link-active" >See Details
+                      <img class="sc-htpNat gamggo" src="../../assets/ui-image/arrow.bd5e780d.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="upcoming" *ngIf="upcomingOfferings">
+            <div class="sc-dliRfk hkvrfF">
+              <h2 class="sc-hmXxxW bmezip">Upcoming Offerings</h2>
+            </div>
+            <div class="sc-gFaPwZ klretw" *ngFor="let upcomingoffer of upcomingOfferings">
+              <div class="sc-gojNiO fmyiTm" title="upcomingoffer.name">
+                <div class="sc-daURTG ePINih">
+                  <!-- <div>Fully Allocated</div> -->
+                </div>
+                <div class="sc-bXGyLb sHvNw">
+                  <div class="sc-lkqHmb kenoSO">
+                    <div class="sc-esjQYD fXUPyx">
+                      <div class="sc-kIPQKe jjEvNx">
+                        <!-- <p>Fully Allocated</p> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sc-eLExRp OBfjJ">
+                    <div class="sc-hwwEjo isxROF">
+                      <span class="sc-kfGgVZ kKlrRC">
+                        <span class="sc-kPVwWT VCyPM">
+                          <span aria-hidden="true" class="fa fa-angle-right"></span>
+                        </span>Legal
+                      </span>
+                    </div>
+                  </div>
+                  <div class="sc-cbkKFq eMAkyf">
+                    <a routerLink="/offering-detail/{{upcomingoffer.uid}}">
+                      <div class="marketplace-offering-open-title sc-hrWEMg fpplFV">{{upcomingoffer.name}}</div>
+                    </a>
+                    <p class="sc-gHboQg hzacNw">Originated by {{upcomingoffer.owner_name}}</p>
+                  </div>
+                  <div class="sc-dUjcNx iLJTji">
+                    <span class="sc-eilVRo esJwQa">Invest in a senior secured term loan to a New York based law firm backed by its
+                      entire case inventory.</span>
+                  </div>
+                  <div class="sc-krvtoX foMcSo">
+                    <div class="offeringmetrics sc-eXEjpC eHstZJ">
+                      <dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
+                        <dd class="sc-iQKALj dIyKSD">{{upcomingoffer.annual_interest}}</dd>
+                        <dt class="sc-RefOD bcQLGm">Annual Interest
+                        </dt>
+                      </dl>
+                      <dl class="offeringmetrics-item sc-ibxdXY dmWxNl">
+                        <dd class="sc-iQKALj dIyKSD">{{upcomingoffer.term}} months</dd>
+                        <dt class="sc-RefOD bcQLGm">Term
+                        </dt>
+                      </dl>
+                      <dl class="offeringmetrics-item sc-ibxdXY kqvlJG">
+                        <dd class="sc-iQKALj dIyKSD">{{upcomingoffer.owner_name}</dd>
+                        <dt class="sc-RefOD bcQLGm">Originator
+                        </dt>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="sc-fYiAbW hBEFkG">
+                    <div class="sc-eTuwsz bZNdzA">
+                      <div class="sc-esOvli dTDxbU">
+                          <circle-progress
+                          [percent]="calculatePercentage(upcomingoffer)"
+                          [radius]="100"
+                          [outerStrokeWidth]="16"
+                          [innerStrokeWidth]="8"
+                          [outerStrokeColor]="'#78C000'"
+                          [innerStrokeColor]="'#C7E596'"
+                          [animation]="true"
+                          [animationDuration]="300"
+                          [subtitle] ="'Remaining'"
+                          [subtitleFontSize] ="12"
+                        ></circle-progress>
+                        <div class="sc-cmthru jgpYLn">
+                          <dl class="sc-gwVKww boAGcr">
+                            <br>
+                            <br>
+                            <br>
+                            <!-- <br>
+                            <br>
+                            <dt class="sc-epnACN hCPGag">Remaining</dt> -->
+                          </dl>
+                          <p class="sc-iQNlJl ozNsI">${{ upcomingoffer.invested_amount == null  ? 0 : upcomingoffer.invested_amount}} of ${{upcomingoffer.required_capital/1000000}}M</p>
+                        </div>
+                      </div>
+                      <dl class="sc-bsbRJL GxuAS">
+                        <dd class="sc-hZSUBg cvfoae">
+                          <span>${{upcomingoffer.min_investment}}</span>
+                        </dd>
+                        <dt class="sc-cMhqgX fFMChW">Minimum Investment</dt>
+                      </dl>
+                    </div>
+                    <div class="sc-dymIpo chifrb">
+                      <span class="sc-eilVRo esJwQa">Invest in a senior secured term loan to a New York based law firm backed by its
+                        entire case inventory.</span>
+                    </div>
+                  </div>
+                  <div class="sc-fOKMvo grfFFL">
+                    <button class="sc-fhYwyz gkfHjm sc-bwzfXH cwfXNK" id="offering-details"
+                    (click) ="routeOfferingDetail(upcomingoffer.uid)">
+                      See Details
+                      <img class="sc-htpNat gamggo" src="../../assets/ui-image/arrow.bd5e780d.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="past" *ngIf="pastOfferings">
+            <div class="sc-jtRfpW fDDQBl" id="pastofferings">
+              <div class="sc-elJkPf csuNdW">
+                <h2 class="sc-hmXxxW bmezip">Past Offerings</h2>
+              </div>
+              <div class="sc-bYSBpT cIgryd">
+                <div class="sc-feJyhm ftpxKV" *ngFor="let pastOffer of pastOfferings">
+                  <div class="sc-jhAzac eGcSkl">
+                    <div class="box">
+                      <div class="sc-frDJqD eIqFEl">
+                        <div class="off-image">
+                          <img class="sc-jqCOkK hWMEzZ" src="../../assets/closed_offering_thumbnil.png">
+                        </div>
+                        <div class="sc-jnlKLf iukwUf">
+                          <p class="sc-fBuWsC bJYYcE">Real Estate</p>
+                          <a routerLink="/offering-detail/{{pastOffer.uid}}">
+                            <h5 class="marketplace-offering-past-title sc-fMiknA ihCrPN">{{pastOffer.name}} </h5>
+                            <div class="sc-caSCKo giOrYH">
+                              <p class="sc-cHGsZl jHXJRE">${{pastOffer.required_capital/1000000}}M</p>
+                              <p class="sc-bbmXgH dUqMsj"> Offering Size</p>
+                            </div>
+                          </a>
+                          <div class="sc-caSCKo bUGWdJ">
+                            <div class="sc-gisBJw cBXWj">
+                              <p class="sc-cHGsZl eoSNBH">{{pastOffer.annual_interest}}%</p>
+                              <p class="sc-dVhcbM dWxTtV">Annual Interest
+                              </p>
+                            </div>
+                            <div class="sc-gisBJw cBXWj">
+                              <p class="sc-cHGsZl eoSNBH">0
+                                <span class="sc-gGBfsJ cmPsgo"> of 11 Mo.</span>
+                              </p>
+                              <p class="sc-dVhcbM dWxTtV">Term Remaining
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="sc-fYxtnH XczkD">
+                          <svg class="sc-hzDkRC cOHVfC" width="124" height="124">
+                            <circle class="sc-Rmtcm lkJXfL" r="61" cx="62" cy="62" transform="rotate(-90 62,62)" style="stroke-width: 0;"></circle>
+                            <circle class="sc-bRBYWo bvAKUx" r="61" cx="62" cy="62" transform="rotate(-90 62,62)" style="stroke-width: 2; stroke-dasharray: 383.274, 383.274;"></circle>
+                          </svg>
+                          <div class="sc-tilXH dlmAbj">
+                            <div class="sc-hEsumM keGjzv">
+                              <div class="sc-ktHwxA dummVq">${{pastOffer.required_capital/1000000}}M</div>
+                              <div class="sc-cIShpX fapeeq">Offering Size</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sc-cJSrbW gcLOQF">
+                        <span></span>
+                        <p>Recently Funded</p>
+                        <span></span>
+                      </div>
+                      <div class="sc-kvZOFW ikJfHj">This offering was recently closed.
+                        <br>Metrics are expected in 25 days.
+                      </div>
+                      <div class="sc-kjoXOD iPMTJj">
+                        <button class="marketplace-offering-past-cta sc-TOsTZ hkmwMx seeDetails pastOffering" >
+                          <span class="sc-kgAjT bIfcEY whiteTxt" (click) ="routeOfferingDetail(pastOffer.uid)"
+                          >See Details</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <ul class="sc-kTUwUJ ihTGqU" id="marketplace-pagination">
+                <li class="marketplace-paginationitem marketplace-paginationitem-1 sc-dqBHgY fMjjij">1</li>
+                <li class="marketplace-paginationitem marketplace-paginationitem-2 sc-dqBHgY fqoTqk">2</li>
+                <li class="marketplace-paginationitem marketplace-paginationitem-4 sc-dqBHgY fqoTqk">4</li>
+                <li class="marketplace-paginationitem marketplace-paginationitem-3 sc-dqBHgY fqoTqk">3</li>
+              </ul> -->
+            </div>
+          </div>
+          <div class="sc-gxMtzJ cMDySV" id="marketplace-get-started">
+            <h4 class="sc-dfVpRl eUcrm">Ready to Get Started</h4>
+            <div class="sc-iyvyFf izePjh">
+              <span>
+                <a routerLink="{{isUserLoggedIn == true ? '/account' : '/signup' }}">
+                  <button class="cta cta-loggedout sc-bwzfXH RvzlV" id="cta-loggedout">{{isUserLoggedIn == true ? "Manage Account" : "Signup"}}</button>
+                </a>
+              </span>
+            </div>
+            <p class="sc-gzOgki fRQslM">Questions? give us a call at (844) 943-5378
+            </p>
+            <p class="sc-gzOgki fRQslM">Need access to larger investments? Please reach out to our team directly at
+              <a href="mailto:investments@full-cycle.com">investments@full-cycle.com</a>.
+            </p>
+          </div>
+        </div>
 		</div>
 	</div>
 </div>

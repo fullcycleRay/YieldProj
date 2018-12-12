@@ -80,6 +80,7 @@ iframe#_hjRemoteVarsFrame {
     height:auto;
     text-align:center;
     cursor:pointer;
+    border-radius: 5px;
 }
 .cwfXNK:hover{
     background:linear-gradient(0deg,#1E9C9F 0%,#2DB7BF 100%);
@@ -8337,5 +8338,10 @@ iframe#_hjRemoteVarsFrame {
   line-height:24px;
   height:auto;
   text-align:center;
-  cursor:not-allowed;
+  cursor: pointer
+}
+.pastOffering {
+  background: #20C2CB !important;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }

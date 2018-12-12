@@ -16,24 +16,222 @@
                          <div class="Overview__DesktopHeader-jzpCoL kdJzyl">
                             <div class="Overview__FilterContainer-hMdmLg edXjDV">
                                <div class="shared__StyledHeaderDropdown-nCqUr cHWqGL HeaderDropdown__DropdownWrapper-coMKrj jvsIdX">
-                                  <div class="HeaderDropdown__StyledDropdown-cfQxqG beZXOE Dropdown__Container-cUUygg dlinaM" id="portfolio-investor-dropdown">
-                                     <div class="HeaderDropdown__StyledDropdown-cfQxqG beZXOE false Dropdown__ActiveContainer-ftVMPU ilTLWk" data-click-id="dropdown" id="active-container">
-                                        <div class="Dropdown__ActiveOption-eGGXhI eguRTf" data-click-id="dropdown" id="active-option">All Investors</div>
-                                        <span id="dropdown-arrow" data-click-id="dropdown" theme="secondary" aria-hidden="true" class="fa fa-angle-down Dropdown__DropdownIcon-dIxNDU ikGzXA"></span>
-                                     </div>
-                                  </div>
+                                  <select  #keywordsInput class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH setFont customDopDown"
+                                  (change)="onRowClick()" >
+                                   <option value ="all">All</option>
+                                  <option class="Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value = {{accData.uid}}>
+                                    <span class="jCuLJb">{{accData.first_name}} {{accData.title}}</span>
+                                  </option>
+                                </select>
                                </div>
                             </div>
-                         </div>
-                         <div class="Overview__Mobile-iJVYJt hlcOFH">
-                            <div class="shared__MobileButton-HkEuD geypWD"><span aria-hidden="true" class="fa fa-filter"></span></div>
                          </div>
                       </div>
                    </div>
                 </div>
                 <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa">
+                    <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+                    <div class="PortfolioContainer__ContentWrapper-bLzDll fRUPbU" *ngIf= "!appConfig.getLoader()" >
+                        <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa">
+                           <div>
+                              <div class="Overview__Wrapper-jmeSor hFiCDe">
+                                 <div class="Overview__ContentWrapper-eeNvPM dmErfv">
+                                    <div>
+                                       <div class="shared__ComponentWrapper-hNHPcs cfYEto">
+                                          <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
+                                             <h2 class="InvestmentDetailsComponent__ComponentHeader-hXScBQ cvmefl"><b>Investment Earnings</b></h2>
+                                                <div class="InvestmentDetailsComponent__OriginalOffering-hgJrrT lbpClL">
+                                                   <select>
+                                                     <option>Lifetime</option>
+                                                   </select>
+                                                </div>
+                                          </div>
+                                          <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
+                                             <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
+                                                <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
+                                                   <dd><b>$0</b></dd>
+                                                   <dt>Begining interest <br/> Accured</dt>
+                                                </dl>
+                                                <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
+                                                   <dd><b> + $20 </b>.</dd>
+                                                   <dt><a href="#">Interest <br/> Earned</a></dt>
+                                                </dl>
+                                                <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq rightElems">
+                                                    <dd><b>- $10</b></dd>
+                                                    <dt>Interest Paid</dt>
+                                                 </dl>
+                                                 <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq rightElems">
+                                                    <dd><b> = $10</b> </dd>
+                                                    <dt>Ending interest <br/> Accured</dt>
+                                                 </dl>
+                                             </div>
+                                          </div>
+                                          <!-- <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
+                                             <div class="InvestmentDetailsItem__Flex-hzkPGS jyXbON">
+                                                <div class="InvestmentDetailsItem__LeftText-HuGiz dYvagt">Asset Class</div>
+                                                <div class="InvestmentDetailsItem__BottomLine-cMPcci ctETmp"></div>
+                                                <div class="InvestmentDetailsItem__RightText-eXlzpA lGhJn">Marine</div>
+                                             </div>
+                                          </div> -->
+
+
+                                          <div id="chart_div" >
+                                            <google-chart class=" chartSize"
+                                            [title]="investmentTitle"
+                                            [type]="investmentChartType"
+                                            [data]="investmentData"
+                                            [columnNames]="investmentColumn"
+                                            [width]="myWidth"
+                                            [height]="myHeight"
+                                             ></google-chart>
+                                          </div>
+                                       </div>
+                                    </div>
+
+
+                                    <!-- Bottom Section Code-->
+
+                                    <div class="cfYEto">
+                                        <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
+                                            <h2 class="InvestmentDetailsComponent__ComponentHeader-hXScBQ cvmefl"><b>Investment Earnings</b></h2>
+                                               <div class="InvestmentDetailsComponent__OriginalOffering-hgJrrT lbpClL">
+                                                  <select>
+                                                    <option>Lifetime</option>
+                                                  </select>
+                                               </div>
+                                         </div>
+                                         <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
+                                            <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
+                                               <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
+                                                  <dd><b>$0</b></dd>
+                                                  <dt>Begining principle <br/> outstanding</dt>
+                                               </dl>
+                                               <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
+                                                  <dd><b> + $20 </b>.</dd>
+                                                  <dt><a href="#">Total <br/> Invested</a></dt>
+                                               </dl>
+                                               <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq rightElems">
+                                                   <dd><b>- $10</b></dd>
+                                                   <dt>Principal <br/> repaid</dt>
+                                                </dl>
+                                                <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq rightElems">
+                                                   <dd><b> = $10</b> </dd>
+                                                   <dt>Ending principle <br/> outstanding</dt>
+                                                </dl>
+                                            </div>
+                                         </div>
+                                    </div>
+                                    <!-- ENDS HERE -->
+
+                                    <div class="shared__ComponentWrapper-hNHPcs cfYEto">
+                                       <div class="InvestmentDocuments__SummaryWrapper-bNsReo cPCAxU">
+                                          <h2 class="InvestmentDocuments__ComponentHeader-lfhxyR dgFsF">Investment Documents</h2>
+                                          <div>
+                                             <div class="none InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
+                                                <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/117501" download="">Private Placement Memorandum</a></div>
+                                                <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/117501" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
+                                             </div>
+                                          </div>
+                                          <div>
+                                             <div class="background InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
+                                                <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/117502" download="">Subscription Agreement</a></div>
+                                                <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/117502" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
+                                             </div>
+                                          </div>
+                                          <div>
+                                             <div class="none InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
+                                                <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/133448" download="">Important Status Update</a></div>
+                                                <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/133448" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
+                                             </div>
+                                          </div>
+                                          <div>
+                                             <div class="background InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
+                                                <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/133465" download="">Indenture &amp; Form of Note</a></div>
+                                                <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/133465" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
+                                             </div>
+                                          </div>
+                                          <div>
+                                             <div class="none InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
+                                                <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="/a/api/note/documents/wTbO6Q/133664" download="">Series Note Supplement</a></div>
+                                                <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="/a/api/note/documents/wTbO6Q/133664" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
+                                             </div>
+                                          </div>
+                                          <div>
+                                             <div class="background InvestmentDocumentsItem__Flex-cfdTIn hXiNjo">
+                                                <div class="InvestmentDocumentsItem__LeftItem-KqIoU fJAWkb"><a href="https://ysdocs.s3.amazonaws.com/prod/INVESTMENTS/18154/UZtIoaKiq3d4FNWBqm5zqDZ0.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20181101T103607Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=AKIAJ6EW5IDOK7CZYOJA%2F20181101%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=8fb2620f40e747c32a14968f56add0938a54157d11118c73ba7014b6ccc036bb" download="">Subscription Agreement</a></div>
+                                                <div class="InvestmentDocumentsItem__RightItem-EecFt dlLuYI"><a href="https://ysdocs.s3.amazonaws.com/prod/INVESTMENTS/18154/UZtIoaKiq3d4FNWBqm5zqDZ0.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20181101T103607Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Credential=AKIAJ6EW5IDOK7CZYOJA%2F20181101%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=8fb2620f40e747c32a14968f56add0938a54157d11118c73ba7014b6ccc036bb" download=""><img class="normal" src="https://www.yieldstreet.com/static/media/Download.9cf9530a.svg"><img class="active" src="https://www.yieldstreet.com/static/media/DownloadHover.240f095e.svg"></a></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="Overview__RightContentWrapper-hjdzLc kFasWa">
+                                    <div class="shared__ComponentWrapper-hNHPcs inGxEQ" id="portfolio-activity">
+                                        <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                           <div class="Activity__Title-jSQQlI pjrCR">Current Account Summary</div>
+                                        </div>
+                                        <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                            <div class="Activity__Title-jSQQlI pjrCR princ_amt">Principal Outstanding</div>
+
+                                         </div>
+                                         <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                            <div class="Activity__Title-jSQQlI pjrCR princ_amt">Investment Interest Accured</div>
+                                         </div>
+                                         <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                            <div class="Activity__Title-jSQQlI pjrCR princ_amt">Available Balance</div>
+                                         </div>
+                                         <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                            <div class="Activity__Title-jSQQlI pjrCR princ_amt current_amt">Current Account Value</div>
+                                         </div>
+                                     </div>
+                                     <div class="midBlock">
+                                     <div class="shared__ComponentWrapper-hNHPcs inGxEQ acwInterestRate" id="portfolio-activity">
+                                      <p>
+                                          vhfdkjbhjfkd<br>
+                                          ckbscghsv <br>
+                                      </p>
+                                     </div>
+                                     <div class="shared__ComponentWrapper-hNHPcs inGxEQ acwInterestRate" id="portfolio-activity">
+                                        <p>
+                                            vhfdkjbhjfkd<br>
+                                            ckbscghsv <br>
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <div class="shared__ComponentWrapper-hNHPcs inGxEQ" id="portfolio-activity">
+                                       <div class="Activity__TitleWrapper-bMaIrg dtzgFK">
+                                          <div class="Activity__Title-jSQQlI pjrCR">Investment Activity</div>
+                                          <div class="Activity__PaymentsTab-fXkAWs bOcZmN Activity__MenuTab-clDiJZ PsOBr">Payments</div>
+                                          <div class="Activity__UpdatesTab-fkJjda boetUH Activity__MenuTab-clDiJZ PsOBr">Updates</div>
+                                       </div>
+                                       <div class="Activity__UpdatesWrapper-iTfPKV hCWbKF" id="portfolio-overview-activity-updates">
+                                          <div class="Item__ItemWrapper-heChjU bYuSNA">
+                                             <div class="Item__TitleWrapper-jAOqsD vwOQo">
+                                                <div class="activity-item-title Item__Title-cKLOJg lwEFh">Investment Requested</div>
+                                                <div class="activity-item-date Item__Date-beMZVG eFfwpE">November 1, 2018</div>
+                                             </div>
+                                             <div class="Item__ContentWrapper-eWsHpb ghdoim">
+                                                <div class="Item__ContentInnerWrapper-jKYUeu ksKmGc"><span class="Item__Content-bZVkdQ ePYheE">You invested $15,000.00 in Large Dry Bulk Vessel Acquisition.</span></div>
+                                             </div>
+                                          </div>
+                                          <div class="Item__ItemWrapper-heChjU bYuSNA">
+                                             <div class="Item__TitleWrapper-jAOqsD vwOQo">
+                                                <div class="activity-item-title Item__Title-cKLOJg lwEFh">Important Status Update</div>
+                                                <div class="activity-item-date Item__Date-beMZVG eFfwpE">October 19, 2018</div>
+                                             </div>
+                                             <div class="Item__ContentWrapper-eWsHpb ghdoim">
+                                                <div class="Item__ContentInnerWrapper-jKYUeu ksKmGc"><span class="Item__Content-bZVkdQ ePYheE">Please see attached for an important status update regarding this offering.</span><span class="Item__DownloadButton-haWKiQ jxMeWy"> <span aria-hidden="true" class="fa fa-download"></span></span></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
                    <div class="Overview__Large-bquSXS igaIFV">
-                      <div class="Overview__Container-duZyjV cUsIJI">
+                      <div class="Overview__Container-duZyjV cUsIJI" *ngIf = "false">
                          <div class="Teaser__CompAcctContainer-hyPlEi exeJdx shared__ComponentWrapper-hNHPcs inGxEQ">
                             <h2 class="Teaser__HeaderPortfolio-fzeyQS kNqYvZ">Track performance in your Portfolio as soon as you make your first investment</h2>
                             <div class="Teaser__PictureTextContainer-jCIfQI bQuzXb">
@@ -74,6 +272,7 @@
                             <div class="Teaser__ButtonWrapper-dCRhbV cQktSg"><a href="/offerings"><button class="PrimaryButton__ButtonPrimary-exVhhh jcEjeY" id="cta-browse-offering">Browse Offerings<img class="PrimaryButton__Arrow-bFuMQr cjfbRg" src="https://www.yieldstreet.com/static/media/arrow.bd5e780d.svg" alt=""></button></a></div>
                          </div>
                       </div>
+
                    </div>
                 </div>
              </div>
