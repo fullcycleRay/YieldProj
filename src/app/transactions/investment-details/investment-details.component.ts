@@ -10,7 +10,8 @@ import {AppConfig} from '../../../environments/config';
   '../../viewportfolio/viewportfolio.component.scss']
 })
 export class InvestmentDetailsComponent implements OnInit {
-  uid: any;
+  account_uid: any;
+  service_uid: any;
   investmentOfferingDetails: any;
   investmentChartType = 'AreaChart';
   investmentTitle = '';
@@ -37,7 +38,8 @@ export class InvestmentDetailsComponent implements OnInit {
     this.route.params
     .subscribe(
       params => {
-        this.uid = params;
+        this.account_uid = params.accountId;
+        this.service_uid = params.serviceId;
       });
   }
 
@@ -47,10 +49,10 @@ export class InvestmentDetailsComponent implements OnInit {
   }
 
   getInvestmentDetails(): void {
-  this.investmentService.getInvestdetails(this.uid.id)
+  this.investmentService.getInvestdetails(this.account_uid, this.service_uid)
     .then(
       resp => {
-        this.investmentOfferingDetails = resp.data.users_investment;
+        this.investmentOfferingDetails = resp.data;
         this.investmentTitle = this.investmentOfferingDetails.service.name;
         this.appConfig.setLoader(false);
       }

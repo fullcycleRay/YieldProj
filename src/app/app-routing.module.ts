@@ -61,7 +61,7 @@ const routes: Routes = [
   canActivate: [UserSessionGuard]
 },
 {
-  path: 'investment-details/:id',
+  path: 'investment-details/:serviceId/:accountId',
   component: InvestmentDetailsComponent,
   canActivate: [UserSessionGuard]
 },

@@ -46,17 +46,18 @@
                                   </div>
                                   <div class="DesktopTable__TableBody-jtIoId eYMmSM">
                                     <div *ngFor="let investment of filteredArray">
-                                        <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngIf="investment.is_payment_pending === 'false'" >
-
+                                      <div *ngFor = " let sub of investment.subscriptions">
+                                        <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngIf="sub.is_payment_pending === 0">
                                           <div class="DesktopTableRow__TableColumn-cwFros gcRVDh">
                                               <div class="PendingTableDesktop__InvestmentTitle-dgbGRP gRwTuC">
-                                                <a  routerLink ="/investment-details/{{investment.uid}}" routerLinkActive="router-link-active" >{{investment.service.name}}</a></div>
-                                              <div class="PendingTableDesktop__InvestorName-jRDwHF PcQdF">{{investment.service.originator_display_name}}</div>
+                                                <a  routerLink ="/investment-details/{{investment.uid}}/{{sub.user_account_uid}}" routerLinkActive="router-link-active" >{{investment.name}}</a></div>
+                                              <div class="PendingTableDesktop__InvestorName-jRDwHF PcQdF">{{investment.owner_name}}</div>
                                           </div>
-                                          <div class="pending-value term DesktopTableRow__TableColumn-cwFros iIWHKI">{{investment.service.remaining_term}} Mo.</div>
-                                          <div class="pending-value interest-rate DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{investment.service.annual_interest}}%</span></div>
-                                          <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{investment.investment}}</span></div>
+                                          <div class="pending-value term DesktopTableRow__TableColumn-cwFros iIWHKI">{{investment.term}} Mo.</div>
+                                          <div class="pending-value interest-rate DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{investment.annual_interest}}%</span></div>
+                                          <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{sub.investment}}</span></div>
                                         </div>
+                                      </div>
                                       </div>
                                       <div class="PendingTableDesktop__StyledRow-cNUUFl cVxJDE DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngIf="false" >
                                         <div class="DesktopTableRow__TableColumn-cwFros hxlqyY">Pending Investment Totals</div>
@@ -68,7 +69,7 @@
                                 </div>
                             </div>
                           </div>
-                          <div >
+                          <div>
                               <div>
                                   <p class="Investments__Label-suSkU koUArz">Pending Investments</p>
                                   <div class="PendingTableDesktop__StyledTable-qxoTH kCVXCf desktop-table DesktopTable__Wrapper-davOaM icCAYC">
@@ -79,18 +80,19 @@
                                         <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Investment Amount</span></div>
                                     </div>
                                     <div class="DesktopTable__TableBody-jtIoId eYMmSM">
-                                      <div *ngFor="let investment of filteredArray">
-                                          <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngIf="investment.is_payment_pending === 'true'" >
-
+                                      <div *ngFor= "let investment of filteredArray">
+                                        <div *ngFor = " let sub of investment.subscriptions">
+                                          <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngIf="sub.is_payment_pending === 1" >
                                             <div class="DesktopTableRow__TableColumn-cwFros gcRVDh">
                                                 <div class="PendingTableDesktop__InvestmentTitle-dgbGRP gRwTuC">
-                                                  <a  routerLink ="/investment-details/{{investment.uid}}" routerLinkActive="router-link-active" >{{investment.service.name}}</a></div>
-                                                <div class="PendingTableDesktop__InvestorName-jRDwHF PcQdF">{{investment.service.originator_display_name}}</div>
+                                                  <a  routerLink ="/investment-details/{{investment.uid}}/{{sub.user_account_uid}}" routerLinkActive="router-link-active" >{{investment.name}}</a></div>
+                                                <div class="PendingTableDesktop__InvestorName-jRDwHF PcQdF">{{investment.owner_name}}</div>
                                             </div>
-                                            <div class="pending-value term DesktopTableRow__TableColumn-cwFros iIWHKI">{{investment.service.remaining_term}} Mo.</div>
-                                            <div class="pending-value interest-rate DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{investment.service.annual_interest}}%</span></div>
-                                            <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{investment.investment}}</span></div>
+                                            <div class="pending-value term DesktopTableRow__TableColumn-cwFros iIWHKI">{{investment.term}} Mo.</div>
+                                            <div class="pending-value interest-rate DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{investment.annual_interest}}%</span></div>
+                                            <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{sub.investment}}</span></div>
                                           </div>
+                                        </div>
                                         </div>
                                         <div class="PendingTableDesktop__StyledRow-cNUUFl cVxJDE DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngIf="false" >
                                           <div class="DesktopTableRow__TableColumn-cwFros hxlqyY">Pending Investment Totals</div>

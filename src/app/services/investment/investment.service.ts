@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -17,9 +17,13 @@ export class InvestmentService {
     this.investments = await this.http.get(serviceUrl).toPromise();
     return this.investments;
   }
-  async getInvestdetails(uid) {
-    const serviceUrl: string = API_URL + '/user/investment-detail/' + uid;
-    this.investments = await this.http.get(serviceUrl).toPromise();
+  async getInvestdetails(account_uid , service_uid) {
+
+    const params = new HttpParams()
+      .set('service_uid', service_uid)
+      .set('account_uid', account_uid);
+    const serviceUrl: string = API_URL + '/user/investment-detail/';
+    this.investments = await this.http.get(serviceUrl, {params}).toPromise();
     return this.investments;
   }
 }

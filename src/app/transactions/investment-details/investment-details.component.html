@@ -165,32 +165,32 @@
                          <div class="Overview__ContentWrapper-eeNvPM dmErfv">
                             <div>
                                <div class="shared__ComponentWrapper-hNHPcs cfYEto">
-                                  <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
+                                  <!-- <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
                                      <h2 class="InvestmentDetailsComponent__ComponentHeader-hXScBQ cvmefl"><b>Investment Earnings</b></h2>
-                                     <!-- <a routerLink="/offering-detail/{{investmentOfferingDetails.service.uid}}" routerLinkActive="router-link-active" > -->
+                                     <a routerLink="/offering-detail/{{investmentOfferingDetails.service.uid}}" routerLinkActive="router-link-active" >
                                         <div class="InvestmentDetailsComponent__OriginalOffering-hgJrrT lbpClL">
                                            <select>
                                              <option>Lifetime</option>
                                            </select>
                                         </div>
-                                     <!-- </a> -->
-                                  </div>
+                                     </a>
+                                  </div> -->
                                   <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
                                      <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
                                         <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
-                                           <dd><b>${{investmentOfferingDetails.service.annual_interest}}</b></dd>
+                                           <dd><b>$0</b></dd>
                                            <dt>Begining interest <br/> Accured</dt>
                                         </dl>
                                         <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
-                                           <dd><b> + ${{investmentOfferingDetails.service.remaining_term}} Mo</b>.</dd>
-                                           <dt><a href="#">Interest <br/> Earned</a></dt>
+                                           <dd><b> + ${{investmentOfferingDetails.interest.total_interest}} </b>.</dd>
+                                           <dt>Interest <br/> Earned</dt>
                                         </dl>
                                         <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq rightElems">
-                                            <dd><b>- ${{investmentOfferingDetails.service.annual_interest}}</b></dd>
+                                            <dd><b>- ${{investmentOfferingDetails.interest.interest_repaid}}</b></dd>
                                             <dt>Interest Paid</dt>
                                          </dl>
                                          <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq rightElems">
-                                            <dd><b> = ${{investmentOfferingDetails.service.remaining_term}}</b> </dd>
+                                            <dd><b> = ${{investmentOfferingDetails.interest.total_interest - investmentOfferingDetails.interest.interest_repaid}}</b> </dd>
                                             <dt>Ending interest <br/> Accured</dt>
                                          </dl>
                                      </div>
@@ -223,6 +223,39 @@
                                   </div>
                                </div>
                             </div>
+                                <!-- Bottom Section Code-->
+
+                                <div class="cfYEto">
+                                    <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
+                                        <h2 class="InvestmentDetailsComponent__ComponentHeader-hXScBQ cvmefl"><b>Investmented Principal</b></h2>
+                                           <!-- <div class="InvestmentDetailsComponent__OriginalOffering-hgJrrT lbpClL">
+                                              <select>
+                                                <option>Lifetime</option>
+                                              </select>
+                                           </div> -->
+                                     </div>
+                                     <div class="InvestmentDetailsComponent__RowContainer-qiVjG ksbCRB">
+                                        <div class="InvestmentDetailsComponent__Flex-gqBHsE cIvssv">
+                                           <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
+                                              <dd><b>$0</b></dd>
+                                              <dt>Begining principle <br/> outstanding</dt>
+                                           </dl>
+                                           <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq">
+                                              <dd><b> + ${{investmentOfferingDetails.principal.total_principal}} </b>.</dd>
+                                              <dt><a href="#">Total <br/> Invested</a></dt>
+                                           </dl>
+                                           <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq rightElems">
+                                               <dd><b>- ${{investmentOfferingDetails.principal.principal_repaid}} </b></dd>
+                                               <dt>Principal <br/> repaid</dt>
+                                            </dl>
+                                            <dl class="InvestmentDetailsComponent__TargetDetails-casKPN hcoKcq rightElems">
+                                               <dd><b> = ${{investmentOfferingDetails.principal.total_principal - investmentOfferingDetails.principal.principal_repaid}}</b> </dd>
+                                               <dt>Ending principle <br/> outstanding</dt>
+                                            </dl>
+                                        </div>
+                                     </div>
+                                </div>
+                                <!-- ENDS HERE -->
                             <div class="shared__ComponentWrapper-hNHPcs cfYEto">
                                <div class="InvestmentDocuments__SummaryWrapper-bNsReo cPCAxU">
                                   <h2 class="InvestmentDocuments__ComponentHeader-lfhxyR dgFsF">Investment Documents</h2>
@@ -266,6 +299,24 @@
                             </div>
                          </div>
                          <div class="Overview__RightContentWrapper-hjdzLc kFasWa">
+                            <div class="shared__ComponentWrapper-hNHPcs inGxEQ" id="portfolio-activity">
+                                <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                   <div class="Activity__Title-jSQQlI pjrCR">Current Account Summary</div>
+                                </div>
+                                <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                    <div class="Activity__Title-jSQQlI pjrCR princ_amt">Principal Outstanding</div>
+                                    <span></span>
+                                 </div>
+                                 <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                    <div class="Activity__Title-jSQQlI pjrCR princ_amt">Investment Interest Accured</div>
+                                 </div>
+                                 <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                    <div class="Activity__Title-jSQQlI pjrCR princ_amt">Available Balance</div>
+                                 </div>
+                                 <div class="Activity__TitleWrapper-bMaIrg dtzgFK_nobottom">
+                                    <div class="Activity__Title-jSQQlI pjrCR princ_amt current_amt">Current Account Value</div>
+                                 </div>
+                             </div>
                             <div class="shared__ComponentWrapper-hNHPcs inGxEQ" id="portfolio-activity">
                                <div class="Activity__TitleWrapper-bMaIrg dtzgFK">
                                   <div class="Activity__Title-jSQQlI pjrCR">Investment Activity</div>
