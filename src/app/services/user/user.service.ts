@@ -12,6 +12,7 @@ export class UserService {
   }
   setUserLoggedOut() {
     localStorage.removeItem('User');
+    localStorage.removeItem('name');
     this.isLoggedIn.next(false);
   }
 

@@ -1,5 +1,6 @@
 <div class="Main__Container-jeBqdM gQKlCo">
-  <div class="CompleteInvestmentContainer__StyledContainer-ezCXLp hvtsbs Container-gZqETv dedQyW">
+    <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+  <div class="CompleteInvestmentContainer__StyledContainer-ezCXLp hvtsbs Container-gZqETv dedQyW" *ngIf="!appConfig.getLoader()">
     <h1 class="CompleteInvestmentContainer__Title-jwLvwQ buXLfb">Complete Investment</h1>
     <div class="Header__Container-jDruZb HehNz">
       <ul class="Header__Properties-gzraN kLsubj">
@@ -31,8 +32,8 @@
         <div class="MoneyDetails__MoneySection-fSZDLC YwERf">
           <div class="SectionTitle-eIlcEQ kEsgWj">Investor Account</div>
           <div>
-              <select #AccDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH setFont" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
-                <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value={{accData.id}}>
+              <select #AcckeywordsInput class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH setFont"(change) ="onRowClick()" >
+                <option class="Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" value={{accData.uid}}>
                   <span class="jCuLJb">{{accData.first_name}} {{accData.title}}</span>
                 </option>
               </select>
@@ -43,6 +44,7 @@
           <div class="Dropdown__Container-cUUygg kzaOag">
               <div>
                   <select #bankAccDropDownList class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH" aria-labelledby="dropdownMenuButton" (change) ="onRowClick()" >
+                    <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2">fake pay</option>
                     <option class=" null false Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let bankaccData of bankAccountData" value={{bankaccData.account_number}}>
                       <span class="jCuLJb" style = "display: inline-block;"> {{bankaccData.bank_name}}</span>
                     </option>
@@ -57,6 +59,7 @@
             the terms in this online form and my agreement with YieldStreet.</div>
         </div>
       </div>
+      <form>
       <div class="Acknowledge__Container-cuemMQ DqwRz" id="acknowledge">
         <div class="SectionTitle-eIlcEQ kEsgWj">Acknowledge and Sign</div>
         <div class="Acknowledge__CheckContainer-cFGkAE ccOrjJ">
@@ -135,9 +138,10 @@
           id="complete-cancelBtn" routerLink ="/offering-detail/{{currentOffering['uid']}}">
           Cancel
         </button>
-          <button class="CompleteInvestmentContainer__SubmitButton-eRMzxQ cgHsse PrimaryButton__ButtonPrimary-exVhhh jLNNsJ"
-          id="complete-submitBtn" (click)="subscribeOffering()">Submit</button>
+          <button type = "submit"class="CompleteInvestmentContainer__SubmitButton-eRMzxQ cgHsse PrimaryButton__ButtonPrimary-exVhhh jLNNsJ"
+          id="complete-submitBtn" (click)="subscribeOffering($event)">Submit</button>
         </div>
+      </form>
     </div>
   </div>
 </div>

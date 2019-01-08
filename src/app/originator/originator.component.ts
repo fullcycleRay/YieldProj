@@ -16,6 +16,7 @@ export class OriginatorComponent implements OnInit {
   headline: any;
   retOid: any;
   today: any;
+  httpErrorResponse: any;
   constructor(private originator: OriginatorService, private route: ActivatedRoute) {
     this.route.params
     .subscribe(
@@ -34,6 +35,12 @@ export class OriginatorComponent implements OnInit {
       resp => {
         this.originatorData = resp;
         this.extractOriginatorData();
+      },
+      error => {
+        this.httpErrorResponse = error;
+        if (this.httpErrorResponse.status !== 200) {
+          alert('Error While fetching originator please contact Full-cycle technical team');
+        }
       }
     );
   }

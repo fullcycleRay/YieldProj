@@ -12,6 +12,7 @@ export class AccountService {
   accToken: any;
   accList: any;
   accountId = [];
+  uploadIndicator = false;
 
   constructor( private http: HttpClient, ) { }
   // Will send account data and create new account
@@ -52,5 +53,11 @@ export class AccountService {
   }
   getSelectAccId () {
     return localStorage.getItem('selectedAccID');
+  }
+  setAccountIndc (bol) {
+    this.uploadIndicator = bol;
+  }
+  getAccountIndc() {
+    return this.uploadIndicator;
   }
 }

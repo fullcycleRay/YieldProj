@@ -30,10 +30,12 @@ export class VerifyAccountComponent implements OnInit {
   constructor(private userService: UserService, private router: Router, private accService: AccountService) { }
 
   ngOnInit() {
-    this.uploader.options.headers = Headers['Content-type: application/x-www-form-urlencoded'];
     this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
       form.append('account_uid' , this.selectedAccId);
      };
+     this.uploader.onBeforeUploadItem = (item) => {
+      item.withCredentials = false;
+      };
     this.uploader.onAfterAddingFile = (file) => {
       // console.log('***** onAfterAddingFile ******');
       // console.log('file ', file);
@@ -45,13 +47,14 @@ export class VerifyAccountComponent implements OnInit {
           alert ('Exception occured while uploading' + ' ' + item.file.name);
         }
       } else {
-        alert ('Upload failed for' + ' ' + item.file.name);
+        // alert ('Upload failed for' + ' ' + item.file.name);
       }
     };
 
     this.uploader.onCompleteAll = () => {
       // console.log('******* onCompleteAll *********');
       localStorage.removeItem('selectedAccID');
+      this.accService.setAccountIndc(true);
       this.router.navigate(['/account']);
     };
   }

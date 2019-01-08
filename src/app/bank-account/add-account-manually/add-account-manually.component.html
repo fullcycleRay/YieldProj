@@ -47,6 +47,9 @@
               </div>
               <div class="AddAccountManually__Wrapper-kybUmc xkrFu">
                  <div class="AddAccountManually__Content-iPkOQr ghLFmo">
+                    <div class="alert alert-danger" *ngIf="errorFlag">
+                        <strong>{{errorMessage}}!</strong>
+                      </div>
                     <div class="AddAccountManually__Header-cAZtmi klxXto">
                        <div class="AddAccountManually__Title-gtotVb gQswKR">Add Account Manually</div>
                        <!-- <p class="LinkExternalAccount__Change-crQGUA vUFBx">Change</p> -->
@@ -60,11 +63,14 @@
                                   <label class="InputText__Label-hEWkWK lnRsmH">
                                     <div class="LinkExternalAccount__MyText-hGqvra jXneMq">Account Nickname</div>
                                   </label>
-                                  <div class="InputText__InputContainer-kBPNQb kzXpab"><input type="text" min="0" required ="true" max="Infinity" name="nickname" placeholder="i.e. My Business Checking" value=""></div>
+                                  <div class="InputText__InputContainer-kBPNQb kzXpab">
+                                    <input type="text" min="0" required ="true" max="Infinity" name="nickname" placeholder="i.e. My Business Checking">
+                                  </div>
                               </div>
                               <div class="undefined InputText__InputTextContainer-eprnIR dafSbU">
                                   <label class="InputText__Label-hEWkWK lnRsmH">Name on Account</label>
-                                  <div class="InputText__InputContainer-kBPNQb kzXpab"><input type="text" min="0" max="Infinity" name="nameOnAccount" placeholder="Name" value=""></div>
+                                  <div class="InputText__InputContainer-kBPNQb kzXpab">
+                                    <input type="text" min="0" max="Infinity"  name="nameOnAccount" placeholder="Name"></div>
                               </div>
                               <div class="AddAccountManually__DropdownWrapper-NahRM hVrHgJ">
                                   <label class="AddAccountManually__DropdownTitle-hhkupI kwojpG">
@@ -73,16 +79,12 @@
                                   <div class="AddAccountManually__FilterContainer-dKsYTz fNbrec">
                                     <div class="dropdown shared__StyledHeaderDropdown-nCqUr cHWqGL HeaderDropdown__DropdownWrapper-coMKrj jvsIdX">
                                         <div class="HeaderDropdown__StyledDropdown-cfQxqG beZXOE Dropdown__Container-cUUygg dlinaM" id="portfolio-investor-dropdown">
-                                            <select class = "HeaderDropdown__StyledDropdown-cfQxqG beZXOE false Dropdown__ActiveContainer-ftVMPU ilTLWk selectWidth">
-                                                <option class = "Dropdown__ActiveOption-eGGXhI eguRTf">Select Type</option>
+                                            <select #accountType class = "HeaderDropdown__StyledDropdown-cfQxqG beZXOE false Dropdown__ActiveContainer-ftVMPU ilTLWk selectWidth" (click) = "onRowClick()">
+                                                <!-- <option class = "Dropdown__ActiveOption-eGGXhI eguRTf">Select Type</option> -->
                                                 <option class = "Dropdown__ActiveOption-eGGXhI eguRTf">Checking</option>
                                                 <option class = "Dropdown__ActiveOption-eGGXhI eguRTf">Savings</option>
                                                 <option class = "Dropdown__ActiveOption-eGGXhI eguRTf">Business Checking</option>
                                               </select>
-                                          <!-- <div class="HeaderDropdown__StyledDropdown-cfQxqG beZXOE false Dropdown__ActiveContainer-ftVMPU ilTLWk" data-click-id="dropdown" id="active-container">
-                                              <div class="Dropdown__ActiveOption-eGGXhI eguRTf" data-click-id="dropdown" id="active-option">Select type</div>
-                                              <span id="dropdown-arrow" data-click-id="dropdown" theme="secondary" aria-hidden="true" class="fa fa-angle-down Dropdown__DropdownIcon-dIxNDU ikGzXA"></span>
-                                          </div> -->
                                         </div>
                                     </div>
                                   </div>
@@ -93,15 +95,21 @@
                                   <label class="InputText__Label-hEWkWK lnRsmH">
                                     <div class="LinkExternalAccount__MyText-hGqvra jXneMq">Routing Number</div>
                                   </label>
-                                  <div class="InputText__InputContainer-kBPNQb kzXpab"><input type="text" min="9" max="9" name="bankRoutingNumber" placeholder="Enter 9 digit routing number" required="true" value=""></div>
+                                  <div class="InputText__InputContainer-kBPNQb kzXpab">
+                                    <input type="text" min="9" max="9" name="bankRoutingNumber" placeholder="Enter 9 digit routing number" required="true"></div>
                               </div>
                               <div class="undefined InputText__InputTextContainer-eprnIR dafSbU">
                                   <label class="InputText__Label-hEWkWK lnRsmH">
                                     <div class="LinkExternalAccount__MyText-hGqvra jXneMq">Account Number</div>
                                   </label>
-                                  <div class="InputText__InputContainer-kBPNQb kzXpab"><input type="text" min="0" max="32" name="accountNumber" placeholder="Account Number" required="true" value=""></div>
+                                  <div class="InputText__InputContainer-kBPNQb kzXpab">
+                                    <input type="text" min="0" max="32" name="accountNumber" placeholder="Account Number" required="true" ></div>
                               </div>
-                              <div class="Textarea__Container-cnXbCn gdBoDI"><label class="Textarea__Label-jHTrUR iSeYYG">Special Instructions (Optional)</label><textarea class="Textarea__RealTextarea-iHgmoi joEYHT" name="specialInstructions" placeholder="If you have special routing instructions, such as an intermediate brokerage or FCC/FBP account, please enter these details here." required=""></textarea></div>
+                              <div class="Textarea__Container-cnXbCn gdBoDI">
+                                <label class="Textarea__Label-jHTrUR iSeYYG">Special Instructions (Optional)</label>
+                                <textarea class="Textarea__RealTextarea-iHgmoi joEYHT" name="specialInstructions"  placeholder="If you have special routing instructions, such as an intermediate brokerage or FCC/FBP account, please enter these details here." required="">
+                                </textarea>
+                              </div>
                             </div>
                         </div>
                         <div class="AddAccountManually__ButtonContainer-gWxnUT fVIOKd">
