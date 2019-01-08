@@ -3,6 +3,7 @@ import { InvestmentOfferingService } from '../../services/investment-offering/in
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import {CompleteInvestmentService} from '../../services/complete-investment/complete-investment.service';
+import {OfferingDetailsService} from '../../services/offering-detail/offering-details.service';
 
 
 
@@ -22,7 +23,7 @@ export class OfferingDetailsComponent implements OnInit {
   isUserLoggedIn: any;
   investOrLogin = '';
   investmentError: any;
-  // originator: any;
+  originatorUid: any;
   investmentPerRemaining: any;
   investAmt: any;
   minAmtIndicator: any;
@@ -36,9 +37,12 @@ export class OfferingDetailsComponent implements OnInit {
   originatorOwnerName: any;
   originatorHeadline: any;
   serviceUid: any;
-
+  nonActiveFlag: any;
+  investDisableFlag: any;
   constructor(private InvestmentOffering: InvestmentOfferingService, private route: ActivatedRoute,
-              private user: UserService, private router: Router, private compInvest: CompleteInvestmentService) {
+              private user: UserService, private router: Router,
+              private compInvest: CompleteInvestmentService,
+              private offeringDetails: OfferingDetailsService) {
     this.route.params
       .subscribe(
         params => {
@@ -72,12 +76,13 @@ export class OfferingDetailsComponent implements OnInit {
         resp => {
           this.offering = resp;
           this.extractOfferingData();
+          this.checkInvesmentCompleted();
         }
       );
   }
 
   extractOfferingData() {
-    // this.originator = this.offering.service.originator;
+    this.originatorUid = this.offering.service.originator.uid;
     this.serviceUid = this.offering.service.uid;
     this.serviceName = this.offering.service.name;
     this.ownerName = this.offering.service.owner_name;
@@ -127,12 +132,21 @@ export class OfferingDetailsComponent implements OnInit {
     }
   }
   checkForMinAmt() {
-    if (this.investAmt < this.offering.service.min_investment) {
+    if (((this.investAmt) < this.offering.service.min_investment || (this.investAmt % 5000 !== 0) ) || undefined  === this.investAmt) {
       this.minAmtIndicator = 'minAmtError';
-    } else if (this.investAmt >= this.offeringReqCap) {
+    } else if (this.investAmt >= 1000000) {
       this.minAmtIndicator = 'thresholdError';
     } else {
       this.minAmtIndicator = '';
+    }
+  }
+  checkInvesmentCompleted() {
+    this.nonActiveFlag = this.offeringDetails.getNonActiveFlag();
+    if (this.offeringInvestedAmt >= this.offeringReqCap ||
+       (this.uid.id === this.nonActiveFlag.uid && this.nonActiveFlag.flag)) {
+         this.investDisableFlag = true;
+    } else {
+      this.investDisableFlag = false;
     }
   }
 

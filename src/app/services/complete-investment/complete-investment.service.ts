@@ -14,7 +14,7 @@ export class CompleteInvestmentService {
 
 
   constructor(private http: HttpClient) { }
-  async subscribeOffer(uId, investedAmt) {
+  async subscribeOffer(uId, investedAmt, account_id) {
 
     const subcriptionInfo = {
       'subscription':
@@ -25,7 +25,8 @@ export class CompleteInvestmentService {
         'coupon_code': 'coupon_code',
         'misc': 'Test',
         'items': {}
-      }
+      },
+      'account_uid': account_id
     };
     const subcriptionUrl: string = API_URL + '/order/user-subscription';
     this.OfferSubs = await this.http.post(subcriptionUrl, subcriptionInfo).toPromise();

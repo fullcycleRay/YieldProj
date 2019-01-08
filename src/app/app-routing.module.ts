@@ -30,6 +30,8 @@ import {UserSessionGuard} from './shared/guards/user-session-guard/user-session.
 import {ConfirmInvestmentComponent} from './transactions/confirm-investment/confirm-investment.component';
 import {InvestmentGuard} from './shared/guards/transaction/investment.guard';
 import {VerifyAccountComponent} from './manage-account/verify-account/verify-account.component';
+import {InvestmentDetailsComponent} from './transactions/investment-details/investment-details.component';
+import {OriginatorApplicationComponent} from './originator-application/originator-application.component';
 const routes: Routes = [
 {
   path: '',
@@ -56,7 +58,13 @@ const routes: Routes = [
 },
 {
   path: 'investments',
-  component: InvestmentComponent
+  component: InvestmentComponent,
+  canActivate: [UserSessionGuard]
+},
+{
+  path: 'investment-details/:serviceId/:accountId',
+  component: InvestmentDetailsComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'wallet',
@@ -150,6 +158,10 @@ const routes: Routes = [
   component: OriginatorComponent
 },
 {
+  path: 'originator-application',
+  component: OriginatorApplicationComponent
+},
+{
   path: 'offering-detail/:id/:success',
   component: OfferingDetailsComponent
 },
@@ -160,7 +172,8 @@ const routes: Routes = [
 },
 {
   path: 'confirm-investment',
-  component: ConfirmInvestmentComponent
+  component: ConfirmInvestmentComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: '**',
