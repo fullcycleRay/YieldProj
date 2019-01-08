@@ -31,6 +31,7 @@ import {ConfirmInvestmentComponent} from './transactions/confirm-investment/conf
 import {InvestmentGuard} from './shared/guards/transaction/investment.guard';
 import {VerifyAccountComponent} from './manage-account/verify-account/verify-account.component';
 import {InvestmentDetailsComponent} from './transactions/investment-details/investment-details.component';
+import {OriginatorApplicationComponent} from './originator-application/originator-application.component';
 const routes: Routes = [
 {
   path: '',
@@ -155,6 +156,10 @@ const routes: Routes = [
 {
   path: 'originator/:oid',
   component: OriginatorComponent
+},
+{
+  path: 'originator-application',
+  component: OriginatorApplicationComponent
 },
 {
   path: 'offering-detail/:id/:success',

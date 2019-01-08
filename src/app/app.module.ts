@@ -54,6 +54,7 @@ import {RequestCache} from './services/request-cache';
 import {CachingInterceptor} from './helper/cache.interceptor';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { TooltipModule } from 'ng2-tooltip-directive';
+import { OriginatorApplicationComponent } from './originator-application/originator-application.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,6 +97,7 @@ import { TooltipModule } from 'ng2-tooltip-directive';
     VerifyAccountComponent,
     LoaderComponent,
     InvestmentDetailsComponent,
+    OriginatorApplicationComponent,
   ],
   imports: [
     BrowserModule,
