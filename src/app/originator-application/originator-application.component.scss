@@ -1,3 +1,6 @@
+.originator-application{
+  margin-top: 90px;
+}
 .originator-submit-application {
 	background: #f5f7f9;
 	.card {
@@ -71,6 +74,7 @@
   color: #2CB591;
   margin: 0 -15px 15px;
   border-bottom: 1px solid #dcdee0;
+  background-color: #fff;
   padding: 12px 15px;
   line-height: 1;
   position: relative;
@@ -179,6 +183,10 @@ textarea {
 .ys-button--primary {
   background-color: #FEDC3D !important;
 }
+.ys-button--disabled {
+  background-color: #cccccc !important;
+
+}
 
 .ys-button, ys-button {
   cursor: pointer;
@@ -219,4 +227,19 @@ textarea {
   font-size: 10px;
   font-style: italic;
   font-weight: normal;
+}
+.multi-select {
+  width: 200px;
+  height:80px;
+}
+.InputText_errorMessage_1WBY1{
+  color:#d0021b;
+  line-height:30px;
+  font-size: 10px;
+}
+.originator-submit-application .submit-success .card-body i.fa {
+  font-size: 50px;
+  line-height: 14px;
+  color: #1e9c9f;
+  margin: 25px 0;
 }

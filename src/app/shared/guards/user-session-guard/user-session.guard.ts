@@ -13,14 +13,14 @@ export class UserSessionGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       if (localStorage.getItem('User')) {
-        if ((state.url === '/signup' || state.url === '/login')) {
+        if ((state.url === '/signup' || state.url === '/login' || state.url === '/originator-application')) {
           this.router.navigate(['/offerings']);
           return false;
         } else {
           return true;
         }
       } else {
-        if ((state.url === '/signup' || state.url === '/login')) {
+        if ((state.url === '/signup' || state.url === '/login' || state.url === '/originator-application')) {
           return true;
         } else {
           this.router.navigate(['/login']);
