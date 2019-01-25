@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferingDetailsService } from '../../services/offering-detail/offering-details.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, map } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
+import {AppConfig} from '../../../environments/config';
 
 const API_URL = environment.yieldUrl;
 
@@ -27,19 +26,20 @@ export class OfferingsComponent implements OnInit {
   loading = true;
   dateNow: Date = new Date();
   isUserLoggedIn: Observable <boolean>;
+  offerRemPer: any;
 
   constructor(private http: HttpClient, private router: Router, private offeringDetails: OfferingDetailsService,
-    private userService: UserService) {
+    private userService: UserService, public appConfig: AppConfig) {
   }
 
   ngOnInit() {
-    this.getOfferingDetails();
-    this.loading = false;
+    this.appConfig.setLoader(true);
     this.userService.checkLogin().subscribe(
       resp => {
         this.isUserLoggedIn = resp;
       }
     );
+    this.getOfferingDetails();
   }
   // tslint:disable-next-line:use-life-cycle-interface
   ngAfterContentChecked() {
@@ -56,6 +56,7 @@ export class OfferingsComponent implements OnInit {
           this.offeringResp = resp;
           // console.log(this.offeringResp, this.dateNow.getTime());
           this.offeringDataExc();
+          this.appConfig.setLoader(false);
         }
       );
   }
@@ -84,11 +85,19 @@ export class OfferingsComponent implements OnInit {
 
   }
 
+calculatePercentage = (openOffer) => {
+  const investedAmount = openOffer.invested_amount == null  ? 0 : openOffer.invested_amount;
+  return (openOffer.required_capital - investedAmount) * 100 / (openOffer.required_capital);
+}
 
 subSectionLoad(e, subSectionLoad) {
   if (e.target.classList.contains(subSectionLoad)) {
       e.preventDefault();
   }
+}
+routeOfferingDetail(uid) {
+this.offeringDetails.setNonActiveFlag({ uid: uid, flag: true});
+this.router.navigate(['/offering-detail/' + uid]);
 }
 
 }

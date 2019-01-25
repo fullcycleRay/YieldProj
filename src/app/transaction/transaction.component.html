@@ -55,7 +55,7 @@
                     </div>
                  </div>
               </div>
-              <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa" *ngIf="tranPresent === false">
+              <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa" *ngIf="tranPresent === false && !appConfig.getLoader()">
                  <div class="Transactions__Container-jGaKLJ ibqjOa">
                     <div class="NoInvestmentAlert__NoInvestmentsAlertContainer-cVRUEX cUGTtX shared__ComponentWrapper-hNHPcs inGxEQ">
                        <h4 class="NoInvestmentAlert__NoInvestmentsTitle-jtCIJD imAOFj">The currently selected Investor Account does not have any Transactions available at this time.</h4>
@@ -64,8 +64,9 @@
                     </div>
                  </div>
               </div>
-              <div class="Transactions__Wrapper-ForFM kKpXAN" *ngIf=" tranPresent === true">
-                  <p class="Transactions__Label-kyKciE kZzUUf">Pending Transactions</p>
+              <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+              <div class="Transactions__Wrapper-ForFM kKpXAN" *ngIf=" tranPresent === true && !appConfig.getLoader()">
+                  <!-- <p class="Transactions__Label-kyKciE kZzUUf">Pending Transactions</p> -->
                   <div class="TransactionsTableDesktop__StyledTable-jESJps iECseb desktop-table DesktopTable__Wrapper-davOaM icCAYC">
                      <div class="DesktopTable__TableHeader-SGQqU eLqeCd">
                         <div class="TransactionsTableDesktop__DateHeader-fovqMv eDTENN">Payment Date</div>
@@ -73,18 +74,23 @@
                         <div class="DesktopTable__TableColumn-kQTcFy eyFdve"><span class="DesktopTable__TableText-lliHlq iPAGlM">To</span></div>
                         <div class="DesktopTable__TableColumn-kQTcFy bvpbzp" width="200px"><span class="DesktopTable__TableText-lliHlq iPAGlM">Transaction Type</span></div>
                         <div class="TransactionsTableDesktop__AmountHeader-ivsiKd jiIUVS">Amount</div>
-                        <div class="TransactionsTableDesktop__ArrowHeader-gUdLSw cmEMrL"><span aria-hidden="true" class="fa fa-angle-double-down TransactionsTableDesktop__DoubleAngle-kDmPKl fGpwQv"></span></div>
+                        <div class="TransactionsTableDesktop__ArrowHeader-gUdLSw cmEMrL">
+                          <span aria-hidden="true"  (click)="showHide()" class="fa fa-angle-double-down TransactionsTableDesktop__DoubleAngle-kDmPKl fGpwQv"></span></div>
                      </div>
                      <div class="DesktopTable__TableBody-jtIoId eYMmSM">
                         <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH" *ngFor="let transaction of transactions">
                            <div class="DesktopTableRow__TableColumn-cwFros gXmfjc">
                               {{transaction.investment_date}}
-                              <div class="transaction-details TransactionsTableDesktop__TransactionDetailsWrapper-gtLWAn eOOzdO" *ngIf="isClicked">
+                              <div class="transaction-details TransactionsTableDesktop__TransactionDetailsWrapper-gtLWAn eOOzdO" *ngIf="isClicked || perClick()">
                                  <div class="TransactionsTableDesktop__TransactionDetails-jijtrL INBGC">
                                     Effective Date
                                     <span class="TransactionsTableDesktop__ReactToolTipContainer-jeovWG fJtQIk">
-                                       <a data-tip="true" data-for="tooltip-transactions-mobile" currentitem="false"><span aria-hidden="true" class="fa fa-question-circle-o TransactionsTableDesktop__FontAwesomeStyled-jyvxc jyJZqE"></span></a>
-                                       <div class="__react_component_tooltip place-top type-dark " id="tooltip-transactions-mobile" data-id="tooltip">The Effective Date of the transaction is the date funds were applied to the investment.</div>
+                                       <a>
+                                         <span tooltip="The Effective Date of the transaction is the date funds were applied to the investment."
+                                         placement="bottom" show-delay="500"
+                                         class="fa fa-question-circle-o TransactionsTableDesktop__FontAwesomeStyled-jyvxc jyJZqE">
+                                        </span>
+                                        </a>
                                     </span>
                                  </div>
                                  <div class="TransactionsTableDesktop__TransactionDetails-jijtrL icyMjV">{{transaction.service.effective_date}}</div>
@@ -96,7 +102,7 @@
                            <div class="DesktopTableRow__TableColumn-cwFros vMCeh"><span class="TransactionsTableDesktop__IconWrapper-hwgqkl bKEkqU"><img alt="Responsive Image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAU5JREFUOBGNUztOBDEM9WSCqKm5AiwFp0BUNByAjp47QM2uhDgANRXTwQEQt6DiAkgrYpu8TLxxhgaPZmM7z59nzxL9U1bT5vroZXO5hAfvOP143Dub7ve9z3QR0/qzS7D9+rn4JLrqIbPFnE+8C+kSlDv567IYodFUOp7WzzDizpMVyRWCeo/TpQXDq0wHOPtyPBI7rqtpfQNQkUX7husTFGSrJDyc13CSTK3MYeeYcR0FDElcU10AAnOHJlo7DSevD4fmLAGOgrqBWsuGVR6KGvg7PZmT8pQ90CdAd74j0UqBUxtDAWizJbXUoIbHJG+hSBCXwHPErdYqBYk1uk2oVgqS2mAAFLdv41kSLH7wzUCipDkTDFBoFpLBOwsC1H2JVLsLviIo+DUqN87kNoKUNoOoHG9rEdKg7wPH9m/UeGd3g45vqmlrdm6+xP0CGgyDttZZ9pgAAAAASUVORK5CYII=" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAU5JREFUOBGNUztOBDEM9WSCqKm5AiwFp0BUNByAjp47QM2uhDgANRXTwQEQt6DiAkgrYpu8TLxxhgaPZmM7z59nzxL9U1bT5vroZXO5hAfvOP143Dub7ve9z3QR0/qzS7D9+rn4JLrqIbPFnE+8C+kSlDv567IYodFUOp7WzzDizpMVyRWCeo/TpQXDq0wHOPtyPBI7rqtpfQNQkUX7husTFGSrJDyc13CSTK3MYeeYcR0FDElcU10AAnOHJlo7DSevD4fmLAGOgrqBWsuGVR6KGvg7PZmT8pQ90CdAd74j0UqBUxtDAWizJbXUoIbHJG+hSBCXwHPErdYqBYk1uk2oVgqS2mAAFLdv41kSLH7wzUCipDkTDFBoFpLBOwsC1H2JVLsLviIo+DUqN87kNoKUNoOoHG9rEdKg7wPH9m/UeGd3g45vqmlrdm6+xP0CGgyDttZZ9pgAAAAASUVORK5CYII= 1x, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAU5JREFUOBGNUztOBDEM9WSCqKm5AiwFp0BUNByAjp47QM2uhDgANRXTwQEQt6DiAkgrYpu8TLxxhgaPZmM7z59nzxL9U1bT5vroZXO5hAfvOP143Dub7ve9z3QR0/qzS7D9+rn4JLrqIbPFnE+8C+kSlDv567IYodFUOp7WzzDizpMVyRWCeo/TpQXDq0wHOPtyPBI7rqtpfQNQkUX7husTFGSrJDyc13CSTK3MYeeYcR0FDElcU10AAnOHJlo7DSevD4fmLAGOgrqBWsuGVR6KGvg7PZmT8pQ90CdAd74j0UqBUxtDAWizJbXUoIbHJG+hSBCXwHPErdYqBYk1uk2oVgqS2mAAFLdv41kSLH7wzUCipDkTDFBoFpLBOwsC1H2JVLsLviIo+DUqN87kNoKUNoOoHG9rEdKg7wPH9m/UeGd3g45vqmlrdm6+xP0CGgyDttZZ9pgAAAAASUVORK5CYII= 2x"></span>Investment</div>
                            <div class="DesktopTableRow__TableColumn-cwFros kWQzDe"><span>${{transaction.items[0].amount}}</span></div>
                            <div class="DesktopTableRow__TableColumn-cwFros dyGQer">
-                             <span aria-hidden="true" class="fa fa-angle-down TransactionsTableDesktop__AngleDown-bcpKYL hQIAiO" (click)="showHide()"></span>
+                             <span aria-hidden="true" class="fa fa-angle-down TransactionsTableDesktop__AngleDown-bcpKYL hQIAiO" ></span>
                             </div>
                         </div>
                      </div>

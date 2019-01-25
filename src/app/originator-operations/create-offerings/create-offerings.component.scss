@@ -1,0 +1,24 @@
+.create-offering-container{
+  margin-top: 90px;
+  background: #f5f7f9;
+  margin-top: 151px;
+  max-width: 600px;
+}
+.container:after, .container:before {
+  content: " ";
+  display: table;
+}
+.create-offering-header {
+  text-align: center;
+  h1{
+    font-size: 36px;
+    font-weight: 500;
+  }
+}
+
+.input-error{
+  color:#d0021b;
+  line-height:30px;
+  font-size: 10px;
+}
+

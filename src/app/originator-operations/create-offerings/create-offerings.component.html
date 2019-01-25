@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="create-offering-container">
+      <div class="create-offering-header row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+              <h1>Create Investment</h1>
+          </div>
+          <div class="col-md-2"></div>
+      </div>
+        <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group row">
+              <div class="col-md-2"></div>
+               <label class="col-md-4 control-label" for="example-text-input">Service Name</label>
+               <div class="col-md-4">
+                  <input type="text" class="form-control" name= "service_name" [(ngModel)]="model.service.name" #service_name ="ngModel"
+                    placeholder = "Enter the service name" id="example-text-input" required>
+                    <div *ngIf="service_name.errors?.required && service_name.touched"class="input-error"> {{required_error}} </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2"></div>
+               <label class="col-md-4 control-label" for="example-email">Annual Interest</label>
+               <div class="col-md-4">
+                  <input type="text" [(ngModel)]="model.service.annual_interest" #annual_interest="ngModel"  name= "annual_interest" maxlength= "2"
+                          class="form-control" placeholder="eg. 8%" required>
+                  <div *ngIf="annual_interest.errors?.required && annual_interest.touched"class="input-error"> {{required_error}} </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2"></div>
+               <label class="col-md-4 control-label" for="example-password-input">Term</label>
+               <div class="col-md-4">
+                  <input type="text" class="form-control" [(ngModel)]="model.service.term" #term="ngModel" name = "term"
+                          placeholder="eg. 1 or 10 months" required>
+                    <div *ngIf="term.errors?.required && term.touched"class="input-error"> {{required_error}} </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2"></div>
+               <label class="col-md-4 control-label">Start Date</label>
+               <div class="col-md-4">
+                  <input type="date" class="form-control" [(ngModel)]="model.service.start_date" #start_date ="ngModel" name = "start_date"  required>
+                  <div *ngIf="start_date.errors?.required && start_date.touched"class="input-error"> {{required_error}} </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2"></div>
+               <label class="col-md-4 control-label">End Date</label>
+               <div class="col-md-4">
+                  <input type="date" class="form-control" [(ngModel)]="model.service.end_date" #end_date ="ngModel" name ="end_date" required>
+                  <div *ngIf="end_date.errors?.required && end_date.touched"class="input-error"> {{required_error}} </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2"></div>
+               <label class="col-md-4 control-label">Required Capital</label>
+               <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder=" eg. $2000" [(ngModel)]="model.service.required_capital" #required_capital ="ngModel" name = "required_capital" required>
+                  <div *ngIf="required_capital.errors?.required && required_capital.touched"class="input-error"> {{required_error}} </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2"></div>
+               <label class="col-md-4 control-label">Minimum Investment</label>
+               <div class="col-md-4">
+                  <input type="number" class="form-control" placeholder=" eg. $2000" [(ngModel)]="model.service.min_investment" #min_investment ="ngModel" name = "min_investment" required>
+                  <div *ngIf="min_investment.errors?.required && min_investment.touched" class="input-error"> {{required_error}} </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2"></div>
+               <label class="col-sm-4 control-label">Category</label>
+               <div class="col-sm-4">
+                  <select class="form-control" [(ngModel)]="model.category_uid" #category_uid ="ngModel" name = "category_uid" required>
+                     <option value ="nsy1">Real Estate</option>
+                     <option value ="q8dx">Marine</option>
+                     <option value ="y1w2">Legal</option>
+                     <option value ="cq3p">Consumer</option>
+                     <option value ="thd2">Commercial</option>
+                  </select>
+                  <div *ngIf="category_uid.errors?.required && category_uid.touched"class="input-error"> {{required_error}} </div>
+               </div>
+               <div class="col-md-2"></div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-6"></div>
+              <div class="col-sm-2" >
+                  <button  type ="submit" class="ys-button ng-binding" [disabled]="!f.valid" [ngClass]= "f.invalid ? 'ys-button--disabled' :'ys-button--primary' " >SUBMIT</button>
+              </div>
+              <div class="col-sm-4"></div>
+            </div>
+         </form>
+    </div>
+</div>
+
+

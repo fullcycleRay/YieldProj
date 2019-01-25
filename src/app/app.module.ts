@@ -45,6 +45,18 @@ import { TransferFundHeaderComponent } from './shared/ui/transfer-fund-header/tr
 import { ManageAccountHeaderComponent } from './shared/ui/manage-account-header/manage-account-header.component';
 import { VerifyAccountComponent } from './manage-account/verify-account/verify-account.component';
 import { FileUploadModule } from 'ng2-file-upload';
+// Import ng-circle-progress
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { LoaderComponent } from './shared/loader/loader.component';
+import {AppConfig} from '../environments/config';
+import { InvestmentDetailsComponent } from './transactions/investment-details/investment-details.component';
+import {RequestCache} from './services/request-cache';
+// import {CachingInterceptor} from './helper/cache.interceptor';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { TooltipModule } from 'ng2-tooltip-directive';
+import { OriginatorApplicationComponent } from './originator-application/originator-application.component';
+import { CreateOfferingsComponent } from './originator-operations/create-offerings/create-offerings.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,18 +97,38 @@ import { FileUploadModule } from 'ng2-file-upload';
     TransferFundHeaderComponent,
     ManageAccountHeaderComponent,
     VerifyAccountComponent,
+    LoaderComponent,
+    InvestmentDetailsComponent,
+    OriginatorApplicationComponent,
+    CreateOfferingsComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FileUploadModule
+    FileUploadModule,
+    TooltipModule,
+    // Specify ng-circle-progress as an import
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: '#78C000',
+      innerStrokeColor: '#C7E596',
+      animationDuration: 300,
+    }),
+    GoogleChartsModule.forRoot(),
   ],
   providers: [
     UserService,
     AuthServiceService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    AppConfig,
+    // RequestCache,
+    // { provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 

@@ -80,6 +80,7 @@ iframe#_hjRemoteVarsFrame {
     height:auto;
     text-align:center;
     cursor:pointer;
+    border-radius: 5px;
 }
 .cwfXNK:hover{
     background:linear-gradient(0deg,#1E9C9F 0%,#2DB7BF 100%);
@@ -3180,7 +3181,7 @@ iframe#_hjRemoteVarsFrame {
     position:relative;
     clear:both;
     overflow:hidden;
-    background-image:url(https://ysdocs.s3.amazonaws.com/prod/NOTES/OWxmcQ/5wjT9lHZ2OkyAIP7dN_UpKwy.png);
+    background-image:url(../../../assets/offering.png);
     background-repeat:no-repeat;
     background-size:auto 100%;
     position:absolute;
@@ -3467,26 +3468,26 @@ iframe#_hjRemoteVarsFrame {
 }
 @media (min-width:992px){
     .hCPGag{
-        margin-top:4px;
+        margin-top:-12px;
     }
 }
 /* sc-component-id: sc-iQNlJl */
  .ozNsI{
-    margin-top:10px;
+    margin-top:0px;
     color:rgb(118,129,135);
     font-size:12px;
     line-height:13px;
 }
 @media (min-width:768px){
     .ozNsI{
-        margin-top:9px;
+        margin-top:0px;
         font-size:14px;
         line-height:15px;
     }
 }
 @media (min-width:992px){
     .ozNsI{
-        margin-top:16px;
+        margin-top:0px;
         font-size:16px;
         line-height:18px;
     }
@@ -8308,4 +8309,39 @@ iframe#_hjRemoteVarsFrame {
  .gfxcau{
     color:rgb(53,56,58);
     line-height:20px;
+}
+
+.seeDetails{
+  max-width: 625px !important;
+}
+.whiteTxt{
+  color:white !important;
+}
+.hkmwMx{
+  min-width:190px;
+  max-width:200px;
+  float:right;
+  width:100%;
+  padding-top:11px;
+  padding-right:15px;
+  padding-bottom:11px;
+  padding-left:15px;
+  background:rgb(223,227,228);
+  color:white;
+  font-family:'Raleway',sans-serif;
+  font-weight:normal;
+  font-size:16px;
+  text-align:left;
+  border:0;
+  position:relative;
+  border-radius:0;
+  line-height:24px;
+  height:auto;
+  text-align:center;
+  cursor: pointer
+}
+.pastOffering {
+  background: #20C2CB !important;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }

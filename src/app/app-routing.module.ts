@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './static-ui/home/home.component';
 import {AboutComponent} from './static-ui/about/about.component';
@@ -30,6 +30,10 @@ import {UserSessionGuard} from './shared/guards/user-session-guard/user-session.
 import {ConfirmInvestmentComponent} from './transactions/confirm-investment/confirm-investment.component';
 import {InvestmentGuard} from './shared/guards/transaction/investment.guard';
 import {VerifyAccountComponent} from './manage-account/verify-account/verify-account.component';
+import {InvestmentDetailsComponent} from './transactions/investment-details/investment-details.component';
+import {OriginatorApplicationComponent} from './originator-application/originator-application.component';
+import {CreateOfferingsComponent} from './originator-operations/create-offerings/create-offerings.component';
+import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 const routes: Routes = [
 {
   path: '',
@@ -39,10 +43,18 @@ const routes: Routes = [
   path: 'about',
   component: AboutComponent
 },
-
+{
+  path: 'auth/reset-password',
+  component: ResetpasswordComponent
+},
 {
   path: 'account',
   component: AccountComponent,
+  canActivate: [UserSessionGuard]
+},
+{
+  path: 'create-offering',
+  component: CreateOfferingsComponent,
   canActivate: [UserSessionGuard]
 },
 {
@@ -56,7 +68,13 @@ const routes: Routes = [
 },
 {
   path: 'investments',
-  component: InvestmentComponent
+  component: InvestmentComponent,
+  canActivate: [UserSessionGuard]
+},
+{
+  path: 'investment-details/:serviceId/:accountId',
+  component: InvestmentDetailsComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'wallet',
@@ -139,7 +157,7 @@ const routes: Routes = [
 },
 {
   path: 'forgetpassword',
-  component: ForgetpasswordComponent
+  component: ForgetpasswordComponent,
 },
 {
   path: 'offering-detail/:id',
@@ -148,6 +166,11 @@ const routes: Routes = [
 {
   path: 'originator/:oid',
   component: OriginatorComponent
+},
+{
+  path: 'originator-application',
+  component: OriginatorApplicationComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: 'offering-detail/:id/:success',
@@ -160,7 +183,8 @@ const routes: Routes = [
 },
 {
   path: 'confirm-investment',
-  component: ConfirmInvestmentComponent
+  component: ConfirmInvestmentComponent,
+  canActivate: [UserSessionGuard]
 },
 {
   path: '**',

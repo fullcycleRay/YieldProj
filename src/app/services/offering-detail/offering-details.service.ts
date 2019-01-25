@@ -16,13 +16,14 @@ export class OfferingDetailsService {
   res: any;
   offeringCat: any;
   subscribed: any;
+  upcomingOrPast: any;
 
   constructor(private http: HttpClient, public sanitizer: DomSanitizer, private route: ActivatedRoute) {
     this.route.params
     .subscribe(
       params => {
         this.subscribed = params.success;
-        localStorage.setItem('Subcribed',this.subscribed);
+        localStorage.setItem('Subcribed', this.subscribed);
       });
   }
   async getOfferingData() {
@@ -30,5 +31,10 @@ export class OfferingDetailsService {
     this.offeringCat = await this.http.get(serviceUrl).toPromise();
     return this.offeringCat;
     }
-
+    setNonActiveFlag(upcomingOrPast) {
+      localStorage.setItem('nonActive', JSON.stringify(upcomingOrPast));
+    }
+    getNonActiveFlag() {
+      return JSON.parse(localStorage.getItem('nonActive'));
+    }
 }

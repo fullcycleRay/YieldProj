@@ -1,0 +1,344 @@
+<div class="main originator-application">
+  <div>
+     <div class="originator-submit-application ">
+        <div class="container">
+          <div class ="originator-application-container" *ngIf="!signupSucess">
+              <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate (keydown.enter)="$event.preventDefault()">
+                  <div class="row col-sm-8" >
+                      <h3>New application</h3>
+                      <div class="registration-container">
+                        <div class="card">
+                            <div class="card-header">
+                              <div class="card-title">Primary Contact</div>
+                            </div>
+                            <div class="card-body">
+                                  <label class="input-base">
+                                    <span>
+                                        <span>First name</span>
+                                        <i>*</i>
+                                    </span>
+                                    <input type="text" name="firstName" placeholder="First name" class="input-text"
+                                      [(ngModel)]="model.user.first_name" #first_name="ngModel" required >
+                                      <div *ngIf="first_name.errors?.required && first_name.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                  </label>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Last name</span>
+                                        <i >*</i>
+                                    </span>
+                                    <input type="text" name="lastName" placeholder="Last name"
+                                      [(ngModel)]="model.user.last_name" #lastName="ngModel" class="input-text" required >
+                                      <div *ngIf="lastName.errors?.required && lastName.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                    <span class="input-text-tooltip ng-hide" >
+                                    </span><a class="input-text-tooltip ng-hide" href=""></a>
+                                    <ul class="error-msg">
+                                    </ul>
+                                  </label>
+                                  <label class="input-base">
+                                    <span>
+                                        <span class="">Title</span>
+                                        <i >*</i>
+                                    </span>
+                                    <input type="text" name="title" placeholder="CEO, CFO, Portfolio Manager, etc."
+                                      [(ngModel)]="model.user.title" #title="ngModel" class="input-text" required="true" >
+                                      <div *ngIf="title.errors?.required && title.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                    <span class="input-text-tooltip ng-hide" >
+                                    </span>
+                                    <a class="input-text-tooltip ng-hide" href="">
+                                    </a>
+                                    <ul class="error-msg ng-hide">
+                                    </ul>
+                                  </label>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Phone number</span>
+                                        <i >*</i>
+                                    </span>
+                                    <input type="tel" name="phoneNumber" placeholder="eg. 7022544841" minlength="10" maxlength ="10"
+                                        [(ngModel)]="model.user.phoneNumber" #phoneNumber="ngModel" class="input-text" required="true" >
+                                    <div *ngIf="phoneNumber.errors?.required && phoneNumber.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                    <div *ngIf="phoneNumber.errors?.minlength && phoneNumber.touched"class="InputText_errorMessage_1WBY1"> Please enter a valid mobile number</div>
+                                    <a class="input-text-tooltip ng-hide" href=""></a>
+                                    <ul class="error-msg ng-hide" >
+                                    </ul>
+                                  </label>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Email</span>
+                                        <i>*</i>
+                                    </span>
+                                    <input type="email"
+                                            name="emailAddress"
+                                            placeholder="test@gmail.com"
+                                            maxlength="255"
+                                            pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                            [(ngModel)]="model.user.email"
+                                            #emailAddress="ngModel" class="input-text"
+                                            required>
+                                      <div *ngIf="emailAddress.errors?.required && emailAddress.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                      <div *ngIf="emailAddress.errors?.pattern && emailAddress.touched"class="InputText_errorMessage_1WBY1"> Please enter a valid email </div>
+                                  </label>
+                                  <div class="dropdown-combobox input-select">
+                                    <label class="input-base">
+                                        <span ng-show="showLabel">
+                                          <span class="">How did you hear about us?</span>
+                                          <i >*</i>
+                                        </span>
+                                        <select class="btn btn-default dropdown-toggle portal-inputs__btn ng-binding" name ="referralSource" [(ngModel)]= "model.user.referralSource" #referralSource = "ngModel" >
+                                          <option>Recommended by Friend/Colleague</option>
+                                          <option>Newspaper or magazine article</option>
+                                          <option>Search Engine (Google, Bing, Yahoo, etc.)</option>
+                                          <option>Social media (Facebook, Twitter, LinkedIn, Quora)</option>
+                                          <option>Conference / Event</option>
+                                          <option>Postcard/Mailer</option>
+                                          <option>Business Contact</option>
+                                          <option>Millennium Trust</option>
+                                          <option>In-flight Video</option>
+                                          <option>Other</option>
+                                        </select>
+                                    </label>
+                                    <ul class="error-msg ng-hide"  >
+                                    </ul>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                              <div class="card-title">Company Information</div>
+                            </div>
+                            <div class="card-body">
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Company name</span>
+                                        <i>*</i>
+                                    </span>
+                                    <input type="text" name="companyName" placeholder="Company name" maxlength="255"
+                                    [(ngModel)]="model.company_info.name" #companyName = "ngModel" class="input-text" required="required">
+                                    <div *ngIf="companyName.errors?.required && companyName.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                    <span class="input-text-tooltip ng-hide">
+                                    </span>
+                                    <a class="input-text-tooltip ng-hide">
+                                    </a>
+                                    <ul class="error-msg ng-hide">
+                                    </ul>
+                                  </label>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Company website</span>
+                                        <i>*</i>
+                                    </span>
+                                    <input type="text" name="companyWebsite"
+                                            placeholder="Company website"
+                                            maxlength="255"
+                                            [(ngModel)]="model.company_info.website"
+                                            pattern="^(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$"
+                                            #companyWebsite = "ngModel"
+                                            class="input-text"
+                                            required="required">
+                                      <div *ngIf="companyWebsite.errors?.required && companyWebsite.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                      <div *ngIf="companyWebsite.errors?.pattern && companyWebsite.touched"class="InputText_errorMessage_1WBY1"> Please enter a valid URL </div>
+                                    <span class="input-text-tooltip">
+                                    </span>
+                                    <a class="input-text-tooltip"></a>
+                                    <ul class="error-msg ng-hide">
+                                    </ul>
+                                  </label>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">The company has been in business since</span>
+                                        <i>*</i>
+                                    </span>
+                                    <input type="date" name="established" placeholder="1986" maxlength="255"
+                                    [(ngModel)]="model.company_info.inaugurated_date" #established = "ngModel" class="input-text" required="required">
+                                    <div *ngIf="established.errors?.required && established.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                    <span class="input-text-tooltip">
+                                    </span>
+                                    <a class="input-text-tooltip"></a>
+                                    <ul class="error-msg">
+                                    </ul>
+                                  </label>
+                                  <div class="fake-input-text">
+                                    <label class="input-base">
+                                        <span>
+                                          <span class="">Total loans originated since inception</span>
+                                          <i>*</i>
+                                        </span>
+                                        <input type="text" name="totalLoans"  placeholder="1,500,000"
+                                        [(ngModel)]="model.company_info.total_loans_given" #totalLoans = "ngModel" class="input-text" required="required" >
+                                        <div *ngIf="totalLoans.errors?.required && totalLoans.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                    </label>
+                                  </div>
+                                  <div class="fake-input-text">
+                                    <label class="input-base">
+                                        <span>
+                                          <span class="">Current loan book or asset value</span>
+                                          <i>*</i>
+                                        </span>
+                                        <input type="text" name="currentAssetValue" placeholder="1,500,000" class="input-text"
+                                        [(ngModel)]="model.company_info.current_assets" #currentAssetValue = "ngModel" required="required" >
+                                        <div *ngIf="currentAssetValue.errors?.required && currentAssetValue.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                    </label>
+                                  </div>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Description of the company</span>
+                                        <i ng-show="required" class="ng-hide" >*</i>
+                                    </span>
+                                    <textarea name="description"  placeholder="Company description" [(ngModel)]="model.company_info.description" #companyDescription = "ngModel" ></textarea>
+                                    <!-- <div ng-if="maxChars" class="chars-left ng-binding " >140 characters left</div> -->
+                                  </label>
+                              <div class="input-base" >
+                                  <span>Please select the asset classes the company conducts business in:<i>*</i>
+                                  </span>
+                                  <!-- <p class="error-message ng-hide">Please select at least one option</p> -->
+                                  <div>
+                                    <select multiple class="multi-select" name = "categories_ids" [(ngModel)]="model.company_info.categories_ids" #categories_ids = "ngModel" required>
+                                      <option value="0">Legal</option>
+                                      <option value="1">Real Estate</option>
+                                      <option value="2">Commercial</option>
+                                      <option value="3">Consumer</option>
+                                      <option value="4">Marine</option>
+                                    </select>
+                                  </div>
+                                  <div *ngIf="categories_ids.errors?.required && categories_ids.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                </div>
+                                  <label class="input-base" >
+                                    <span>
+                                       <i>*</i>
+                                    </span>
+                                    <input type="text" name="otherAssets" placeholder="List asset classes (separated by comma)" maxlength="255"
+                                    [(ngModel)]="model.company_info.other_asset" #otherAssets = "ngModel" class="input-text">
+                                  </label>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                              <div class="card-title">Loan details</div>
+                            </div>
+                            <div class="card-body">
+                              <p>If you have a specific project in mind that you would like to fund with YieldStreet, please tell us about it below. Otherwise, give us a sense of what your typical projects look like.</p>
+                              <label class="input-base">
+                                  <span>Financing type</span>
+                                  <p>We currently only accept debt-based projects with tangible collateral.</p>
+                                    <div class="radio ys-radio">
+                              <label>
+                                <input type="radio" name="debt" [(ngModel)]="model.loan.financing_type" #debt = "ngModel" value="0">
+                                <span class="radio-btn">
+                                </span>
+                                <p>
+                                  <span class="">Debt</span>
+                                </p>
+                              </label>
+                            </div>
+                                  <div class="radio ys-radio">
+                                    <label>
+                                        <input type="radio" name="equity" [(ngModel)]="model.loan.financing_type" #equity = "ngModel" value="1">
+                                        <span class="radio-btn"></span>
+                                        <p>
+                                          <span class="">Equity</span>
+                                        </p>
+                                    </label>
+                                  </div>
+                              </label>
+                                  <div class="fake-input-text">
+                                    <label class="input-base" >
+                                        <span>
+                                          <span class="">Loan size </span><small class="">How much are you planning to raise for this (or your typical) loan?</small>
+                                          <i ng-show="required">*</i>
+                                        </span>
+                                        <input type="text" name="loanSize" placeholder="1,500,000" [(ngModel)]="model.loan.loan_amount" #loanSize = "ngModel" >
+                                    </label>
+                                  </div>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Loan term </span><small class="">What are your expectations for this (or your typical) loan, in months?</small>
+                                        <i >*</i>
+                                    </span>
+                                    <input type="text" name="loanTerm" placeholder="e.g 16 "
+                                      [(ngModel)]="model.loan.term" #loanTerm = "ngModel" maxlength="255" class="input-text" required="required">
+                                      <div *ngIf="loanTerm.errors?.required && loanTerm.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                  </label>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Interest rate</span>
+                                        <i >*</i>
+                                    </span>
+                                    <input type="text" name="interestRate" placeholder="e.g. 8%" maxlength="255"
+                                    [(ngModel)]="model.loan.interest" #interestRate = "ngModel" class="input-text" required="required">
+                                    <div *ngIf="interestRate.errors?.required && interestRate.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                  </label>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Description of assets</span>
+                                        <i ng-show="required">*</i>
+                                    </span>
+                                    <textarea name="assetDescription"  placeholder="Description of underlying collateral"
+                                    [(ngModel)]="model.loan.assets_description" #assetDescription = "ngModel" required="required" ></textarea>
+                                    <div *ngIf="assetDescription.errors?.required && assetDescription.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                  </label>
+                              <label class="input-base">
+                                  <span>Is this an existing loan?</span>
+                                  <p>Are you selling an existing loan or funding a new one?</p>
+                                    <div class="radio ys-radio">
+                              <label>
+                                <input type="radio" name="existingLoan" [(ngModel)]="model.loan.is_existing_loan" #existingLoan = "ngModel" value="1">
+                                <span class="radio-btn"></span><p><span class="">Yes</span></p></label>
+                              </div>
+                                  <div class="radio ys-radio">
+                                    <label>
+                                        <input type="radio" name="existingLoan" [(ngModel)]="model.loan.is_existing_loan" #existingLoan = "ngModel" value="0">
+                                        <span class="radio-btn"></span>
+                                        <p>
+                                          <span class="">No</span>
+                                        </p>
+                                    </label>
+                                  </div>
+                              </label>
+                                  <label class="input-base" >
+                                    <span>
+                                        <span class="">Sponsor equity </span><small class="">How much equity in the loan will you retain (or what do you typically do)?</small>
+                                        <i >*</i>
+                                    </span>
+                                    <input type="text" name="sponsorEquity" placeholder="e.g. 2%" maxlength="255"  class="input-text"
+                                    [(ngModel)]="model.loan.sponsor_equity" #sponsorEquity = "ngModel" required="required">
+                                    <div *ngIf="sponsorEquity.errors?.required && sponsorEquity.touched"class="InputText_errorMessage_1WBY1"> {{required_error}} </div>
+                                  </label>
+                            </div>
+                        </div>
+                        <div class="card originator-navigation">
+                            <div class="card-body">
+                              <div class="pull-right">
+                                <button  type ="submit" class="ys-button ng-binding" [disabled]="!f.valid" [ngClass]= "f.invalid ? 'ys-button--disabled' :'ys-button--primary' " >SUBMIT</button></div>
+                              <div class="clearfix"></div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  </form>
+          </div>
+          <!-- confirmation -->
+          <div data-autoscroll="true" class="ng-scope" *ngIf="signupSucess">
+              <div class="originator-submit-application ng-scope">
+                 <div class="container">
+                    <div class="row col-sm-8 " >
+                       <h3>New application</h3>
+                       <div class="card submit-success " >
+                          <div class="card-header">
+                             <div class="card-title">Confirmation</div>
+                          </div>
+                          <div class="card-body">
+                             <span class="thanks ng-binding">Thank you </span>
+                             <h3>We've received your application</h3>
+                             <i class="fa fa-check"></i>
+                             <p>We will be in touch if your application meets our criteria and warrants further discussion.</p>
+                             <a class="ys-button ys-button--primary"  [routerLink]="['/']" routerLinkActive="router-link-active" >CLOSE</a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>

@@ -5,20 +5,34 @@
         <div class="TransferFunds__Wrapper-iAXsuO kmqWFo">
            <app-manage-account-header></app-manage-account-header>
            <div class="TransferFunds__Content-iakrPW diVxBw">
-              <app-transfer-fund-header></app-transfer-fund-header>
-              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "!bankAccountExist">
+              <!-- <app-transfer-fund-header *ngIf="!appConfig.getLoader()"></app-transfer-fund-header> -->
+              <div class="TransferFunds__Header-kdtEcZ lgSQGw" *ngIf="!appConfig.getLoader()">
+                  <div class="TransferFunds__Title-laRkDW kaIhwm">Manage Funds</div>
+                  <div class="Dropdown__Container-cUUygg dlinaM" id="transfer-funds-investor">
+                     <div>
+                         <select #keywordsInput class="dropdown  Dropdown__ActiveContainer-ftVMPU bkTGAH"
+                          (change) ="onRowClick()">
+                           <option class="Dropdown__DropdownOptionContainer-nr8gk9-2" *ngFor= "let accData of accountData" [value] = "accData.uid">
+                             <span class="jCuLJb">{{accData.first_name | titlecase}} {{accData.title | titlecase}}</span>
+                           </option>
+                         </select>
+                       </div>
+                  </div>
+                </div>
+              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "!bankAccountExist && !appConfig.getLoader()">
                  <div class="TransferFunds__Subtitle-wkHIC hUQEze">External Bank Accounts</div>
                  <div class="ExternalBanks__NoBankWrapper-mBUfY bkBUZv">
                     <p class="ExternalBanks__NoBankAccountText-eQlvuw kPUQpi">You have not connected to an external bank account.</p>
                     <p class="ExternalBanks__NoBankAccountDescription-fooRdK kfCuDE">In order to transfer funds to and from ProjYield, you’ll need to set-up an external account.</p>
                     <div class="ExternalBanks__ButtonContainer-djYdki gULRxs">
-                      <button routerLink ="/new-account"class="ExternalBanks__StyledButton-hiBpNJ dYGjny PrimaryButton__ButtonPrimary-exVhhh YVQzO btnwidth" id="transfer-funds-add-bank-account-button">
+                      <button routerLink ="/new-account" routerLinkActive="router-link-active" class="ExternalBanks__StyledButton-hiBpNJ dYGjny PrimaryButton__ButtonPrimary-exVhhh YVQzO btnwidth" id="transfer-funds-add-bank-account-button">
                         Add External Bank Account
                       </button>
                     </div>
                  </div>
               </div>
-              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "bankAccountExist">
+              <app-loader *ngIf="appConfig.getLoader()"></app-loader>
+              <div class="ExternalBanks__Wrapper-cVUfiu hPgMQo" *ngIf = "bankAccountExist && !appConfig.getLoader()">
                 <div class="TransferFunds__Subtitle-wkHIC hUQEze">External Bank Accounts</div>
                 <!-- <div class="container success Notification__NotificationContainer-iqncWM cPNdGL alertCon" type="success">External Bank Account successfully connected to your YieldStreet Account.<span class="Notification__Close-fJjSLz dhZfLV"></span></div> -->
                 <div class="ExternalBanks__BankWrapper-hWhCgr kYEAjR">
@@ -30,7 +44,7 @@
                          <div class="ExternalBanks__Item-eWsHcE dqRJFI"></div>
                          <div class="ExternalBanks__Item-eWsHcE dqRJFI"></div>
                       </div>
-                      <div class="ExternalBanks__BanksRow-kBiVRS coDwtn" *ngFor= "let bankDetails of bankAccountData">
+                      <div class="ExternalBanks__BanksRow-kBiVRS coDwtn" *ngFor= "let bankDetails of filteredArray">
                          <div class="ExternalBanks__Desktop-dvupgI czxaQn">
                             <div class="ExternalBanks__BanksWrapper-jYQIes fuaHUE">
                                <div class="ExternalBanks__Flex-iAohPz hYSgVD">
@@ -42,7 +56,7 @@
                                </div>
                             </div>
                          </div>
-                         <div class="ExternalBanks__Mobile-kYmpuF dgMcWP" *ngFor= "let bankDetails of bankAccountData">
+                         <div class="ExternalBanks__Mobile-kYmpuF dgMcWP" *ngFor= "let bankDetails of filteredArray">
                             <div class="ExternalBanks__BanksWrapper-jYQIes fuaHUE">
                                <div class="ExternalBanks__Flex-iAohPz hYSgVD">
                                   <div class="ExternalBanks__Item-eWsHcE deJnZy">
@@ -66,7 +80,7 @@
                       </div>
                    </div>
                    <div class="ExternalBanks__LinkContainer-kWsNzB jEmhMz">
-                      <p class="ExternalBanks__AddAccount-neWGU kqfSUF" id="transfer-funds-add-bank-account-link">Add External Bank Account</p>
+                      <p  routerLink ="/new-account" routerLinkActive="router-link-active" class="ExternalBanks__AddAccount-neWGU kqfSUF" id="transfer-funds-add-bank-account-link">Add External Bank Account</p>
                    </div>
                 </div>
              </div>
