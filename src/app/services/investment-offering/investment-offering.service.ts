@@ -19,4 +19,9 @@ export class InvestmentOfferingService {
     this.offerings = await this.http.get(serviceUrl).toPromise();
     return this.offerings;
   }
+  async createOffering(data) {
+    const serviceUrl: string = API_URL + '/service/new-service';
+    this.offerings = await this.http.post(serviceUrl, data).toPromise();
+    return this.offerings;
+  }
 }
