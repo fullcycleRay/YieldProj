@@ -61,23 +61,26 @@ export class InvestmentComponent implements OnInit {
   filterInvestment() {
     this.filteredArray = [];
     let accountInvestmentTemp = [];
-    accountInvestmentTemp = JSON.parse(JSON.stringify( this.accountInvestments ));
-    if (this.selectedAccValue !== 'all') {
-      // tslint:disable-next-line:prefer-const
-      for (let i = 0; i < accountInvestmentTemp.length; i++) {
-        const subscriptionLen = accountInvestmentTemp[i].subscriptions.length;
-        for ( let y = subscriptionLen - 1 ; y >= 0; y--) {
-          if (accountInvestmentTemp[i].subscriptions[y].user_account_uid !== this.selectedAccValue) {
-            accountInvestmentTemp[i].subscriptions.splice(y, 1 );
+    if (this.accountInvestments ) {
+      accountInvestmentTemp = JSON.parse(JSON.stringify( this.accountInvestments ));
+      if (this.selectedAccValue !== 'all') {
+        // tslint:disable-next-line:prefer-const
+        for (let i = 0; i < accountInvestmentTemp.length; i++) {
+          const subscriptionLen = accountInvestmentTemp[i].subscriptions.length;
+          for ( let y = subscriptionLen - 1 ; y >= 0; y--) {
+            if (accountInvestmentTemp[i].subscriptions[y].user_account_uid !== this.selectedAccValue) {
+              accountInvestmentTemp[i].subscriptions.splice(y, 1 );
+          }
+          }
+          if (accountInvestmentTemp[i].subscriptions.length) {
+            this.filteredArray.push(accountInvestmentTemp[i]);
+          }
         }
-        }
-        if (accountInvestmentTemp[i].subscriptions.length) {
-          this.filteredArray.push(accountInvestmentTemp[i]);
-        }
+      } else {
+        this.filteredArray = this.accountInvestments;
+      }
     }
-    } else {
-      this.filteredArray = this.accountInvestments;
-    }
+
   }
   extractData () {
     let accountInvestmentTemp = [];
