@@ -51,10 +51,12 @@ import { LoaderComponent } from './shared/loader/loader.component';
 import {AppConfig} from '../environments/config';
 import { InvestmentDetailsComponent } from './transactions/investment-details/investment-details.component';
 import {RequestCache} from './services/request-cache';
-import {CachingInterceptor} from './helper/cache.interceptor';
+// import {CachingInterceptor} from './helper/cache.interceptor';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { TooltipModule } from 'ng2-tooltip-directive';
 import { OriginatorApplicationComponent } from './originator-application/originator-application.component';
+import { CreateOfferingsComponent } from './originator-operations/create-offerings/create-offerings.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +100,8 @@ import { OriginatorApplicationComponent } from './originator-application/origina
     LoaderComponent,
     InvestmentDetailsComponent,
     OriginatorApplicationComponent,
+    CreateOfferingsComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,8 +127,8 @@ import { OriginatorApplicationComponent } from './originator-application/origina
     AuthServiceService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     AppConfig,
-    RequestCache,
-    { provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }
+    // RequestCache,
+    // { provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 

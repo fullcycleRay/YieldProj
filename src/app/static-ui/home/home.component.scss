@@ -1,5 +1,5 @@
 .Hero_container_3h28w{
-  background-image:url('../../../assets/hero-image.87b76954.png');
+  // background-image:url('../../../assets/hero-image.87b76954.png');
   background-position:50%;
   background-size:cover;
   background-repeat:no-repeat;
@@ -38,7 +38,7 @@
 }
 @media (min-width:768px){
   .Hero_container_3h28w{
-      background-image:url('../../../assets/hero-image@2x.cd310c65.jpg');
+      // background-image:url('../../../assets/hero-image@2x.cd310c65.jpg');
       min-height:500px;
       max-height:650px
   }
@@ -55,7 +55,8 @@
 }
 @media (min-width:992px){
   .Hero_container_3h28w{
-      background-image:url('../../../assets/hero-image@3x.cbf2f4d8.jpg');
+      // background-image:url('../../../assets/hero-image@3x.cbf2f4d8.jpg');
+      background-image:url('../../../assets/ui-image/home.jpg');
       min-height:535px;
       max-height:900px;
       background-position:center 75%
