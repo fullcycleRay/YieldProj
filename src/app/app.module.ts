@@ -57,6 +57,7 @@ import { TooltipModule } from 'ng2-tooltip-directive';
 import { OriginatorApplicationComponent } from './originator-application/originator-application.component';
 import { CreateOfferingsComponent } from './originator-operations/create-offerings/create-offerings.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { MyOfferingsComponent } from './originator-operations/my-offerings/my-offerings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,6 +103,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     OriginatorApplicationComponent,
     CreateOfferingsComponent,
     ResetpasswordComponent,
+    MyOfferingsComponent,
   ],
   imports: [
     BrowserModule,

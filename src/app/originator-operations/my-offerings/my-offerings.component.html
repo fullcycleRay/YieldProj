@@ -1,0 +1,102 @@
+<div class="Main__Wrapper-fTNHWf fHOsuF">
+  <div class="Main__Container-jeBqdM gQKlCo">
+     <div class="PortfolioContainer__Wrapper-hvqmVE ikFBWa">
+        <div class="Navbar__InnerWrapper-jFgBlI cuaAbL Container-gZqETv dedQyW">
+           <div class="PortfolioContainer__ContentWrapper-bLzDll fRUPbU">
+              <div class="Header__Wrapper-jGBIxR dWYIdt">
+                 <div class="Header__TitleWrapper-eiGINF iWVqVB">
+                    <div class="Header__Title-dLRSgy fnOXBv">
+                       <div class="Breadcrumb__Container-iFkNRY gdpVpA"><span class="Breadcrumb__BreadcrumbItem-hOHfsj cvyNLD"><span class="Breadcrumb__FontAwesomeWrapper-eFirZx gGHvIX"><span aria-hidden="true" class="fa fa-angle-right"></span></span>portfolio</span><span class="Breadcrumb__BreadcrumbItem-hOHfsj cvyNLD"><span class="Breadcrumb__FontAwesomeWrapper-eFirZx gGHvIX"><span aria-hidden="true" class="fa fa-angle-right"></span></span>investments</span></div>
+                    </div>
+                    <div class="Header__CurrentTab-dWpQpn dQsaWW">Investments</div>
+                 </div>
+                 <div class="Header__DropdownWrapper-kzZVJq cMVwLP">
+                    <div>
+                       <div class="shared__Desktop-hjxvYk cGsOEk">
+                       </div>
+                       <div class="shared__Mobile-gnnfyx iORixb">
+                          <div class="shared__MobileButton-HkEuD geypWD"><span aria-hidden="true" class="fa fa-filter"></span></div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="PortfolioContainer__SectionWrapper-kfBCZx jXkgWa">
+                  <!-- <app-loader *ngIf="appConfig.getLoader()"></app-loader> -->
+                  <div >
+                    <div class="Investments__Container-gUoaLB VnLjP">
+                        <div >
+                          <div>
+                              <p class="Investments__Label-suSkU koUArz">Active Offering</p>
+                              <div class="PendingTableDesktop__StyledTable-qxoTH kCVXCf desktop-table DesktopTable__Wrapper-davOaM icCAYC">
+                                <div class="DesktopTable__TableHeader-SGQqU eLqeCd">
+                                    <div class="DesktopTable__TableColumn-kQTcFy hafpuL" width="425px"><span class="DesktopTable__TableText-lliHlq iPAGlM">Offering Name </span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Term</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Interest Rate</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Start date</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">End date</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Required Capital</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Capital acquired</span></div>
+                                </div>
+                                <div class="DesktopTable__TableBody-jtIoId eYMmSM">
+                                  <div *ngFor="let offering of model.offerings.active">
+                                    <div>
+                                      <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH">
+                                        <div class="DesktopTableRow__TableColumn-cwFros gcRVDh">
+                                            <div class="PendingTableDesktop__InvestmentTitle-dgbGRP gRwTuC">
+                                             {{offering.name}}</div>
+                                        </div>
+                                        <div class="pending-value term DesktopTableRow__TableColumn-cwFros iIWHKI">{{offering.term}} Mo.</div>
+                                        <div class="pending-value interest-rate DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{offering.rate}}%</span></div>
+                                        <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{offering.start_date}}</span></div>
+                                        <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{offering.end_date}}</span></div>
+                                        <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{offering.required_cap}}</span></div>
+                                        <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{offering.capital_acquired}}</span></div>
+                                      </div>
+                                    </div>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p class="Investments__Label-suSkU koUArz">Inactive Offerings</p>
+                                <div class="PendingTableDesktop__StyledTable-qxoTH kCVXCf desktop-table DesktopTable__Wrapper-davOaM icCAYC">
+                                  <div class="DesktopTable__TableHeader-SGQqU eLqeCd">
+                                    <div class="DesktopTable__TableColumn-kQTcFy hafpuL" width="425px"><span class="DesktopTable__TableText-lliHlq iPAGlM">Offering Name </span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Term</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Interest Rate</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Start date</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">End date</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Required Capital</span></div>
+                                    <div class="DesktopTable__TableColumn-kQTcFy ftYXIy"><span class="DesktopTable__TableText-lliHlq iPAGlM">Capital acquired</span></div>
+                                  </div>
+                                  <div class="DesktopTable__TableBody-jtIoId eYMmSM">
+                                    <div *ngFor="let offering of model.offerings.inactive">
+                                      <div>
+                                        <div class="desktop-row DesktopTableRow__TableRow-bEtxgu kMQpQH">
+                                          <div class="DesktopTableRow__TableColumn-cwFros gcRVDh">
+                                              <div class="PendingTableDesktop__InvestmentTitle-dgbGRP gRwTuC">
+                                               {{offering.name}}</div>
+                                          </div>
+                                          <div class="pending-value term DesktopTableRow__TableColumn-cwFros iIWHKI">{{offering.term}} Mo.</div>
+                                          <div class="pending-value interest-rate DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{offering.rate}}%</span></div>
+                                          <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{offering.start_date}}</span></div>
+                                          <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>{{offering.end_date}}</span></div>
+                                          <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{offering.required_cap}}</span></div>
+                                          <div class="pending-value amount DesktopTableRow__TableColumn-cwFros uMzOX"><span>${{offering.capital_acquired}}</span></div>
+                                        </div>
+                                      </div>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>

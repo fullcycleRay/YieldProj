@@ -8,10 +8,12 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserSessionGuard implements CanActivate {
+  prevPage: any;
   constructor (private router: Router) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+      this.prevPage = localStorage.getItem('pageVisitedWithoutLogin');
       if (localStorage.getItem('User')) {
         if ((state.url === '/signup' || state.url === '/login' || state.url === '/originator-application')) {
           this.router.navigate(['/offerings']);
@@ -23,8 +25,9 @@ export class UserSessionGuard implements CanActivate {
         if ((state.url === '/signup' || state.url === '/login' || state.url === '/originator-application')) {
           return true;
         } else {
+          localStorage.setItem('pageVisitedWithoutLogin', state.url);
           this.router.navigate(['/login']);
-        return false;
+          return false;
         }
       }
   }

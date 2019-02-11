@@ -35,8 +35,14 @@ export class LoginComponent implements OnInit {
             this.emailError = false;
             localStorage.setItem('User', this.restItems.user.auth_token);
             localStorage.setItem('name', this.restItems.user.name);
+            const prevPage = localStorage.getItem('pageVisitedWithoutLogin');
             this.user.setUserLoggedIn();
-            this.router.navigate(['offerings']);
+            if (prevPage) {
+              this.router.navigate([prevPage]);
+              localStorage.removeItem('pageVisitedWithoutLogin');
+            } else {
+              this.router.navigate(['offerings']);
+            }
           } else if (this.restItems.success === false) {
             this.userIdError = true;
             this.userDisError = AppError.error_0006;
